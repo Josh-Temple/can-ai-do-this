@@ -434,3 +434,37 @@ select:focus {
     gap: 3px;
   }
 }
+
+
+.review-hint {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.review-hint.due,
+.freshness-due {
+  color: var(--partial);
+  font-weight: 720;
+}
+
+.freshness-warning {
+  margin: 0 0 16px;
+  padding: 11px 14px;
+  border-left: 3px solid var(--partial);
+  background: var(--soft);
+  font-size: 0.9rem;
+}
+
+.freshness-flag {
+  display: inline-block;
+  margin-left: 10px;
+  border: 1px solid var(--partial);
+  padding: 5px 8px;
+  color: var(--partial);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}

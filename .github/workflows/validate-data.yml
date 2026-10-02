@@ -79,8 +79,36 @@ jobs:
 
       - name: Check browser JavaScript syntax
         run: |
+          node --check site/freshness.js
           node --check site/app.js
           node --check site/question.js
+      - name: Check public freshness boundary
+        run: |
+          node - <<'NODE'
+          const assert = require("node:assert");
+          const freshness = require("./site/freshness.js");
+          const record = { review_window_days: 14 };
+          const answer = { last_checked: "2026-10-03" };
+
+          const before = freshness.evaluate(record, answer, new Date("2026-10-16T12:00:00Z"));
+          assert.equal(before.isDue, false);
+          assert.equal(before.nextReview, "2026-10-17");
+
+          const due = freshness.evaluate(record, answer, new Date("2026-10-17T00:00:00Z"));
+          assert.equal(due.isDue, true);
+          assert.equal(due.state, "DUE");
+
+          const multi = freshness.recordStatus(
+            { review_window_days: 14, answers: [
+              { last_checked: "2026-10-03" },
+              { last_checked: "2026-10-10" }
+            ]},
+            new Date("2026-10-17T00:00:00Z")
+          );
+          assert.equal(multi.dueCount, 1);
+          console.log("Public freshness boundary checks passed.");
+          NODE
+
       - name: Check task-search regressions
         run: python scripts/check_search_cases.py
 

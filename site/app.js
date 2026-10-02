@@ -58,6 +58,23 @@ function answerClass(answer) {
   return String(answer || "unknown").toLowerCase();
 }
 
+function freshnessInfo(record, answer) {
+  return CapabilityFreshness.evaluate(record, answer);
+}
+
+function effectiveEvidenceLabel(record, answer) {
+  return freshnessInfo(record, answer).isDue
+    ? "要再確認"
+    : evidenceLabel(answer.evidence_state);
+}
+
+function freshnessWarning(record, answer) {
+  const freshness = freshnessInfo(record, answer);
+  if (!freshness.isDue) return "";
+  const deadline = freshness.nextReview ? `（確認期限 ${escapeHtml(freshness.nextReview)}）` : "";
+  return `<p class="freshness-warning"><strong>要再確認</strong> この回答は確認期限を過ぎています${deadline}。前回確認時点の内容として参照し、公式情報を再確認してください。</p>`;
+}
+
 function categoryLabel(category) {
   return {
     automation: "自動化",
@@ -121,19 +138,25 @@ function searchableText(record) {
 }
 
 function renderComparisonRows(record) {
-  return record.answers.map((answer) => `
-    <tr>
-      <td class="task-cell"><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></td>
-      <td>${escapeHtml(answer.product)}</td>
-      <td><span class="answer-badge ${answerClass(answer.answer)}">${escapeHtml(answerLabel(answer.answer))}</span></td>
-      <td>${escapeHtml(answer.plan || "条件による")}</td>
-      <td>${escapeHtml(evidenceLabel(answer.evidence_state))}</td>
-      <td>${escapeHtml(answer.last_checked)}</td>
-    </tr>
-  `).join("");
+  return record.answers.map((answer) => {
+    const freshness = freshnessInfo(record, answer);
+    const review = freshness.nextReview
+      ? `<div class="review-hint ${freshness.isDue ? "due" : ""}">次回確認目安 ${escapeHtml(freshness.nextReview)}${freshness.isDue ? " · 期限超過" : ""}</div>`
+      : "";
+    return `
+      <tr>
+        <td class="task-cell"><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></td>
+        <td>${escapeHtml(answer.product)}</td>
+        <td><span class="answer-badge ${answerClass(answer.answer)}">${escapeHtml(answerLabel(answer.answer))}</span></td>
+        <td>${escapeHtml(answer.plan || "条件による")}</td>
+        <td class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</td>
+        <td>${escapeHtml(answer.last_checked)}${review}</td>
+      </tr>
+    `;
+  }).join("");
 }
 
-function renderAnswer(answer) {
+function renderAnswer(record, answer) {
   const conditions = answerList(answer, "conditions")
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
@@ -149,16 +172,20 @@ function renderAnswer(answer) {
     })
     .join("");
 
+  const freshness = freshnessInfo(record, answer);
+
   return `
     <div class="answer">
       <div class="answer-meta">
         <strong>${escapeHtml(answer.product)}</strong>
         <div>${escapeHtml(answer.plan || "プラン条件あり")}</div>
         <div>${escapeHtml(answer.platform || "利用画面による")}</div>
-        <div>${escapeHtml(evidenceLabel(answer.evidence_state))}</div>
+        <div class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</div>
         <div>確認 ${escapeHtml(answer.last_checked)}</div>
+        ${freshness.nextReview ? `<div>次回確認目安 ${escapeHtml(freshness.nextReview)}</div>` : ""}
       </div>
       <div class="answer-body">
+        ${freshnessWarning(record, answer)}
         <p class="answer-summary">${escapeHtml(answerText(answer, "summary"))}</p>
         <details class="details">
           <summary>条件・制限・根拠を見る</summary>
@@ -197,7 +224,7 @@ function renderRecord(record) {
         </div>
         <span class="answer-badge ${answerClass(primary.answer)}">${escapeHtml(answerLabel(primary.answer))}</span>
       </div>
-      ${record.answers.map(renderAnswer).join("")}
+      ${record.answers.map((answer) => renderAnswer(record, answer)).join("")}
       ${communityLinks ? `<p class="community">需要・エッジケースの参考: ${communityLinks}</p>` : ""}
     </article>
   `;
@@ -262,7 +289,13 @@ async function loadRecords() {
       .sort();
 
     if (dates.length) {
-      els.freshness.textContent = `最新確認日: ${dates.at(-1)}`;
+      const dueAnswers = records.reduce(
+        (count, record) => count + CapabilityFreshness.recordStatus(record).dueCount,
+        0
+      );
+      els.freshness.textContent = dueAnswers
+        ? `要再確認: ${dueAnswers}回答 · 最新確認日: ${dates.at(-1)}`
+        : `確認期限内 · 最新確認日: ${dates.at(-1)}`;
     }
 
     applyFilters();
