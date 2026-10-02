@@ -1,0 +1,37 @@
+{
+  "id": "Q9997",
+  "question": "Can a semantic-invalid fixture perform a task?",
+  "slug": "can-a-semantic-invalid-fixture-perform-a-task",
+  "category": "example",
+  "status": "DRAFT",
+  "demand": {
+    "summary": "Schema-valid fixture used to verify evidence semantics.",
+    "community_links": []
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Example AI",
+      "plan": null,
+      "platform": null,
+      "region": null,
+      "answer": "YES",
+      "summary": "This intentionally mislabels community evidence as documented capability evidence.",
+      "conditions": [],
+      "limitations": [],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "COMMUNITY",
+          "url": "https://example.com/community-report",
+          "accessed_at": "2026-10-03",
+          "note": "Intentionally invalid evidence-state pairing."
+        }
+      ]
+    }
+  ],
+  "notes": "This file should pass JSON Schema but fail semantic validation."
+}
