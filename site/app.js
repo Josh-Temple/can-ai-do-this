@@ -60,6 +60,9 @@ function categoryLabel(category) {
     "connected-apps": "外部アプリ連携",
     spreadsheets: "表計算",
     presentations: "プレゼン",
+    "web-research": "ウェブ調査",
+    images: "画像",
+    documents: "文書・PDF",
   }[category] || category;
 }
 
