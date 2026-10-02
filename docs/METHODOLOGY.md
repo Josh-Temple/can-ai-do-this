@@ -82,6 +82,8 @@ These are provisional operating rules, not claims about how often vendors change
 
 Use the shorter window when a record spans more than one category.
 
+Each canonical question stores the selected policy as `review_window_days` with a value of 14 or 30. This field records the review cadence; it is not evidence that a capability was re-checked. Automated due-date checks use the **oldest answer-level `last_checked` date** in the question so that refreshing one product answer cannot hide another stale answer.
+
 ### Review semantics
 
 - Update `last_checked` only after the relevant evidence has actually been re-read or the capability has been re-tested.

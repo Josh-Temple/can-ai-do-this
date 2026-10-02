@@ -32,5 +32,6 @@
       ]
     }
   ],
-  "notes": "Valid schema fixture."
+  "notes": "Valid schema fixture.",
+  "review_window_days": 30
 }

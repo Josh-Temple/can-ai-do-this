@@ -3,7 +3,7 @@
   "$id": "https://github.com/Josh-Temple/can-ai-do-this/schemas/question.schema.json",
   "title": "Can AI Do This question record",
   "type": "object",
-  "required": ["id", "question", "slug", "category", "status", "last_checked", "answers"],
+  "required": ["id", "question", "slug", "category", "status", "last_checked", "review_window_days", "answers"],
   "properties": {
     "id": { "type": "string", "pattern": "^Q[0-9]{4,}$" },
     "question": { "type": "string", "minLength": 5 },
@@ -38,6 +38,7 @@
       "additionalProperties": false
     },
     "last_checked": { "type": "string", "format": "date" },
+    "review_window_days": { "enum": [14, 30] },
     "answers": {
       "type": "array",
       "minItems": 1,

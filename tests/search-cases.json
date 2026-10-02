@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "query": "毎日",
+      "must_include": [
+        "Q0001"
+      ]
+    },
+    {
+      "query": "メール 予定",
+      "must_include": [
+        "Q0002"
+      ],
+      "must_exclude": [
+        "Q0003"
+      ]
+    },
+    {
+      "query": "スライド",
+      "must_include": [
+        "Q0005",
+        "Q0006"
+      ]
+    },
+    {
+      "query": "パワポ",
+      "must_include": [
+        "Q0005",
+        "Q0006"
+      ]
+    },
+    {
+      "query": "エクセル",
+      "must_include": [
+        "Q0004"
+      ]
+    },
+    {
+      "query": "ドライブ",
+      "must_include": [
+        "Q0007"
+      ]
+    },
+    {
+      "query": "写真",
+      "must_include": [
+        "Q0009",
+        "Q0010"
+      ]
+    },
+    {
+      "query": "PDF 要約",
+      "must_include": [
+        "Q0011",
+        "Q0015"
+      ]
+    },
+    {
+      "query": "最新情報 出典",
+      "must_include": [
+        "Q0008",
+        "Q0014"
+      ]
+    },
+    {
+      "query": "Webサイト 公開",
+      "must_include": [
+        "Q0012"
+      ]
+    },
+    {
+      "query": "前の会話",
+      "must_include": [
+        "Q0013"
+      ]
+    },
+    {
+      "query": "PDF グラフ",
+      "must_include": [
+        "Q0015"
+      ]
+    }
+  ]
+}

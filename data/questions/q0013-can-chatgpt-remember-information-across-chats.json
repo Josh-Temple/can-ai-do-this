@@ -70,5 +70,6 @@
       ]
     }
   ],
-  "notes": "This record describes personalization memory across chats, not storage guarantees or retrieval of every prior conversation."
+  "notes": "This record describes personalization memory across chats, not storage guarantees or retrieval of every prior conversation.",
+  "review_window_days": 14
 }

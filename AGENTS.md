@@ -39,7 +39,7 @@ For a new question:
 5. If direct testing is available, test only within the stated environment.
 6. Add community links only when they add demand evidence, edge cases, or failure reports.
 7. Write a concise answer that distinguishes facts from reports and unknowns.
-8. Set a next-review date or freshness window.
+8. Set `review_window_days` to 14 or 30 using the freshness rules in `docs/METHODOLOGY.md`.
 9. Validate against `schemas/question.schema.json`.
 
 ## Community-source handling

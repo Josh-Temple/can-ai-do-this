@@ -77,5 +77,6 @@
     "PowerPoint",
     "pptx",
     "スライド作成"
-  ]
+  ],
+  "review_window_days": 30
 }

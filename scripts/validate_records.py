@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -38,6 +39,58 @@ def format_path(error):
     return out
 
 
+def semantic_errors(record):
+    errors = []
+
+    if record.get("status") == "PUBLISHED":
+        if not str(record.get("question_ja") or "").strip():
+            errors.append("$.question_ja: required for PUBLISHED records")
+        if not record.get("search_terms"):
+            errors.append("$.search_terms: at least one task alias is required for PUBLISHED records")
+
+        for index, answer in enumerate(record.get("answers", [])):
+            prefix = f"$.answers[{index}]"
+            if answer.get("summary") and not str(answer.get("summary_ja") or "").strip():
+                errors.append(f"{prefix}.summary_ja: required when summary is present")
+
+            conditions = answer.get("conditions") or []
+            conditions_ja = answer.get("conditions_ja") or []
+            if conditions and len(conditions_ja) != len(conditions):
+                errors.append(
+                    f"{prefix}.conditions_ja: expected {len(conditions)} translated item(s), "
+                    f"found {len(conditions_ja)}"
+                )
+
+            limitations = answer.get("limitations") or []
+            limitations_ja = answer.get("limitations_ja") or []
+            if limitations and len(limitations_ja) != len(limitations):
+                errors.append(
+                    f"{prefix}.limitations_ja: expected {len(limitations)} translated item(s), "
+                    f"found {len(limitations_ja)}"
+                )
+
+    record_checked = date.fromisoformat(record["last_checked"])
+    for index, answer in enumerate(record.get("answers", [])):
+        answer_checked = date.fromisoformat(answer["last_checked"])
+        prefix = f"$.answers[{index}]"
+
+        if answer_checked > record_checked:
+            errors.append(
+                f"{prefix}.last_checked: cannot be later than record last_checked "
+                f"({record['last_checked']})"
+            )
+
+        for source_index, source in enumerate(answer.get("sources", [])):
+            accessed = date.fromisoformat(source["accessed_at"])
+            if accessed > answer_checked:
+                errors.append(
+                    f"{prefix}.sources[{source_index}].accessed_at: cannot be later than "
+                    f"answer last_checked ({answer['last_checked']})"
+                )
+
+    return errors
+
+
 def validate(paths):
     schema = load_json(SCHEMA_PATH)
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
@@ -67,6 +120,14 @@ def validate(paths):
                     f"  {format_path(error)}: {error.message}",
                     file=sys.stderr,
                 )
+            continue
+
+        semantics = semantic_errors(record)
+        if semantics:
+            failures += 1
+            print(f"INVALID {path.relative_to(ROOT)}", file=sys.stderr)
+            for message in semantics:
+                print(f"  {message}", file=sys.stderr)
             continue
 
         record_id = record["id"]

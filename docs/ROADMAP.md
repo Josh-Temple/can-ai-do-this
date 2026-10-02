@@ -79,11 +79,14 @@ Goal: detect when an answer may have changed.
 
 The operating review windows are defined in `docs/METHODOLOGY.md`. Automation may identify review candidates, but current capability claims must still be re-checked against evidence.
 
-Potential signals:
-- official documentation changes;
-- major product releases;
-- new contradictory reports;
-- stale last-checked dates.
+Current controls:
+- [x] explicit 14-day / 30-day review cadence on every canonical question;
+- [x] daily automated due-date check using the oldest answer-level review date;
+- [x] automatic GitHub review-queue issue when a record passes its review window;
+- [x] CI regression checks for common task-search phrases;
+- [ ] official documentation content-change detection;
+- [ ] major product-release signals;
+- [ ] contradictory community-report triage.
 
 ## Non-goals for now
 

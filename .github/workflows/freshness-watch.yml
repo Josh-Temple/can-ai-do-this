@@ -1,0 +1,81 @@
+name: Freshness watch
+
+on:
+  schedule:
+    - cron: "15 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check freshness
+        id: freshness
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_freshness.py --warning-days 3 --fail-on-due > freshness.txt 2>&1
+          status=$?
+          set -e
+          cat freshness.txt
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Sync freshness issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECK_STATUS: ${{ steps.freshness.outputs.status }}
+        run: |
+          title="[automation] Freshness review required"
+          issue_number="$(gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.title == "[automation] Freshness review required") | .number' | head -n 1)"
+
+          if [ "$CHECK_STATUS" -eq 1 ]; then
+            body_file="$(mktemp)"
+            {
+              echo "The scheduled freshness check found canonical questions whose review window has expired."
+              echo
+              echo "This issue is only a review queue. Automation must not refresh last_checked, change capability conclusions, or promote evidence states."
+              echo
+              echo '```text'
+              cat freshness.txt
+              echo '```'
+              echo
+              echo "Re-read the relevant evidence or re-test the capability, then update the canonical records according to docs/METHODOLOGY.md."
+            } > "$body_file"
+
+            if [ -n "$issue_number" ]; then
+              gh issue edit "$issue_number" --body-file "$body_file"
+            else
+              gh issue create --title "$title" --body-file "$body_file"
+            fi
+          elif [ "$CHECK_STATUS" -eq 0 ]; then
+            if [ -n "$issue_number" ]; then
+              gh issue close "$issue_number" --comment "Automated freshness check is clear; no canonical record is currently past its review window."
+            fi
+          else
+            echo "Freshness checker returned structural error status $CHECK_STATUS." >&2
+            exit "$CHECK_STATUS"
+          fi
+
+      - name: Write workflow summary
+        shell: bash
+        run: |
+          {
+            echo "## Freshness check"
+            echo
+            echo '```text'
+            cat freshness.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

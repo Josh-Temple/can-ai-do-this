@@ -72,5 +72,6 @@
       ]
     }
   ],
-  "notes": "PARTIAL is deliberate because the question explicitly includes visual elements, which are only analyzed for PDFs up to 100 pages."
+  "notes": "PARTIAL is deliberate because the question explicitly includes visual elements, which are only analyzed for PDFs up to 100 pages.",
+  "review_window_days": 30
 }

@@ -12,6 +12,7 @@ demand:
       summary: "Original short summary of why this discussion is relevant."
 
 last_checked: "YYYY-MM-DD"
+review_window_days: 14  # use 14 or 30 per docs/METHODOLOGY.md
 
 answers:
   - product: "Product name"

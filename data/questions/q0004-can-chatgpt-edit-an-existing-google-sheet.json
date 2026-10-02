@@ -83,5 +83,6 @@
     "Excel",
     "編集",
     "更新"
-  ]
+  ],
+  "review_window_days": 14
 }

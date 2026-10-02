@@ -71,6 +71,10 @@
     "自動実行",
     "scheduled task",
     "recurring task",
-    "reminder"
-  ]
+    "reminder",
+    "毎日",
+    "毎週",
+    "時間指定"
+  ],
+  "review_window_days": 14
 }
