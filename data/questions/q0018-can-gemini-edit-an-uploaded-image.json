@@ -1,0 +1,68 @@
+{
+  "id": "Q0018",
+  "question": "Can Gemini edit an uploaded image from text instructions?",
+  "question_ja": "Geminiは、アップロードした画像を文章の指示で編集できる？",
+  "slug": "can-gemini-edit-an-uploaded-image",
+  "category": "image-editing",
+  "search_terms": [
+    "画像編集",
+    "写真編集",
+    "画像を直す",
+    "写真を直す",
+    "アップロード画像",
+    "Nano Banana",
+    "背景変更",
+    "画像加工",
+    "画像修正"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image editing is distinct from image generation; users often need to know whether an existing upload can be changed directly.",
+    "summary_ja": "新規画像生成とは別に、手元の画像をアップロードして直接修正できるかは実用上重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; model and quota availability vary by account",
+      "platform": "Gemini Apps on supported web/mobile surfaces",
+      "region": "Supported languages and countries only",
+      "answer": "YES",
+      "summary": "Gemini Apps can edit an uploaded image with text instructions, edit an image generated in Gemini, or combine multiple uploaded images into a new result.",
+      "summary_ja": "Gemini Appsは、アップロードした画像を文章で指示して編集できます。Geminiで生成した画像の編集や、複数画像を基に新しい画像を作ることもできます。",
+      "conditions": [
+        "You must be signed in to Gemini Apps.",
+        "Image editing is only available to users age 18 or older.",
+        "The feature must be available in the selected Gemini app, language, and country."
+      ],
+      "conditions_ja": [
+        "Gemini Appsにログインしている必要があります。",
+        "画像編集は18歳以上のユーザーのみ利用できます。",
+        "利用するGeminiアプリ、言語、国で機能が提供されている必要があります。"
+      ],
+      "limitations": [
+        "Daily image quotas and model availability can limit editing.",
+        "Work or school accounts can have different terms or access restrictions.",
+        "Google Photos-based personalized editing has additional region/account requirements and is not the same as ordinary uploaded-image editing."
+      ],
+      "limitations_ja": [
+        "画像生成・編集の1日あたりの上限や、利用できるモデルによって制限される場合があります。",
+        "仕事用・学校用アカウントでは、利用条件やアクセス制限が異なる場合があります。",
+        "Google Photosを使うパーソナライズ編集には別の地域・アカウント条件があり、通常のアップロード画像編集とは別機能です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/14286560",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents editing generated images, editing uploaded images, multi-image workflows, age restrictions, and availability constraints."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers ordinary Gemini image editing, not the separate US-only Google Photos personalization flow."
+}
