@@ -102,7 +102,7 @@ function searchableText(record) {
     ...(answer.limitations_ja || []),
   ]);
 
-  return [
+  const values = [
     record.id,
     record.question,
     record.question_ja,
@@ -116,7 +116,6 @@ function searchableText(record) {
     .join(" ");
 
   return normalizeSearch(values);
-
 }
 
 function renderComparisonRows(record) {
