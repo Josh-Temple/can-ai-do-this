@@ -238,7 +238,8 @@
           "create and manage your events"
         ],
         [
-          "create, draft, or delete spreadsheets, pdfs, documents, and presentations"
+          "create, draft, or delete",
+          "manage content in your drive"
         ]
       ],
       "fetch_mode": "direct"
@@ -262,7 +263,8 @@
           "pro search"
         ]
       ],
-      "fetch_mode": "direct"
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for www.perplexity.ai during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     }
   ]
 }
