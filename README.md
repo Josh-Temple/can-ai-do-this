@@ -1,6 +1,13 @@
 # Can AI Do This?
 
+[![Validate capability data](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/validate-data.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/validate-data.yml)
+[![Deploy public site](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/deploy-pages.yml)
+[![Freshness watch](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/freshness-watch.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/freshness-watch.yml)
+[![Official source watch](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/source-watch.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/source-watch.yml)
+
 **Evidence-based answers to real-world questions about what AI tools can actually do.**
+
+**Live site:** https://josh-temple.github.io/can-ai-do-this/
 
 AI products change quickly. Feature lists are usually organized around products, while users usually start with a task:
 
@@ -55,11 +62,16 @@ data/
 docs/
   METHODOLOGY.md    # evidence, freshness, and research rules
   ROADMAP.md        # staged development plan
+monitoring/
+  source-watch.json # semantic official-source monitoring configuration
 schemas/
   question.schema.json
 scripts/
-  build_site.py       # builds the static site from canonical records
+  build_site.py          # builds the static site from canonical records
   validate_records.py
+  check_freshness.py      # review-window due-date checks
+  check_search_cases.py   # task-search regression checks
+  check_source_watch.py   # low-noise official-source review signals
 site/                 # public comparison/search UI
 templates/
   question.yaml
