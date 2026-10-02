@@ -54,6 +54,11 @@ jobs:
           fi
           echo "Invalid fixture failed as expected."
 
+      - name: Check browser JavaScript syntax
+        run: |
+          node --check site/app.js
+          node --check site/question.js
+
       - name: Build static site from canonical records
         run: python scripts/build_site.py --output /tmp/can-ai-do-this-site
 
