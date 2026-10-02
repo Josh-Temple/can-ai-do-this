@@ -28,6 +28,21 @@
           "citations",
           "source links"
         ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "manual-demo",
+      "url": "https://example.com/manual",
+      "questions": [
+        "QMANUAL"
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "Fixture verifies that manual sources do not require network content.",
+      "anchor_groups": [
+        [
+          "manual anchor"
+        ]
       ]
     }
   ]
