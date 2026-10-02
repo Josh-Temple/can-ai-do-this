@@ -1,6 +1,12 @@
 name: Freshness watch
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/questions/**"
+      - "scripts/check_freshness.py"
+      - ".github/workflows/freshness-watch.yml"
   schedule:
     - cron: "15 23 * * *"
   workflow_dispatch:
