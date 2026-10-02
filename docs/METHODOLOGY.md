@@ -66,14 +66,28 @@ The repository should normally store a link and an original short summary, not a
 
 AI products change rapidly. Every answer must carry `last_checked`.
 
-A future automated process may assign review priority based on:
-- age;
-- product release activity;
-- source changes;
-- conflicting user reports;
-- traffic or question demand.
+Freshness is separate from evidence quality. A well-verified old result may still need review.
 
-Freshness is separate from evidence quality. A well-verified old result may still be stale.
+### Default review windows
+
+These are provisional operating rules, not claims about how often vendors change their products:
+
+- **14 days:** scheduling, autonomous/event-triggered work, connected apps, permissions, plan limits, and other capability boundaries that change frequently.
+- **30 days:** file creation/editing, document processing, and other comparatively stable task capabilities.
+- **Immediate review:** a relevant official change, a broken or substantially changed source, a credible contradictory report, or a failed reproduction of a previously verified capability.
+
+Use the shorter window when a record spans more than one category.
+
+### Review semantics
+
+- Update `last_checked` only after the relevant evidence has actually been re-read or the capability has been re-tested.
+- Rebuilding the site, opening a record, or seeing that a URL still resolves is not a freshness check.
+- Re-reading documentation does not refresh an older direct-test date. Preserve what was actually tested and when.
+- When evidence has exceeded its review window and has not been re-checked, mark the affected answer `STALE` or the question `REVIEW_REQUIRED` before relying on it as a current answer.
+- Official documentation changes are a reason to re-investigate, not an automatic reason to change a YES/NO answer.
+- Automated change detection may prioritize review, but it must not promote evidence to `VERIFIED` or rewrite capability conclusions by itself.
+
+Future automation may prioritize review based on age, product release activity, source changes, conflicting reports, and question demand.
 
 ## 7. Negative claims
 
