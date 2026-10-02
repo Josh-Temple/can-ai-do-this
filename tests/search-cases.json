@@ -19,14 +19,16 @@
       "query": "スライド",
       "must_include": [
         "Q0005",
-        "Q0006"
+        "Q0006",
+        "Q0019"
       ]
     },
     {
       "query": "パワポ",
       "must_include": [
         "Q0005",
-        "Q0006"
+        "Q0006",
+        "Q0019"
       ]
     },
     {
@@ -45,21 +47,28 @@
       "query": "写真",
       "must_include": [
         "Q0009",
-        "Q0010"
+        "Q0010",
+        "Q0018",
+        "Q0021",
+        "Q0025"
       ]
     },
     {
       "query": "PDF 要約",
       "must_include": [
         "Q0011",
-        "Q0015"
+        "Q0015",
+        "Q0017",
+        "Q0023"
       ]
     },
     {
       "query": "最新情報 出典",
       "must_include": [
         "Q0008",
-        "Q0014"
+        "Q0014",
+        "Q0020",
+        "Q0024"
       ]
     },
     {
@@ -78,6 +87,32 @@
       "query": "PDF グラフ",
       "must_include": [
         "Q0015"
+      ]
+    },
+    {
+      "query": "画像生成",
+      "must_include": [
+        "Q0009",
+        "Q0021",
+        "Q0025"
+      ]
+    },
+    {
+      "query": "ファイル作成",
+      "must_include": [
+        "Q0022"
+      ]
+    },
+    {
+      "query": "Copilot PDF",
+      "must_include": [
+        "Q0023"
+      ]
+    },
+    {
+      "query": "Copilot Web検索",
+      "must_include": [
+        "Q0024"
       ]
     }
   ]
