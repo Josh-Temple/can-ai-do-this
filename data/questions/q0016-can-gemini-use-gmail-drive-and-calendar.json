@@ -1,0 +1,75 @@
+{
+  "id": "Q0016",
+  "question": "Can Gemini use Gmail, Google Drive, and Google Calendar in a conversation?",
+  "question_ja": "Geminiは、Gmail・Google Drive・Googleカレンダーの情報を会話で使える？",
+  "slug": "can-gemini-use-gmail-drive-and-calendar",
+  "category": "connected-apps",
+  "search_terms": [
+    "Gmail",
+    "メール",
+    "Google Drive",
+    "Drive",
+    "Googleカレンダー",
+    "カレンダー",
+    "予定",
+    "Google Workspace",
+    "連携",
+    "接続",
+    "メール要約",
+    "ドライブ検索"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often see that Gemini connects to Google Workspace but need to know what actions are actually supported.",
+    "summary_ja": "GeminiとGoogle Workspaceを接続できることは知られていても、Gmail・Drive・Calendarで実際に何ができるかは分かりにくい境界です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Personal Google Account; work/school availability depends on Workspace edition and admin settings",
+      "platform": "Gemini Apps; some connected services are limited in Live chats",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Apps can use the Google Workspace connected app to find and summarize information from Gmail, Docs, and Drive, and can create and manage Google Calendar events.",
+      "summary_ja": "Gemini AppsはGoogle Workspace連携を使い、Gmail・Googleドキュメント・Driveの情報を検索・要約し、Googleカレンダーの予定を作成・管理できます。",
+      "conditions": [
+        "You must be signed in to Gemini Apps with the same account used for Google Workspace.",
+        "Keep Activity must be on.",
+        "Required Gmail smart-feature settings must be enabled.",
+        "For work or school accounts, the Workspace administrator must allow connected apps."
+      ],
+      "conditions_ja": [
+        "Gemini AppsとGoogle Workspaceで同じGoogleアカウントにログインする必要があります。",
+        "Keep Activityをオンにする必要があります。",
+        "Gmail側で必要なスマート機能設定を有効にする必要があります。",
+        "仕事用・学校用アカウントでは、管理者がアプリ連携を許可している必要があります。"
+      ],
+      "limitations": [
+        "Gemini cannot access comments or images in Docs or Gmail through this integration.",
+        "It cannot access standalone pictures or videos in Drive.",
+        "It cannot create, draft, or delete spreadsheets, PDFs, documents, or presentations through the Google Workspace connected app.",
+        "For each new conversation, the user generally needs to explicitly ask Gemini to use the relevant Workspace service."
+      ],
+      "limitations_ja": [
+        "この連携では、GoogleドキュメントやGmail内のコメント・画像にはアクセスできません。",
+        "Drive内の単独の画像・動画にはアクセスできません。",
+        "Google Workspace連携経由で、スプレッドシート・PDF・文書・プレゼンテーションを作成、下書き、削除することはできません。",
+        "新しい会話では、利用したいWorkspaceサービスを明示的に指定する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/15229592",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents Gmail/Docs/Drive retrieval and summarization, Calendar event management, required settings, and unsupported Workspace actions."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers the Google Workspace connected app inside Gemini Apps, not every Google service or every Live-chat integration."
+}

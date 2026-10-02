@@ -15,7 +15,7 @@ Goal: define a trustworthy data model before collecting at scale.
 
 Goal: publish a small set of high-demand, high-confidence questions.
 
-Initial public milestone: **10–15 questions**. Current published set: **15 questions** — seed milestone reached. Do not expand toward **25–50** until the public set is usable and the update burden is demonstrably sustainable.
+Initial public milestone: **10–15 questions**. The original seed milestone was reached at 15 questions. A controlled owner-directed expansion on 2026-10-03 brought the published set to **20 questions**, adding Gemini, Microsoft Copilot, and Perplexity coverage. Pause again at 20 before expanding toward **25–50**, unless new evidence or user demand justifies a specific exception.
 
 Selection signals:
 - recurring questions in Reddit and other public communities;
@@ -54,7 +54,7 @@ Current prototype:
 
 Avoid building a generic AI-tool directory.
 
-Before expanding beyond 15 questions, test whether users can:
+Before expanding beyond 20 questions, test whether users can:
 - find the relevant task without knowing the product feature name;
 - understand the answer and its plan/platform conditions;
 - find the evidence state and last-checked date;
@@ -85,6 +85,7 @@ Current controls:
 - [x] automatic GitHub review-queue issue when a record passes its review window;
 - [x] CI regression checks for common task-search phrases;
 - [x] low-noise semantic-anchor monitoring for directly accessible Anthropic sources in the 14-day set;
+- [x] add direct semantic monitoring for the 14-day Gemini Workspace and Perplexity search records;
 - [x] explicit MANUAL handling for OpenAI Help Center sources blocked to GitHub-hosted Actions;
 - [ ] establish a reliable first-party access path for automated OpenAI Help Center monitoring without bypassing vendor controls;
 - [ ] extend source monitoring to the 30-day set after the pilot proves acceptably low-noise;

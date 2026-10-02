@@ -1,0 +1,75 @@
+{
+  "id": "Q0017",
+  "question": "Can Gemini analyze uploaded PDFs and other files?",
+  "question_ja": "Geminiは、アップロードしたPDFやその他のファイルを分析できる？",
+  "slug": "can-gemini-analyze-uploaded-pdfs-and-files",
+  "category": "documents",
+  "search_terms": [
+    "PDF",
+    "PDF分析",
+    "PDF要約",
+    "ファイル",
+    "ファイル分析",
+    "資料",
+    "文書",
+    "画像",
+    "動画",
+    "スプレッドシート",
+    "アップロード",
+    "要約"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "File analysis is a core everyday workflow, and users need concrete upload and context limits rather than a generic 'supports files' claim.",
+    "summary_ja": "ファイル分析は日常的な用途ですが、「対応している」だけでなく、アップロード数・容量・コンテキスト上限を知る必要があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Signed-in Gemini Apps; higher file/context limits are available on Google AI plans",
+      "platform": "Gemini web and mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Apps can analyze uploaded documents, spreadsheets, notebooks, photos, videos, and other supported files to answer questions, summarize content, and provide insights.",
+      "summary_ja": "Gemini Appsは、アップロードした文書、スプレッドシート、ノートブック、写真、動画などの対応ファイルを分析し、質問への回答、要約、内容の把握に利用できます。",
+      "conditions": [
+        "You must be signed in to Gemini Apps.",
+        "Up to 10 supported files can be added to one prompt, subject to availability.",
+        "Videos can be up to 2 GB each; other supported files can be up to 100 MB each.",
+        "Work or school users may need administrator-enabled access to use Google Drive uploads."
+      ],
+      "conditions_ja": [
+        "Gemini Appsにログインしている必要があります。",
+        "1回のプロンプトに追加できる対応ファイルは、利用状況により最大10件です。",
+        "動画は1ファイル最大2GB、その他の対応ファイルは1ファイル最大100MBです。",
+        "仕事用・学校用アカウントでGoogle Driveから追加する場合、管理者による許可が必要な場合があります。"
+      ],
+      "limitations": [
+        "File analysis has rolling usage limits.",
+        "Very large inputs can cause Gemini to miss connections or details spread across the files.",
+        "The effective amount Gemini can understand at once is limited by the model's context window.",
+        "Some higher upload and context limits require Google AI Pro or Ultra."
+      ],
+      "limitations_ja": [
+        "ファイルのアップロード・分析にはローリング方式の利用上限があります。",
+        "非常に大きいファイルでは、全体に散らばる情報のつながりや細部を見落とす場合があります。",
+        "一度に理解できる量はモデルのコンテキストウィンドウに制約されます。",
+        "より高いアップロード上限やコンテキスト上限はGoogle AI ProまたはUltraが必要です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/14903178",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents supported file analysis, per-prompt file counts, file-size limits, rolling limits, and context-window caveats."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers general supported-file analysis. It does not claim that every visual element inside every PDF is interpreted."
+}

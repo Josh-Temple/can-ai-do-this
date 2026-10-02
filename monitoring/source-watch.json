@@ -221,6 +221,48 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "google-gemini-workspace",
+      "url": "https://support.google.com/gemini/answer/15229592",
+      "questions": [
+        "Q0016"
+      ],
+      "anchor_groups": [
+        [
+          "summarize, get quick answers, and find information",
+          "find information from google workspace"
+        ],
+        [
+          "create & manage your events",
+          "create and manage your events"
+        ],
+        [
+          "create, draft, or delete spreadsheets, pdfs, documents, and presentations"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "perplexity-pro-search",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search",
+      "questions": [
+        "Q0020"
+      ],
+      "anchor_groups": [
+        [
+          "web crawling"
+        ],
+        [
+          "every answer includes direct links to the original sources",
+          "citation and transparency"
+        ],
+        [
+          "standard search",
+          "pro search"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
