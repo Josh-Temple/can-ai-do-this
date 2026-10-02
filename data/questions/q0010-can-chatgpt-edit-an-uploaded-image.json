@@ -1,0 +1,62 @@
+{
+  "id": "Q0010",
+  "question": "Can ChatGPT edit an image that I upload?",
+  "slug": "can-chatgpt-edit-an-uploaded-image",
+  "category": "image-editing",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users distinguish between generating a new image and making controlled edits to an existing uploaded image.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1un589j/chatgpt_can_generate_images_but_refuses_to_edit/",
+        "observed_at": "2026-10-03",
+        "summary": "A user describes a real workflow that depends on repeatedly editing uploaded product photos and reports reliability questions."
+      }
+    ]
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "All tiers",
+      "platform": "Web, iOS, and Android",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Images can edit an existing uploaded image. The user can describe the change directly or select a region and then describe what should change.",
+      "conditions": [
+        "The image must be uploaded or otherwise available as an editable image in the conversation.",
+        "ChatGPT Images must be available on the selected surface.",
+        "Image editing is subject to the plan's applicable usage limits and product policies."
+      ],
+      "limitations": [
+        "Selection highlights are not always precise.",
+        "An edit can affect areas outside the selected region.",
+        "A successful edit request does not guarantee pixel-exact preservation of every unselected detail."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents editing uploaded or generated images, direct text instructions, selection-based edits, and the limitation that edits can extend outside the selected area."
+        }
+      ],
+      "summary_ja": "ChatGPT Imagesは、アップロードした既存画像を編集できます。変更内容を文章で直接指示するか、編集したい範囲を選択してから変更内容を指定できます。",
+      "conditions_ja": [
+        "画像をアップロードするなど、会話内で編集対象として利用できる状態にする必要があります。",
+        "利用する画面でChatGPT Imagesが提供されていること。",
+        "画像編集には、利用中プランの使用量上限と製品ポリシーが適用されます。"
+      ],
+      "limitations_ja": [
+        "選択ツールで指定した範囲は常に厳密とは限りません。",
+        "編集が選択範囲の外側にも及ぶことがあります。",
+        "編集自体が成功しても、選択していない細部がピクセル単位で完全に保持されるとは限りません。"
+      ]
+    }
+  ],
+  "notes": "The official product supports uploaded-image editing; the community link is retained as a reliability/edge-case signal, not as capability evidence.",
+  "question_ja": "ChatGPTは、アップロードした画像を編集できる？"
+}
