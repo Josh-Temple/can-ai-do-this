@@ -1,0 +1,54 @@
+{
+  "id": "Q0010",
+  "question": "Can ChatGPT edit an existing image that I upload?",
+  "question_ja": "ChatGPTは、アップロードした既存画像を編集できる？",
+  "slug": "can-chatgpt-edit-an-uploaded-image",
+  "category": "images",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often need to modify an existing photo or image rather than create a new image from scratch.",
+    "summary_ja": "新規生成ではなく、手元の写真や画像をそのまま修正したいという用途は一般的です。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "All tiers",
+      "platform": "Web, iOS, and Android",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Images can edit an uploaded existing image. The user can describe the desired change directly or select an area and then describe the edit.",
+      "summary_ja": "ChatGPT Imagesは、アップロードした既存画像を編集できます。変更内容をそのまま文章で指示する方法と、範囲を選択してから編集内容を指示する方法があります。",
+      "conditions": [
+        "The image must be uploaded or otherwise available in the conversation.",
+        "ChatGPT Images must be available on the account and surface."
+      ],
+      "conditions_ja": [
+        "対象画像を会話にアップロードするなど、ChatGPTが利用できる状態にする必要があります。",
+        "利用しているアカウントと画面でChatGPT Imagesが利用できること。"
+      ],
+      "limitations": [
+        "Selection highlights are not always exact, and edits can extend outside the selected area.",
+        "Precise preservation of every untouched detail is not guaranteed.",
+        "Feature availability and usage limits can vary by plan."
+      ],
+      "limitations_ja": [
+        "選択範囲は必ずしも厳密ではなく、指定範囲の外側まで変更が及ぶ場合があります。",
+        "変更対象外の細部が完全に維持されるとは限りません。",
+        "利用上限や一部機能の提供状況はプランによって異なります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents editing uploaded existing images by describing changes, with optional area selection, plus platform availability and selection limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers image editing in ChatGPT Images, not pixel-perfect professional retouching guarantees."
+}
