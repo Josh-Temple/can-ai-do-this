@@ -101,6 +101,7 @@ Each canonical question stores the selected policy as `review_window_days` with 
 - Rebuilding the site, opening a record, or seeing that a URL still resolves is not a freshness check.
 - Re-reading documentation does not refresh an older direct-test date. Preserve what was actually tested and when.
 - When evidence has exceeded its review window and has not been re-checked, mark the affected answer `STALE` or the question `REVIEW_REQUIRED` before relying on it as a current answer.
+- The public site also derives a fail-closed freshness warning from answer-level `last_checked` plus `review_window_days`. Once the review date is reached, the UI displays **要再確認** even if the canonical record has not yet been manually changed to STALE/REVIEW_REQUIRED. This presentation rule does not alter the stored evidence state or historical answer.
 - Official documentation changes are a reason to re-investigate, not an automatic reason to change a YES/NO answer.
 - Automated change detection may prioritize review, but it must not promote evidence to `VERIFIED` or rewrite capability conclusions by itself.
 
