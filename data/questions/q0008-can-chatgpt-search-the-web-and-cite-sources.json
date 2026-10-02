@@ -1,0 +1,56 @@
+{
+  "id": "Q0008",
+  "question": "Can ChatGPT search the web for current information and show source links?",
+  "question_ja": "ChatGPTは、最新情報をウェブ検索して情報源を示せる？",
+  "slug": "can-chatgpt-search-the-web-and-cite-sources",
+  "category": "web-research",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often need to know whether an answer comes from the model alone or from a current web search with inspectable sources.",
+    "summary_ja": "回答がモデル内の知識だけなのか、現在のウェブ検索と確認可能な情報源に基づくのかは、実用上重要な違いです。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Free, Go, Plus, Pro, Business, Enterprise, and Edu; also available signed out",
+      "platform": "Web, desktop apps, and mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can search the web for current information and return links or citations to relevant sources. It may search automatically when current information would help, or the user can start Search manually.",
+      "summary_ja": "ChatGPTはウェブを検索して最新情報を調べ、関連する情報源へのリンクや引用を示せます。必要に応じて自動検索する場合も、利用者が検索を明示的に開始する場合もあります。",
+      "conditions": [
+        "Search is subject to plan usage limits.",
+        "In managed workspaces, an administrator can affect whether web search is available for a role.",
+        "Some specialized search experiences have additional eligibility requirements."
+      ],
+      "conditions_ja": [
+        "検索には各プランの利用上限が適用されます。",
+        "管理対象ワークスペースでは、管理者設定によって検索の利用可否が変わる場合があります。",
+        "一部の専門的な検索機能には追加の利用条件があります。"
+      ],
+      "limitations": [
+        "Search results and citations can still be incomplete, outdated, or incorrect.",
+        "A citation should be opened and checked when accuracy matters.",
+        "Web search is different from sidebar search for chats, projects, and account files."
+      ],
+      "limitations_ja": [
+        "検索結果や引用が不完全・古い・誤っている可能性は残ります。",
+        "正確性が重要な場合は、引用元を開き、回答を実際に裏づけているか確認する必要があります。",
+        "ウェブ検索は、チャット・プロジェクト・アカウント内ファイルを探すサイドバー検索とは別機能です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/9237897-searching-the-web-with-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents current-information web search, source links/citations, plan and platform availability, and cautions about checking cited results."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers ordinary ChatGPT web search, not every specialized research or reservation workflow."
+}
