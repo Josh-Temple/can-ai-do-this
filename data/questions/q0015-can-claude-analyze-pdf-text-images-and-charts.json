@@ -1,0 +1,76 @@
+{
+  "id": "Q0015",
+  "question": "Can Claude analyze an uploaded PDF, including its images and charts?",
+  "question_ja": "Claudeは、アップロードしたPDFの文章・画像・グラフを分析できる？",
+  "slug": "can-claude-analyze-pdf-text-images-and-charts",
+  "category": "documents",
+  "search_terms": [
+    "PDF",
+    "PDF分析",
+    "PDF要約",
+    "文書",
+    "資料",
+    "論文",
+    "画像",
+    "グラフ",
+    "図表",
+    "PDFを読む",
+    "document analysis",
+    "chart"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "PDF analysis is a common workflow, and users need to know when visual content is actually interpreted rather than only text being extracted.",
+    "summary_ja": "PDF分析では、文章だけでなく図・画像・グラフまで読めるかどうかが実用上の重要な境界です。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Plan and usage-limit dependent",
+      "platform": "Claude chats and project files",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "Claude can analyze PDF text and, for PDFs of 100 pages or fewer, visual elements such as images, charts, and graphics. PDFs from 101 to 1000 pages are processed as text only.",
+      "summary_ja": "ClaudeはPDFの文章を分析でき、100ページ以下のPDFでは画像・グラフ・図などの視覚要素も分析できます。101〜1000ページのPDFはテキストのみ処理されます。",
+      "conditions": [
+        "The PDF must be uploaded to a chat or otherwise added through a supported file flow.",
+        "Chat uploads allow files up to 500 MB each and up to 20 files per chat.",
+        "PDFs are limited to 1000 pages."
+      ],
+      "conditions_ja": [
+        "PDFをチャットなど対応するファイル追加方法でアップロードする必要があります。",
+        "チャットへのアップロードは1ファイル500MBまで、1チャット20ファイルまでです。",
+        "PDFは1000ページまでです。"
+      ],
+      "limitations": [
+        "Visual analysis of embedded images, charts, and graphics is limited to PDFs of 100 pages or fewer.",
+        "For PDFs from 101 to 1000 pages, Claude processes text only and does not analyze the visual elements.",
+        "Project files have a 30 MB per-file limit and total project content must fit within Claude's context window."
+      ],
+      "limitations_ja": [
+        "PDF内の画像・グラフ・図などを視覚的に分析できるのは100ページ以下のPDFです。",
+        "101〜1000ページではテキストのみ処理され、視覚要素は分析されません。",
+        "プロジェクト内ファイルは1ファイル30MBまでで、プロジェクト全体の内容はClaudeのコンテキストウィンドウ内に収まる必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/8241126-upload-files-to-claude",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents supported PDF uploads, file/page limits, and visual-versus-text-only PDF processing by page count."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents extracting and analyzing data from uploaded PDFs as part of Claude file workflows."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL is deliberate because the question explicitly includes visual elements, which are only analyzed for PDFs up to 100 pages."
+}
