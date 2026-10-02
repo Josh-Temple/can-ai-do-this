@@ -48,8 +48,8 @@ Current prototype:
 - [x] evidence state and last checked date;
 - [x] official source links;
 - [x] community discussion links where useful;
-- [ ] dedicated question pages / stable share links;
-- [ ] related-question navigation;
+- [x] dedicated question pages / stable share links;
+- [x] related-question navigation;
 - [x] live public deployment verified.
 
 Avoid building a generic AI-tool directory.
