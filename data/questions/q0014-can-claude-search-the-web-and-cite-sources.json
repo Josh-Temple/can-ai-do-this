@@ -65,5 +65,6 @@
       ]
     }
   ],
-  "notes": "This record covers ordinary Claude web search, not the separate multi-step Research feature."
+  "notes": "This record covers ordinary Claude web search, not the separate multi-step Research feature.",
+  "review_window_days": 14
 }
