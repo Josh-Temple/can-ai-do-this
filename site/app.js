@@ -215,7 +215,8 @@ function populateProductFilter() {
 }
 
 function applyFilters() {
-  const tokens = normalizeSearch(els.search.value.trim()).split(/\s+/).filter(Boolean);
+  const rawQuery = els.search.value.trim();
+  const tokens = normalizeSearch(rawQuery).split(/\s+/).filter(Boolean);
   const product = els.product.value;
 
   const filtered = records.filter((record) => {
@@ -231,7 +232,7 @@ function applyFilters() {
   els.empty.hidden = filtered.length !== 0;
 
   const params = new URLSearchParams(window.location.search);
-  query ? params.set("q", els.search.value.trim()) : params.delete("q");
+  rawQuery ? params.set("q", rawQuery) : params.delete("q");
   product ? params.set("product", product) : params.delete("product");
   const next = params.toString() ? `?${params}` : window.location.pathname;
   history.replaceState(null, "", next);
