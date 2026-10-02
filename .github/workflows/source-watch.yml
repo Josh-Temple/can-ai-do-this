@@ -1,0 +1,117 @@
+name: Official source watch
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "monitoring/source-watch.json"
+      - "scripts/check_source_watch.py"
+      - ".github/workflows/source-watch.yml"
+  schedule:
+    - cron: "45 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  source-watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check official sources
+        id: watch
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_source_watch.py --json-output source-watch-report.json > source-watch.txt 2>&1
+          status=$?
+          set -e
+          cat source-watch.txt
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          if [ -s source-watch-report.json ]; then
+            python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          report = json.loads(Path("source-watch-report.json").read_text())
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write(f"changed={report['summary']['changed']}\n")
+              handle.write(f"unavailable={report['summary']['unavailable']}\n")
+          PY
+          else
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+            echo "unavailable=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync source-review issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECK_STATUS: ${{ steps.watch.outputs.status }}
+          CHANGED_COUNT: ${{ steps.watch.outputs.changed }}
+          UNAVAILABLE_COUNT: ${{ steps.watch.outputs.unavailable }}
+        run: |
+          title="[automation] Official source review required"
+          issue_number="$(gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.title == "[automation] Official source review required") | .number' | head -n 1)"
+
+          if [ "$CHECK_STATUS" -eq 1 ]; then
+            body_file="$(mktemp)"
+            {
+              echo "Semantic monitoring found an official source that may no longer support one or more published capability claims."
+              echo
+              echo "This is a review trigger only. Do not automatically change an answer, evidence state, or last_checked date."
+              echo
+              echo '```text'
+              cat source-watch.txt
+              echo '```'
+              echo
+              echo "Open the affected first-party sources, re-read the relevant sections, and update canonical records only if the evidence actually changed."
+            } > "$body_file"
+
+            if [ -n "$issue_number" ]; then
+              gh issue edit "$issue_number" --body-file "$body_file"
+            else
+              gh issue create --title "$title" --body-file "$body_file"
+            fi
+          elif [ "$CHECK_STATUS" -eq 0 ] && [ "$UNAVAILABLE_COUNT" -eq 0 ]; then
+            if [ -n "$issue_number" ]; then
+              gh issue close "$issue_number" --comment "Semantic source monitoring is clear again; all configured anchors are present."
+            fi
+          elif [ "$CHECK_STATUS" -eq 0 ]; then
+            echo "Only transient/unavailable source fetches were observed; leaving any existing review issue unchanged."
+          else
+            echo "Source watcher returned structural error status $CHECK_STATUS." >&2
+            exit "$CHECK_STATUS"
+          fi
+
+      - name: Upload source-watch report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-watch-report
+          path: |
+            source-watch.txt
+            source-watch-report.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Write workflow summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Official source watch"
+            echo
+            echo '```text'
+            cat source-watch.txt 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
