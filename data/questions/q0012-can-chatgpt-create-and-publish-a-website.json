@@ -81,5 +81,6 @@
       ]
     }
   ],
-  "notes": "This record covers ChatGPT Sites, not generic code generation or deployment through a separate hosting provider."
+  "notes": "This record covers ChatGPT Sites, not generic code generation or deployment through a separate hosting provider.",
+  "review_window_days": 14
 }
