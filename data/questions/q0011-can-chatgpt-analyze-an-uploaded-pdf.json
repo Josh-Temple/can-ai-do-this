@@ -1,0 +1,68 @@
+{
+  "id": "Q0011",
+  "question": "Can ChatGPT analyze an uploaded PDF and answer questions about it?",
+  "slug": "can-chatgpt-analyze-an-uploaded-pdf",
+  "category": "documents",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "PDF question-answering is a common document workflow, and the important boundary is whether ChatGPT reads only extracted text or also understands embedded visual content.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1rm7ai2/chatgpt_doc_analysis/",
+        "observed_at": "2026-10-03",
+        "summary": "A user describes a recurring PDF-analysis workflow and reports file-lifetime reliability problems."
+      }
+    ]
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Free and paid plans, with plan-specific limits",
+      "platform": "Web and supported mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can analyze uploaded PDFs, summarize them, compare them with other documents, and extract or answer questions about specific text in them.",
+      "conditions": [
+        "File uploads must be available for the account and workspace.",
+        "Uploads are subject to plan-specific rate, storage, file-size, and token limits.",
+        "A single uploaded file has a 512 MB hard limit; text and document files are capped at 2 million tokens per file."
+      ],
+      "limitations": [
+        "For non-Enterprise plans, PDF document retrieval is text-based and embedded images are not interpreted as part of the PDF.",
+        "Visual Retrieval for images, graphs, and diagrams embedded in PDFs is documented as an Enterprise-only capability.",
+        "Very large, complex, image-heavy, or scanned PDFs can produce incomplete or less reliable extraction."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8555545-file-uploads-faq",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents PDF upload, synthesis/transformation/extraction tasks, Free and paid availability, and upload/token limits."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10416312-visual-retrieval-with-pdfs-faq",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents PDF visual retrieval for embedded images, graphs, and diagrams as an Enterprise-only capability."
+        }
+      ],
+      "summary_ja": "ChatGPTはPDFをアップロードして、要約、他文書との比較、特定記述の抽出、内容に関する質問への回答を行えます。",
+      "conditions_ja": [
+        "そのアカウント・ワークスペースでファイルアップロードが利用できること。",
+        "アップロードにはプランごとの回数、保存容量、ファイルサイズ、トークン上限が適用されます。",
+        "1ファイルの上限は512MBで、テキスト・文書ファイルは1ファイル200万トークンまでです。"
+      ],
+      "limitations_ja": [
+        "Enterprise以外では、PDF文書の処理は基本的にテキストベースで、PDF内に埋め込まれた画像はPDFの一部として解釈されません。",
+        "PDF内の画像・グラフ・図を読むVisual Retrievalは、公式情報ではEnterprise限定です。",
+        "非常に大きい、複雑、画像中心、またはスキャン中心のPDFでは、抽出が不完全・不安定になることがあります。"
+      ]
+    }
+  ],
+  "notes": "This record distinguishes ordinary PDF text analysis from Enterprise PDF visual retrieval.",
+  "question_ja": "ChatGPTは、アップロードしたPDFを分析して内容について答えられる？"
+}

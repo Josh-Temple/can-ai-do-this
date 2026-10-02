@@ -1,0 +1,55 @@
+{
+  "id": "Q0008",
+  "question": "Can ChatGPT search the live web and cite sources?",
+  "slug": "can-chatgpt-search-the-web-and-cite-sources",
+  "category": "web-research",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "A common practical boundary is whether ChatGPT is answering from model knowledge or can retrieve current web information with source links."
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Free, Go, Plus, Pro, Business, Enterprise, and Edu",
+      "platform": "Web, desktop apps, and mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can search the web for current information and return answers with links or citations to relevant sources. It can search automatically when current information would help, or the user can start Search manually.",
+      "conditions": [
+        "Search is subject to the usage limits of the user's plan.",
+        "Managed workspaces can restrict or disable web search through workspace or role settings.",
+        "Some specialized search features can have additional eligibility requirements."
+      ],
+      "limitations": [
+        "Web search is different from searching the user's saved chats, projects, and files.",
+        "Availability of specific search experiences can depend on workspace configuration and app version.",
+        "Source links make the evidence inspectable, but they do not by themselves guarantee that every generated statement is correct."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/9237897-searching-the-web-with-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents web search, current-information retrieval, source links, supported plans and surfaces, automatic/manual search, and usage-limit or workspace restrictions."
+        }
+      ],
+      "summary_ja": "ChatGPTはウェブを検索して最新情報を取得し、関連する情報源へのリンクや引用を付けて回答できます。必要に応じて自動検索するほか、ユーザーが検索を明示的に開始することもできます。",
+      "conditions_ja": [
+        "検索には利用中プランの使用上限が適用されます。",
+        "管理対象ワークスペースでは、ワークスペース設定やロール設定でWeb検索が制限・無効化される場合があります。",
+        "一部の専門的な検索機能には追加の利用条件があります。"
+      ],
+      "limitations_ja": [
+        "Web検索と、アカウント内の保存済みチャット・プロジェクト・ファイルを探す機能は別です。",
+        "具体的な検索体験の利用可否は、ワークスペース設定やアプリ版によって異なる場合があります。",
+        "出典リンクが付いても、生成されたすべての記述が自動的に正しいことを保証するものではありません。"
+      ]
+    }
+  ],
+  "notes": "This record covers live web search in ChatGPT, not external-app or private-account search.",
+  "question_ja": "ChatGPTは、現在のウェブを検索して出典付きで回答できる？"
+}

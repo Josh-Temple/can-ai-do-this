@@ -1,0 +1,64 @@
+{
+  "id": "Q0007",
+  "question": "Can Claude read and work with files in Google Drive, not just search for them?",
+  "slug": "can-claude-read-and-work-with-google-drive-files",
+  "category": "connected-apps",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users are asking what practical value the Google Drive connection provides beyond finding a file.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1wpnd37/what_are_real_use_cases_for_connecting_google/",
+        "observed_at": "2026-10-03",
+        "summary": "A user asks what Claude can actually do with a connected Google Drive beyond document search."
+      }
+    ]
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "All Claude plans; Team and Enterprise require organization enablement",
+      "platform": "Claude and Claude Desktop",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude's Google Drive connector can do more than search: it can read several file types, preview metadata, upload files, create folders, inspect permissions and recent changes, and save Claude-generated files to Drive.",
+      "conditions": [
+        "The Google Drive connector must be authenticated for the Google account whose files you want to use.",
+        "On Team and Enterprise, an Owner or Primary Owner must enable the Google Workspace connectors before individual users authenticate.",
+        "Actions that Claude takes through the connector require explicit user approval.",
+        "Saving Claude-generated files to Drive requires code execution and file creation to be enabled."
+      ],
+      "limitations": [
+        "When Claude reads Google Drive files, it extracts text content; images embedded inside documents are not processed.",
+        "The Google Drive connector is not the same as the separate Google Docs, Sheets, and Slides connectors used for live editing.",
+        "Adding Google Drive files to project Files is limited to private projects, not shared projects."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents Drive search and retrieval, file reading, uploads, folder creation, permissions/recent-change inspection, saving generated files, approval requirements, and text-only extraction limitations."
+        }
+      ],
+      "summary_ja": "ClaudeのGoogle Driveコネクタは検索だけでなく、複数形式のファイル読取、メタデータ確認、ファイルのアップロード、フォルダ作成、権限・最近の変更の確認、生成ファイルのDrive保存まで対応します。",
+      "conditions_ja": [
+        "利用したいGoogleアカウントでGoogle Driveコネクタを認証していること。",
+        "Team／Enterpriseでは、個人が認証する前にOwnerまたはPrimary OwnerがGoogle Workspaceコネクタを有効化する必要があります。",
+        "コネクタ経由でClaudeが行う操作には、ユーザーの明示的な承認が必要です。",
+        "Claude生成ファイルをDriveへ保存するには、コード実行とファイル作成が有効である必要があります。"
+      ],
+      "limitations_ja": [
+        "Google Drive上のファイルを読む際はテキスト内容を抽出し、文書内に埋め込まれた画像は処理しません。",
+        "Google Driveコネクタと、ライブ編集に使うGoogle Docs／Sheets／Slidesコネクタは別機能です。",
+        "プロジェクトのFilesへGoogle Driveファイルを追加できるのはprivate projectに限られ、shared projectでは使えません。"
+      ]
+    }
+  ],
+  "notes": "This record is about the Google Drive connector itself. Live editing of Google Docs, Sheets, and Slides is a separate connector capability.",
+  "question_ja": "Claudeは、Google Drive内のファイルを検索するだけでなく、読んだり操作したりできる？"
+}

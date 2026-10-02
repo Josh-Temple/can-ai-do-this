@@ -69,7 +69,7 @@ CONTRIBUTING.md
 
 ## Initial scope
 
-The first release will focus on common, concrete tasks performed with mainstream consumer AI products. The goal is not to rank models or declare an overall winner.
+The first release focuses on common, concrete tasks performed with mainstream consumer AI products. The goal is not to rank models or declare an overall winner.
 
 Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. Coverage does **not** imply equal testing depth. Every record must state what was actually tested versus what is only documented.
 
@@ -85,8 +85,10 @@ Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Per
 
 ## Status
 
-The repository currently contains six published, source-backed questions and a static public prototype generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search, product filter, and detailed evidence view.
+The repository currently contains **11 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search, product filter, and detailed evidence view.
 
-The next content milestone is 10–15 high-confidence questions, followed by expansion toward 25–50 only if the small public set proves useful. A GitHub Pages deployment workflow is included; first-time Pages enablement may still be required in repository settings before the live URL is available.
+The 10–15 question seed milestone is now in progress. Before expanding toward 25–50, the next priority is to finish the remaining seed coverage and test whether ordinary users can quickly find a task, understand its conditions, and inspect its evidence.
+
+Public site: https://josh-temple.github.io/can-ai-do-this/
 
 > **Real questions. Official sources. Actual capabilities.**
