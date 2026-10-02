@@ -34,7 +34,9 @@ The first public view is Japanese-first and deliberately simple:
 - keyword search;
 - product filter;
 - comparison table;
-- detailed evidence view.
+- detailed evidence view;
+- stable per-question share pages;
+- related-question navigation.
 
 Japanese display text lives in the canonical question records, with English as the fallback. The UI should not become a second manually maintained capability database.
 

@@ -60,11 +60,19 @@ function categoryLabel(category) {
     "connected-apps": "外部アプリ連携",
     spreadsheets: "表計算",
     presentations: "プレゼン",
+    "web-research": "ウェブ調査",
+    "image-generation": "画像生成",
+    "image-editing": "画像編集",
+    documents: "文書・PDF",
   }[category] || category;
 }
 
 function questionText(record) {
   return record.question_ja || record.question;
+}
+
+function questionUrl(record) {
+  return `./question.html?slug=${encodeURIComponent(record.slug)}`;
 }
 
 function answerText(answer, field) {
@@ -107,7 +115,7 @@ function searchableText(record) {
 function renderComparisonRows(record) {
   return record.answers.map((answer) => `
     <tr>
-      <td class="task-cell"><a href="#${escapeHtml(record.id)}">${escapeHtml(questionText(record))}</a></td>
+      <td class="task-cell"><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></td>
       <td>${escapeHtml(answer.product)}</td>
       <td><span class="answer-badge ${answerClass(answer.answer)}">${escapeHtml(answerLabel(answer.answer))}</span></td>
       <td>${escapeHtml(answer.plan || "条件による")}</td>
@@ -177,7 +185,7 @@ function renderRecord(record) {
       <div class="question-head">
         <div>
           <p class="question-id">${escapeHtml(record.id)} · ${escapeHtml(categoryLabel(record.category))}</p>
-          <h2>${escapeHtml(questionText(record))}</h2>
+          <h2><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></h2>
         </div>
         <span class="answer-badge ${answerClass(primary.answer)}">${escapeHtml(answerLabel(primary.answer))}</span>
       </div>
