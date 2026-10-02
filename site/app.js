@@ -1,5 +1,4 @@
-const REPO = "Josh-Temple/can-ai-do-this";
-const API = `https://api.github.com/repos/${REPO}/contents/data/questions`;
+const DATA_URL = "./questions.json";
 
 const els = {
   search: document.querySelector("#search"),
@@ -47,6 +46,7 @@ function searchableText(record) {
     ...(a.conditions || []),
     ...(a.limitations || []),
   ]);
+
   return [
     record.id,
     record.question,
@@ -63,9 +63,11 @@ function renderAnswer(answer) {
   const conditions = (answer.conditions || [])
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
+
   const limitations = (answer.limitations || [])
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
+
   const sources = (answer.sources || [])
     .map((source) => {
       const note = source.note ? ` — ${escapeHtml(source.note)}` : "";
@@ -128,7 +130,10 @@ function renderRecord(record) {
 }
 
 function populateProductFilter() {
-  const products = [...new Set(records.flatMap((record) => record.answers.map((a) => a.product)))].sort();
+  const products = [...new Set(
+    records.flatMap((record) => record.answers.map((answer) => answer.product))
+  )].sort();
+
   for (const product of products) {
     const option = document.createElement("option");
     option.value = product;
@@ -160,27 +165,23 @@ function applyFilters() {
 
 async function loadRecords() {
   try {
-    const listingResponse = await fetch(API);
-    if (!listingResponse.ok) throw new Error("Could not list records.");
-    const listing = await listingResponse.json();
-    const files = listing.filter((file) => file.type === "file" && file.name.endsWith(".json"));
+    const response = await fetch(DATA_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error("Could not load capability records.");
 
-    records = await Promise.all(
-      files.map(async (file) => {
-        const response = await fetch(file.download_url);
-        if (!response.ok) throw new Error(`Could not load ${file.name}`);
-        return response.json();
-      })
-    );
-
+    records = await response.json();
     records.sort((a, b) => a.id.localeCompare(b.id));
+
     populateProductFilter();
 
     const params = new URLSearchParams(window.location.search);
     els.search.value = params.get("q") || "";
     els.product.value = params.get("product") || "";
 
-    const dates = records.map((record) => record.last_checked).filter(Boolean).sort();
+    const dates = records
+      .map((record) => record.last_checked)
+      .filter(Boolean)
+      .sort();
+
     if (dates.length) {
       els.freshness.textContent = `Latest check: ${dates.at(-1)}`;
     }
