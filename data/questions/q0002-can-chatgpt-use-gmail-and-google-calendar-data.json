@@ -1,0 +1,67 @@
+{
+  "id": "Q0002",
+  "question": "Can ChatGPT use connected Gmail and Google Calendar data in a conversation?",
+  "slug": "can-chatgpt-use-gmail-and-google-calendar-data",
+  "category": "connected-apps",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users frequently ask whether connecting Gmail and Calendar means ChatGPT can actually read and use those services in practical workflows.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1wg0edy/what_are_people_actually_using_chatgpt_scheduled/",
+        "observed_at": "2026-10-02",
+        "summary": "Users describe daily summaries that combine Gmail and Google Calendar."
+      },
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1nzp2g3/anyone_elses_gmail_calendar_connectors_just_die/",
+        "observed_at": "2026-10-02",
+        "summary": "A user report illustrates that connected-app availability can fail even when an account still appears connected."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Eligible plans, including Plus where the apps are available",
+      "platform": "Supported ChatGPT surfaces",
+      "region": null,
+      "answer": "YES",
+      "summary": "When the relevant Google apps are available and connected, ChatGPT can use authorized Gmail and Google Calendar information for supported requests.",
+      "conditions": [
+        "The relevant Google account must be connected in ChatGPT.",
+        "Availability depends on plan, region, workspace, model, role, and ChatGPT surface.",
+        "The connection only grants access within the Google permissions and ChatGPT actions that are authorized."
+      ],
+      "limitations": [
+        "A connection does not imply that every Gmail or Calendar action is supported.",
+        "Workspace administrators can restrict app availability or actions.",
+        "Authentication or permission changes can make a previously available action unavailable."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents connected apps and states that availability and actions depend on product and account conditions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10408842-google-app-data-controls-faq",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents Gmail and Google Calendar permissions used by supported Google app actions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/12084614",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI gives Gmail and Calendar examples such as reviewing recent emails and creating meeting agendas from calendar information."
+        }
+      ]
+    }
+  ],
+  "notes": "This record is intentionally about access/use of data, not sending email or modifying calendar events. Those should be separate questions."
+}
