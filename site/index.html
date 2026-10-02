@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-based answers to real-world questions about what AI tools can actually do.">
+  <title>Can AI Do This?</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">CAN AI DO THIS?</p>
+      <h1>What are you trying to do?</h1>
+      <p class="lede">Real questions. Official sources. Actual capabilities.</p>
+
+      <div class="search-row">
+        <label class="sr-only" for="search">Search tasks</label>
+        <input id="search" type="search" autocomplete="off" placeholder="e.g. edit a Google Sheet, create a PowerPoint, monitor Gmail">
+        <label class="sr-only" for="product-filter">Filter by product</label>
+        <select id="product-filter">
+          <option value="">All products</option>
+        </select>
+      </div>
+
+      <div class="meta-row">
+        <span id="result-count">Loading questions…</span>
+        <span id="freshness"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="results" aria-live="polite"></section>
+    <div id="empty" class="empty" hidden>
+      <p>No matching questions yet.</p>
+      <p class="muted">Try a shorter task, a product name, or a different verb.</p>
+    </div>
+    <div id="error" class="error" hidden>
+      <p>Could not load the capability records.</p>
+      <p class="muted">The canonical data remains available in the GitHub repository.</p>
+    </div>
+  </main>
+
+  <footer class="wrap footer">
+    <p>
+      Capability claims are time-sensitive. “Documented” means supported by a current first-party source;
+      “Verified” means independently reproduced in a stated environment.
+    </p>
+    <p>
+      <a href="https://github.com/Josh-Temple/can-ai-do-this">View the data and methodology on GitHub</a>
+    </p>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
