@@ -1,0 +1,54 @@
+{
+  "id": "Q0009",
+  "question": "Can ChatGPT generate an image from a text description?",
+  "question_ja": "ChatGPTは、文章の指示から画像を生成できる？",
+  "slug": "can-chatgpt-generate-images-from-text",
+  "category": "images",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image generation is a common consumer task, but availability and the distinction between basic image generation and higher-tier image modes can be unclear.",
+    "summary_ja": "画像生成は一般的な用途ですが、基本的な画像生成と上位プラン向けの画像機能の違いは分かりにくいことがあります。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "All tiers; Images with thinking is limited to eligible paid plans",
+      "platform": "Web, iOS, and Android",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Images can generate images from a text description, including requests for text in the image, added visual details, transparent backgrounds, and different aspect ratios.",
+      "summary_ja": "ChatGPT Imagesは文章の指示から画像を生成できます。画像内の文字、細部の追加、透明背景、アスペクト比の指定にも対応します。",
+      "conditions": [
+        "ChatGPT Images must be available on the account and surface being used.",
+        "Images with thinking has narrower plan availability than standard image generation."
+      ],
+      "conditions_ja": [
+        "利用しているアカウントと画面でChatGPT Imagesが利用できること。",
+        "「思考機能付き画像」は通常の画像生成より対象プランが限定されます。"
+      ],
+      "limitations": [
+        "Feature availability and generation limits can vary by plan.",
+        "Templates are not available in Work mode according to the current help documentation.",
+        "Generated output may still require iterative prompting or editing for precise layout and text."
+      ],
+      "limitations_ja": [
+        "利用上限や一部機能の提供状況はプランによって異なります。",
+        "現在の公式情報では、テンプレートはWorkモードでは利用できません。",
+        "厳密なレイアウトや文字表現には、追加の指示や編集が必要になる場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents text-to-image generation, availability across all tiers, web/iOS/Android support, and image-generation controls."
+        }
+      ]
+    }
+  ],
+  "notes": "This record is about generating images from prompts; editing an existing image is tracked separately."
+}
