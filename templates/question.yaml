@@ -1,0 +1,34 @@
+id: Q0001
+question: "Can an AI do this task?"
+slug: can-an-ai-do-this-task
+category: example
+status: DRAFT
+
+demand:
+  summary: ""
+  community_links:
+    - url: "https://www.reddit.com/"
+      observed_at: "YYYY-MM-DD"
+      summary: "Original short summary of why this discussion is relevant."
+
+last_checked: "YYYY-MM-DD"
+
+answers:
+  - product: "Product name"
+    plan: null
+    platform: null
+    region: null
+    answer: UNKNOWN
+    summary: ""
+    conditions: []
+    limitations: []
+    evidence_state: DOCUMENTED
+    last_checked: "YYYY-MM-DD"
+    tested_environment: null
+    sources:
+      - type: OFFICIAL_DOC
+        url: "https://example.com/"
+        accessed_at: "YYYY-MM-DD"
+        note: ""
+
+notes: ""
