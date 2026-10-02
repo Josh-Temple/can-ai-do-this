@@ -1,0 +1,74 @@
+{
+  "id": "Q0013",
+  "question": "Can ChatGPT remember preferences and details across separate chats?",
+  "question_ja": "ChatGPTは、別のチャットをまたいで好みや情報を覚えて使える？",
+  "slug": "can-chatgpt-remember-information-across-chats",
+  "category": "memory",
+  "search_terms": [
+    "記憶",
+    "覚える",
+    "メモリ",
+    "Memory",
+    "過去のチャット",
+    "会話履歴",
+    "前の会話",
+    "好み",
+    "パーソナライズ",
+    "前回の続き"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often expect continuity across conversations but may confuse chat history, explicit instructions, and product memory.",
+    "summary_ja": "別チャットでも前の情報を使えるかは日常利用で重要ですが、チャット履歴・明示的な指示・Memoryは混同されやすいです。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plan, region, platform, and workspace dependent",
+      "platform": "ChatGPT",
+      "region": null,
+      "answer": "YES",
+      "summary": "When Memory is enabled, ChatGPT can use relevant preferences and details from past chats and other available sources to personalize later conversations.",
+      "summary_ja": "Memoryが有効なら、ChatGPTは過去のチャットや利用可能な他の情報源から関連する好み・情報を使い、後の会話をパーソナライズできます。",
+      "conditions": [
+        "Memory must be enabled and available for the account or workspace.",
+        "Available memory sources and controls vary by plan, region, platform, and workspace settings.",
+        "Memory controls are managed under Settings > Personalization > Memory when available."
+      ],
+      "conditions_ja": [
+        "そのアカウントまたはワークスペースでMemoryが利用可能で、有効になっていること。",
+        "利用できるMemoryの情報源や管理機能は、プラン・地域・プラットフォーム・ワークスペース設定によって異なります。",
+        "利用可能な場合、設定 > Personalization > Memoryから管理します。"
+      ],
+      "limitations": [
+        "Memory does not retain every detail from every conversation and can change as context changes.",
+        "Temporary chats do not create or update memories.",
+        "Memory is for useful context and personalization; it should not be treated as guaranteed exact storage for large verbatim text or critical records."
+      ],
+      "limitations_ja": [
+        "すべての会話の細部を必ず保持するわけではなく、関連性に応じてMemoryの内容は変化します。",
+        "Temporary ChatではMemoryを新規作成・更新しません。",
+        "Memoryは文脈やパーソナライズのための機能であり、大量の原文や重要記録を厳密に保存する保管庫としては扱うべきではありません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents cross-conversation Memory, available sources and controls, variability by plan/region/workspace, and Temporary Chat behavior."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8590148-memory-faq",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI explains that memory is intended for useful preferences/context rather than guaranteed verbatim storage."
+        }
+      ]
+    }
+  ],
+  "notes": "This record describes personalization memory across chats, not storage guarantees or retrieval of every prior conversation."
+}
