@@ -15,7 +15,7 @@ Goal: define a trustworthy data model before collecting at scale.
 
 Goal: publish a small set of high-demand, high-confidence questions.
 
-Initial public milestone: **10–15 questions**. Current published set: **11 questions**. Expand toward **25–50** only after the small public set is usable and the update burden is sustainable.
+Initial public milestone: **10–15 questions**. Current published set: **15 questions** — seed milestone reached. Do not expand toward **25–50** until the public set is usable and the update burden is demonstrably sustainable.
 
 Selection signals:
 - recurring questions in Reddit and other public communities;
@@ -54,7 +54,7 @@ Current prototype:
 
 Avoid building a generic AI-tool directory.
 
-Before expanding beyond 10–15 questions, test whether users can:
+Before expanding beyond 15 questions, test whether users can:
 - find the relevant task without knowing the product feature name;
 - understand the answer and its plan/platform conditions;
 - find the evidence state and last-checked date;

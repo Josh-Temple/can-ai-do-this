@@ -85,9 +85,9 @@ Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Per
 
 ## Status
 
-The repository currently contains **11 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search, product filter, and detailed evidence view.
+The repository currently contains **15 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search with task aliases, product filtering, dedicated question pages, and detailed evidence views.
 
-The 10–15 question seed milestone is now in progress. Before expanding toward 25–50, the next priority is to finish the remaining seed coverage and test whether ordinary users can quickly find a task, understand its conditions, and inspect its evidence.
+The initial 10–15 question seed milestone is complete. The next priority is usability validation and freshness maintenance rather than adding more breadth immediately. Expansion toward 25–50 should happen only after people can reliably find tasks, understand conditions, and inspect the evidence without knowing product feature names.
 
 Public site: https://josh-temple.github.io/can-ai-do-this/
 

@@ -1,0 +1,85 @@
+{
+  "id": "Q0012",
+  "question": "Can ChatGPT create and publish a website from a natural-language description?",
+  "question_ja": "ChatGPTは、文章で要望を伝えるだけでWebサイトを作成・公開できる？",
+  "slug": "can-chatgpt-create-and-publish-a-website",
+  "category": "website-creation",
+  "search_terms": [
+    "Webサイト",
+    "ウェブサイト",
+    "サイト",
+    "ホームページ",
+    "Webアプリ",
+    "アプリ",
+    "ノーコード",
+    "公開",
+    "デプロイ",
+    "website",
+    "web app",
+    "ChatGPT Sites"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users care about the difference between generating code and getting a working website that can actually be previewed and published.",
+    "summary_ja": "コード案を出せるだけでなく、実際にプレビューして公開できるWebサイトまで作れるかは、非開発者にとって大きな違いです。",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1315y8b/chatgpt_created_a_website_for_me_and_ive_never/",
+        "observed_at": "2026-10-02",
+        "summary": "A non-coder describes using ChatGPT to create a website, illustrating demand for end-to-end site creation rather than code snippets alone."
+      }
+    ]
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plus, Pro, and eligible ChatGPT workspaces; public beta",
+      "platform": "ChatGPT Work on web; Work or Codex in the desktop app",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Sites can create an interactive website or lightweight app from a natural-language description, provide a private preview for refinement, and publish it to a production URL.",
+      "summary_ja": "ChatGPT Sitesでは、文章で要望を伝えてインタラクティブなWebサイトや軽量アプリを作成し、非公開プレビューで修正したうえで、本番URLへ公開できます。",
+      "conditions": [
+        "ChatGPT Sites must be available for the account or workspace; it is in public beta and can still be rolling out.",
+        "On the web, site creation starts in Work; in the desktop app it can start in Work or Codex.",
+        "Workspace administrators can control who may create and publish Sites.",
+        "In Enterprise workspaces, public publishing is off by default and must be enabled by an administrator."
+      ],
+      "conditions_ja": [
+        "そのアカウントまたはワークスペースでChatGPT Sitesが利用可能であること。パブリックベータ中で、アカウントによっては段階提供中です。",
+        "Web版ではWork、デスクトップアプリではWorkまたはCodexからサイト作成を開始します。",
+        "ワークスペースでは、管理者がSitesの作成・公開権限を制御できます。",
+        "Enterpriseでは一般公開が初期状態で無効で、管理者による有効化が必要です。"
+      ],
+      "limitations": [
+        "Sites is a public-beta feature with plan-specific limits that can change.",
+        "Hitting beta limits can restrict creation of new Sites, storage additions, or continued public availability of high-usage Sites.",
+        "A deployed Site being functional does not guarantee that every requested production requirement, security property, or external integration is implemented correctly."
+      ],
+      "limitations_ja": [
+        "Sitesはパブリックベータ機能で、プランごとの上限は変更される可能性があります。",
+        "ベータ上限に達すると、新規サイト作成、ストレージ追加、利用量の多いサイトの一般公開継続が制限される場合があります。",
+        "サイトを公開できることと、要求した本番要件・セキュリティ・外部連携がすべて正しく実装されていることは別なので、公開前の確認が必要です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents natural-language site creation, private preview/refinement, deployment to a production URL, availability, workspace controls, and public-beta limits."
+        },
+        {
+          "type": "OFFICIAL_ANNOUNCEMENT",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI release notes describe Sites rollout and public publishing availability."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers ChatGPT Sites, not generic code generation or deployment through a separate hosting provider."
+}

@@ -1,0 +1,69 @@
+{
+  "id": "Q0014",
+  "question": "Can Claude search the web for current information and cite sources?",
+  "question_ja": "Claudeは、最新情報をウェブ検索して出典を示せる？",
+  "slug": "can-claude-search-the-web-and-cite-sources",
+  "category": "web-research",
+  "search_terms": [
+    "ウェブ検索",
+    "Web検索",
+    "ネット検索",
+    "検索",
+    "最新情報",
+    "出典",
+    "引用",
+    "リサーチ",
+    "調べる",
+    "web search",
+    "current information"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "A practical comparison with other assistants requires separating model knowledge from live web retrieval with inspectable sources.",
+    "summary_ja": "他のAIと比べるとき、モデル内部の知識だけで答えるのか、現在のWebを検索して出典を示せるのかは重要な違いです。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Plan, model, and workspace dependent",
+      "platform": "Claude chat; exact controls vary by experience",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude can search the live web for current information and return responses with direct citations and source links when web search is available and enabled.",
+      "summary_ja": "Web検索が利用可能・有効な環境では、Claudeは現在のWebを検索し、直接引用や情報源リンクを付けて回答できます。",
+      "conditions": [
+        "A model that supports web search must be in use.",
+        "On Team and Enterprise, an Owner or Primary Owner must enable web search for the workspace.",
+        "In the newer Claude experience there may be no search toggle; Claude searches the web when it is useful. In other experiences, web search can be enabled from the chat controls."
+      ],
+      "conditions_ja": [
+        "Web検索に対応したモデルを使用していること。",
+        "Team・Enterpriseでは、OwnerまたはPrimary Ownerがワークスペース全体のWeb検索を有効にする必要があります。",
+        "新しいClaude体験では検索トグルがなく、必要に応じてClaudeがWeb検索します。従来の画面ではチャットの操作からWeb検索を有効にします。"
+      ],
+      "limitations": [
+        "Web search and web fetch count toward usage limits.",
+        "Search availability can depend on connectivity and some source links may fail.",
+        "Citations make sources inspectable but important claims should still be checked against the original source."
+      ],
+      "limitations_ja": [
+        "Web検索とWeb fetchは利用上限にカウントされます。",
+        "接続状況によって検索できない場合があり、情報源リンクが機能しないこともあります。",
+        "引用が付いていても、重要な内容は元の情報源を開いて確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/10684626-enable-and-use-web-search",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents live web search, citations and source links, supported models, Team/Enterprise enablement, new-experience behavior, and usage/availability limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers ordinary Claude web search, not the separate multi-step Research feature."
+}
