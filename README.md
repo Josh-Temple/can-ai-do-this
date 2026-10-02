@@ -57,9 +57,13 @@ docs/
   ROADMAP.md        # staged development plan
 schemas/
   question.schema.json
+scripts/
+  build_site.py       # builds the static site from canonical records
+  validate_records.py
+site/                 # public comparison/search UI
 templates/
   question.yaml
-AGENTS.md            # instructions for AI-assisted research
+AGENTS.md             # instructions for AI-assisted research
 CONTRIBUTING.md
 ```
 
@@ -81,6 +85,8 @@ Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Per
 
 ## Status
 
-Early foundation stage. The immediate target is a small, high-confidence seed set of real-world questions before building a public browsing interface.
+The repository currently contains six published, source-backed questions and a static public prototype generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search, product filter, and detailed evidence view.
+
+The next content milestone is 10–15 high-confidence questions, followed by expansion toward 25–50 only if the small public set proves useful. A GitHub Pages deployment workflow is included; first-time Pages enablement may still be required in repository settings before the live URL is available.
 
 > **Real questions. Official sources. Actual capabilities.**
