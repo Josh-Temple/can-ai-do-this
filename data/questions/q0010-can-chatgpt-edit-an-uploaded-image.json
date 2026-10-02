@@ -69,5 +69,6 @@
     "背景変更",
     "画像を直す",
     "photo edit"
-  ]
+  ],
+  "review_window_days": 30
 }
