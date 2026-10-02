@@ -1,22 +1,27 @@
 # Site prototype
 
-This directory contains the first task-first browsing interface for Can AI Do This?
+This directory contains the task-first browsing interface for Can AI Do This?
 
-## Data source
+## Source of truth
 
-The interface does not maintain a second capability database. It reads the canonical JSON records from:
+The interface does not maintain a second capability database.
+
+Canonical records live under:
 
 `data/questions/*.json`
 
-For the prototype, the browser fetches the public GitHub Contents API and then loads each record from its raw GitHub URL.
+`scripts/build_site.py` copies the static interface into a build directory and generates `questions.json` from those canonical records.
 
-This is acceptable for early testing with a small dataset. Before meaningful public traffic, replace the runtime GitHub API dependency with a build-time generated static index.
+## Build locally
 
-## Run locally
+From the repository root:
 
-Serve the repository root or this directory with any static HTTP server and open `site/index.html`.
+```bash
+python scripts/build_site.py
+python -m http.server 8000 --directory dist
+```
 
-Do not open the HTML only through `file://`; browser fetch restrictions may prevent the GitHub API request from working consistently.
+Then open `http://localhost:8000`.
 
 ## Product intent
 
@@ -25,7 +30,12 @@ The interface should answer:
 > What are you trying to do?
 
 It deliberately avoids:
+
 - model leaderboards;
-- generic AI tool directories;
+- generic AI-tool directories;
 - overall product scores;
 - unsupported equivalence between different plans or surfaces.
+
+## Deployment
+
+The build output is static and can be hosted on GitHub Pages, Vercel, or another static host. Deployment should publish the generated build output, not duplicate or manually rewrite the canonical question data.
