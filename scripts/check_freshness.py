@@ -47,12 +47,17 @@ def main():
         record_id = record.get("id", path.name)
         checked_raw = record.get("last_checked")
         window = record.get("review_window_days")
+        answer_dates = [
+            date.fromisoformat(answer["last_checked"])
+            for answer in record.get("answers", [])
+            if answer.get("last_checked")
+        ]
 
-        if not checked_raw or window not in (14, 30):
-            structural.append(f"{record_id}: missing/invalid freshness policy")
+        if not checked_raw or window not in (14, 30) or not answer_dates:
+            structural.append(f"{record_id}: missing/invalid freshness policy or answer date")
             continue
 
-        checked = date.fromisoformat(checked_raw)
+        checked = min(answer_dates)
         next_review = checked + timedelta(days=window)
         days_left = (next_review - args.as_of).days
         item = (record_id, checked, window, next_review, days_left, record.get("status"))
@@ -70,7 +75,7 @@ def main():
     for label, items in (("DUE", due), ("SOON", upcoming)):
         for record_id, checked, window, next_review, days_left, status in items:
             print(
-                f"{label} {record_id} checked={checked.isoformat()} "
+                f"{label} {record_id} oldest_answer_checked={checked.isoformat()} "
                 f"window={window}d next_review={next_review.isoformat()} "
                 f"days_left={days_left} status={status}"
             )
