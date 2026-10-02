@@ -1,0 +1,51 @@
+{
+  "id": "Q0009",
+  "question": "Can ChatGPT generate an image from a text prompt?",
+  "slug": "can-chatgpt-generate-images-from-a-prompt",
+  "category": "image-generation",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image generation is a mainstream AI task, but users still need to know which ChatGPT surfaces and plans provide the current Images capability."
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "All tiers",
+      "platform": "Web, iOS, and Android",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Images can generate a new image from a written description, including requested text, details, transparent backgrounds, and different aspect ratios.",
+      "conditions": [
+        "ChatGPT Images must be available on the selected surface.",
+        "Image generation is subject to the plan's applicable tool and usage limits."
+      ],
+      "limitations": [
+        "Images with thinking is currently limited to Plus, Pro, and Business, with Enterprise and Edu announced as coming later.",
+        "This record covers the current ChatGPT Images experience, not the retired official DALL·E GPT."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents text-prompt image generation, all-tier availability, supported web/mobile surfaces, transparent backgrounds, aspect ratios, and the separate Images-with-thinking availability."
+        }
+      ],
+      "summary_ja": "ChatGPT Imagesは、文章で説明した内容から新しい画像を生成できます。画像内テキスト、細部、透明背景、アスペクト比なども指示できます。",
+      "conditions_ja": [
+        "利用する画面でChatGPT Imagesが提供されていること。",
+        "画像生成には、利用中プランのツール利用上限・使用量上限が適用されます。"
+      ],
+      "limitations_ja": [
+        "Images with thinkingは現在Plus、Pro、Business向けで、EnterpriseとEduは今後提供予定とされています。",
+        "この記録は現在のChatGPT Imagesを対象としており、提供終了した公式DALL·E GPTは対象外です。"
+      ]
+    }
+  ],
+  "notes": "The record describes product capability, not image-quality benchmarking.",
+  "question_ja": "ChatGPTは、文章の指示から画像を生成できる？"
+}
