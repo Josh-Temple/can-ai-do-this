@@ -9,13 +9,13 @@ Goal: define a trustworthy data model before collecting at scale.
 - [x] Define community-source policy
 - [x] Add initial schema and template
 - [x] Add automated schema validation
-- [ ] Define freshness review rules
+- [x] Define freshness review rules
 
 ## Stage 1 — Seed set
 
 Goal: publish a small set of high-demand, high-confidence questions.
 
-Target: 25–50 questions.
+Initial public milestone: **10–15 questions**. Expand toward **25–50** only after the small public set is usable and the update burden is sustainable.
 
 Selection signals:
 - recurring questions in Reddit and other public communities;
@@ -54,6 +54,12 @@ Current prototype:
 
 Avoid building a generic AI-tool directory.
 
+Before expanding beyond 10–15 questions, test whether users can:
+- find the relevant task without knowing the product feature name;
+- understand the answer and its plan/platform conditions;
+- find the evidence state and last-checked date;
+- identify when the answer is conditional or not yet verified.
+
 ## Stage 3 — Community contribution
 
 Goal: accept structured reports without treating them as verified facts.
@@ -68,6 +74,8 @@ Potential flow:
 ## Stage 4 — Freshness and change tracking
 
 Goal: detect when an answer may have changed.
+
+The operating review windows are defined in `docs/METHODOLOGY.md`. Automation may identify review candidates, but current capability claims must still be re-checked against evidence.
 
 Potential signals:
 - official documentation changes;
