@@ -1,0 +1,69 @@
+{
+  "id": "Q0019",
+  "question": "Can Microsoft Copilot create an editable PowerPoint presentation?",
+  "question_ja": "Microsoft Copilotは、編集可能なPowerPointプレゼンテーションを作成できる？",
+  "slug": "can-microsoft-copilot-create-an-editable-powerpoint",
+  "category": "presentations",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "PowerPoint",
+    "パワポ",
+    "pptx",
+    "プレゼン",
+    "プレゼン資料",
+    "スライド",
+    "スライド作成",
+    "Microsoft 365 Copilot"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Presentation creation is a high-demand workflow where users care whether the result is a real editable PowerPoint rather than only slide text.",
+    "summary_ja": "プレゼン作成では、文章案ではなく実際に編集できるPowerPointになるかどうかが重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Eligible Microsoft 365 subscription / Copilot license; organization settings can affect availability",
+      "platform": "PowerPoint for Microsoft 365, Mac, iPad; Microsoft 365 Copilot for work/school flows",
+      "region": null,
+      "answer": "YES",
+      "summary": "Copilot can generate a real PowerPoint presentation from a prompt, and the resulting slides can be added, deleted, edited, and refined in PowerPoint. Microsoft 365 Copilot can also generate the presentation in OneDrive and provide a link to open it.",
+      "summary_ja": "Copilotはプロンプトから実際のPowerPointプレゼンテーションを生成でき、作成後のスライドはPowerPoint上で追加・削除・編集・調整できます。Microsoft 365 CopilotではOneDriveにプレゼンテーションを生成して開くリンクを返すこともできます。",
+      "conditions": [
+        "Copilot must be included in the user's Microsoft 365 subscription or Copilot license and allowed by organization settings.",
+        "The user needs access to a supported PowerPoint or Microsoft 365 Copilot surface.",
+        "Referenced files require the user to have permission to access them."
+      ],
+      "conditions_ja": [
+        "利用中のMicrosoft 365サブスクリプションまたはCopilotライセンスに機能が含まれ、組織設定でも許可されている必要があります。",
+        "対応するPowerPointまたはMicrosoft 365 Copilotの画面を利用する必要があります。",
+        "参照ファイルを使う場合、そのファイルへのアクセス権が必要です。"
+      ],
+      "limitations": [
+        "Some presentation controls and newer agent-mode features are still rolling out.",
+        "AI-generated presentation content should be reviewed and edited by a human.",
+        "File-reference behavior can differ by Copilot mode, license, and rollout state."
+      ],
+      "limitations_ja": [
+        "プレゼンテーションの細かな制御や新しいエージェントモード機能の一部は段階的提供中です。",
+        "AIが生成したプレゼンテーション内容は、人が確認・編集する必要があります。",
+        "参照ファイルの扱いは、Copilotのモード、ライセンス、提供状況によって異なります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/ja-jp/powerpoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents prompt-based PowerPoint generation, editable generated slides, OneDrive generation from Microsoft 365 Copilot, license caveats, and rollout limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "YES refers to Microsoft Copilot in supported Microsoft 365/PowerPoint surfaces, not the generic free Copilot chat experience."
+}
