@@ -1,0 +1,63 @@
+{
+  "id": "Q0004",
+  "question": "Can ChatGPT edit an existing Google Sheet directly?",
+  "slug": "can-chatgpt-edit-an-existing-google-sheet",
+  "category": "spreadsheets",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "A recurring confusion is whether ChatGPT can only read/analyze Sheets or can actually write changes back to the source file.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1ut2shq/getting_chatgpt_to_interface_with_google/",
+        "observed_at": "2026-10-02",
+        "summary": "A user describes real-world use of ChatGPT writing values into a Google Sheet and intermittent loss of the editing action."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Eligible plan with Google Drive actions available",
+      "platform": "Work / supported Google Drive integration surfaces",
+      "region": null,
+      "answer": "YES",
+      "summary": "Where supported and authorized, ChatGPT can directly update an existing Google Sheet through the Google Drive app.",
+      "conditions": [
+        "Google Drive must be connected with the required permissions.",
+        "The relevant Google Sheets action must be available for the account/workspace.",
+        "In Work, the user can select the Sheet and approve the requested action."
+      ],
+      "limitations": [
+        "Some Google Drive editing and collaboration features are not available inside ChatGPT.",
+        "Availability depends on plan, workspace settings, file type, and surface.",
+        "Workspace or Google administrators can block required scopes or actions.",
+        "A connected Sheet may still need to be opened in Google Drive for unsupported editing features."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10929079-google-workspace-admin-managed-setup",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI states that Google Docs, Sheets, and Slides actions are available through Google Drive and that supported file-changing actions require corresponding permissions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI states that, where supported and authorized, ChatGPT can update the source Google file directly."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001278",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents creating or editing a Google Sheet in Work and reviewing the result in Google Workspace."
+        }
+      ]
+    }
+  ],
+  "notes": "This answer is about native Google Sheets, not uploaded .xlsx files or the Excel desktop add-in."
+}
