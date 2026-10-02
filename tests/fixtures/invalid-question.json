@@ -1,0 +1,17 @@
+{
+  "id": "bad-id",
+  "question": "Bad fixture",
+  "slug": "Bad Slug",
+  "category": "example",
+  "status": "PUBLISHED",
+  "last_checked": "not-a-date",
+  "answers": [
+    {
+      "product": "Example AI",
+      "answer": "MAYBE",
+      "evidence_state": "TRUST_ME",
+      "last_checked": "2026-99-99",
+      "sources": []
+    }
+  ]
+}
