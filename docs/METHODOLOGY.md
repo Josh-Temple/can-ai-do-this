@@ -113,7 +113,7 @@ For high-change questions, the repository may monitor a small set of semantic an
 - A monitoring alert never refreshes `last_checked`, changes the answer, or promotes an evidence state.
 - The source must be re-read or the capability re-tested before the canonical claim is changed.
 
-The initial pilot covers every published question on the 14-day review cadence. Configuration and operating details are in `monitoring/README.md`.
+The initial configuration covers every published question on the 14-day review cadence. Sources that can be fetched reliably are checked automatically; sources blocked to GitHub-hosted Actions are marked MANUAL and remain governed by the normal freshness review. The project does not bypass vendor access controls. Configuration and operating details are in `monitoring/README.md`.
 
 Future automation may prioritize review based on age, product release activity, source changes, conflicting reports, and question demand.
 

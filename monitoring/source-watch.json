@@ -40,7 +40,9 @@
           "new gmail messages",
           "gmail tasks can respond to a new message"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "openai-connected-apps",
@@ -62,7 +64,9 @@
           "new gmail messages",
           "gmail"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "openai-google-app-data",
@@ -85,7 +89,9 @@
           "event-triggered",
           "new messages in a connected gmail account"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "openai-work-google-files",
@@ -106,7 +112,9 @@
           "create or edit documents, spreadsheets, presentations",
           "documents, spreadsheets, presentations"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "anthropic-google-drive",
@@ -124,7 +132,8 @@
         [
           "save claude-generated files directly to your drive"
         ]
-      ]
+      ],
+      "fetch_mode": "direct"
     },
     {
       "id": "openai-web-search",
@@ -144,7 +153,9 @@
           "citations",
           "cited sources"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "openai-chatgpt-sites",
@@ -164,7 +175,9 @@
           "production url",
           "publish"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "openai-memory",
@@ -183,7 +196,9 @@
         [
           "memory summary"
         ]
-      ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 403 for help.openai.com during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
     },
     {
       "id": "anthropic-web-search",
@@ -204,7 +219,8 @@
           "source links for further reading",
           "source links"
         ]
-      ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }

@@ -124,6 +124,12 @@ def validate_config(config, skip_coverage):
         if not source.get("url"):
             errors.append(f"{source_id}: missing url")
 
+        fetch_mode = source.get("fetch_mode", "direct")
+        if fetch_mode not in {"direct", "manual"}:
+            errors.append(f"{source_id}: fetch_mode must be direct or manual")
+        if fetch_mode == "manual" and not str(source.get("manual_reason") or "").strip():
+            errors.append(f"{source_id}: manual fetch_mode requires manual_reason")
+
         questions = source.get("questions") or []
         if not questions:
             errors.append(f"{source_id}: questions must be non-empty")
@@ -163,6 +169,16 @@ def validate_config(config, skip_coverage):
 
 
 def evaluate_source(source, fetched, policy):
+    if source.get("fetch_mode", "direct") == "manual":
+        return {
+            "id": source["id"],
+            "url": source["url"],
+            "questions": source["questions"],
+            "state": "MANUAL",
+            "reason": source.get("manual_reason", "manual review configured"),
+            "missing_groups": [],
+        }
+
     status = fetched["status"]
     text = fetched["text"]
     error = fetched["error"]
@@ -253,7 +269,10 @@ def main():
     content_map = load_content_map(args.content_map)
     results = []
     for source in config["sources"]:
-        fetched = fetch_source(source, content_map, args.timeout)
+        if source.get("fetch_mode", "direct") == "manual":
+            fetched = {"status": None, "text": "", "error": None}
+        else:
+            fetched = fetch_source(source, content_map, args.timeout)
         result = evaluate_source(source, fetched, config.get("policy") or {})
         results.append(result)
         questions = ",".join(result["questions"])
@@ -266,6 +285,7 @@ def main():
 
     changed = [item for item in results if item["state"] == "CHANGED"]
     unavailable = [item for item in results if item["state"] == "UNAVAILABLE"]
+    manual = [item for item in results if item["state"] == "MANUAL"]
     ok = [item for item in results if item["state"] == "OK"]
 
     payload = {
@@ -274,6 +294,7 @@ def main():
             "ok": len(ok),
             "changed": len(changed),
             "unavailable": len(unavailable),
+            "manual": len(manual),
         },
         "results": results,
     }
@@ -287,7 +308,8 @@ def main():
     print(
         "Summary: "
         f"total={len(results)} ok={len(ok)} "
-        f"changed={len(changed)} unavailable={len(unavailable)}"
+        f"changed={len(changed)} unavailable={len(unavailable)} "
+        f"manual={len(manual)}"
     )
 
     return 1 if changed else 0

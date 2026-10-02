@@ -46,10 +46,12 @@ jobs:
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
               handle.write(f"changed={report['summary']['changed']}\n")
               handle.write(f"unavailable={report['summary']['unavailable']}\n")
+              handle.write(f"manual={report['summary']['manual']}\n")
           PY
           else
             echo "changed=0" >> "$GITHUB_OUTPUT"
             echo "unavailable=0" >> "$GITHUB_OUTPUT"
+            echo "manual=0" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Sync source-review issue
@@ -59,6 +61,7 @@ jobs:
           CHECK_STATUS: ${{ steps.watch.outputs.status }}
           CHANGED_COUNT: ${{ steps.watch.outputs.changed }}
           UNAVAILABLE_COUNT: ${{ steps.watch.outputs.unavailable }}
+          MANUAL_COUNT: ${{ steps.watch.outputs.manual }}
         run: |
           title="[automation] Official source review required"
           issue_number="$(gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.title == "[automation] Official source review required") | .number' | head -n 1)"
@@ -84,7 +87,7 @@ jobs:
             fi
           elif [ "$CHECK_STATUS" -eq 0 ] && [ "$UNAVAILABLE_COUNT" -eq 0 ]; then
             if [ -n "$issue_number" ]; then
-              gh issue close "$issue_number" --comment "Semantic source monitoring is clear again; all configured anchors are present."
+              gh issue close "$issue_number" --comment "Semantic source monitoring is clear again for directly monitored sources. Manual-only sources remain subject to the normal freshness review process."
             fi
           elif [ "$CHECK_STATUS" -eq 0 ]; then
             echo "Only transient/unavailable source fetches were observed; leaving any existing review issue unchanged."
