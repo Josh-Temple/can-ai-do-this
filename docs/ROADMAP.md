@@ -1,81 +1,197 @@
 # Roadmap
 
-## Stage 0 — Foundation
+更新日: 2026-10-02  
+状態: 提案。工程・件数・日程は計画上の目安であり、実施済みの結果ではない。
 
-Goal: define a trustworthy data model before collecting at scale.
+## 1. 目指す価値
 
-- [x] Define task-first scope
-- [x] Define evidence states
-- [x] Define community-source policy
-- [x] Add initial schema and template
-- [ ] Add automated schema validation
-- [ ] Define freshness review rules
+少しAIを使っている日本語話者が、「やりたい作業を、自分の契約・端末・設定で実行できるか」を判断できるサイトにする。
 
-## Stage 1 — Seed set
+最初の画面にはキーワード検索と比較表を置く。質問別の詳細ページで、結論、条件、制約、公式根拠、確認日を示す。サービス名を知らなくても作業から探せるようにする。
 
-Goal: publish a small set of high-demand, high-confidence questions.
+差別化の仮説は、作業の具体性、プラン等の条件、公式確認と実測の区別、更新履歴の組合せにある。単に作業別に並べるだけで独自性や需要が成立するとは判断しない。
 
-Target: 25–50 questions.
+既存の[Futurepediaのカテゴリ一覧](https://www.futurepedia.io/ai-tools)には、スプレッドシート、プレゼンテーション、個人アシスタント等があることを2026-10-02に確認した。この確認は競合調査の一例であり、類似サービスの不存在や市場の空白を証明しない。
 
-Selection signals:
-- recurring questions in Reddit and other public communities;
-- common web-search phrasing;
-- recurring confusion in official support forums;
-- major newly released AI capabilities;
-- tasks that ordinary users can understand without specialist knowledge.
+## 2. 確認した開始時点
 
-For the seed set, prioritize tasks involving:
-- email;
-- documents and PDFs;
-- spreadsheets;
-- presentations;
-- web research;
-- image creation/editing;
-- coding and website creation;
-- memory;
-- scheduled or autonomous work;
-- external app connections.
+現行mainをcommit `4861916fe87855ea54d1f410a303676af9b33bc7`で確認した。
 
-## Stage 2 — Public browsing experience
+| 対象 | 確認できた状態 |
+|---|---|
+| 基本方針 | README、AGENTS、Methodology、Roadmapが存在 |
+| データ定義 | JSON SchemaとYAMLテンプレートが存在 |
+| 需要候補 | Seed demand scanに10件。うちP0は6件 |
+| 回答データ | `data/questions/`には.gitkeepのみ。回答レコード0件 |
+| 自動検証・サイト実装 | このcommitのtreeには実装がない |
+| 既存作業 | Issue #1〜#3がopen |
 
-Goal: make the dataset useful to non-technical users.
+根拠:
+- [確認したtree](https://github.com/Josh-Temple/can-ai-do-this/tree/4861916fe87855ea54d1f410a303676af9b33bc7)
+- [需要候補](../research/SEED_DEMAND_2026-10-02.md)
+- [Issue #1: 重要な質問の確認](https://github.com/Josh-Temple/can-ai-do-this/issues/1)
+- [Issue #2: データの自動検証](https://github.com/Josh-Temple/can-ai-do-this/issues/2)
+- [Issue #3: 公開UI](https://github.com/Josh-Temple/can-ai-do-this/issues/3)
 
-Minimum interface:
-- one prominent task search box;
-- plain-language answer;
-- product/plan/platform conditions;
-- evidence state and last checked date;
-- official source links;
-- community discussion links where useful;
-- related questions.
+需要候補は問題発見の材料であり、利用者数、検索量、支払意思の検証結果ではない。この計画では個々のAI製品の現在の能力を新たに確定していない。
 
-Avoid building a generic AI-tool directory.
+## 3. 初期公開の範囲
 
-## Stage 3 — Community contribution
+- 日本語を優先する。日本で利用できる条件を明記する。
+- 最初はChatGPT、Claude、Geminiを対象候補とし、回答できる製品から掲載する。
+- 同じ数の実測結果をそろえるために、新規の有料契約を増やすことを前提にしない。
+- 実測は実際に利用でき、必要な権限がある環境だけで行う。それ以外は公式確認として掲載できる。
+- ChatGPTの特定のWork環境・プラグインでの結果を、一般のPlusアカウントやAndroidアプリにそのまま適用しない。
+- まず5問程度で記録方法を確かめ、10〜15問を最小公開範囲とする。25〜50問は公開後の利用検証を通過してから目指す。
+- 件数は重複を除いた利用者の質問数で数える。製品・プランの回答を増やしても質問数として水増ししない。
 
-Goal: accept structured reports without treating them as verified facts.
+初期テーマは、資料・Officeファイル、Googleサービス連携、定期実行の3つに絞る。
 
-Potential flow:
-- user selects task/product/plan/platform;
-- reports Worked / Partially worked / Failed;
-- may attach evidence;
-- submission enters USER_REPORTED state;
-- maintainers can independently reproduce and promote evidence to VERIFIED.
+### 最初に確認する5つの作業範囲
 
-## Stage 4 — Freshness and change tracking
+Issue #1を起点に、次を調べる。調査結果に応じて別の質問へ分ける。
 
-Goal: detect when an answer may have changed.
+1. チャットを開いたままにせず、指定時刻に定期実行できるか。
+2. GmailとGoogle Calendarを読み取り、どの操作まで実行できるか。
+3. 既存のGoogle Sheetsを直接編集できるか。
+4. ChatGPTで編集可能なPowerPointファイルを作れるか。
+5. Claudeで編集可能なPowerPointファイルを作れるか。
 
-Potential signals:
-- official documentation changes;
-- major product releases;
-- new contradictory reports;
-- stale last-checked dates.
+PowerPointの2製品は、同じ利用目的なら1つの質問に複数回答を持たせる。5つの調査範囲と5つの質問レコードは必ずしも一致しない。読み取り、下書き、送信、作成、編集、定期実行の違いを確認し、Issue #1の最低5レコードを具体的な質問へ分解して満たす。
 
-## Non-goals for now
+### 10〜15問への拡張候補
 
-- exhaustive coverage of every AI product;
-- synthetic model intelligence benchmarks;
-- overall model rankings;
-- scraping and republishing large amounts of community content;
-- automatic commercial use of third-party community datasets.
+| 利用目的 | 分けて扱う質問の例 |
+|---|---|
+| 資料・Office | 複数PDFの比較、スキャンPDFの読み取り、編集可能な.pptx作成、数式入り.xlsx作成 |
+| Google連携 | Gmail検索・要約、メール下書き、メール送信、予定の読み取り、予定作成・変更、Sheets分析、既存Sheets編集 |
+| 定期実行 | 定時の調査、接続サービスを使った定期処理、条件に合うときだけ通知 |
+
+Seedに根拠がある候補を優先する。追加候補の需要が確認できない場合は、仮説として記録する。画像、記憶、Webサイト制作、Copilot、Perplexityの追加は、公開後の質問・利用結果から判断する。
+
+## 4. 工程と完了条件
+
+日程は着手から約4週間の目安とする。暦より完了条件を優先し、最初の5問を調べた実績から見積もり直す。
+
+| 工程 | 目安 | 作業 | 完了条件 |
+|---|---|---|---|
+| Stage 0: 基盤 | 第1週前半 | 最初の2〜3問を試作し、必要な項目と検証を整える | schema・テンプレート・方法論が一致し、有効例が通り、意図した無効例がCIで落ちる |
+| Stage 1: 最初の回答 | 第1〜2週 | 重要5問程度を公式確認し、利用可能な環境だけ実測する | 最低5レコードに、作業、条件、根拠、確認日があり、事実と未確認事項を区別できる |
+| Stage 2: 最小公開 | 第2〜3週 | 合計10〜15問に絞り、検索・比較表・詳細ページを作る | データから画面を生成でき、スマホで探して条件と根拠まで確認できる |
+| 利用検証 | 第4週 | 対象に近い3〜5人に試してもらう | 質問発見、条件理解、役立つ度合いを記録し、拡張・修正・保留を判断する |
+| Stage 3: 投稿受付 | 利用検証後 | 再現報告・修正依頼の負担を確認してから受付を増やす | 投稿と確認済み事実を分けて運用できる |
+| Stage 4: 更新の自動化 | 手動更新の実績後 | 差分検出と再確認候補の抽出を必要部分だけ自動化する | 自動検知を能力確認と取り違えず、更新負担が減る |
+
+既存Issue #1〜#3を再利用する。基盤と少数の回答を相互に確認し、その後にUIを作る。定期実行タスクや新しい管理基盤は、初期計画のためだけに追加しない。
+
+## 5. データと公開基準
+
+`data/questions/`を公開回答の正本とする。比較表、詳細ページ、検索索引は同じデータから生成する。
+
+### 少数の試作で確認する項目
+
+- 1問が具体的な作業になっているか。
+- 複数プラン・端末の回答を区別できるか。
+- 接続、許可、補助サービス等の前提を既存のconditions・limitationsで表せるか。
+- 検索に必要な日本語・英語の別名と、回答単位の再確認予定日を持てるか。
+
+追加項目は少数の実レコードで必要性を確認し、schema、テンプレート、Methodologyを一緒に更新する。現行schemaは追加プロパティを許さないため、データだけに独自項目を追加しない。
+
+### 公開時に必要なこと
+
+1. YES・PARTIAL等の既知の能力回答には、公式根拠または対象環境での再現記録を付ける。
+2. VERIFIEDには、日付、プラン、アプリ、必要な設定、試した手順、結果を残す。公式文書だけならDOCUMENTEDとする。
+3. 機能の利用条件と、直接実測した環境を区別する。
+4. NOの根拠を説明する。公式文書に記載がないことや、1回の失敗だけで全環境の不可能を断定しない。
+5. USER_REPORTEDを、そのまま確認済みのYESへ昇格させない。
+6. 未調査の製品には能力の断定を入れない。回答レコードがない列は表示側で未調査と示し、調べたが判断できないUNKNOWNと区別する。
+7. PUBLISHEDの質問だけを通常の比較・検索対象にする。期限超過は再確認が必要だと見えるようにする。
+8. 矛盾する根拠がある場合は、双方と確認範囲を明記する。
+
+CIは構造、日付形式、URL形式、ID・slug重複等を確認する。URLの存在や、出典が結論を支えるかは、形式検証だけでは保証できないため調査レビューで確認する。
+
+## 6. 最小UI
+
+トップは「検索窓＋比較表」にする。初期公開で検索と一覧を別のデータとして管理しない。
+
+| 画面 | 内容 |
+|---|---|
+| トップ | やりたい作業の検索、カテゴリ、比較表 |
+| 比較表 | 行は作業、列は製品。結論と重要な条件を短く表示 |
+| 質問別ページ | 結論→実行条件→制約→根拠・実測環境→確認日→関連質問 |
+| 情報訂正の導線 | GitHub Issue等の既存手段へのリンク |
+
+- 結論は「できる／一部できる／できない／不明」を文字で示す。色や○×だけに頼らない。
+- 公式確認・実測済みを区別し、確認日をすぐ見られるようにする。
+- Androidを含むスマホで読みやすさを確認する。横長の表は作業名を見失わずに閲覧できる構成にする。
+- 検索は質問文、カテゴリ、要約、別名を対象にする。「パワポ／PowerPoint／pptx」「スプレッドシート／Sheets」等を確かめる。
+- 0件の場合は近いカテゴリと質問受付先を示す。
+- 質問ごとの固定URLを持たせ、直接共有できるようにする。
+- 実測を「公式より常に正しい」と扱わず、その環境で観測した結果だと分かる文言にする。
+
+検索・比較表は静的データとブラウザ内の処理で成立させる設計にする。閲覧者の検索ごとに有料LLM APIを呼ぶ構成は初期範囲に含めない。公開先は実装時に既存のホスティング環境と条件を確認して決める。
+
+## 7. Reddit等の使い方
+
+需要候補と失敗・混乱の発見に使い、公式根拠と照合する。
+
+保存するのは、元URL、確認日、自分の言葉による短い要約を基本とする。投稿本文の大量取得・再掲載を前提にしない。Redditから集めた質問を、需要の代表性や機能の正しさの証拠にしない。
+
+最初はGitHub Issue等で修正・質問を受け付ける。アカウント、投稿フォーム、評価点、投票、公開掲示板は利用が確認されてから検討する。
+
+## 8. 更新運用を公開時から用意する
+
+下記の期間は、このプロジェクトの暫定ルールであり、製品の変更頻度についての実測値ではない。
+
+- 定期実行・外部連携・プラン制限: 原則14日を再確認の目安にする。
+- ファイル作成・資料処理等: 原則30日を目安にする。
+- 公式変更、矛盾する再現報告、重要リンクの失効: 期限を待たず確認する。
+- 再確認日は、回答に関係する根拠を読み直した場合だけ更新する。ページを開いただけ、サイトを再生成しただけでは更新しない。
+- 実測をやり直していない場合は、実測日の履歴を保持する。
+
+証拠の種類と鮮度を分ける。日付・再確認予定と既存のREVIEW_REQUIREDを使う具体的な方法をStage 0で定義する。新しい証拠状態を独自に増やさない。
+
+初期は手動の週次確認で、期限超過、矛盾、修正依頼を処理する。自動化する場合も、リンク・文書差分の検出は再調査のきっかけに限定する。ページ差分だけでYES/NOやVERIFIEDへ書き換えない。
+
+週次確認で重要な期限超過が2回続いた場合は、新しい質問・製品の追加を止め、既存回答の更新を優先する。件数の上限は最初の運用実績から見直す。
+
+## 9. 利用検証と拡張判断
+
+対象に近い3〜5人に、自分が知りたい作業を探してもらう。事前に答えを説明せず、次を観察する。
+
+- 該当する質問を検索または一覧から見つけられるか。
+- できることと、必要なプラン・端末・設定を説明できるか。
+- 根拠と確認日を見つけられるか。
+- 普通の検索や公式ヘルプより、判断の手間が減ったと感じるか。
+- 追加で知りたい質問が出るか。
+- 数日〜2週間後に再利用・共有した事実があるか。
+
+まず5人実施できた場合、4人以上が主要タスクを説明なしで完了することをUIの暫定目標とする。これは市場需要の証明ではない。3〜4人しか実施できなければ、観察数と失敗内容をそのまま報告する。
+
+### 拡張する条件
+
+主要タスクが実行でき、再利用・共有・具体的な追加質問のいずれかが観測され、既存回答の更新が維持できること。実際の質問が多いカテゴリから25〜50問へ増やす。
+
+### 修正する条件
+
+質問が見つからない場合は検索語・一覧を直す。見つかるが条件を理解できない場合は表と詳細の文言を直す。件数追加だけで解決しようとしない。
+
+### 保留する条件
+
+2回の小規模な改善・観察後も、判断の手間が減った具体例や再利用等が確認できない場合、対象・用途を絞り直す。更新負担が維持できない場合も規模拡張を保留する。
+
+## 10. 今は着手しないこと
+
+- 全AI製品、全プラン、全端末の網羅。
+- 全製品の同等な有料実測環境。
+- 総合ランキングや根拠の異なる結果を合算した点数。
+- リアルタイムニュース、日次の大量記事生成。
+- Reddit等の大量取得・本文転載。
+- 認証、データベース、LLM検索、通知配信の先行実装。
+- 収益化を前提にした広告・アフィリエイト設計。
+
+## 11. 次の着手単位
+
+Issue #1から最初の2〜3問を公式確認してDRAFTレコード化し、Issue #2で検証する。その結果から記録項目と所要時間を確定し、重要5問を完成させる。
+
+その後にIssue #3で同じデータから検索と比較表を実装する。最初の成功は「1つの具体的な作業について、利用者が自分の条件で実行可能かを判断できること」とする。
