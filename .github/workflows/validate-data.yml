@@ -7,18 +7,26 @@ on:
       - "schemas/**"
       - "scripts/validate_records.py"
       - "scripts/build_site.py"
+      - "scripts/check_search_cases.py"
+      - "scripts/check_freshness.py"
       - "site/**"
       - "tests/fixtures/**"
+      - "tests/search-cases.json"
       - ".github/workflows/validate-data.yml"
+      - ".github/workflows/freshness-watch.yml"
   pull_request:
     paths:
       - "data/questions/**"
       - "schemas/**"
       - "scripts/validate_records.py"
       - "scripts/build_site.py"
+      - "scripts/check_search_cases.py"
+      - "scripts/check_freshness.py"
       - "site/**"
       - "tests/fixtures/**"
+      - "tests/search-cases.json"
       - ".github/workflows/validate-data.yml"
+      - ".github/workflows/freshness-watch.yml"
 
 permissions:
   contents: read
@@ -58,6 +66,18 @@ jobs:
         run: |
           node --check site/app.js
           node --check site/question.js
+      - name: Check task-search regressions
+        run: python scripts/check_search_cases.py
+
+      - name: Smoke-test freshness policy
+        shell: bash
+        run: |
+          python scripts/check_freshness.py tests/fixtures/valid-question.json --as-of 2026-10-31 --fail-on-due
+          if python scripts/check_freshness.py tests/fixtures/valid-question.json --as-of 2026-11-01 --fail-on-due; then
+            echo "Freshness checker unexpectedly treated the due date as current."
+            exit 1
+          fi
+          echo "Freshness due-date boundary failed as expected."
 
       - name: Build static site from canonical records
         run: python scripts/build_site.py --output /tmp/can-ai-do-this-site
