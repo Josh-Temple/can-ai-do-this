@@ -8,7 +8,7 @@ The watcher is a **review trigger**, not a capability evaluator.
 
 It checks whether high-change first-party documentation still contains a small set of semantic anchors that support the published task boundary. It does not compare full HTML, because navigation, timestamps, translations, tracking markup, and layout changes would create excessive noise.
 
-The configuration covers every published question with a 14-day review window. Anthropic sources are directly monitored. OpenAI Help Center sources are currently marked MANUAL because the first live GitHub-hosted Actions run on 2026-10-03 received HTTP 403 from help.openai.com. The project does not attempt to bypass that access control.
+The configuration covers every published question with a 14-day review window. Anthropic sources and the Gemini Workspace source are directly monitored. OpenAI Help Center and Perplexity Help Center sources are currently marked MANUAL because live GitHub-hosted Actions runs on 2026-10-03 received HTTP 403 from those sites. The project does not attempt to bypass that access control.
 
 ## States
 
@@ -41,4 +41,4 @@ Within each group, at least one alternative must remain present. Keep anchors ti
 
 CI checks that every published question with `review_window_days: 14` is covered by at least one configured source.
 
-The 30-day set is deliberately not included in the first pilot. Before broadening coverage, first establish a reliable, policy-respecting first-party access path for the currently manual OpenAI Help Center sources and confirm that direct monitoring remains low-noise.
+The 30-day set is deliberately not included in the first pilot. Before broadening coverage, first establish a reliable, policy-respecting first-party access path for the currently manual OpenAI Help Center and Perplexity sources and confirm that direct monitoring remains low-noise.
