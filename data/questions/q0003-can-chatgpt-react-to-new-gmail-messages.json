@@ -56,8 +56,22 @@
           "accessed_at": "2026-10-02",
           "note": "OpenAI documents how Gmail works with event-triggered tasks and the required Google permissions."
         }
+      ],
+      "summary_ja": "対象ユーザーは、Workで接続済みGmailの新着メールをきっかけに動くイベントトリガー型タスクを作成できます。",
+      "conditions_ja": [
+        "Plus、Pro、Business、Enterprise、Edu、または対応するHealthcareアカウントが必要です。",
+        "Gmailアカウントを接続し、必要な権限を許可していること。",
+        "Work上でイベントトリガー型タスクとして作成すること。",
+        "新着メールをトリガーにでき、送信者や件名による条件指定にも対応します。"
+      ],
+      "limitations_ja": [
+        "FreeとGoではイベントトリガー型タスクを作成できません。",
+        "外部データを書き換える操作では承認が必要になり、タスクが一時停止することがあります。",
+        "すべてのGmailイベントや操作に対応しているわけではありません。",
+        "アカウント、ワークスペース、接続アプリ側の権限が引き続き適用されます。"
       ]
     }
   ],
-  "notes": "This does not imply autonomous support for every possible Gmail action after the trigger fires."
+  "notes": "This does not imply autonomous support for every possible Gmail action after the trigger fires.",
+  "question_ja": "ChatGPTは、新着Gmailをきっかけに自動で処理を始められる？"
 }
