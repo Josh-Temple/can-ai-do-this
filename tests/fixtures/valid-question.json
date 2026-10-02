@@ -1,0 +1,36 @@
+{
+  "id": "Q9998",
+  "question": "Can an example AI perform an example task?",
+  "slug": "can-an-example-ai-perform-an-example-task",
+  "category": "example",
+  "status": "DRAFT",
+  "demand": {
+    "summary": "Fixture used to verify schema validation.",
+    "community_links": []
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "Example AI",
+      "plan": null,
+      "platform": null,
+      "region": null,
+      "answer": "UNKNOWN",
+      "summary": "This is a validation fixture, not a published capability claim.",
+      "conditions": [],
+      "limitations": [],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://example.com/",
+          "accessed_at": "2026-10-02",
+          "note": "Fixture source."
+        }
+      ]
+    }
+  ],
+  "notes": "Valid schema fixture."
+}
