@@ -44,8 +44,21 @@
           "accessed_at": "2026-10-02",
           "note": "OpenAI documents one-time, recurring, monitoring, and event-triggered scheduled tasks, including Plus limits and supported surfaces."
         }
+      ],
+      "summary_ja": "ChatGPTは、1回限りまたは定期のタスクをクラウドで実行し、実行時に通知できます。",
+      "conditions_ja": [
+        "そのアカウントとアプリ版でスケジュールタスクが利用できること。",
+        "Plusでは、指定時刻の実行と毎時1回までの定期実行に対応します。",
+        "Plusで同時に有効化できるスケジュールタスクは5件までです。",
+        "通知はChatGPT側と端末側の通知設定に依存します。"
+      ],
+      "limitations_ja": [
+        "スケジュールタスクでは音声チャットとGPTsは利用できません。",
+        "プロジェクト内で作成したタスクは、そのプロジェクトにアップロード・保存されたファイルへアクセスできません。",
+        "接続アプリを使えるかどうかは、そのアプリがスケジュールタスクに対応し、認可されているかに依存します。"
       ]
     }
   ],
-  "notes": "This record covers time-based scheduled tasks generally, not every possible connected-app action."
+  "notes": "This record covers time-based scheduled tasks generally, not every possible connected-app action.",
+  "question_ja": "ChatGPTは、チャットを開いたままにせず、指定時刻や定期タスクを実行できる？"
 }
