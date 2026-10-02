@@ -22,6 +22,10 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
+function normalizeSearch(value = "") {
+  return String(value).normalize("NFKC").toLowerCase();
+}
+
 function sourceLabel(type) {
   return {
     OFFICIAL_DOC: "公式ドキュメント",
@@ -103,13 +107,16 @@ function searchableText(record) {
     record.question,
     record.question_ja,
     record.category,
+    ...(record.search_terms || []),
     record.demand?.summary,
     record.demand?.summary_ja,
     ...answerValues,
   ]
     .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
+    .join(" ");
+
+  return normalizeSearch(values);
+
 }
 
 function renderComparisonRows(record) {
@@ -209,11 +216,12 @@ function populateProductFilter() {
 }
 
 function applyFilters() {
-  const query = els.search.value.trim().toLowerCase();
+  const tokens = normalizeSearch(els.search.value.trim()).split(/\s+/).filter(Boolean);
   const product = els.product.value;
 
   const filtered = records.filter((record) => {
-    const queryMatch = !query || searchableText(record).includes(query);
+    const haystack = searchableText(record);
+    const queryMatch = tokens.length === 0 || tokens.every((token) => haystack.includes(token));
     const productMatch = !product || record.answers.some((answer) => answer.product === product);
     return queryMatch && productMatch;
   });
