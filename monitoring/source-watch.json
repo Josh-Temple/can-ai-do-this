@@ -265,6 +265,26 @@
       ],
       "fetch_mode": "manual",
       "manual_reason": "GitHub-hosted Actions returned HTTP 403 for www.perplexity.ai during the first live watch run on 2026-10-03. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "microsoft-copilot-web-search",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-web-search-works-in-microsoft-365-copilot-chat-and-agents",
+      "questions": [
+        "Q0024"
+      ],
+      "anchor_groups": [
+        [
+          "sources button"
+        ],
+        [
+          "bing search query",
+          "query copilot sent to bing"
+        ],
+        [
+          "web search"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
