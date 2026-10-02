@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Evidence-based answers to real-world questions about what AI tools can actually do.">
+  <meta name="description" content="AIで実際に何ができるかを、公式情報と利用条件つきで確認できるタスク別データベース。">
   <title>Can AI Do This?</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -11,44 +11,78 @@
   <header class="masthead">
     <div class="wrap">
       <p class="eyebrow">CAN AI DO THIS?</p>
-      <h1>What are you trying to do?</h1>
-      <p class="lede">Real questions. Official sources. Actual capabilities.</p>
+      <h1>何をしたいですか？</h1>
+      <p class="lede">実際のタスクから探す。公式情報と条件つきで確認する。</p>
 
       <div class="search-row">
-        <label class="sr-only" for="search">Search tasks</label>
-        <input id="search" type="search" autocomplete="off" placeholder="e.g. edit a Google Sheet, create a PowerPoint, monitor Gmail">
-        <label class="sr-only" for="product-filter">Filter by product</label>
+        <label class="sr-only" for="search">タスクを検索</label>
+        <input id="search" type="search" autocomplete="off" placeholder="例：Googleスプレッドシートを編集、PowerPointを作成、Gmailを監視">
+        <label class="sr-only" for="product-filter">製品で絞り込む</label>
         <select id="product-filter">
-          <option value="">All products</option>
+          <option value="">すべての製品</option>
         </select>
       </div>
 
       <div class="meta-row">
-        <span id="result-count">Loading questions…</span>
+        <span id="result-count">読み込み中…</span>
         <span id="freshness"></span>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <section id="results" aria-live="polite"></section>
+    <section class="comparison-section" aria-labelledby="comparison-heading">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">QUICK VIEW</p>
+          <h2 id="comparison-heading" class="section-title">比較一覧</h2>
+        </div>
+        <p class="section-note">まず一覧で当たりをつけ、必要な項目だけ詳細を確認できます。</p>
+      </div>
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">やりたいこと</th>
+              <th scope="col">製品</th>
+              <th scope="col">回答</th>
+              <th scope="col">プラン</th>
+              <th scope="col">根拠</th>
+              <th scope="col">確認日</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-labelledby="detail-heading">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">DETAILS</p>
+          <h2 id="detail-heading" class="section-title">詳しく見る</h2>
+        </div>
+      </div>
+      <div id="results" aria-live="polite"></div>
+    </section>
+
     <div id="empty" class="empty" hidden>
-      <p>No matching questions yet.</p>
-      <p class="muted">Try a shorter task, a product name, or a different verb.</p>
+      <p>一致する項目はまだありません。</p>
+      <p class="muted">短い言葉、製品名、別の動詞で検索してみてください。</p>
     </div>
     <div id="error" class="error" hidden>
-      <p>Could not load the capability records.</p>
-      <p class="muted">The canonical data remains available in the GitHub repository.</p>
+      <p>データを読み込めませんでした。</p>
+      <p class="muted">正本データはGitHubリポジトリで確認できます。</p>
     </div>
   </main>
 
   <footer class="wrap footer">
     <p>
-      Capability claims are time-sensitive. “Documented” means supported by a current first-party source;
-      “Verified” means independently reproduced in a stated environment.
+      AIの機能は変化します。「公式確認」は一次資料で確認済み、「実測済み」は記載した環境で再現済み、という区別です。
+      回答には確認日と条件を付けています。
     </p>
     <p>
-      <a href="https://github.com/Josh-Temple/can-ai-do-this">View the data and methodology on GitHub</a>
+      <a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a>
     </p>
   </footer>
 
