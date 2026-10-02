@@ -1,0 +1,69 @@
+{
+  "id": "Q0025",
+  "question": "Can Microsoft Copilot generate images from a text prompt?",
+  "question_ja": "Microsoft Copilotは、文章の指示から画像を生成できる？",
+  "slug": "can-microsoft-copilot-generate-images-from-text",
+  "category": "image-generation",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "画像",
+    "画像生成",
+    "写真",
+    "イラスト",
+    "絵",
+    "画像を作る",
+    "Image Creator",
+    "生成画像"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image generation is one of the most visible AI tasks and provides a useful comparison with ChatGPT and Gemini.",
+    "summary_ja": "画像生成は一般利用者にも分かりやすい主要用途であり、ChatGPTやGeminiとの比較軸として有用です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft Copilot; availability and performance can vary by account, service load, and Microsoft 365 subscription",
+      "platform": "Microsoft Copilot",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot can create a new image from a text description and can generate different visual styles based on detailed prompts.",
+      "summary_ja": "Microsoft Copilotは文章の説明から新しい画像を生成でき、詳しいプロンプトでフォトリアル、抽象、コミックなどの画風も指定できます。",
+      "conditions": [
+        "Image generation must be available in the Copilot experience being used.",
+        "Service availability, quality, and usage limits can vary by account or subscription.",
+        "More detailed prompts generally provide more control over style, characters, mood, and setting."
+      ],
+      "conditions_ja": [
+        "利用しているCopilot環境で画像生成が提供されている必要があります。",
+        "サービスの提供状況、品質、利用上限はアカウントやサブスクリプションによって異なる場合があります。",
+        "画風、人物、雰囲気、背景などを細かく指定するほど生成内容を制御しやすくなります。"
+      ],
+      "limitations": [
+        "Availability and performance can vary with service capacity and license status.",
+        "Different Microsoft Copilot and Microsoft 365 Copilot surfaces can expose different image-generation controls.",
+        "Generated images should be reviewed before consequential or public use."
+      ],
+      "limitations_ja": [
+        "サービス負荷やライセンス状況によって提供可否や性能が変わる場合があります。",
+        "Microsoft CopilotとMicrosoft 365 Copilotの各画面では、利用できる画像生成の操作が異なる場合があります。",
+        "生成画像を重要な用途や公開用途に使う前に内容を確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-copilot/using-image-generation-in-microsoft-copilot",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents built-in text-to-image generation in Copilot, prompt-based styling, and uploaded-image transformation."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers consumer Microsoft Copilot image generation, not image-generation controls embedded in Word or other Microsoft 365 apps."
+}
