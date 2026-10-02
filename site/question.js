@@ -80,6 +80,7 @@ function categoryLabel(category) {
     documents: "文書・PDF",
     "website-creation": "Webサイト作成",
     memory: "記憶",
+    "file-creation": "ファイル作成",
   }[category] || category;
 }
 
