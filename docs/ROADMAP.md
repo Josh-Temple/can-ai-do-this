@@ -60,6 +60,8 @@ Before expanding beyond 15 questions, test whether users can:
 - find the evidence state and last-checked date;
 - identify when the answer is conditional or not yet verified.
 
+The current test protocol and pass criteria are fixed in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`. Record de-identified sessions under `research/usability-results/`.
+
 ## Stage 3 — Community contribution
 
 Goal: accept structured reports without treating them as verified facts.
