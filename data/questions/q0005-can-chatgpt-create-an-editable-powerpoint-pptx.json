@@ -1,0 +1,61 @@
+{
+  "id": "Q0005",
+  "question": "Can ChatGPT create an editable PowerPoint (.pptx) presentation?",
+  "slug": "can-chatgpt-create-an-editable-powerpoint-pptx",
+  "category": "presentations",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often distinguish between getting slide text or an HTML preview and receiving a real editable PowerPoint file.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1fqko3q/",
+        "observed_at": "2026-10-02",
+        "summary": "A user asks whether ChatGPT can generate a PowerPoint from text or files."
+      },
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1oq9ypk/chatgpt_be_like_i_can_build_your_entire/",
+        "observed_at": "2026-10-02",
+        "summary": "A user reports difficulty downloading a generated PPTX, illustrating that file creation and reliable retrieval are separate questions."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plan and surface dependent",
+      "platform": "ChatGPT Work; exact PowerPoint behavior depends on surface",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "ChatGPT Work can create and edit editable presentation files and can use PowerPoint (.pptx) files as references/templates, but current official documentation does not support treating downloadable PPTX creation as a universal capability across all ChatGPT surfaces.",
+      "conditions": [
+        "Work can create or edit presentations and lets the user name the desired output format.",
+        "PowerPoint (.pptx) is supported as a reference/template format.",
+        "Availability depends on plan, workspace settings, file type, and surface."
+      ],
+      "limitations": [
+        "OpenAI explicitly states that PowerPoint is not included in the Work desktop flow at launch.",
+        "The official documentation reviewed here is clearer about editable presentations generally and Google Slides natively than about universal downloadable PPTX output on every surface.",
+        "A user should verify the specific ChatGPT surface before relying on PPTX delivery."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001278",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents editable presentation creation/editing in Work, PowerPoint (.pptx) as a reference/template format, and surface-specific limitations."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8983675-what-types-of-files-are-supported",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI lists PPTX among supported presentation file types for ChatGPT file uploads."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL is used deliberately because current first-party documentation does not justify a blanket YES for editable PPTX output across all ChatGPT surfaces."
+}
