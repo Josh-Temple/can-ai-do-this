@@ -62,6 +62,15 @@ jobs:
           fi
           echo "Invalid fixture failed as expected."
 
+      - name: Confirm semantic-invalid evidence fixture fails
+        shell: bash
+        run: |
+          if python scripts/validate_records.py tests/fixtures/invalid-evidence-question.json; then
+            echo "Semantic-invalid evidence fixture unexpectedly passed validation."
+            exit 1
+          fi
+          echo "Semantic-invalid evidence fixture failed as expected."
+
       - name: Check browser JavaScript syntax
         run: |
           node --check site/app.js

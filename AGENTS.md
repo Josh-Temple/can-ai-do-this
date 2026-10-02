@@ -11,7 +11,7 @@ The repository is a knowledge base first and a website second. Preserve source t
 1. Start from a user task or question, not from a product feature list.
 2. Never convert a community claim into a factual capability claim without independent support.
 3. Prefer first-party documentation for product capabilities.
-4. Record direct testing separately from documentation.
+4. Record direct testing separately from documentation. Keep evidence states consistent with their sources: DOCUMENTED needs first-party evidence; VERIFIED needs a DIRECT_TEST record and tested environment; USER_REPORTED needs a report-oriented source.
 5. Record plan, platform, region, date, and prerequisites whenever they affect the answer.
 6. Do not infer that a capability on one plan, platform, region, or model applies to another.
 7. If evidence conflicts, preserve the conflict and explain it.

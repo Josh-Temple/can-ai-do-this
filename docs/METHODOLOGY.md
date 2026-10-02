@@ -42,6 +42,17 @@ A community member or third party reports the behavior. This can reveal demand, 
 
 Previously useful evidence is old enough that the current answer should not rely on it without re-checking.
 
+### Evidence-state invariants
+
+The structured state must agree with the evidence actually stored:
+
+- **DOCUMENTED** requires at least one official first-party documentation or announcement source.
+- **VERIFIED** requires a `DIRECT_TEST` source and a non-null `tested_environment`.
+- **USER_REPORTED** requires at least one `COMMUNITY` or `SECONDARY` report-oriented source.
+- A **NO** answer must explain the basis for the negative claim in its limitations; absence from documentation alone is insufficient.
+
+These are minimum consistency rules, not substitutes for source quality review.
+
 ## 4. Source handling
 
 Prefer, in order:

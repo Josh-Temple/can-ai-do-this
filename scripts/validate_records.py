@@ -88,6 +88,38 @@ def semantic_errors(record):
                     f"answer last_checked ({answer['last_checked']})"
                 )
 
+        source_types = {source["type"] for source in answer.get("sources", [])}
+        evidence_state = answer.get("evidence_state")
+
+        if evidence_state == "DOCUMENTED" and not (
+            {"OFFICIAL_DOC", "OFFICIAL_ANNOUNCEMENT"} & source_types
+        ):
+            errors.append(
+                f"{prefix}.evidence_state: DOCUMENTED requires an official first-party source"
+            )
+
+        if evidence_state == "VERIFIED":
+            if "DIRECT_TEST" not in source_types:
+                errors.append(
+                    f"{prefix}.evidence_state: VERIFIED requires a DIRECT_TEST source"
+                )
+            if not answer.get("tested_environment"):
+                errors.append(
+                    f"{prefix}.tested_environment: required for VERIFIED evidence"
+                )
+
+        if evidence_state == "USER_REPORTED" and not (
+            {"COMMUNITY", "SECONDARY"} & source_types
+        ):
+            errors.append(
+                f"{prefix}.evidence_state: USER_REPORTED requires a report-oriented source"
+            )
+
+        if answer.get("answer") == "NO" and not (answer.get("limitations") or []):
+            errors.append(
+                f"{prefix}.limitations: a NO answer must state the basis for the negative claim"
+            )
+
     return errors
 
 
