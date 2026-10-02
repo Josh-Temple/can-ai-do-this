@@ -54,8 +54,20 @@
           "accessed_at": "2026-10-02",
           "note": "OpenAI lists PPTX among supported presentation file types for ChatGPT file uploads."
         }
+      ],
+      "summary_ja": "ChatGPT Workは編集可能なプレゼンテーションの作成・編集に対応し、PowerPoint（.pptx）を参照やテンプレートとして扱えます。ただし、現在の公式情報だけでは、すべてのChatGPT画面でダウンロード可能なPPTX作成を一律に「できる」とは言えません。",
+      "conditions_ja": [
+        "Workではプレゼンテーションを作成・編集でき、希望する出力形式を指定できます。",
+        "PowerPoint（.pptx）は参照・テンプレート形式としてサポートされています。",
+        "利用可否はプラン、ワークスペース設定、ファイル形式、利用画面によって異なります。"
+      ],
+      "limitations_ja": [
+        "OpenAIは、Workのデスクトップフローではローンチ時点でPowerPointが対象外であると明記しています。",
+        "確認した公式情報は、編集可能なプレゼンテーション全般やGoogle Slidesについては明確ですが、あらゆる画面でPPTXを直接出力できるとは明記していません。",
+        "PPTX納品を前提にする場合は、利用するChatGPT画面で実際の出力可否を確認する必要があります。"
       ]
     }
   ],
-  "notes": "PARTIAL is used deliberately because current first-party documentation does not justify a blanket YES for editable PPTX output across all ChatGPT surfaces."
+  "notes": "PARTIAL is used deliberately because current first-party documentation does not justify a blanket YES for editable PPTX output across all ChatGPT surfaces.",
+  "question_ja": "ChatGPTは、編集可能なPowerPoint（.pptx）を作成できる？"
 }
