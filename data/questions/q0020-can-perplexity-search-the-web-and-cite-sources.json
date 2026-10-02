@@ -1,0 +1,76 @@
+{
+  "id": "Q0020",
+  "question": "Can Perplexity search the live web and cite its sources?",
+  "question_ja": "Perplexityは、現在のウェブを検索して出典付きで回答できる？",
+  "slug": "can-perplexity-search-the-web-and-cite-sources",
+  "category": "web-research",
+  "search_terms": [
+    "Perplexity",
+    "検索",
+    "ウェブ検索",
+    "Web検索",
+    "ネット検索",
+    "最新情報",
+    "出典",
+    "引用",
+    "リサーチ",
+    "Pro Search",
+    "調べる"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Perplexity is primarily used as an answer engine, so users need a clear boundary between free core search and deeper paid research.",
+    "summary_ja": "Perplexityは検索用途が中心のため、無料の基本検索と有料の深い検索で何が違うかを含めて整理する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Perplexity",
+      "plan": "Core Search is available free; Pro Search and higher limits require paid plans",
+      "platform": "Web, iOS, Android, and Comet",
+      "region": null,
+      "answer": "YES",
+      "summary": "Perplexity searches the open web in real time and returns answers with citations. Free users have core search and chat, while Pro Search performs broader multi-source research with more extensive source links.",
+      "summary_ja": "Perplexityは現在のウェブを検索し、出典付きで回答できます。無料ユーザーも基本検索とチャットを利用でき、Pro Searchではより多くの情報源を横断した深い調査と充実した出典リンクを利用できます。",
+      "conditions": [
+        "Internet access to Perplexity's search service is required.",
+        "Core Search is available free; Pro Search, Projects, file uploads, and higher limits are paid features.",
+        "The number and depth of sources differ between Standard Search and Pro Search."
+      ],
+      "conditions_ja": [
+        "Perplexityの検索サービスにインターネット経由でアクセスできる必要があります。",
+        "基本検索は無料で利用できますが、Pro Search、Projects、ファイルアップロード、高い利用上限は有料機能です。",
+        "Standard SearchとPro Searchでは、参照する情報源の数や調査の深さが異なります。"
+      ],
+      "limitations": [
+        "Citations make claims inspectable but do not guarantee that the generated synthesis is correct.",
+        "Standard Search uses fewer sources than Pro Search.",
+        "Advanced model choices and deeper research capabilities depend on the paid plan."
+      ],
+      "limitations_ja": [
+        "引用が付いていても、生成された要約・統合内容が必ず正しいとは限りません。",
+        "Standard Searchが参照する情報源はPro Searchより少数です。",
+        "高度なモデル選択や深い調査機能は有料プランに依存します。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity documents web crawling, multi-source synthesis, direct source links, and Standard Search versus Pro Search."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/hub",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity describes core search as real-time open-web research with citations and states that core search is free while Pro Search is paid."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Perplexity's consumer search experience, not the developer API."
+}
