@@ -1,0 +1,60 @@
+{
+  "id": "Q0006",
+  "question": "Can Claude create and edit PowerPoint (.pptx) files?",
+  "slug": "can-claude-create-and-edit-powerpoint-pptx-files",
+  "category": "presentations",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users regularly ask for editable PowerPoint output rather than HTML decks, screenshots, or PDFs.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t9uvsd/claude_design_any_better_way_to_export_slide/",
+        "observed_at": "2026-10-02",
+        "summary": "A user asks for a better way to get a Claude-created deck into an editable format such as PowerPoint."
+      },
+      {
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1tpc2ki/has_anyone_found_a_reliable_claude_workflow_for/",
+        "observed_at": "2026-10-02",
+        "summary": "A user describes the practical need for editable, reusable, brand-consistent presentations rather than merely visually attractive output."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Free, Pro, Max, Team, and Enterprise",
+      "platform": "Web, Claude Desktop, and Claude Mobile",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude can create and edit PowerPoint (.pptx) files directly in conversations, including generating a presentation from source material.",
+      "conditions": [
+        "Code execution and file creation must be available/enabled for the account.",
+        "The generated file can be downloaded from the conversation or saved to Google Drive.",
+        "The documented maximum file size is 30 MB per file for uploads and downloads."
+      ],
+      "limitations": [
+        "Successful file creation does not guarantee that every deck will preserve a specific corporate template or require no manual cleanup.",
+        "Claude Design and direct file creation are related but distinct workflows; export quality can vary by workflow and deck complexity."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+          "accessed_at": "2026-10-02",
+          "note": "Anthropic states that all Claude users can create PowerPoint (.pptx) files and describes direct file creation/editing on web, desktop, and mobile."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+          "accessed_at": "2026-10-02",
+          "note": "Anthropic states that Slides artifacts can be edited and exported to PowerPoint or PDF."
+        }
+      ]
+    }
+  ],
+  "notes": "This record describes product capability, not presentation-quality benchmarking."
+}
