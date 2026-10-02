@@ -1,0 +1,69 @@
+{
+  "id": "Q0021",
+  "question": "Can Gemini generate images from a text prompt?",
+  "question_ja": "Geminiは、文章の指示から画像を生成できる？",
+  "slug": "can-gemini-generate-images-from-text",
+  "category": "image-generation",
+  "search_terms": [
+    "Gemini",
+    "画像",
+    "画像生成",
+    "写真",
+    "イラスト",
+    "絵",
+    "画像を作る",
+    "Nano Banana",
+    "text to image",
+    "生成画像"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image generation is a mainstream comparison task, and Gemini's current Nano Banana experience should be distinguishable from image editing.",
+    "summary_ja": "画像生成は主要な比較軸であり、GeminiのNano Bananaによる新規生成を既存画像の編集とは分けて確認する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; paid subscribers can also use Nano Banana Pro where available",
+      "platform": "Gemini web and supported mobile apps",
+      "region": "Supported languages and countries only",
+      "answer": "YES",
+      "summary": "Gemini Apps can generate a new image from a written prompt with Nano Banana 2, including prompts for visual style, subjects, actions, and backgrounds.",
+      "summary_ja": "Gemini AppsはNano Banana 2を使い、文章の指示から新しい画像を生成できます。画風、被写体、動作、背景などもプロンプトで指定できます。",
+      "conditions": [
+        "Image generation must be available in the selected Gemini app, language, and country.",
+        "Model and quota availability can vary by account and plan.",
+        "Work or school accounts may be subject to different terms depending on license type."
+      ],
+      "conditions_ja": [
+        "利用するGeminiアプリ、言語、国で画像生成が提供されている必要があります。",
+        "利用できるモデルや生成上限はアカウント・プランによって異なる場合があります。",
+        "仕事用・学校用アカウントでは、ライセンス種別により異なる利用条件が適用される場合があります。"
+      ],
+      "limitations": [
+        "Paid subscribers may have access to additional image-generation models or regeneration options that free accounts do not.",
+        "Generated images should be reviewed before publication or other consequential use.",
+        "This record covers ordinary Gemini image generation, not avatar or Google Photos personalization features."
+      ],
+      "limitations_ja": [
+        "有料ユーザーだけが利用できる追加の画像モデルや再生成機能があります。",
+        "生成画像を公開したり重要な用途に使ったりする前に、内容を確認する必要があります。",
+        "この記録は通常のGemini画像生成を対象とし、アバターやGoogle Photos連携によるパーソナライズ機能は対象外です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/14286560",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents prompt-based image generation with Nano Banana 2, supported surfaces, availability limits, and paid Nano Banana Pro options."
+        }
+      ]
+    }
+  ],
+  "notes": "This question is intentionally separate from Q0018, which covers editing an uploaded existing image."
+}
