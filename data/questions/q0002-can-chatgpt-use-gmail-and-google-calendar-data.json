@@ -75,5 +75,16 @@
     }
   ],
   "notes": "This record is intentionally about access/use of data, not sending email or modifying calendar events. Those should be separate questions.",
-  "question_ja": "ChatGPTは、接続したGmailとGoogleカレンダーの情報を会話で使える？"
+  "question_ja": "ChatGPTは、接続したGmailとGoogleカレンダーの情報を会話で使える？",
+  "search_terms": [
+    "メール",
+    "受信トレイ",
+    "予定",
+    "スケジュール",
+    "カレンダー",
+    "Gmail",
+    "Google Calendar",
+    "メール検索",
+    "メール参照"
+  ]
 }

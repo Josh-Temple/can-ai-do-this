@@ -60,5 +60,15 @@
     }
   ],
   "notes": "This record is about the Google Drive connector itself. Live editing of Google Docs, Sheets, and Slides is a separate connector capability.",
-  "question_ja": "Claudeは、Google Drive内のファイルを検索するだけでなく、読んだり操作したりできる？"
+  "question_ja": "Claudeは、Google Drive内のファイルを検索するだけでなく、読んだり操作したりできる？",
+  "search_terms": [
+    "ドライブ",
+    "Google Drive",
+    "クラウドストレージ",
+    "ファイル検索",
+    "ファイル読取",
+    "ファイルを読む",
+    "ファイル操作",
+    "Drive"
+  ]
 }

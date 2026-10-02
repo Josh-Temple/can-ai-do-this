@@ -47,5 +47,16 @@
     }
   ],
   "notes": "The record describes product capability, not image-quality benchmarking.",
-  "question_ja": "ChatGPTは、文章の指示から画像を生成できる？"
+  "question_ja": "ChatGPTは、文章の指示から画像を生成できる？",
+  "search_terms": [
+    "画像",
+    "写真",
+    "イラスト",
+    "絵",
+    "画像生成",
+    "画像を作る",
+    "写真を作る",
+    "生成画像",
+    "text to image"
+  ]
 }

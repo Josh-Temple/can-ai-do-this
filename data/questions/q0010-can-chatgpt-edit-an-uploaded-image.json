@@ -58,5 +58,16 @@
     }
   ],
   "notes": "The official product supports uploaded-image editing; the community link is retained as a reliability/edge-case signal, not as capability evidence.",
-  "question_ja": "ChatGPTは、アップロードした画像を編集できる？"
+  "question_ja": "ChatGPTは、アップロードした画像を編集できる？",
+  "search_terms": [
+    "画像編集",
+    "写真編集",
+    "写真を編集",
+    "画像加工",
+    "修正",
+    "レタッチ",
+    "背景変更",
+    "画像を直す",
+    "photo edit"
+  ]
 }

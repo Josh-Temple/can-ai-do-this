@@ -67,5 +67,15 @@
     }
   ],
   "notes": "This record describes product capability, not presentation-quality benchmarking.",
-  "question_ja": "Claudeは、PowerPoint（.pptx）ファイルを作成・編集できる？"
+  "question_ja": "Claudeは、PowerPoint（.pptx）ファイルを作成・編集できる？",
+  "search_terms": [
+    "スライド",
+    "プレゼン",
+    "プレゼン資料",
+    "資料",
+    "パワポ",
+    "PowerPoint",
+    "pptx",
+    "スライド作成"
+  ]
 }

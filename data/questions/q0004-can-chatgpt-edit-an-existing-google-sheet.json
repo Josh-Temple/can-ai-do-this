@@ -72,5 +72,16 @@
     }
   ],
   "notes": "This answer is about native Google Sheets, not uploaded .xlsx files or the Excel desktop add-in.",
-  "question_ja": "ChatGPTは、既存のGoogleスプレッドシートを直接編集できる？"
+  "question_ja": "ChatGPTは、既存のGoogleスプレッドシートを直接編集できる？",
+  "search_terms": [
+    "表計算",
+    "表",
+    "シート",
+    "スプレッドシート",
+    "Google Sheets",
+    "エクセル",
+    "Excel",
+    "編集",
+    "更新"
+  ]
 }

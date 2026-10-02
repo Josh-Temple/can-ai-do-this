@@ -73,5 +73,16 @@
     }
   ],
   "notes": "This does not imply autonomous support for every possible Gmail action after the trigger fires.",
-  "question_ja": "ChatGPTは、新着Gmailをきっかけに自動で処理を始められる？"
+  "question_ja": "ChatGPTは、新着Gmailをきっかけに自動で処理を始められる？",
+  "search_terms": [
+    "メール",
+    "新着メール",
+    "受信",
+    "メール監視",
+    "トリガー",
+    "自動化",
+    "Gmail",
+    "event trigger",
+    "inbox"
+  ]
 }

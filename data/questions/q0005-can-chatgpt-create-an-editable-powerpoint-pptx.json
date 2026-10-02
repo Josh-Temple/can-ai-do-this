@@ -69,5 +69,15 @@
     }
   ],
   "notes": "PARTIAL is used deliberately because current first-party documentation does not justify a blanket YES for editable PPTX output across all ChatGPT surfaces.",
-  "question_ja": "ChatGPTは、編集可能なPowerPoint（.pptx）を作成できる？"
+  "question_ja": "ChatGPTは、編集可能なPowerPoint（.pptx）を作成できる？",
+  "search_terms": [
+    "スライド",
+    "プレゼン",
+    "プレゼン資料",
+    "資料",
+    "パワポ",
+    "PowerPoint",
+    "pptx",
+    "スライド作成"
+  ]
 }

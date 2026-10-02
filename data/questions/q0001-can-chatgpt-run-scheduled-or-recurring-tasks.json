@@ -60,5 +60,17 @@
     }
   ],
   "notes": "This record covers time-based scheduled tasks generally, not every possible connected-app action.",
-  "question_ja": "ChatGPTは、チャットを開いたままにせず、指定時刻や定期タスクを実行できる？"
+  "question_ja": "ChatGPTは、チャットを開いたままにせず、指定時刻や定期タスクを実行できる？",
+  "search_terms": [
+    "スケジュール",
+    "予約実行",
+    "定期実行",
+    "リマインダー",
+    "通知",
+    "監視",
+    "自動実行",
+    "scheduled task",
+    "recurring task",
+    "reminder"
+  ]
 }

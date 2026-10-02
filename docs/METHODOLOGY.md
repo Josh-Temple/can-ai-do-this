@@ -18,6 +18,10 @@ The canonical unit is a **task-first question** such as:
 
 A broad capability such as "email integration" should be decomposed into user-visible actions where needed: search, read, summarize, draft, send, label, archive, and scheduled follow-up may be different capabilities.
 
+### Search metadata
+
+A record may include `search_terms` containing ordinary-language aliases, abbreviations, and common task phrasing that help people find the question. These terms are discovery metadata, not capability evidence, and must not broaden the factual claim made by the question or answer.
+
 ## 3. Evidence hierarchy
 
 Evidence is not collapsed into one confidence score.

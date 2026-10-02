@@ -64,5 +64,17 @@
     }
   ],
   "notes": "This record distinguishes ordinary PDF text analysis from Enterprise PDF visual retrieval.",
-  "question_ja": "ChatGPTは、アップロードしたPDFを分析して内容について答えられる？"
+  "question_ja": "ChatGPTは、アップロードしたPDFを分析して内容について答えられる？",
+  "search_terms": [
+    "PDF",
+    "文書",
+    "資料",
+    "論文",
+    "要約",
+    "PDF要約",
+    "PDF分析",
+    "PDFを読む",
+    "質問応答",
+    "文書分析"
+  ]
 }

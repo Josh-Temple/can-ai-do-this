@@ -10,6 +10,11 @@
     "question_ja": { "type": "string", "minLength": 2 },
     "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "category": { "type": "string" },
+    "search_terms": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
     "status": { "enum": ["DRAFT", "PUBLISHED", "REVIEW_REQUIRED"] },
     "demand": {
       "type": "object",
