@@ -84,5 +84,6 @@
     "Gmail",
     "event trigger",
     "inbox"
-  ]
+  ],
+  "review_window_days": 14
 }
