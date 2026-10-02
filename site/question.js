@@ -61,6 +61,8 @@ function categoryLabel(category) {
     "image-generation": "画像生成",
     "image-editing": "画像編集",
     documents: "文書・PDF",
+    "website-creation": "Webサイト作成",
+    memory: "記憶",
   }[category] || category;
 }
 
