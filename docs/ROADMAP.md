@@ -85,7 +85,8 @@ Current controls:
 - [x] automatic GitHub review-queue issue when a record passes its review window;
 - [x] CI regression checks for common task-search phrases;
 - [x] low-noise semantic-anchor monitoring for directly accessible Anthropic sources in the 14-day set;
-- [x] add direct semantic monitoring for the 14-day Gemini Workspace and Perplexity search records;
+- [x] add direct semantic monitoring for the 14-day Gemini Workspace record;
+- [x] explicitly handle the 14-day Perplexity search source as MANUAL after GitHub-hosted Actions returned HTTP 403;
 - [x] explicit MANUAL handling for OpenAI Help Center sources blocked to GitHub-hosted Actions;
 - [ ] establish a reliable first-party access path for automated OpenAI Help Center monitoring without bypassing vendor controls;
 - [ ] extend source monitoring to the 30-day set after the pilot proves acceptably low-noise;
