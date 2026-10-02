@@ -51,6 +51,23 @@ function answerClass(answer) {
   return String(answer || "unknown").toLowerCase();
 }
 
+function freshnessInfo(record, answer) {
+  return CapabilityFreshness.evaluate(record, answer);
+}
+
+function effectiveEvidenceLabel(record, answer) {
+  return freshnessInfo(record, answer).isDue
+    ? "要再確認"
+    : evidenceLabel(answer.evidence_state);
+}
+
+function freshnessWarning(record, answer) {
+  const freshness = freshnessInfo(record, answer);
+  if (!freshness.isDue) return "";
+  const deadline = freshness.nextReview ? `（確認期限 ${escapeHtml(freshness.nextReview)}）` : "";
+  return `<p class="freshness-warning"><strong>要再確認</strong> この回答は確認期限を過ぎています${deadline}。前回確認時点の内容として参照し、公式情報を再確認してください。</p>`;
+}
+
 function categoryLabel(category) {
   return {
     automation: "自動化",
@@ -82,7 +99,7 @@ function questionUrl(record) {
   return `./question.html?slug=${encodeURIComponent(record.slug)}`;
 }
 
-function renderAnswer(answer) {
+function renderAnswer(record, answer) {
   const conditions = answerList(answer, "conditions")
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
@@ -98,16 +115,20 @@ function renderAnswer(answer) {
     })
     .join("");
 
+  const freshness = freshnessInfo(record, answer);
+
   return `
     <div class="answer question-page-answer">
       <div class="answer-meta">
         <strong>${escapeHtml(answer.product)}</strong>
         <div>${escapeHtml(answer.plan || "プラン条件あり")}</div>
         <div>${escapeHtml(answer.platform || "利用画面による")}</div>
-        <div>${escapeHtml(evidenceLabel(answer.evidence_state))}</div>
+        <div class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</div>
         <div>確認 ${escapeHtml(answer.last_checked)}</div>
+        ${freshness.nextReview ? `<div>次回確認目安 ${escapeHtml(freshness.nextReview)}</div>` : ""}
       </div>
       <div class="answer-body">
+        ${freshnessWarning(record, answer)}
         <p class="answer-summary">${escapeHtml(answerText(answer, "summary"))}</p>
         <div class="detail-grid">
           <div>
@@ -165,10 +186,11 @@ async function loadQuestion() {
     if (!record) throw new Error("Question not found.");
 
     const primary = record.answers[0] || { answer: "UNKNOWN" };
-    els.meta.textContent = `${record.id} · ${categoryLabel(record.category)} · 最終確認 ${record.last_checked}`;
+    const freshness = CapabilityFreshness.recordStatus(record);
+    els.meta.textContent = `${record.id} · ${categoryLabel(record.category)} · 最終確認 ${record.last_checked}${freshness.isDue ? " · 要再確認" : ""}`;
     els.title.textContent = questionText(record);
-    els.badge.innerHTML = `<span class="answer-badge ${answerClass(primary.answer)}">${escapeHtml(answerLabel(primary.answer))}</span>`;
-    els.answers.innerHTML = record.answers.map(renderAnswer).join("");
+    els.badge.innerHTML = `<span class="answer-badge ${answerClass(primary.answer)}">${escapeHtml(answerLabel(primary.answer))}</span>${freshness.isDue ? '<span class="freshness-flag">要再確認</span>' : ""}`;
+    els.answers.innerHTML = record.answers.map((answer) => renderAnswer(record, answer)).join("");
 
     const communityLinks = (record.demand?.community_links || [])
       .map((link) => `<a href="${escapeHtml(link.url)}" rel="noreferrer">関連する議論</a>`)
