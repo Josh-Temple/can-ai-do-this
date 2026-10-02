@@ -1,0 +1,63 @@
+{
+  "id": "Q0003",
+  "question": "Can ChatGPT automatically react to new Gmail messages?",
+  "slug": "can-chatgpt-react-to-new-gmail-messages",
+  "category": "automation",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users are trying to build inbox-driven workflows rather than manually asking ChatGPT to check email.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1wg0edy/what_are_people_actually_using_chatgpt_scheduled/",
+        "observed_at": "2026-10-02",
+        "summary": "Users describe email-driven scheduling and daily Gmail workflows."
+      },
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1v3rt63/plugins_in_scheduled_tasks/",
+        "observed_at": "2026-10-02",
+        "summary": "Users report practical confusion about whether connected apps remain available inside scheduled tasks."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plus or another eligible paid plan",
+      "platform": "Work on supported ChatGPT surfaces",
+      "region": null,
+      "answer": "YES",
+      "summary": "Eligible users can create event-triggered tasks in Work that respond to new messages in a connected Gmail account.",
+      "conditions": [
+        "Requires an eligible Plus, Pro, Business, Enterprise, Edu, or supported Healthcare account.",
+        "The Gmail account must be connected and authorized.",
+        "The task is created in Work as an event-triggered task.",
+        "Gmail triggers can react to new messages and can filter by sender or subject."
+      ],
+      "limitations": [
+        "Free and Go accounts cannot create event-triggered tasks.",
+        "An action that changes external data may require approval and can pause the task.",
+        "Not every Gmail event or action is necessarily available.",
+        "Account, workspace, and app permissions still apply."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents webhook-based event-triggered tasks for Gmail, including new-message triggers and sender/subject conditions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10408842-google-app-data-controls-faq",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents how Gmail works with event-triggered tasks and the required Google permissions."
+        }
+      ]
+    }
+  ],
+  "notes": "This does not imply autonomous support for every possible Gmail action after the trigger fires."
+}
