@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "policy": {
+    "description": "Low-noise semantic anchor monitoring for high-change official sources. This is a review trigger only.",
+    "transient_http_statuses": [
+      401,
+      403,
+      408,
+      425,
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "permanent_http_statuses": [
+      404,
+      410
+    ],
+    "min_text_chars": 500
+  },
+  "sources": [
+    {
+      "id": "openai-scheduled-tasks",
+      "url": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+      "questions": [
+        "Q0001",
+        "Q0003"
+      ],
+      "anchor_groups": [
+        [
+          "one-off and recurring tasks",
+          "recurring tasks"
+        ],
+        [
+          "event-triggered",
+          "event triggered"
+        ],
+        [
+          "new gmail messages",
+          "gmail tasks can respond to a new message"
+        ]
+      ]
+    },
+    {
+      "id": "openai-connected-apps",
+      "url": "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt",
+      "questions": [
+        "Q0002",
+        "Q0003"
+      ],
+      "anchor_groups": [
+        [
+          "search and reference information from connected services",
+          "search and reference information"
+        ],
+        [
+          "creating or updating information",
+          "take supported actions"
+        ],
+        [
+          "new gmail messages",
+          "gmail"
+        ]
+      ]
+    },
+    {
+      "id": "openai-google-app-data",
+      "url": "https://help.openai.com/en/articles/10408842-google-app-data-controls-faq",
+      "questions": [
+        "Q0002",
+        "Q0003",
+        "Q0004"
+      ],
+      "anchor_groups": [
+        [
+          "gmail, calendar, or drive",
+          "gmail, calendar, or drive"
+        ],
+        [
+          "google sheets",
+          "spreadsheets"
+        ],
+        [
+          "event-triggered",
+          "new messages in a connected gmail account"
+        ]
+      ]
+    },
+    {
+      "id": "openai-work-google-files",
+      "url": "https://help.openai.com/en/articles/20001278-creating-and-editing-documents-spreadsheets-and-presentations-with-chatgpt-work",
+      "questions": [
+        "Q0004"
+      ],
+      "anchor_groups": [
+        [
+          "create or edit a google doc, sheet, or slide",
+          "create or edit native google docs"
+        ],
+        [
+          "google workspace app",
+          "google workspace"
+        ],
+        [
+          "create or edit documents, spreadsheets, presentations",
+          "documents, spreadsheets, presentations"
+        ]
+      ]
+    },
+    {
+      "id": "anthropic-google-drive",
+      "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+      "questions": [
+        "Q0007"
+      ],
+      "anchor_groups": [
+        [
+          "search and retrieve google docs"
+        ],
+        [
+          "read sheets, slides, pdfs"
+        ],
+        [
+          "save claude-generated files directly to your drive"
+        ]
+      ]
+    },
+    {
+      "id": "openai-web-search",
+      "url": "https://help.openai.com/en/articles/9237897-searching-the-web-with-chatgpt",
+      "questions": [
+        "Q0008"
+      ],
+      "anchor_groups": [
+        [
+          "search the web",
+          "web search"
+        ],
+        [
+          "current information"
+        ],
+        [
+          "citations",
+          "cited sources"
+        ]
+      ]
+    },
+    {
+      "id": "openai-chatgpt-sites",
+      "url": "https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites",
+      "questions": [
+        "Q0012"
+      ],
+      "anchor_groups": [
+        [
+          "create, preview, publish",
+          "create, edit, publish"
+        ],
+        [
+          "public beta"
+        ],
+        [
+          "production url",
+          "publish"
+        ]
+      ]
+    },
+    {
+      "id": "openai-memory",
+      "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt",
+      "questions": [
+        "Q0013"
+      ],
+      "anchor_groups": [
+        [
+          "past chats"
+        ],
+        [
+          "temporary chats",
+          "temporary chat"
+        ],
+        [
+          "memory summary"
+        ]
+      ]
+    },
+    {
+      "id": "anthropic-web-search",
+      "url": "https://support.claude.com/en/articles/10684626-enable-and-use-web-search",
+      "questions": [
+        "Q0014"
+      ],
+      "anchor_groups": [
+        [
+          "search the internet",
+          "web search"
+        ],
+        [
+          "direct citations to sources",
+          "every response includes citations"
+        ],
+        [
+          "source links for further reading",
+          "source links"
+        ]
+      ]
+    }
+  ]
+}

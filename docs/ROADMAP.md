@@ -84,7 +84,8 @@ Current controls:
 - [x] daily automated due-date check using the oldest answer-level review date;
 - [x] automatic GitHub review-queue issue when a record passes its review window;
 - [x] CI regression checks for common task-search phrases;
-- [ ] official documentation content-change detection;
+- [x] low-noise semantic-anchor monitoring for official sources covering every 14-day question;
+- [ ] extend source monitoring to the 30-day set after the pilot proves acceptably low-noise;
 - [ ] major product-release signals;
 - [ ] contradictory community-report triage.
 

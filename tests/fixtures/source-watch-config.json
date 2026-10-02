@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "policy": {
+    "transient_http_statuses": [
+      429,
+      500,
+      503
+    ],
+    "permanent_http_statuses": [
+      404,
+      410
+    ],
+    "min_text_chars": 20
+  },
+  "sources": [
+    {
+      "id": "demo-source",
+      "url": "https://example.com/help",
+      "questions": [
+        "QTEST"
+      ],
+      "anchor_groups": [
+        [
+          "scheduled tasks",
+          "recurring tasks"
+        ],
+        [
+          "citations",
+          "source links"
+        ]
+      ]
+    }
+  ]
+}

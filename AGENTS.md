@@ -18,6 +18,7 @@ The repository is a knowledge base first and a website second. Preserve source t
 8. Do not reproduce large amounts of Reddit or other community content. Store the URL, date observed, a short original summary, and any useful metadata.
 9. A broken or stale source is a data-quality issue, not a reason to silently delete history.
 10. Every material current-state answer must have a last-checked date.
+11. Treat automated source-watch alerts only as review triggers. Re-read first-party evidence before changing a capability conclusion or freshness date.
 
 ## Allowed evidence states
 

@@ -104,6 +104,17 @@ Each canonical question stores the selected policy as `review_window_days` with 
 - Official documentation changes are a reason to re-investigate, not an automatic reason to change a YES/NO answer.
 - Automated change detection may prioritize review, but it must not promote evidence to `VERIFIED` or rewrite capability conclusions by itself.
 
+### Official-source change monitoring
+
+For high-change questions, the repository may monitor a small set of semantic anchors in first-party documentation. This deliberately avoids full-page hashing.
+
+- Missing semantic anchors or permanent 404/410 responses create a review signal.
+- Transient fetch failures are warnings, not evidence that the capability changed.
+- A monitoring alert never refreshes `last_checked`, changes the answer, or promotes an evidence state.
+- The source must be re-read or the capability re-tested before the canonical claim is changed.
+
+The initial pilot covers every published question on the 14-day review cadence. Configuration and operating details are in `monitoring/README.md`.
+
 Future automation may prioritize review based on age, product release activity, source changes, conflicting reports, and question demand.
 
 ## 7. Negative claims
