@@ -1,0 +1,51 @@
+{
+  "id": "Q0001",
+  "question": "Can ChatGPT run scheduled or recurring tasks without keeping the chat open?",
+  "slug": "can-chatgpt-run-scheduled-or-recurring-tasks",
+  "category": "automation",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users are actively sharing recurring briefings, job searches, price checks, and other scheduled workflows.",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1wg0edy/what_are_people_actually_using_chatgpt_scheduled/",
+        "observed_at": "2026-10-02",
+        "summary": "Discussion of practical scheduled-task use cases, including daily briefings, job searches, price monitoring, Gmail, and Calendar workflows."
+      }
+    ]
+  },
+  "last_checked": "2026-10-02",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plus",
+      "platform": "Web and supported mobile apps; availability can vary by app/version",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can run one-time and recurring scheduled tasks in the cloud and notify the user when they run.",
+      "conditions": [
+        "Scheduled tasks must be available for the account and app version.",
+        "Plus supports exact delivery times and recurring schedules up to once per hour.",
+        "Plus has a limit of 5 active scheduled tasks.",
+        "Notifications depend on notification settings and device permissions."
+      ],
+      "limitations": [
+        "Scheduled tasks do not support voice chats or GPTs.",
+        "A task created inside a project cannot access files uploaded to or stored in that project.",
+        "Connected-app access depends on whether the app is supported and authorized for the scheduled task."
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+          "accessed_at": "2026-10-02",
+          "note": "OpenAI documents one-time, recurring, monitoring, and event-triggered scheduled tasks, including Plus limits and supported surfaces."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers time-based scheduled tasks generally, not every possible connected-app action."
+}
