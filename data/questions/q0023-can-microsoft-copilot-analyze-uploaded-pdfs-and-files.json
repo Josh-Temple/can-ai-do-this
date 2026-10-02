@@ -1,0 +1,71 @@
+{
+  "id": "Q0023",
+  "question": "Can Microsoft Copilot analyze uploaded PDFs and other files?",
+  "question_ja": "Microsoft Copilotは、アップロードしたPDFやその他のファイルを分析できる？",
+  "slug": "can-microsoft-copilot-analyze-uploaded-pdfs-and-files",
+  "category": "documents",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "PDF",
+    "PDF分析",
+    "PDF要約",
+    "ファイル",
+    "ファイル分析",
+    "DOCX",
+    "XLSX",
+    "PPTX",
+    "資料",
+    "アップロード"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "File upload and analysis is a common assistant task, and supported formats and size/count limits are important practical boundaries.",
+    "summary_ja": "ファイル分析は一般的な用途ですが、対応形式、1会話あたりの件数、容量上限まで分からないと実用判断ができません。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft Copilot; work-account behavior is documented separately",
+      "platform": "Microsoft Copilot chat",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot can analyze uploaded PDFs, Word, Excel, PowerPoint, images, text, JSON, CSV, Markdown, and other supported files to answer questions and extract information.",
+      "summary_ja": "Microsoft Copilotは、アップロードしたPDF、Word、Excel、PowerPoint、画像、テキスト、JSON、CSV、Markdownなどの対応ファイルを分析し、質問への回答や情報抽出に利用できます。",
+      "conditions": [
+        "The file must be uploaded into the Copilot conversation using the supported attachment flow.",
+        "Up to 20 files can be uploaded in one Copilot conversation.",
+        "Each uploaded file is limited to 50 MB."
+      ],
+      "conditions_ja": [
+        "対応する添付操作からファイルをCopilotの会話へアップロードする必要があります。",
+        "1つのCopilot会話にアップロードできるファイルは最大20件です。",
+        "1ファイルあたりの上限は50MBです。"
+      ],
+      "limitations": [
+        "The consumer Copilot file-upload page is distinct from Microsoft 365 Copilot for work, which has separate file-format documentation.",
+        "Files shared with Copilot may be stored for a limited period according to Microsoft's documented retention policy.",
+        "A supported format does not guarantee perfect extraction from every complex layout, scan, or embedded object."
+      ],
+      "limitations_ja": [
+        "この記録は一般向けMicrosoft Copilotのファイルアップロードを対象としており、Microsoft 365 Copilot for workには別のファイル形式仕様があります。",
+        "Copilotと共有したファイルは、Microsoftが説明する保持方針に従い一定期間保存される場合があります。",
+        "対応形式であっても、複雑なレイアウト、スキャン、埋め込みオブジェクトを常に完全に抽出できるとは限りません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-copilot/file-upload-in-microsoft-copilot",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents uploaded-file analysis, supported PDF/DOCX/XLSX/PPTX/image/text formats, a 20-file conversation limit, and a 50 MB per-file limit."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers consumer Microsoft Copilot file upload, not the distinct Microsoft 365 Copilot for work file pipeline."
+}

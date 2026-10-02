@@ -1,0 +1,76 @@
+{
+  "id": "Q0024",
+  "question": "Can Microsoft Copilot search the live web and cite sources?",
+  "question_ja": "Microsoft Copilotは、現在のウェブを検索して出典を示せる？",
+  "slug": "can-microsoft-copilot-search-the-web-and-cite-sources",
+  "category": "web-research",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Web検索",
+    "ウェブ検索",
+    "ネット検索",
+    "検索",
+    "最新情報",
+    "出典",
+    "引用",
+    "Bing",
+    "調べる"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Web-grounded answers are a key comparison axis, especially where organization settings can enable or disable search.",
+    "summary_ja": "現在のWebを根拠に答えられるかは主要な比較軸であり、組織設定で検索可否が変わる点も重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft Copilot; Microsoft 365 Copilot Chat access can be standard or priority depending on license",
+      "platform": "Microsoft Copilot and Microsoft 365 Copilot Chat",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot can search current web content and produce web-grounded answers with source links. In Microsoft 365 Copilot Chat, users can inspect the Bing query and sources used when web search is enabled.",
+      "summary_ja": "Microsoft Copilotは現在のWebを検索し、情報源リンク付きの回答を生成できます。Microsoft 365 Copilot Chatでは、Web検索が有効な場合にBingへ送られた検索語と使用した情報源を確認できます。",
+      "conditions": [
+        "The Copilot experience must have web access available.",
+        "In managed Microsoft 365 environments, administrators can control whether web search is allowed.",
+        "Standard or priority service access can depend on whether the user has a Microsoft Copilot license."
+      ],
+      "conditions_ja": [
+        "利用するCopilot環境でWebアクセスが利用可能である必要があります。",
+        "管理対象のMicrosoft 365環境では、管理者がWeb検索の利用可否を制御できます。",
+        "Microsoft Copilotライセンスの有無により、標準アクセスまたは優先アクセスになる場合があります。"
+      ],
+      "limitations": [
+        "Copilot does not need to use web search for every prompt.",
+        "Source citations make the grounding inspectable but do not guarantee that every synthesis or inference is correct.",
+        "Organization policy can disable web search in Microsoft 365 Copilot Chat and agents."
+      ],
+      "limitations_ja": [
+        "すべてのプロンプトで必ずWeb検索を使うわけではありません。",
+        "引用により根拠を確認できますが、生成された要約や推論が必ず正しいことを保証するものではありません。",
+        "Microsoft 365 Copilot Chatやエージェントでは、組織ポリシーでWeb検索を無効化できます。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft states that Copilot searches relevant web content, summarizes it, and cites sources."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-web-search-works-in-microsoft-365-copilot-chat-and-agents",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents Bing query generation, the Sources button, license-dependent access, and administrator controls over web search."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers live web grounding in Microsoft Copilot experiences and explicitly notes organization-controlled search availability."
+}

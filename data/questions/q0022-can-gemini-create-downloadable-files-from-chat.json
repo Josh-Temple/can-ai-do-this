@@ -1,0 +1,71 @@
+{
+  "id": "Q0022",
+  "question": "Can Gemini create downloadable documents, spreadsheets, and other files from a chat?",
+  "question_ja": "Geminiは、会話からダウンロードできる文書・表計算・PDFなどのファイルを作成できる？",
+  "slug": "can-gemini-create-downloadable-files-from-chat",
+  "category": "file-creation",
+  "search_terms": [
+    "Gemini",
+    "ファイル作成",
+    "文書作成",
+    "PDF作成",
+    "DOCX",
+    "XLSX",
+    "CSV",
+    "Google Docs",
+    "Google Sheets",
+    "ダウンロード",
+    "表計算",
+    "ファイル出力"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often need an actual reusable file rather than text pasted into chat, and supported output formats materially affect usefulness.",
+    "summary_ja": "チャット内の文章だけでなく、実際に再利用・ダウンロードできるファイルになるかは実務上大きな違いです。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; availability and usage limits vary by account",
+      "platform": "Gemini Apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Apps can generate formatted files directly from a conversation, including Google Docs and Sheets, PDF, DOCX, XLSX, CSV, LaTeX, TXT, RTF, and Markdown.",
+      "summary_ja": "Gemini Appsは会話から整形済みファイルを生成できます。Google Docs・Sheets、PDF、DOCX、XLSX、CSV、LaTeX、TXT、RTF、Markdownに対応しています。",
+      "conditions": [
+        "The file-generation feature must be available on the account and Gemini surface being used.",
+        "The user can explicitly request a supported output type, or Gemini may suggest formatting the result as a file.",
+        "For most formats, the result can be downloaded or exported to Google Drive."
+      ],
+      "conditions_ja": [
+        "利用するアカウントとGemini画面でファイル生成機能が利用可能である必要があります。",
+        "対応する出力形式を明示的に指定できるほか、Gemini側からファイル形式での出力を提案される場合もあります。",
+        "多くの形式では、生成ファイルを端末へダウンロードするかGoogle Driveへエクスポートできます。"
+      ],
+      "limitations": [
+        "The documented output list does not include PowerPoint/PPTX in this file-generation flow.",
+        "Availability can differ by account, app version, or rollout state.",
+        "Creating a file does not guarantee that complex formatting, formulas, or layout will exactly match the user's intended final document."
+      ],
+      "limitations_ja": [
+        "このファイル生成フローの公式対応形式にはPowerPoint/PPTXは含まれていません。",
+        "利用可否はアカウント、アプリ版、段階的提供状況によって異なる場合があります。",
+        "ファイルを生成できても、複雑な書式・数式・レイアウトが意図どおり完全に再現されるとは限りません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/13275745",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents direct file generation from Gemini chats and lists supported formats including Docs, Sheets, PDF, DOCX, XLSX, CSV, LaTeX, TXT, RTF, and Markdown."
+        }
+      ]
+    }
+  ],
+  "notes": "This record distinguishes creating actual downloadable/exportable files from merely returning formatted text in chat."
+}
