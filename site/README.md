@@ -27,7 +27,16 @@ Then open `http://localhost:8000`.
 
 The interface should answer:
 
-> What are you trying to do?
+> 何をしたいですか？
+
+The first public view is Japanese-first and deliberately simple:
+
+- keyword search;
+- product filter;
+- comparison table;
+- detailed evidence view.
+
+Japanese display text lives in the canonical question records, with English as the fallback. The UI should not become a second manually maintained capability database.
 
 It deliberately avoids:
 
@@ -39,3 +48,10 @@ It deliberately avoids:
 ## Deployment
 
 The build output is static and can be hosted on GitHub Pages, Vercel, or another static host. Deployment should publish the generated build output, not duplicate or manually rewrite the canonical question data.
+
+
+## GitHub Pages
+
+`.github/workflows/deploy-pages.yml` builds the site from the canonical records and deploys the generated artifact.
+
+GitHub requires Pages to be enabled for the repository before a custom Pages workflow can deploy. Once the repository publishing source is set to GitHub Actions, pushes affecting the site or canonical data will publish automatically.
