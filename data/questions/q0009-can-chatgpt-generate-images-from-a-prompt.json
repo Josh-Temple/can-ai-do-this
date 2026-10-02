@@ -58,5 +58,6 @@
     "写真を作る",
     "生成画像",
     "text to image"
-  ]
+  ],
+  "review_window_days": 30
 }
