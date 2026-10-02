@@ -1,0 +1,65 @@
+{
+  "id": "Q0007",
+  "question": "Can Claude search and read files in a connected Google Drive?",
+  "question_ja": "Claudeは、接続したGoogle Drive内のファイルを検索・読取できる？",
+  "slug": "can-claude-search-and-read-google-drive-files",
+  "category": "connected-apps",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users can see that Google Drive connects to Claude, but the practical boundary between connecting, searching, reading, saving, and editing is not obvious.",
+    "summary_ja": "Google DriveをClaudeに接続できることは分かっても、検索・読取・保存・編集のどこまでできるのかは分かりにくいです。",
+    "community_links": [
+      {
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1wpnd37/what_are_real_use_cases_for_connecting_google/",
+        "observed_at": "2026-10-02",
+        "summary": "A community discussion asks what practical value the Google Drive connection provides beyond simply being connected."
+      }
+    ]
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "All users; Team and Enterprise require organization-level enablement",
+      "platform": "Claude and Claude Desktop",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude can search and retrieve Google Docs, read Sheets, Slides, PDFs, images, and Microsoft Office files, inspect metadata and permissions, upload files, create folders, and save Claude-generated files to a connected Google Drive.",
+      "summary_ja": "Claudeは接続したGoogle DriveからGoogle Docsを検索・取得し、Sheets、Slides、PDF、画像、Microsoft Officeファイルを読み取れます。メタデータや権限の確認、ファイルのアップロード、フォルダ作成、生成ファイルのDrive保存にも対応します。",
+      "conditions": [
+        "The Google Drive connector must be authenticated for the Google account.",
+        "Team and Enterprise organizations require an Owner or Primary Owner to enable the connector before users authenticate.",
+        "Claude mirrors the user's existing Google Workspace permissions.",
+        "Saving Claude-generated files requires code execution and file creation to be enabled."
+      ],
+      "conditions_ja": [
+        "対象のGoogleアカウントでGoogle Driveコネクタを認証していること。",
+        "Team・Enterpriseでは、利用者の認証前にOwnerまたはPrimary Ownerによる組織レベルの有効化が必要です。",
+        "Claudeから見える範囲は、利用者自身のGoogle Workspace権限に従います。",
+        "Claudeが生成したファイルをDriveへ保存するには、コード実行とファイル作成が有効である必要があります。"
+      ],
+      "limitations": [
+        "When Claude reads Google Drive files, embedded images inside documents are not processed.",
+        "Google Docs added to chats and projects are text-focused; Claude cannot see images, comments, or suggestions in those Docs through this connector.",
+        "This record establishes Drive search/read/upload/save behavior; it does not by itself establish every form of live document editing."
+      ],
+      "limitations_ja": [
+        "Google Driveファイルを読む際、文書内に埋め込まれた画像は処理されません。",
+        "チャットやプロジェクトに追加したGoogle Docsでは、画像・コメント・提案はこのコネクタ経由では見えません。",
+        "このレコードが確認しているのはDrive上の検索・読取・アップロード・保存です。あらゆる形式のライブ編集まで一律に確認したものではありません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents Google Drive search/retrieval, file reading, uploads, folders, permissions, recent changes, and saving generated files, plus permission and embedded-image limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This question intentionally separates Google Drive retrieval/file operations from broader claims about live editing in Google Docs, Sheets, or Slides."
+}
