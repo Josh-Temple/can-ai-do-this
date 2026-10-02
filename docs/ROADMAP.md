@@ -8,7 +8,7 @@ Goal: define a trustworthy data model before collecting at scale.
 - [x] Define evidence states
 - [x] Define community-source policy
 - [x] Add initial schema and template
-- [ ] Add automated schema validation
+- [x] Add automated schema validation
 - [ ] Define freshness review rules
 
 ## Stage 1 — Seed set
@@ -40,14 +40,17 @@ For the seed set, prioritize tasks involving:
 
 Goal: make the dataset useful to non-technical users.
 
-Minimum interface:
-- one prominent task search box;
-- plain-language answer;
-- product/plan/platform conditions;
-- evidence state and last checked date;
-- official source links;
-- community discussion links where useful;
-- related questions.
+Current prototype:
+- [x] prominent keyword search;
+- [x] simple comparison table;
+- [x] plain-language Japanese answer with English fallback;
+- [x] product/plan/platform conditions;
+- [x] evidence state and last checked date;
+- [x] official source links;
+- [x] community discussion links where useful;
+- [ ] dedicated question pages / stable share links;
+- [ ] related-question navigation;
+- [ ] live public deployment verified.
 
 Avoid building a generic AI-tool directory.
 

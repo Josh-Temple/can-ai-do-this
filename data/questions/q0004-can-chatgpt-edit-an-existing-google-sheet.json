@@ -56,8 +56,21 @@
           "accessed_at": "2026-10-02",
           "note": "OpenAI documents creating or editing a Google Sheet in Work and reviewing the result in Google Workspace."
         }
+      ],
+      "summary_ja": "対応する環境で権限を付与していれば、ChatGPTはGoogle Driveアプリ経由で既存のGoogleスプレッドシートを直接更新できます。",
+      "conditions_ja": [
+        "必要な権限でGoogle Driveを接続していること。",
+        "そのアカウントやワークスペースでGoogleスプレッドシートの操作が利用できること。",
+        "Workでは対象のシートを選び、要求された操作を承認できます。"
+      ],
+      "limitations_ja": [
+        "Google Drive上の編集・共同作業機能の一部はChatGPT内では利用できません。",
+        "利用可否はプラン、ワークスペース設定、ファイル形式、利用画面によって異なります。",
+        "ワークスペース管理者やGoogle管理者が必要な権限・操作を制限できる場合があります。",
+        "ChatGPTで未対応の編集はGoogle Drive側で開いて行う必要があります。"
       ]
     }
   ],
-  "notes": "This answer is about native Google Sheets, not uploaded .xlsx files or the Excel desktop add-in."
+  "notes": "This answer is about native Google Sheets, not uploaded .xlsx files or the Excel desktop add-in.",
+  "question_ja": "ChatGPTは、既存のGoogleスプレッドシートを直接編集できる？"
 }

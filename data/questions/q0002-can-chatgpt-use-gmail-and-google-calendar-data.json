@@ -60,8 +60,20 @@
           "accessed_at": "2026-10-02",
           "note": "OpenAI gives Gmail and Calendar examples such as reviewing recent emails and creating meeting agendas from calendar information."
         }
+      ],
+      "summary_ja": "対象のGoogleアプリが利用可能で接続済みなら、ChatGPTは許可された範囲のGmailやGoogleカレンダー情報を、対応する依頼に利用できます。",
+      "conditions_ja": [
+        "対象のGoogleアカウントをChatGPTに接続していること。",
+        "利用可否はプラン、地域、ワークスペース、モデル、権限、利用画面によって異なります。",
+        "利用できるのは、Google側の権限とChatGPT側で許可された操作の範囲内です。"
+      ],
+      "limitations_ja": [
+        "接続しただけで、GmailやGoogleカレンダーのすべての操作が可能になるわけではありません。",
+        "ワークスペース管理者がアプリや操作を制限できる場合があります。",
+        "認証や権限の変更により、以前使えた操作が使えなくなることがあります。"
       ]
     }
   ],
-  "notes": "This record is intentionally about access/use of data, not sending email or modifying calendar events. Those should be separate questions."
+  "notes": "This record is intentionally about access/use of data, not sending email or modifying calendar events. Those should be separate questions.",
+  "question_ja": "ChatGPTは、接続したGmailとGoogleカレンダーの情報を会話で使える？"
 }

@@ -53,8 +53,19 @@
           "accessed_at": "2026-10-02",
           "note": "Anthropic states that Slides artifacts can be edited and exported to PowerPoint or PDF."
         }
+      ],
+      "summary_ja": "Claudeは会話内でPowerPoint（.pptx）ファイルを直接作成・編集でき、資料からプレゼンテーションを生成することもできます。",
+      "conditions_ja": [
+        "そのアカウントでコード実行とファイル作成が利用可能・有効であること。",
+        "生成したファイルは会話からダウンロードするか、Google Driveへ保存できます。",
+        "公式情報上、アップロード・ダウンロードとも1ファイル30MBが上限です。"
+      ],
+      "limitations_ja": [
+        "ファイル作成に成功しても、企業テンプレートを完全に保持できることや、手直し不要の品質までは保証されません。",
+        "Claude Designと直接のファイル作成は関連していますが別の流れで、書き出し品質はワークフローや資料の複雑さによって変わります。"
       ]
     }
   ],
-  "notes": "This record describes product capability, not presentation-quality benchmarking."
+  "notes": "This record describes product capability, not presentation-quality benchmarking.",
+  "question_ja": "Claudeは、PowerPoint（.pptx）ファイルを作成・編集できる？"
 }
