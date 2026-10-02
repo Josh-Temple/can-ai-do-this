@@ -6,6 +6,8 @@ on:
       - "data/questions/**"
       - "schemas/**"
       - "scripts/validate_records.py"
+      - "scripts/build_site.py"
+      - "site/**"
       - "tests/fixtures/**"
       - ".github/workflows/validate-data.yml"
   pull_request:
@@ -13,6 +15,8 @@ on:
       - "data/questions/**"
       - "schemas/**"
       - "scripts/validate_records.py"
+      - "scripts/build_site.py"
+      - "site/**"
       - "tests/fixtures/**"
       - ".github/workflows/validate-data.yml"
 
@@ -49,3 +53,20 @@ jobs:
             exit 1
           fi
           echo "Invalid fixture failed as expected."
+
+      - name: Build static site from canonical records
+        run: python scripts/build_site.py --output /tmp/can-ai-do-this-site
+
+      - name: Check site artifact
+        shell: bash
+        run: |
+          test -s /tmp/can-ai-do-this-site/index.html
+          test -s /tmp/can-ai-do-this-site/questions.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          records = json.loads(Path("/tmp/can-ai-do-this-site/questions.json").read_text())
+          assert records, "questions.json is empty"
+          assert all("id" in record and "answers" in record for record in records)
+          print(f"Site artifact contains {len(records)} records")
+          PY
