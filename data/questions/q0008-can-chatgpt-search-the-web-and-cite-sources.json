@@ -51,5 +51,17 @@
     }
   ],
   "notes": "This record covers live web search in ChatGPT, not external-app or private-account search.",
-  "question_ja": "ChatGPTは、現在のウェブを検索して出典付きで回答できる？"
+  "question_ja": "ChatGPTは、現在のウェブを検索して出典付きで回答できる？",
+  "search_terms": [
+    "調べる",
+    "ネット検索",
+    "ウェブ",
+    "Web",
+    "検索",
+    "最新情報",
+    "出典",
+    "引用",
+    "リサーチ",
+    "ネットで調べる"
+  ]
 }
