@@ -1,0 +1,60 @@
+{
+  "id": "Q0011",
+  "question": "Can ChatGPT summarize a PDF and answer questions about its contents?",
+  "question_ja": "ChatGPTは、PDFを要約したり内容について質問に答えたりできる？",
+  "slug": "can-chatgpt-summarize-and-answer-questions-about-a-pdf",
+  "category": "documents",
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "PDF summarization and question answering are common tasks, but users may not realize that embedded visuals are handled differently by plan.",
+    "summary_ja": "PDFの要約や質問応答は一般的ですが、PDF内の画像やグラフの扱いはプランによって異なる点が見落とされやすいです。"
+  },
+  "last_checked": "2026-10-03",
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Free and paid plans; limits vary by plan",
+      "platform": "Web and supported mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can work with uploaded PDFs to summarize text, find references to topics, extract information, and answer questions about the document.",
+      "summary_ja": "ChatGPTはアップロードしたPDFの文章を要約し、特定トピックの記載を探したり、情報を抽出したり、文書内容について質問に答えたりできます。",
+      "conditions": [
+        "The PDF must be uploaded or attached through a supported file-upload flow.",
+        "Plan-specific file upload and usage limits apply."
+      ],
+      "conditions_ja": [
+        "対応するファイルアップロード機能からPDFを添付する必要があります。",
+        "ファイル数・容量・利用回数など、プランごとの上限が適用されます。"
+      ],
+      "limitations": [
+        "For non-Enterprise plans, document files use text-based retrieval and embedded images are discarded.",
+        "ChatGPT Enterprise supports visual retrieval for PDFs uploaded in supported prompt contexts, allowing embedded images, graphs, and diagrams to be interpreted.",
+        "Very large or complex documents may be constrained by file and context limits."
+      ],
+      "limitations_ja": [
+        "Enterprise以外のプランでは、文書ファイルはテキストベースで処理され、PDF内に埋め込まれた画像は破棄されます。",
+        "ChatGPT Enterpriseでは、対応する方法でPDFを会話に添付した場合、画像・グラフ・図を含むVisual Retrievalに対応します。",
+        "非常に大きい、または複雑な文書では、ファイルやコンテキストの上限による制約があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8555545-file-uploads-faq",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents PDF/document summarization, extraction, supported file uploads, and the text-only limitation for embedded visuals outside Enterprise."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10416312-visual-retrieval-with-pdfs-faq",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents Enterprise visual retrieval for images, charts, and diagrams embedded in PDFs and its context-specific limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record distinguishes ordinary text-based PDF analysis from visual understanding of embedded PDF content."
+}
