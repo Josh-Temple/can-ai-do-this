@@ -59,15 +59,9 @@
       "sources": [
         {
           "type": "OFFICIAL_DOC",
-          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-video-with-the-microsoft-copilot-app",
-          "accessed_at": "2026-10-03",
-          "note": "Microsoft documents prompt-based video creation, optional PowerPoint input, preview/transcript, AI transformation, Clipchamp refinement, and the Clipchamp prerequisite."
-        },
-        {
-          "type": "OFFICIAL_DOC",
           "url": "https://support.microsoft.com/en-us/clipchamp/how-to-create-video-with-copilot",
           "accessed_at": "2026-10-03",
-          "note": "Microsoft documents the generated-script, AI narration, stock-footage composition mechanism and work-account requirements."
+          "note": "Microsoft documents Copilot video creation for work accounts, generated scripts and AI narration, stock-footage composition, PowerPoint input, Clipchamp editing, export, and explicit confirmation that the standard flow does not generate video pixels or clips."
         }
       ]
     }
