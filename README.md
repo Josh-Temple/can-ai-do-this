@@ -97,9 +97,9 @@ Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Per
 
 ## Status
 
-The repository currently contains **30 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search with task aliases, product filtering, dedicated question pages, and detailed evidence views.
+The repository currently contains **35 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search with task aliases, product filtering, dedicated question pages, and detailed evidence views.
 
-The initial 10–15 question seed milestone is complete, followed by controlled expansion to 30 questions covering ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. The latest expansion deepens comparison for spreadsheet editing, email/calendar workflows, image editing, and uploaded-file analysis. The next priority remains usability validation and freshness maintenance before broader expansion toward 35–50 questions.
+The initial 10–15 question seed milestone is complete, followed by controlled expansion to 35 questions covering ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. The latest expansion adds direct comparison for multi-step deep research and in-document editing in Google Docs and Microsoft Word. The next priority remains usability validation and freshness maintenance before broader expansion toward 40–50 questions.
 
 Public site: https://josh-temple.github.io/can-ai-do-this/
 
