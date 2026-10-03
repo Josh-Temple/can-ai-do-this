@@ -421,8 +421,8 @@
           "apps & code"
         ],
         [
-          "public link",
-          "share"
+          "shareable public link",
+          "public link"
         ],
         [
           "webpage",
@@ -446,8 +446,7 @@
           "google ai plan"
         ],
         [
-          "audio",
-          "sound"
+          "generate audio with your video"
         ]
       ],
       "fetch_mode": "direct"
@@ -591,8 +590,8 @@
           "visual aids"
         ],
         [
-          "practice questions",
-          "quiz"
+          "practice questions with feedback and hints",
+          "practice questions"
         ]
       ],
       "fetch_mode": "direct"
