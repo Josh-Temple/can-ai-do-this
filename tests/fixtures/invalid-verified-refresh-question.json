@@ -1,0 +1,48 @@
+{
+  "id": "Q9996",
+  "question": "Can a verified fixture preserve its direct-test date?",
+  "slug": "can-a-verified-fixture-preserve-its-direct-test-date",
+  "category": "example",
+  "status": "DRAFT",
+  "demand": {
+    "summary": "Fixture used to verify direct-test freshness semantics.",
+    "community_links": []
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Example AI",
+      "plan": null,
+      "platform": "web",
+      "region": null,
+      "answer": "YES",
+      "summary": "The direct test occurred before a later documentation reread.",
+      "conditions": [],
+      "limitations": [],
+      "evidence_state": "VERIFIED",
+      "last_checked": "2026-10-03",
+      "tested_environment": {
+        "account_tier": "Test",
+        "app": "Web",
+        "model": null,
+        "notes": "Synthetic fixture."
+      },
+      "sources": [
+        {
+          "type": "DIRECT_TEST",
+          "url": "https://example.com/direct-test",
+          "accessed_at": "2026-10-02",
+          "note": "Synthetic direct test."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://example.com/docs",
+          "accessed_at": "2026-10-03",
+          "note": "Later documentation reread."
+        }
+      ]
+    }
+  ],
+  "notes": "Schema-valid but semantically invalid: a docs reread advanced VERIFIED answer freshness."
+}

@@ -45,11 +45,13 @@ jobs:
           report = json.loads(Path("source-watch-report.json").read_text())
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
               handle.write(f"changed={report['summary']['changed']}\n")
+              handle.write(f"unreadable={report['summary']['unreadable']}\n")
               handle.write(f"unavailable={report['summary']['unavailable']}\n")
               handle.write(f"manual={report['summary']['manual']}\n")
           PY
           else
             echo "changed=0" >> "$GITHUB_OUTPUT"
+            echo "unreadable=0" >> "$GITHUB_OUTPUT"
             echo "unavailable=0" >> "$GITHUB_OUTPUT"
             echo "manual=0" >> "$GITHUB_OUTPUT"
           fi
@@ -60,6 +62,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           CHECK_STATUS: ${{ steps.watch.outputs.status }}
           CHANGED_COUNT: ${{ steps.watch.outputs.changed }}
+          UNREADABLE_COUNT: ${{ steps.watch.outputs.unreadable }}
           UNAVAILABLE_COUNT: ${{ steps.watch.outputs.unavailable }}
           MANUAL_COUNT: ${{ steps.watch.outputs.manual }}
         run: |
@@ -69,7 +72,7 @@ jobs:
           if [ "$CHECK_STATUS" -eq 1 ]; then
             body_file="$(mktemp)"
             {
-              echo "Semantic monitoring found an official source that may no longer support one or more published capability claims."
+              echo "Official-source monitoring found a condition that requires human review: semantic anchor drift, exhausted configured source URLs, or unreadable extracted content."
               echo
               echo "This is a review trigger only. Do not automatically change an answer, evidence state, or last_checked date."
               echo

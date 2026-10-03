@@ -1,0 +1,48 @@
+{
+  "id": "Q9994",
+  "question": "Can a verified fixture record a later documentation reread?",
+  "slug": "can-a-verified-fixture-record-a-later-documentation-reread",
+  "category": "example",
+  "status": "DRAFT",
+  "demand": {
+    "summary": "Fixture used to preserve direct-test freshness while recording later docs review.",
+    "community_links": []
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Example AI",
+      "plan": null,
+      "platform": "web",
+      "region": null,
+      "answer": "YES",
+      "summary": "The direct-test freshness date remains separate from a later documentation reread.",
+      "conditions": [],
+      "limitations": [],
+      "evidence_state": "VERIFIED",
+      "last_checked": "2026-10-02",
+      "tested_environment": {
+        "account_tier": "Test",
+        "app": "Web",
+        "model": null,
+        "notes": "Synthetic fixture."
+      },
+      "sources": [
+        {
+          "type": "DIRECT_TEST",
+          "url": "https://example.com/direct-test",
+          "accessed_at": "2026-10-02",
+          "note": "Synthetic direct test."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://example.com/docs",
+          "accessed_at": "2026-10-03",
+          "note": "Later documentation reread."
+        }
+      ]
+    }
+  ],
+  "notes": "Valid VERIFIED fixture: record-level review may advance without refreshing direct-test freshness."
+}
