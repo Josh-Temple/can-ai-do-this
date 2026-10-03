@@ -1,0 +1,69 @@
+{
+  "id": "Q0028",
+  "question": "Can Microsoft Copilot edit an uploaded image?",
+  "question_ja": "Microsoft Copilotは、アップロードした画像を編集できる？",
+  "slug": "can-microsoft-copilot-edit-an-uploaded-image",
+  "category": "image-editing",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "画像編集",
+    "写真編集",
+    "画像加工",
+    "背景削除",
+    "背景変更",
+    "レタッチ",
+    "アップロード画像",
+    "画像を直す"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Editing an existing image is a distinct workflow from generating a new one and is useful for comparison with ChatGPT and Gemini.",
+    "summary_ja": "既存画像の編集は新規画像生成とは別用途であり、ChatGPTやGeminiとの比較軸として有用です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Eligible Microsoft 365 subscription; some Copilot capabilities have changing usage limits",
+      "platform": "Microsoft Copilot app / web Create experience",
+      "region": null,
+      "answer": "YES",
+      "summary": "The Microsoft Copilot app can edit an uploaded image with AI-powered tools including crop, background changes or removal, enhancement, filters, text, inserted media, and other visual elements.",
+      "summary_ja": "Microsoft Copilotアプリでは、アップロード画像に対してトリミング、背景変更・削除、補正、フィルター、文字追加、メディア挿入などのAI編集を行えます。",
+      "conditions": [
+        "An eligible Microsoft 365 subscription is required for the documented image-editing flow.",
+        "The Edit an image option must be available in the Copilot Create experience.",
+        "The user must upload the image from the device or another supported source."
+      ],
+      "conditions_ja": [
+        "公式に説明されている画像編集フローには対象となるMicrosoft 365サブスクリプションが必要です。",
+        "CopilotのCreate画面で「Edit an image」が利用可能である必要があります。",
+        "端末など対応する方法から編集対象画像をアップロードする必要があります。"
+      ],
+      "limitations": [
+        "Usage limits can change over time and vary by Microsoft 365 subscription.",
+        "The documented editor uses a specific Create workflow rather than arbitrary image modification in every Copilot chat.",
+        "AI edits should be reviewed before consequential or public use."
+      ],
+      "limitations_ja": [
+        "利用上限はMicrosoft 365サブスクリプションによって異なり、今後変更される場合があります。",
+        "公式の画像編集は特定のCreateフローを使うもので、すべてのCopilotチャットで任意の画像編集ができるという意味ではありません。",
+        "AIによる編集結果を重要な用途や公開用途に使う前に内容を確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/edit-an-image-with-the-microsoft-365-copilot-app",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents uploading an image into Copilot Create and editing it with crop, background, enhancement, filters, text, media, and visual tools."
+        }
+      ]
+    }
+  ],
+  "notes": "This question covers editing a user-provided image in the Copilot Create experience, not only refining an AI-generated image."
+}
