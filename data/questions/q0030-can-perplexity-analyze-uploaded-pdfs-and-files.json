@@ -1,0 +1,77 @@
+{
+  "id": "Q0030",
+  "question": "Can Perplexity analyze uploaded PDFs and other files?",
+  "question_ja": "Perplexityは、アップロードしたPDFやその他のファイルを分析できる？",
+  "slug": "can-perplexity-analyze-uploaded-pdfs-and-files",
+  "category": "documents",
+  "search_terms": [
+    "Perplexity",
+    "PDF",
+    "PDF分析",
+    "PDF要約",
+    "ファイル",
+    "ファイル分析",
+    "CSV",
+    "音声",
+    "動画",
+    "画像",
+    "アップロード",
+    "Pro"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Perplexity is often used for research, so users need to know whether uploaded source material can be analyzed alongside web research.",
+    "summary_ja": "Perplexityは調査用途で使われることが多く、Web情報だけでなく手元の資料も分析できるかは重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Perplexity",
+      "plan": "Standard has limited basic uploads; Pro and higher plans provide increased file upload and analysis limits",
+      "platform": "Perplexity consumer web/app experiences",
+      "region": null,
+      "answer": "YES",
+      "summary": "Perplexity supports file upload and analysis, including PDFs, CSVs, audio, video, and images, allowing users to explore and question the contents with supported AI models.",
+      "summary_ja": "PerplexityはPDF、CSV、音声、動画、画像などのファイルをアップロードして分析し、その内容について質問・探索できます。",
+      "conditions": [
+        "File-upload availability and limits depend on the user's Perplexity plan.",
+        "Free/Standard accounts have limited basic file uploads; Pro and higher plans have increased limits.",
+        "Supported analysis models and upload allowances can change by plan."
+      ],
+      "conditions_ja": [
+        "ファイルアップロードの可否と上限はPerplexityのプランによって異なります。",
+        "無料のStandardでは基本的なファイルアップロードが限定的で、Pro以上では上限が拡大します。",
+        "利用できる分析モデルやアップロード枠はプランによって変わる場合があります。"
+      ],
+      "limitations": [
+        "The official Pro documentation emphasizes enhanced file and photo uploads and analysis; free access is more limited.",
+        "Large or complex files can still exceed practical model context or analysis limits.",
+        "Supported upload analysis does not guarantee perfect interpretation of every scan, chart, or embedded object."
+      ],
+      "limitations_ja": [
+        "公式Pro資料ではファイル・写真のアップロードと分析の拡張が強調されており、無料利用では制約が大きくなります。",
+        "大きい・複雑なファイルでは、実用上のコンテキストや分析上限に達する場合があります。",
+        "対応ファイルでも、すべてのスキャン、グラフ、埋め込み要素を完全に解釈できるとは限りません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity documents uploading and analyzing PDFs, CSVs, audio, video, and images with advanced AI models on Pro."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity documents limited basic file uploads on Standard and increased file upload/analysis limits on Pro and higher plans."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers consumer file analysis. Persistent Project repositories and enterprise file connectors have additional rules."
+}
