@@ -99,7 +99,7 @@ const SEARCH_CONCEPTS = [
   },
   {
     id: "deep-research",
-    queryGroups: [["deep research", "深掘り", "詳しく調べ", "詳細調査", "詳細に調べ", "複数の情報源", "複数のweb情報源", "横断して", "調査レポート", "出典付きのレポート"]],
+    queryGroups: [["deep research", "深掘り", "深く調べ", "詳しく調べ", "詳細調査", "詳細に調べ", "複数の情報源", "複数のweb情報源", "横断して", "調査レポート", "出典付きのレポート"]],
     categories: ["deep-research"],
     terms: ["deep research", "深掘り調査", "詳細調査", "調査レポート", "複数段階", "複数の情報源", "出典", "レポート"],
   },
