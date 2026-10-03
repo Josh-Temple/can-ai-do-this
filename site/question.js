@@ -82,6 +82,8 @@ function categoryLabel(category) {
     memory: "記憶",
     "file-creation": "ファイル作成",
     "deep-research": "深掘り調査",
+    "video-creation": "動画作成",
+    "audio-transcription": "音声・文字起こし",
   }[category] || category;
 }
 
