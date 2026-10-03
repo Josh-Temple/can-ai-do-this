@@ -3,60 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIで実際に何ができるかを、公式情報と利用条件つきで確認できるタスク別データベース。">
-  <title>Can AI Do This?</title>
+  <meta name="description" content="AIでやりたい作業について、ChatGPT・Claude・Gemini・Copilotなどの対応可否を、公式情報・利用条件・確認日つきで比較できます。">
+  <title>Can AI Do This? | その作業、どのAIならできる？</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="masthead">
     <div class="wrap">
       <p class="eyebrow">CAN AI DO THIS?</p>
-      <h1>何をしたいですか？</h1>
-      <p class="lede">やりたいことをそのまま入力すると、近い質問を製品横断で比較できます。</p>
+      <h1>その作業、どのAIならできる？</h1>
+      <p class="lede">ChatGPT、Claude、Gemini、Copilotなどを「できる／条件付き／できない」で比較できます。公式情報、利用条件、確認日までまとめて確認できます。</p>
 
       <div class="search-row">
-        <label class="sr-only" for="search">タスクを検索</label>
-        <input id="search" type="search" autocomplete="off" placeholder="例：PDFを読みたい、会議を文字起こししたい、AIでサイトを作りたい">
-        <label class="sr-only" for="product-filter">製品で絞り込む</label>
-        <select id="product-filter">
-          <option value="">すべての製品</option>
-        </select>
+        <div class="search-field">
+          <label class="field-label" for="search">やりたいことを入力</label>
+          <input id="search" type="search" autocomplete="off" placeholder="例：会議を文字起こし、Excelを編集">
+        </div>
+        <div class="search-field">
+          <label class="field-label" for="product-filter">製品で絞り込む <span class="muted">任意</span></label>
+          <select id="product-filter">
+            <option value="">すべての製品</option>
+          </select>
+        </div>
       </div>
 
-      <div class="quick-queries" aria-label="よく比較するタスク">
-        <span>すぐ比較:</span>
+      <div class="quick-queries" aria-label="よくあるタスク">
+        <span>よくあるタスク:</span>
         <button type="button" data-query="PDFを読みたい">PDFを読む</button>
         <button type="button" data-query="ネットで調べたい">Web検索</button>
-        <button type="button" data-query="Deep Research">Deep Research</button>
+        <button type="button" data-query="詳しく調べたい">詳しく調べる</button>
         <button type="button" data-query="画像を作りたい">画像生成</button>
         <button type="button" data-query="写真を直したい">画像編集</button>
-        <button type="button" data-query="エクセルを編集したい">表計算</button>
+        <button type="button" data-query="エクセルを編集したい">Excelを編集</button>
         <button type="button" data-query="Excelを分析したい">データ分析</button>
-        <button type="button" data-query="パワポを作りたい">プレゼン</button>
-        <button type="button" data-query="AIでサイトを作りたい">Webアプリ</button>
+        <button type="button" data-query="パワポを作りたい">PowerPoint</button>
+        <button type="button" data-query="AIでサイトを作りたい">サイト作成</button>
         <button type="button" data-query="勉強を教えてほしい">学習</button>
         <button type="button" data-query="AIと話したい">音声会話</button>
         <button type="button" data-query="会議を文字起こししたい">文字起こし</button>
-        <button type="button" data-query="GitHubのコードを直してほしい">コード修正</button>
       </div>
 
       <div class="meta-row">
         <span id="result-count" aria-live="polite">読み込み中…</span>
         <span id="freshness"></span>
       </div>
+
+      <div class="hero-guide">
+        <p><strong>使い方:</strong> やりたいことを検索 → AIごとの可否を比較 → 条件と根拠を確認</p>
+        <button id="show-all" class="text-button" type="button">全質問を見る</button>
+      </div>
     </div>
   </header>
 
   <main class="wrap">
-    <section id="intro-state" class="intro-state" aria-labelledby="intro-heading">
-      <div>
-        <p class="section-kicker">TASK-FIRST DATABASE</p>
-        <h2 id="intro-heading" class="section-title">まず、やりたいことから探す</h2>
-        <p class="section-note intro-note">製品名や機能名を知らなくても構いません。自然な言葉で検索し、候補を比較してから詳細ページで条件と根拠を確認できます。</p>
-      </div>
-      <button id="show-all" class="text-button" type="button">全50問を見る</button>
-    </section>
-
     <section id="comparison-section" class="comparison-section" aria-labelledby="comparison-heading" hidden>
       <div class="section-head">
         <div>
@@ -94,7 +93,7 @@
       <p class="muted">正本データはGitHubリポジトリで確認できます。</p>
     </div>
 
-    <section class="feedback-section" aria-labelledby="feedback-heading">
+    <section id="feedback-section" class="feedback-section" aria-labelledby="feedback-heading" hidden>
       <p class="section-kicker">FEEDBACK</p>
       <h2 id="feedback-heading" class="section-title">探していた答えは見つかりましたか？</h2>
       <p class="section-note feedback-note">短いフィードバックをGitHubへ送れます。氏名・メールアドレスなどの個人情報は入力しないでください。</p>
@@ -121,12 +120,8 @@
   </main>
 
   <footer class="wrap footer">
-    <p>
-      AIの機能は変化します。回答には確認日と条件を付け、実測と公式資料による確認を区別しています。
-    </p>
-    <p>
-      <a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a>
-    </p>
+    <p>AIの機能は変化します。回答には確認日と条件を付け、実測と公式資料による確認を区別しています。</p>
+    <p><a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a></p>
   </footer>
 
   <script src="./freshness.js" defer></script>
