@@ -59,6 +59,7 @@ Community discussions are useful for discovering real questions and edge cases. 
 ```
 data/
   questions/        # structured task-first records
+  comparison-groups.json # canonical cross-product task relations
 docs/
   METHODOLOGY.md    # evidence, freshness, and research rules
   ROADMAP.md        # staged development plan
