@@ -1,7 +1,12 @@
 const DATA_URL = "./questions.json";
+const COMPARISON_GROUPS_URL = "./comparison-groups.json";
 
 const els = {
   search: document.querySelector("#search"),
+  overviewSection: document.querySelector("#overview-section"),
+  matrixHead: document.querySelector("#matrix-head"),
+  matrixBody: document.querySelector("#matrix-body"),
+  matrixCoverage: document.querySelector("#matrix-coverage"),
   product: document.querySelector("#product-filter"),
   comparisonSection: document.querySelector("#comparison-section"),
   comparison: document.querySelector("#comparison-body"),
@@ -16,6 +21,7 @@ const els = {
 };
 
 let records = [];
+let comparisonConfig = null;
 let showAllRecords = false;
 
 function escapeHtml(value = "") {
@@ -324,6 +330,81 @@ function renderComparisonRows(record) {
   }).join("");
 }
 
+function matrixAnswerFor(group, product) {
+  const allowed = new Set(group.question_ids || []);
+  for (const record of records) {
+    if (!allowed.has(record.id)) continue;
+    const answer = record.answers.find((item) => item.product === product);
+    if (answer) return { record, answer };
+  }
+  return null;
+}
+
+function renderMatrixCell(group, product) {
+  const match = matrixAnswerFor(group, product);
+  if (!match) {
+    return '<span class="matrix-missing">未調査</span>';
+  }
+
+  const freshness = freshnessInfo(match.record, match.answer);
+  const label = freshness.isDue ? "要再確認" : answerLabel(match.answer.answer);
+  const klass = freshness.isDue ? "stale" : answerClass(match.answer.answer);
+  return `<a class="matrix-status ${klass}" href="${questionUrl(match.record)}" aria-label="${escapeHtml(product)}: ${escapeHtml(label)}">${escapeHtml(label)}</a>`;
+}
+
+function renderOtherProducts(group, matrixProducts) {
+  const allowed = new Set(group.question_ids || []);
+  const items = [];
+
+  for (const record of records) {
+    if (!allowed.has(record.id)) continue;
+    for (const answer of record.answers) {
+      if (matrixProducts.includes(answer.product)) continue;
+      const freshness = freshnessInfo(record, answer);
+      const label = freshness.isDue ? "要再確認" : answerLabel(answer.answer);
+      items.push(
+        `<a href="${questionUrl(record)}">${escapeHtml(answer.product)} <span>${escapeHtml(label)}</span></a>`
+      );
+    }
+  }
+
+  return items.length
+    ? `<div class="matrix-others">${items.join("")}</div>`
+    : '<span class="matrix-missing">—</span>';
+}
+
+function renderOverviewMatrix() {
+  const groups = comparisonConfig?.groups || [];
+  const products = comparisonConfig?.matrix_products || [];
+  if (!groups.length || !products.length) {
+    els.overviewSection.hidden = true;
+    return;
+  }
+
+  els.matrixHead.innerHTML = `
+    <tr>
+      <th scope="col">タスク</th>
+      ${products.map((product) => `<th scope="col">${escapeHtml(product === "Microsoft Copilot" ? "Copilot" : product)}</th>`).join("")}
+      <th scope="col">その他</th>
+    </tr>
+  `;
+
+  els.matrixBody.innerHTML = groups.map((group) => `
+    <tr>
+      <th scope="row">${escapeHtml(group.label_ja)}</th>
+      ${products.map((product) => `<td data-product="${escapeHtml(product)}">${renderMatrixCell(group, product)}</td>`).join("")}
+      <td data-product="その他">${renderOtherProducts(group, products)}</td>
+    </tr>
+  `).join("");
+
+  const coverage = products.map((product) => {
+    const count = groups.filter((group) => matrixAnswerFor(group, product)).length;
+    const label = product === "Microsoft Copilot" ? "Copilot" : product;
+    return `${label} ${count}/${groups.length}`;
+  });
+  els.matrixCoverage.textContent = `掲載状況: ${coverage.join(" · ")}`;
+}
+
 function populateProductFilter() {
   const products = [...new Set(
     records.flatMap((record) => record.answers.map((answer) => answer.product))
@@ -359,6 +440,7 @@ function applyFilters() {
   }
 
   const active = hasSearch || showAllRecords;
+  els.overviewSection.hidden = active || !comparisonConfig;
   els.comparisonSection.hidden = !active || filtered.length === 0;
   els.feedbackSection.hidden = !active;
   els.comparison.innerHTML = filtered.map(renderComparisonRows).join("");
@@ -383,14 +465,22 @@ function applyFilters() {
 
 async function loadRecords() {
   try {
-    const response = await fetch(DATA_URL, { cache: "no-store" });
-    if (!response.ok) throw new Error("Could not load capability records.");
+    const [questionsResponse, comparisonResponse] = await Promise.all([
+      fetch(DATA_URL, { cache: "no-store" }),
+      fetch(COMPARISON_GROUPS_URL, { cache: "no-store" }),
+    ]);
+    if (!questionsResponse.ok) throw new Error("Could not load capability records.");
 
-    records = (await response.json())
+    records = (await questionsResponse.json())
       .filter((record) => record.status === "PUBLISHED")
       .sort((a, b) => a.id.localeCompare(b.id));
 
+    if (comparisonResponse.ok) {
+      comparisonConfig = await comparisonResponse.json();
+    }
+
     populateProductFilter();
+    renderOverviewMatrix();
 
     const params = new URLSearchParams(window.location.search);
     els.search.value = params.get("q") || "";
