@@ -133,14 +133,6 @@ function renderAnswer(record, answer) {
 
   return `
     <div class="answer question-page-answer">
-      <div class="answer-meta">
-        <strong>${escapeHtml(answer.product)}</strong>
-        <div>${escapeHtml(answer.plan || "プラン条件あり")}</div>
-        <div>${escapeHtml(answer.platform || "利用画面による")}</div>
-        <div class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</div>
-        <div>確認 ${escapeHtml(answer.last_checked)}</div>
-        ${freshness.nextReview ? `<div>次回確認目安 ${escapeHtml(freshness.nextReview)}</div>` : ""}
-      </div>
       <div class="answer-body">
         ${freshnessWarning(record, answer)}
         <p class="answer-summary">${escapeHtml(answerText(answer, "summary"))}</p>
@@ -159,6 +151,14 @@ function renderAnswer(record, answer) {
           <ul>${sources}</ul>
         </div>
       </div>
+      <aside class="answer-meta" aria-label="回答の条件と確認状況">
+        <strong>${escapeHtml(answer.product)}</strong>
+        <div>${escapeHtml(answer.plan || "プラン条件あり")}</div>
+        <div>${escapeHtml(answer.platform || "利用画面による")}</div>
+        <div class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</div>
+        <div>確認 ${escapeHtml(answer.last_checked)}</div>
+        ${freshness.nextReview ? `<div>次回確認目安 ${escapeHtml(freshness.nextReview)}</div>` : ""}
+      </aside>
     </div>
   `;
 }
