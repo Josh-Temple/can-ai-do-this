@@ -1,0 +1,79 @@
+{
+  "id": "Q0042",
+  "question": "Can Claude Code edit a repository and create a pull request?",
+  "question_ja": "Claude Codeは、リポジトリを直接編集してPull Requestを作成できる？",
+  "slug": "can-claude-code-edit-a-repository-and-create-a-pull-request",
+  "category": "coding",
+  "search_terms": [
+    "Claude Code",
+    "Claude",
+    "GitHub",
+    "リポジトリ",
+    "repository",
+    "Issue",
+    "PR",
+    "Pull Request",
+    "プルリクエスト",
+    "コード修正",
+    "コミット",
+    "Git",
+    "GitHub Actions",
+    "@claude"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Claude Code is an agentic coding tool that can act on a working tree and Git history, so users need a clear boundary between code explanation and actual repository mutation.",
+    "summary_ja": "Claude Codeはコードを説明するだけでなく、作業ツリーやGitへ実際に変更を加えるため、どこまで操作できるかを明確にする価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude Code",
+      "plan": "Claude Code access requires a supported Claude subscription, Anthropic Console/API billing, or supported enterprise provider configuration",
+      "platform": "Claude Code CLI and Claude Code GitHub Actions",
+      "region": "Anthropic-supported countries and environments",
+      "answer": "YES",
+      "summary": "Claude Code can edit files across a codebase, run tests and commands, create Git commits, resolve conflicts, and create pull requests. Claude Code GitHub Actions can also respond to @claude in issues or PRs to implement features, fix bugs, and create PRs.",
+      "summary_ja": "Claude Codeはコードベース全体のファイル編集、テスト・コマンド実行、Gitコミット、競合解消、Pull Request作成を行えます。Claude Code GitHub ActionsではIssueやPR上の`@claude`を起点に機能実装・バグ修正・PR作成を行うこともできます。",
+      "conditions": [
+        "Claude Code must run in a project or GitHub workflow with access to the target repository.",
+        "Git and GitHub actions require the permissions and credentials granted to the Claude Code environment.",
+        "GitHub Actions automation requires the Claude Code GitHub Action and appropriate Anthropic authentication/secrets."
+      ],
+      "conditions_ja": [
+        "Claude Codeが対象リポジトリへアクセスできるプロジェクト環境またはGitHubワークフローで動作している必要があります。",
+        "Git・GitHub操作は、Claude Code環境に付与された権限と認証情報の範囲で実行されます。",
+        "GitHub Actionsで自動化する場合は、Claude Code GitHub Actionと適切なAnthropic認証・Secret設定が必要です。"
+      ],
+      "limitations": [
+        "Repository permissions and Claude Code permission settings can restrict edits, shell commands, Git operations, or GitHub actions.",
+        "Automated changes and pull requests should be reviewed and tested before merge.",
+        "GitHub Actions setup adds workflow and credential-management responsibilities that are separate from local Claude Code usage."
+      ],
+      "limitations_ja": [
+        "リポジトリ権限やClaude Codeの権限設定により、ファイル編集、シェルコマンド、Git操作、GitHub操作が制限される場合があります。",
+        "自動生成された変更やPRは、マージ前に人がレビュー・テストする必要があります。",
+        "GitHub Actionsを使う場合は、ローカルのClaude Codeとは別にワークフローや認証情報を管理する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://docs.anthropic.com/ja/docs/claude-code",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents codebase-wide file editing, command/test execution, Git history, merge conflict resolution, commits, and pull-request creation."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://docs.anthropic.com/en/docs/claude-code/github-actions",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents @claude GitHub workflows that can analyze code, implement features, fix bugs, and create pull requests."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers authorized code-repository actions; it does not imply bypassing repository review or branch-protection rules."
+}
