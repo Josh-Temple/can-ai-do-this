@@ -261,7 +261,19 @@ async function loadQuestion() {
       els.community.hidden = false;
     }
 
-    const related = relatedRecords(record, records);
+    const peers = comparisonPeers(record, records);
+    if (peers.length) {
+      els.comparisonPeers.innerHTML = peers
+        .map((item) => {
+          const answer = item.answers[0] || { answer: "UNKNOWN" };
+          return `<li><a href="${questionUrl(item)}">${escapeHtml(questionText(item))}</a><span>${escapeHtml(answer.product || "")} · ${escapeHtml(answerLabel(answer.answer))}</span></li>`;
+        })
+        .join("");
+      els.comparisonPeersSection.hidden = false;
+    }
+
+    const peerIds = new Set(peers.map((item) => item.id));
+    const related = relatedRecords(record, records, peerIds);
     els.related.innerHTML = related
       .map((item) => `<li><a href="${questionUrl(item)}">${escapeHtml(questionText(item))}</a><span>${escapeHtml(item.answers[0]?.product || "")}</span></li>`)
       .join("");
