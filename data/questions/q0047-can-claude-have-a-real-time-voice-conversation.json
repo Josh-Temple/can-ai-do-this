@@ -1,0 +1,70 @@
+{
+  "id": "Q0047",
+  "question": "Can Claude have a real-time spoken conversation with me?",
+  "question_ja": "Claudeと、声だけでリアルタイムに会話できる？",
+  "slug": "can-claude-have-a-real-time-voice-conversation",
+  "category": "voice-conversation",
+  "search_terms": [
+    "Claude",
+    "音声会話",
+    "音声モード",
+    "voice mode",
+    "AIと話す",
+    "声で会話",
+    "ハンズフリー",
+    "リアルタイム会話",
+    "話しかける",
+    "音声で返事",
+    "push to talk"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often want to talk to an assistant while walking, commuting, or multitasking, so cross-product comparison needs to distinguish full voice conversation from simple speech-to-text dictation.",
+    "summary_ja": "移動中や作業中にAIへ話しかけたい需要は高く、単なる音声入力ではなく、AI側も音声で応答する会話機能を比較する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Free, Pro, Max, Team, and Enterprise",
+      "platform": "Claude web, Claude Desktop, and Claude Mobile on iOS and Android",
+      "region": "Where Claude is available",
+      "answer": "YES",
+      "summary": "Claude voice mode supports complete spoken conversations: you can speak to Claude, hear its spoken responses, interrupt it, and switch between voice and text while keeping the same conversation context.",
+      "summary_ja": "Claudeの音声モードでは、Claudeに話しかけて音声の返答を聞く完全な音声会話ができます。会話への割り込みや、同じ文脈を保ったまま音声とテキストを切り替えることにも対応しています。",
+      "conditions": [
+        "Voice mode must be available and enabled in the user's Claude app or web experience.",
+        "The device or browser needs microphone access.",
+        "Voice conversations count toward the user's normal Claude usage limits."
+      ],
+      "conditions_ja": [
+        "利用中のClaudeアプリまたはWebで音声モードが利用可能になっている必要があります。",
+        "端末またはブラウザでマイク権限を許可する必要があります。",
+        "音声会話も通常のClaude利用上限に含まれます。"
+      ],
+      "limitations": [
+        "Voice mode is documented as a beta feature, so behavior and availability can change.",
+        "Hands-free recognition works best in quieter environments; push-to-talk is recommended when background noise causes problems.",
+        "Models and connected-tool access available during voice follow the user's plan and existing integrations."
+      ],
+      "limitations_ja": [
+        "音声モードはベータ機能として案内されており、仕様や提供範囲が変わる可能性があります。",
+        "ハンズフリーモードは静かな環境に向いており、周囲が騒がしい場合はプッシュ・トゥ・トークの利用が案内されています。",
+        "音声会話中に使えるモデルや接続ツールは、ユーザーのプランと既存の連携設定に従います。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents voice mode across all Claude plans and web/desktop/mobile, including spoken responses, hands-free and push-to-talk modes, text/voice switching, and normal usage limits."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Claude voice mode, not mobile dictation that converts speech into a text prompt."
+}
