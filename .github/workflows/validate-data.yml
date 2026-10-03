@@ -10,6 +10,7 @@ on:
       - "scripts/check_search_cases.py"
       - "scripts/check_freshness.py"
       - "scripts/check_source_watch.py"
+      - "scripts/check_usability_assets.py"
       - "site/**"
       - "tests/fixtures/**"
       - "tests/search-cases.json"
@@ -17,6 +18,9 @@ on:
       - ".github/workflows/source-watch.yml"
       - ".github/workflows/validate-data.yml"
       - ".github/workflows/freshness-watch.yml"
+      - ".github/workflows/feedback-triage.yml"
+      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"
+      - "research/usability-results/TEMPLATE.md"
   pull_request:
     paths:
       - "data/questions/**"
@@ -26,6 +30,7 @@ on:
       - "scripts/check_search_cases.py"
       - "scripts/check_freshness.py"
       - "scripts/check_source_watch.py"
+      - "scripts/check_usability_assets.py"
       - "site/**"
       - "tests/fixtures/**"
       - "tests/search-cases.json"
@@ -33,6 +38,9 @@ on:
       - ".github/workflows/source-watch.yml"
       - ".github/workflows/validate-data.yml"
       - ".github/workflows/freshness-watch.yml"
+      - ".github/workflows/feedback-triage.yml"
+      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"
+      - "research/usability-results/TEMPLATE.md"
 
 permissions:
   contents: read
@@ -88,6 +96,9 @@ jobs:
             exit 1
           fi
           echo "VERIFIED direct-test freshness failed closed as expected."
+
+      - name: Check usability protocol/template alignment
+        run: python scripts/check_usability_assets.py
 
       - name: Check browser JavaScript syntax
         run: |

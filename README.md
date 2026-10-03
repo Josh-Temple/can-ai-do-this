@@ -103,4 +103,12 @@ The initial 10–15 question seed milestone is complete, followed by controlled 
 
 Public site: https://josh-temple.github.io/can-ai-do-this/
 
+## Public feedback
+
+The public site includes a lightweight feedback form. Submissions open a prefilled GitHub Issue so the user can review the text before sending it. The static site stores no GitHub write token and does not automatically copy search-query parameters into the issue.
+
+Matching `[Site feedback]` issues are automatically classified as found, partial, or discovery-failure signals. These reports inform search, copy, navigation, comparison, and demand work; they are not capability evidence and do not replace the separate three-person usability gate.
+
+Operational rules: `docs/FEEDBACK_OPERATIONS.md`.
+
 > **Real questions. Official sources. Actual capabilities.**

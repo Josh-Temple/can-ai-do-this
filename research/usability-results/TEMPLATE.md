@@ -4,15 +4,22 @@ Date: YYYY-MM-DD
 Site version / main SHA:  
 Participant profile: naive user; no identifying details
 
+## Session coverage
+
+- Product families reached:
+- Non-ChatGPT/Claude products reached:
+- Successful cross-product comparison paths:
+- Observer notes:
+
 ## Results
 
-| Task | found_relevant_question | time_to_first_relevant_click_seconds | search_terms_used | answer_interpreted_correctly | conditions_found | evidence_state_found | last_checked_found | source_opened | confusion_note |
-|---|---|---:|---|---|---|---|---|---|---|
-| A — presentation |  |  |  |  |  |  |  |  |  |
-| B — document |  |  |  |  |  |  |  |  |  |
-| C — automation |  |  |  |  |  |  |  |  |  |
-| D — web research |  |  |  |  |  |  |  |  |  |
-| E — website |  |  |  |  |  |  |  |  |  |
+| Task | found_relevant_question | time_to_first_relevant_click_seconds | search_terms_used | products_reached | cross_product_comparison_completed | answer_interpreted_correctly | conditions_found | evidence_state_found | last_checked_found | source_opened | confusion_note |
+|---|---|---:|---|---|---|---|---|---|---|---|---|
+| A — Deep Research comparison |  |  |  |  |  |  |  |  |  |  |  |
+| B — spreadsheet editing / analysis |  |  |  |  |  |  |  |  |  |  |  |
+| C — media / app creation |  |  |  |  |  |  |  |  |  |  |  |
+| D — real-time voice comparison |  |  |  |  |  |  |  |  |  |  |  |
+| E — recording / transcription |  |  |  |  |  |  |  |  |  |  |  |
 
 ## Repeated or material confusion
 
@@ -27,4 +34,4 @@ Participant profile: naive user; no identifying details
 
 ## Notes
 
-Do not store names, email addresses, account identifiers, or private conversation content.
+Do not store names, email addresses, account identifiers, or private conversation content. General site feedback does not substitute for this recorded protocol.
