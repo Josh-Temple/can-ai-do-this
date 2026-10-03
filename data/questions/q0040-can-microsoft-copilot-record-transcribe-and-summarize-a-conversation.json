@@ -1,0 +1,71 @@
+{
+  "id": "Q0040",
+  "question": "Can Microsoft Copilot record an in-person conversation, transcribe it, and summarize it?",
+  "question_ja": "Microsoft Copilotは、対面の会話を録音して文字起こし・要約できる？",
+  "slug": "can-microsoft-copilot-record-transcribe-and-summarize-a-conversation",
+  "category": "audio-transcription",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "録音",
+    "文字起こし",
+    "音声",
+    "会議",
+    "議事録",
+    "要約",
+    "Record",
+    "transcription",
+    "transcribe",
+    "アクションアイテム"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Meeting and voice-note transcription is a common productivity task where recording limits, licensing, privacy, and data storage matter as much as the transcription itself.",
+    "summary_ja": "会議や音声メモの文字起こしは需要が高く、録音時間、ライセンス、保存先、権限まで含めて把握する必要があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft 365 Copilot license on a work or school account",
+      "platform": "Latest Microsoft Copilot app on iPhone, iPad, or Android",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot Record can capture an in-person conversation or voice note and return a transcript plus an AI-generated summary in chat. The original audio is stored in a Copilot-managed OneDrive folder for the user's organization account.",
+      "summary_ja": "Microsoft CopilotのRecordは、対面会話や音声メモを録音し、会話内に文字起こしとAI要約を返せます。元の音声は組織アカウントのCopilot管理OneDriveフォルダに保存されます。",
+      "conditions": [
+        "A Microsoft 365 Copilot license assigned to a work or school account is required.",
+        "The latest Copilot mobile app, microphone permission, and internet access are required.",
+        "The organization's administrator can disable Record for the tenant."
+      ],
+      "conditions_ja": [
+        "仕事用・学校用アカウントにMicrosoft 365 Copilotライセンスが割り当てられている必要があります。",
+        "最新版のCopilotモバイルアプリ、マイク権限、インターネット接続が必要です。",
+        "組織管理者がテナント全体でRecordを無効化している場合は利用できません。"
+      ],
+      "limitations": [
+        "A single recording is limited to 120 minutes.",
+        "Audio is uploaded to OneDrive for transcription, so organizational OneDrive permissions and retention policies apply.",
+        "Users should confirm recording consent and applicable rules before capturing other people's conversations."
+      ],
+      "limitations_ja": [
+        "1回の録音は最大120分です。",
+        "文字起こしのため音声はOneDriveへアップロードされるため、組織のOneDrive権限・保持ポリシーが適用されます。",
+        "他者の会話を録音する前に、同意や適用されるルールを確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-record",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents Record requirements, transcript and AI summary output, OneDrive storage, follow-up workflows, administrator controls, and the 120-minute recording limit."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers live recording in the Microsoft Copilot mobile app, not arbitrary upload-and-transcribe of an existing audio file."
+}
