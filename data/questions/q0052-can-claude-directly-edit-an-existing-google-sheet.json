@@ -1,0 +1,71 @@
+{
+  "id": "Q0052",
+  "question": "Can Claude directly edit an existing Google Sheet?",
+  "question_ja": "Claudeは、既存のGoogleスプレッドシートを直接編集できる？",
+  "slug": "can-claude-directly-edit-an-existing-google-sheet",
+  "category": "spreadsheets",
+  "search_terms": [
+    "Claude",
+    "Google Sheets",
+    "Googleスプレッドシート",
+    "スプレッドシート",
+    "表計算",
+    "Excel",
+    "エクセル",
+    "既存シート",
+    "直接編集",
+    "セル編集",
+    "数式",
+    "Claude for Google Workspace"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Direct in-place spreadsheet editing is a core comparison task because chat-only analysis and write-back to the source file are materially different workflows.",
+    "summary_ja": "表計算の分析だけでなく、元のシートへその場で書き戻せるかは実務上の差が大きいため、主要AI間で比較する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Pro, Max, Team, or Enterprise (beta)",
+      "platform": "Claude for Google Workspace sidebar in Google Sheets",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude for Google Workspace can read the Google Sheet that is open and edit it directly in place, including building spreadsheet models, writing or fixing formulas, and cleaning data.",
+      "summary_ja": "Claude for Google Workspaceは、開いているGoogleスプレッドシートを読み、その場で直接編集できます。表計算モデルの作成、数式の作成・修正、データ整理などにも対応します。",
+      "conditions": [
+        "Claude for Google Workspace must be available and installed for the account.",
+        "The feature is currently documented as beta for Pro, Max, Team, and Enterprise plans.",
+        "The user needs a Google account permitted to install the Google Workspace Marketplace app."
+      ],
+      "conditions_ja": [
+        "アカウントでClaude for Google Workspaceを利用でき、インストールしている必要があります。",
+        "公式資料ではPro、Max、Team、Enterprise向けのベータ機能として提供されています。",
+        "Google Workspace Marketplaceアプリのインストールを許可されたGoogleアカウントが必要です。"
+      ],
+      "limitations": [
+        "Claude reads and edits the file currently open in the Google Workspace sidebar; it does not automatically gain access to other Drive files from that sidebar.",
+        "Edits are made under the user's Google identity and should be reviewed through normal version history.",
+        "This record covers Google Sheets in-place editing, not arbitrary local .xlsx in-place editing."
+      ],
+      "limitations_ja": [
+        "サイドバーから読み書きできるのは開いているGoogle Workspaceファイルで、他のDriveファイルへ自動的にアクセスするわけではありません。",
+        "変更はユーザー名義で反映されるため、通常の変更履歴などで確認する必要があります。",
+        "この記録はGoogleスプレッドシートの直接編集を対象とし、任意のローカル.xlsxファイルをその場で上書きする機能とは別です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic documents that Claude reads the open Google Sheet and edits it directly, including spreadsheet models, formulas, and data cleanup, with beta plan requirements."
+        }
+      ]
+    }
+  ],
+  "notes": "This record is specifically about Claude for Google Workspace inside Google Sheets, not generic file creation in a Claude chat."
+}
