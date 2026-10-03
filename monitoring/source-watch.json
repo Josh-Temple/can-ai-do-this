@@ -601,6 +601,71 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "openai-chatgpt-voice",
+      "url": "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+      "questions": [
+        "Q0046"
+      ],
+      "anchor_groups": [
+        [
+          "speak with chatgpt",
+          "spoken response"
+        ],
+        [
+          "live",
+          "advanced",
+          "standard"
+        ],
+        [
+          "voice in chat",
+          "voice conversation"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions previously returned HTTP 403 for help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "anthropic-claude-voice",
+      "url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "questions": [
+        "Q0047"
+      ],
+      "anchor_groups": [
+        [
+          "complete spoken conversations",
+          "speak to claude"
+        ],
+        [
+          "hands-free mode"
+        ],
+        [
+          "push-to-talk mode"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-gemini-live",
+      "url": "https://support.google.com/gemini/answer/15274899?hl=en",
+      "questions": [
+        "Q0048"
+      ],
+      "anchor_groups": [
+        [
+          "natural, free-flowing conversation",
+          "talk back and forth"
+        ],
+        [
+          "gemini live"
+        ],
+        [
+          "share your screen",
+          "screen sharing"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
