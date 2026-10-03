@@ -4,6 +4,7 @@
     {
       "id": "spreadsheet-direct-edit",
       "label_ja": "既存の表計算ファイルを直接編集",
+      "coverage": "general",
       "question_ids": [
         "Q0004",
         "Q0026",
@@ -13,6 +14,7 @@
     {
       "id": "editable-powerpoint",
       "label_ja": "編集可能なPowerPointを作成・編集",
+      "coverage": "general",
       "question_ids": [
         "Q0005",
         "Q0006",
@@ -22,6 +24,7 @@
     {
       "id": "web-search-citations",
       "label_ja": "現在のWebを検索して出典付きで回答",
+      "coverage": "general",
       "question_ids": [
         "Q0008",
         "Q0014",
@@ -32,6 +35,7 @@
     {
       "id": "image-generation",
       "label_ja": "文章の指示から画像を生成",
+      "coverage": "general",
       "question_ids": [
         "Q0009",
         "Q0021",
@@ -41,6 +45,7 @@
     {
       "id": "image-editing",
       "label_ja": "アップロードした画像を編集",
+      "coverage": "general",
       "question_ids": [
         "Q0010",
         "Q0018",
@@ -50,6 +55,7 @@
     {
       "id": "pdf-file-analysis",
       "label_ja": "PDFやファイルを分析",
+      "coverage": "general",
       "question_ids": [
         "Q0011",
         "Q0015",
@@ -61,6 +67,7 @@
     {
       "id": "website-app-creation",
       "label_ja": "文章からWebサイト・Webアプリを作成",
+      "coverage": "general",
       "question_ids": [
         "Q0012",
         "Q0036",
@@ -70,6 +77,7 @@
     {
       "id": "deep-research-report",
       "label_ja": "複数情報源を深く調査してレポート作成",
+      "coverage": "general",
       "question_ids": [
         "Q0031",
         "Q0032",
@@ -79,6 +87,7 @@
     {
       "id": "document-direct-edit",
       "label_ja": "既存文書を直接編集",
+      "coverage": "general",
       "question_ids": [
         "Q0034",
         "Q0035"
@@ -87,6 +96,7 @@
     {
       "id": "video-generation",
       "label_ja": "文章や素材から動画を生成",
+      "coverage": "general",
       "question_ids": [
         "Q0038",
         "Q0039"
@@ -95,6 +105,7 @@
     {
       "id": "record-transcribe-summarize",
       "label_ja": "会話や音声を録音・文字起こし・要約",
+      "coverage": "general",
       "question_ids": [
         "Q0040",
         "Q0043"
@@ -103,6 +114,7 @@
     {
       "id": "repository-code-changes",
       "label_ja": "リポジトリを編集してPull Requestを作成",
+      "coverage": "specialized",
       "question_ids": [
         "Q0041",
         "Q0042"
@@ -111,6 +123,7 @@
     {
       "id": "guided-learning",
       "label_ja": "段階的な学習支援とクイズ作成",
+      "coverage": "general",
       "question_ids": [
         "Q0044",
         "Q0045"
@@ -119,6 +132,7 @@
     {
       "id": "realtime-voice",
       "label_ja": "リアルタイム音声会話",
+      "coverage": "general",
       "question_ids": [
         "Q0046",
         "Q0047",
@@ -128,10 +142,21 @@
     {
       "id": "spreadsheet-data-analysis",
       "label_ja": "Excel・CSVを分析して集計やグラフを作成",
+      "coverage": "general",
       "question_ids": [
         "Q0049",
         "Q0050"
       ]
     }
+  ],
+  "matrix_products": [
+    "ChatGPT",
+    "Claude",
+    "Gemini",
+    "Microsoft Copilot"
+  ],
+  "core_products": [
+    "ChatGPT",
+    "Claude"
   ]
 }
