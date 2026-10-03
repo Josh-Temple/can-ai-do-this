@@ -1,5 +1,15 @@
 # Can AI Do This?
 
+## はじめて見る方へ
+
+**[公開サイトで実務の質問を検索](https://josh-temple.github.io/can-ai-do-this/)**し、回答の条件・確認日・Evidenceから原典へ進めます。
+
+「製品に機能があるか」から「具体的な作業を、どの条件でできるか」へ情報を組み直す個人プロジェクトです。問題設定、公式資料調査、JSON設計、生成サイト、鮮度・ソース監視のEvidenceとして、`data/questions/`、`schemas/`、`scripts/`、`monitoring/`を確認できます。
+
+**確認上の限界:** DOCUMENTEDは公式資料による裏付けであり直接再現ではありません。監視は再確認のきっかけであり、自動的な能力検証ではありません。
+
+[全プロジェクトの案内](https://github.com/Josh-Temple)
+
 [![Validate capability data](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/validate-data.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/validate-data.yml)
 [![Deploy public site](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/deploy-pages.yml)
 [![Freshness watch](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/freshness-watch.yml/badge.svg)](https://github.com/Josh-Temple/can-ai-do-this/actions/workflows/freshness-watch.yml)
