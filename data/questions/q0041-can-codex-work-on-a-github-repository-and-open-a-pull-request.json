@@ -1,0 +1,78 @@
+{
+  "id": "Q0041",
+  "question": "Can Codex work on a GitHub repository and open a pull request?",
+  "question_ja": "Codexは、GitHubリポジトリのコードを変更してPull Requestを作成できる？",
+  "slug": "can-codex-work-on-a-github-repository-and-open-a-pull-request",
+  "category": "coding",
+  "search_terms": [
+    "Codex",
+    "GitHub",
+    "リポジトリ",
+    "repository",
+    "Issue",
+    "PR",
+    "Pull Request",
+    "プルリクエスト",
+    "コード修正",
+    "コード変更",
+    "バグ修正",
+    "実装",
+    "@codex"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Developers increasingly delegate repository tasks to coding agents, but repository permissions and cloud-integration boundaries determine whether the agent can actually land a reviewable change.",
+    "summary_ja": "コーディング支援では、コード案を返すだけでなく、実際のリポジトリを変更してレビュー可能なPRまで作れるかが重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Codex",
+      "plan": "Codex availability and cloud GitHub integrations depend on the user's ChatGPT plan/workspace; API-key-only use does not include cloud GitHub integrations",
+      "platform": "Codex Cloud / web and supported Codex surfaces with GitHub integration",
+      "region": null,
+      "answer": "YES",
+      "summary": "Codex can work on repository tasks, implement code changes, and participate in GitHub issue/PR workflows. OpenAI documents GitHub issue and pull-request delegation with @codex, and shows Codex Cloud opening a pull request after modifying repository files.",
+      "summary_ja": "Codexはリポジトリ上のタスクを処理し、コード変更を実装してGitHubのIssue・Pull Requestワークフローに参加できます。OpenAIは`@codex`によるGitHub Issue/PRの委任を提供し、Codex Cloudがリポジトリを変更してPRを開く事例も公式に示しています。",
+      "conditions": [
+        "Codex must have access to the target repository through a supported GitHub integration or authorized working environment.",
+        "The connected account must have sufficient repository permissions for the requested read/write actions.",
+        "Cloud GitHub delegation features depend on the user's ChatGPT/Codex plan and workspace configuration."
+      ],
+      "conditions_ja": [
+        "対応するGitHub連携または権限のある作業環境を通じて、Codexが対象リポジトリへアクセスできる必要があります。",
+        "接続アカウントに、要求する読み取り・書き込み操作に必要なリポジトリ権限が必要です。",
+        "GitHub上のクラウド委任機能は、ChatGPT/Codexのプランやワークスペース設定によって利用可否が異なります。"
+      ],
+      "limitations": [
+        "API-key-only Codex usage does not include the documented cloud GitHub integrations.",
+        "Repository changes and pull requests should be reviewed and tested by a human before merge.",
+        "Exact write, review, and delegation controls can vary by Codex surface and workspace policy."
+      ],
+      "limitations_ja": [
+        "APIキーだけで利用するCodexでは、公式に説明されているクラウドGitHub連携は利用できません。",
+        "リポジトリ変更やPRは、マージ前に人が差分とテスト結果を確認する必要があります。",
+        "書き込み、レビュー、委任の具体的な操作範囲は、Codexの利用画面やワークスペースポリシーによって異なります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://developers.openai.com/ja-JP/docs/pricing",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI lists @codex delegation for GitHub issues and pull requests and GitHub code review among Codex cloud/integration features, and distinguishes API-key-only use from cloud GitHub integrations."
+        },
+        {
+          "type": "OFFICIAL_ANNOUNCEMENT",
+          "url": "https://developers.openai.com/blog/codex-at-devday",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI describes Codex Cloud restructuring repository documentation, changing files, and opening a pull request for review."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers authorized repository work and PR creation, not automatic merging without review."
+}
