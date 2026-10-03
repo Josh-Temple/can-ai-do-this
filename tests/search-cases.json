@@ -145,6 +145,34 @@
       "must_include": [
         "Q0030"
       ]
+    },
+    {
+      "query": "Deep Research",
+      "must_include": [
+        "Q0031",
+        "Q0032",
+        "Q0033"
+      ]
+    },
+    {
+      "query": "深掘り調査",
+      "must_include": [
+        "Q0031",
+        "Q0032",
+        "Q0033"
+      ]
+    },
+    {
+      "query": "Googleドキュメント 編集",
+      "must_include": [
+        "Q0034"
+      ]
+    },
+    {
+      "query": "Word 編集",
+      "must_include": [
+        "Q0035"
+      ]
     }
   ]
 }
