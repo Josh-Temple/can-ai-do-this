@@ -496,6 +496,113 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "openai-codex-github",
+      "url": "https://developers.openai.com/docs/pricing",
+      "questions": [
+        "Q0041"
+      ],
+      "anchor_groups": [
+        [
+          "github issues",
+          "github issue"
+        ],
+        [
+          "pull requests",
+          "pull request"
+        ],
+        [
+          "@codex",
+          "code review"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "anthropic-claude-code-git",
+      "url": "https://docs.anthropic.com/ja/docs/claude-code",
+      "questions": [
+        "Q0042"
+      ],
+      "anchor_groups": [
+        [
+          "ファイル編集",
+          "file editing"
+        ],
+        [
+          "コミット",
+          "commit"
+        ],
+        [
+          "pr",
+          "pull request"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "openai-chatgpt-record",
+      "url": "https://help.openai.com/en/articles/11487532-chatgpt-record/",
+      "questions": [
+        "Q0043"
+      ],
+      "anchor_groups": [
+        [
+          "transcribe and summarize"
+        ],
+        [
+          "macos"
+        ],
+        [
+          "plus",
+          "pro"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions previously returned HTTP 403 for help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "openai-study-mode",
+      "url": "https://help.openai.com/en/articles/11780217-study-mode",
+      "questions": [
+        "Q0044"
+      ],
+      "anchor_groups": [
+        [
+          "study mode"
+        ],
+        [
+          "practice questions",
+          "quiz"
+        ],
+        [
+          "step by step",
+          "step-by-step"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions previously returned HTTP 403 for help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "google-gemini-learning",
+      "url": "https://support.google.com/gemini/answer/16448384",
+      "questions": [
+        "Q0045"
+      ],
+      "anchor_groups": [
+        [
+          "guided learning"
+        ],
+        [
+          "visual aids"
+        ],
+        [
+          "practice questions",
+          "quiz"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
