@@ -661,6 +661,80 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "anthropic-claude-research",
+      "url": "https://support.claude.com/en/articles/11088861-use-research-on-claude",
+      "questions": [
+        "Q0051"
+      ],
+      "anchor_groups": [
+        [
+          "paid Claude plans",
+          "Pro, Max, Team, or Enterprise"
+        ],
+        [
+          "multiple searches",
+          "conducting multiple searches"
+        ],
+        [
+          "citations",
+          "easy-to-check citations"
+        ],
+        [
+          "web search turned on",
+          "web search"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "anthropic-google-workspace-editing",
+      "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+      "questions": [
+        "Q0052"
+      ],
+      "anchor_groups": [
+        [
+          "edits it directly",
+          "edit it directly"
+        ],
+        [
+          "build spreadsheet models"
+        ],
+        [
+          "write and fix formulas",
+          "fix formulas"
+        ],
+        [
+          "Google Sheets"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "openai-chatgpt-for-word",
+      "url": "https://help.openai.com/en/articles/20001526-chatgpt-for-word",
+      "questions": [
+        "Q0054"
+      ],
+      "anchor_groups": [
+        [
+          "revise selected text"
+        ],
+        [
+          "reorganize content"
+        ],
+        [
+          "all ChatGPT plans",
+          "including Free"
+        ],
+        [
+          "Microsoft Word"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions has repeatedly received HTTP 403 from help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
     }
   ]
 }
