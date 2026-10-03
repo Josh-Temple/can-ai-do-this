@@ -6,6 +6,8 @@ const els = {
   badge: document.querySelector("#question-badge"),
   answers: document.querySelector("#question-answers"),
   community: document.querySelector("#question-community"),
+  comparisonPeersSection: document.querySelector("#comparison-peers-section"),
+  comparisonPeers: document.querySelector("#comparison-peers-list"),
   related: document.querySelector("#related-list"),
   error: document.querySelector("#question-error"),
 };
@@ -17,6 +19,10 @@ function escapeHtml(value = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function normalizeSearch(value = "") {
+  return String(value).normalize("NFKC").toLowerCase();
 }
 
 function sourceLabel(type) {
