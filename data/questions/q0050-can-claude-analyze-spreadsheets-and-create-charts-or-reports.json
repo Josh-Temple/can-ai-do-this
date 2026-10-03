@@ -1,0 +1,78 @@
+{
+  "id": "Q0050",
+  "question": "Can Claude analyze spreadsheet or CSV data and create charts or reports?",
+  "question_ja": "Claudeは、ExcelやCSVのデータを分析してグラフやレポートを作れる？",
+  "slug": "can-claude-analyze-spreadsheets-and-create-charts-or-reports",
+  "category": "data-analysis",
+  "search_terms": [
+    "Claude",
+    "データ分析",
+    "Excel 分析",
+    "エクセル 分析",
+    "CSV 分析",
+    "表計算 分析",
+    "集計",
+    "グラフ",
+    "可視化",
+    "統計",
+    "Python",
+    "レポート",
+    "データを見て"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Claude's code-execution and file workflows make spreadsheet analysis materially different from simple text reasoning, so users benefit from a task-level comparison with other assistants.",
+    "summary_ja": "Claudeではコード実行とファイル生成を使ったデータ処理ができるため、単なる文章上の推論とは分けて、表計算分析の実作業として比較する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Free, Pro, Max, Team, and Enterprise; organization owners can control code execution and network access",
+      "platform": "Claude web, Claude Desktop, and Claude Mobile",
+      "region": "Where Claude is available",
+      "answer": "YES",
+      "summary": "Claude can use code execution to analyze uploaded CSV, TSV, Excel, and other data files, write Python analysis, create visualizations, and produce downloadable reports or spreadsheets with the results.",
+      "summary_ja": "Claudeはコード実行を使い、アップロードしたCSV、TSV、Excelなどのデータを分析し、Pythonによる処理、可視化、結果をまとめたダウンロード可能なレポートや表計算ファイルの作成まで行えます。",
+      "conditions": [
+        "Code execution and file creation must be enabled for the user or organization.",
+        "Spreadsheet and other supported data files must fit the documented upload limits; XLSX analysis requires the analysis/code-execution capability to be available.",
+        "Access to external packages or resources depends on the network-egress settings of the user's plan or organization."
+      ],
+      "conditions_ja": [
+        "ユーザーまたは組織でコード実行とファイル作成が有効になっている必要があります。",
+        "表計算などの対象ファイルは公式のアップロード上限内である必要があり、XLSXの分析には分析・コード実行機能が利用可能である必要があります。",
+        "外部パッケージやリソースへのアクセス可否は、プランまたは組織のネットワークアクセス設定によって異なります。"
+      ],
+      "limitations": [
+        "The documented per-file upload and download limit is 30 MB.",
+        "Team and Enterprise administrators can disable code execution or restrict network access.",
+        "Generated analyses, models, charts, and reports should be checked before they are used for consequential decisions."
+      ],
+      "limitations_ja": [
+        "公式に示されているアップロード・ダウンロードの上限は1ファイル30MBです。",
+        "Team・Enterpriseでは管理者がコード実行を無効化したり、ネットワークアクセスを制限したりできます。",
+        "重要な判断に使う場合は、生成された分析、モデル、グラフ、レポートの内容を確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents code execution and file creation for all Claude plans, advanced data analysis, Python scripts, visualizations, reports, spreadsheets, network controls, and 30 MB file limits."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/8241126-upload-files-to-claude",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents supported upload types including CSV and XLSX, with XLSX depending on the analysis capability."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers conversational data analysis and generated outputs, not in-place editing of a spreadsheet in Google Sheets or Microsoft Excel."
+}

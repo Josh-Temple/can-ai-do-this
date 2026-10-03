@@ -1,0 +1,78 @@
+{
+  "id": "Q0049",
+  "question": "Can ChatGPT analyze spreadsheet or CSV data and create charts?",
+  "question_ja": "ChatGPTは、ExcelやCSVのデータを分析して集計・グラフ作成できる？",
+  "slug": "can-chatgpt-analyze-spreadsheets-and-create-charts",
+  "category": "data-analysis",
+  "search_terms": [
+    "ChatGPT",
+    "データ分析",
+    "Excel 分析",
+    "エクセル 分析",
+    "CSV 分析",
+    "表計算 分析",
+    "集計",
+    "グラフ",
+    "可視化",
+    "統計",
+    "Python",
+    "異常値",
+    "データを見て"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Analyzing a spreadsheet without writing formulas or code is a high-frequency office task, and users need to know whether the product can perform code-backed calculations and produce inspectable charts.",
+    "summary_ja": "数式やコードを書かずに表計算データを分析したい需要は高く、AIが実際に計算・集計し、確認できる表やグラフまで作れるかを比較する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "File and data-analysis availability varies by model, plan, workspace settings, and account capabilities",
+      "platform": "ChatGPT conversations with supported file upload and data analysis",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT can analyze uploaded spreadsheets and CSV files, summarize trends and outliers, run Python-based calculations and transformations, and create tables plus static or supported interactive charts.",
+      "summary_ja": "ChatGPTは、アップロードしたExcelやCSVを分析し、傾向・外れ値の把握、Pythonによる計算や変換、表の作成、静的または対応するインタラクティブなグラフ作成を行えます。",
+      "conditions": [
+        "A supported spreadsheet or data file must be uploaded or made available through a connected source.",
+        "Available file types, upload limits, and connected sources depend on the user's model, plan, workspace settings, and account.",
+        "For reliable analysis, structured data should use clear column headers and one record per row."
+      ],
+      "conditions_ja": [
+        "対応する表計算・データファイルをアップロードするか、利用可能な接続先からファイルを参照できる必要があります。",
+        "利用できるファイル形式、アップロード上限、接続先は、モデル、プラン、ワークスペース設定、アカウントによって異なります。",
+        "精度の高い分析には、明確な列名と1行1レコードのような整理されたデータ形式が推奨されています。"
+      ],
+      "limitations": [
+        "The Python environment used for data analysis cannot make external web requests or API calls.",
+        "Exact values from scanned or image-based tables may not be extracted reliably.",
+        "Users should review generated code, assumptions, calculations, and charts before relying on important results."
+      ],
+      "limitations_ja": [
+        "データ分析に使うPython環境から外部WebやAPIへ直接アクセスすることはできません。",
+        "スキャン画像や画像化された表から正確な数値を取り出す処理は、信頼性が下がる場合があります。",
+        "重要な判断に使う場合は、生成されたコード、前提、計算、グラフを確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents spreadsheet/CSV support, Python-based calculations and transformations, chart creation, file/account variability, and sandbox constraints."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/9213685-extracting-insights-with-chatgpt-data-analysis",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents interactive tables, spreadsheet updates, data cleaning, aggregation, merging datasets, and static/interactive chart workflows."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers analysis of uploaded or connected data, not direct editing of an existing Google Sheet or Excel workbook in its native app."
+}

@@ -93,6 +93,8 @@ function categoryLabel(category) {
     "audio-transcription": "音声・文字起こし",
     coding: "プログラミング",
     learning: "学習",
+    "voice-conversation": "音声会話",
+    "data-analysis": "データ分析",
   }[category] || category;
 }
 

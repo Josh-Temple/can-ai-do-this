@@ -1,0 +1,70 @@
+{
+  "id": "Q0046",
+  "question": "Can ChatGPT have a real-time spoken conversation with me?",
+  "question_ja": "ChatGPTと、声だけでリアルタイムに会話できる？",
+  "slug": "can-chatgpt-have-a-real-time-voice-conversation",
+  "category": "voice-conversation",
+  "search_terms": [
+    "ChatGPT",
+    "音声会話",
+    "音声モード",
+    "Voice",
+    "Live",
+    "AIと話す",
+    "声で会話",
+    "ハンズフリー",
+    "リアルタイム会話",
+    "話しかける",
+    "音声で返事"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Voice conversation is a common hands-free use case, and the practical boundary depends on plan limits, platform support, microphone permissions, and which voice experience is available.",
+    "summary_ja": "音声会話は日常的なハンズフリー用途で需要が高く、プラン上限、対応端末、マイク権限、利用できる音声モードによって実用範囲が変わります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Available across consumer plans; workspace availability, models, and usage limits vary by plan and settings",
+      "platform": "ChatGPT on web, iOS, and Android using Voice in Chat",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Voice lets you speak with ChatGPT and hear spoken responses in the same chat. The Live experience supports natural back-and-forth conversation and interruption, while available voice options and limits vary by plan and workspace.",
+      "summary_ja": "ChatGPTの音声モードでは、ChatGPTに話しかけ、同じチャット内で音声の返答を聞けます。Liveでは自然な会話の往復や割り込みに対応し、利用できる音声方式や上限はプラン・ワークスペースによって異なります。",
+      "conditions": [
+        "The user needs access to a supported Voice experience for the current plan, workspace, region, and app version.",
+        "Microphone permission must be granted on the browser or device.",
+        "Usage is subject to the Voice allowance and limits of the user's plan or workspace."
+      ],
+      "conditions_ja": [
+        "現在のプラン、ワークスペース、地域、アプリ版で対応する音声モードが利用できる必要があります。",
+        "ブラウザまたは端末でマイク権限を許可する必要があります。",
+        "利用時間などは、ユーザーのプランまたはワークスペースの音声利用上限に従います。"
+      ],
+      "limitations": [
+        "Live does not support video or screen sharing; those capabilities remain separate in supported Advanced Voice experiences.",
+        "Voice transcripts are not guaranteed to be verbatim records of what was said.",
+        "Available voice models and limits can change by plan, workspace settings, region, and rollout."
+      ],
+      "limitations_ja": [
+        "Liveは動画共有や画面共有には対応しておらず、対応するAdvanced Voiceとは機能範囲が異なります。",
+        "音声会話の文字起こしは逐語的な記録になるとは限りません。",
+        "利用できる音声モデルや上限は、プラン、ワークスペース設定、地域、提供状況によって変わります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents natural spoken conversation, Live/Advanced/Standard voice experiences, supported chat surfaces, microphone requirements, plan-dependent limits, and transcript limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers a live spoken conversation, not one-way dictation or ChatGPT Record meeting capture."
+}

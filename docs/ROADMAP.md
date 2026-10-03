@@ -15,7 +15,7 @@ Goal: define a trustworthy data model before collecting at scale.
 
 Goal: publish a small set of high-demand, high-confidence questions.
 
-Initial public milestone: **10–15 questions**. The original seed milestone was reached at 15 questions. Controlled owner-directed expansions on 2026-10-03 brought the published set to **45 questions**, increasing cross-product comparison density across ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Codex, and Claude Code. Pause again at 45 before expanding to **50**, unless new evidence or user demand justifies a specific exception.
+Initial public milestone: **10–15 questions**. The original seed milestone was reached at 15 questions. Controlled owner-directed expansions on 2026-10-03 brought the published set to a **50-question first release**, increasing cross-product comparison density across ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Codex, and Claude Code. Do not treat 50 as the start of automatic count growth; add questions only when demand or comparison coverage justifies them.
 
 Selection signals:
 - recurring questions in Reddit and other public communities;
@@ -39,7 +39,9 @@ For the seed set, prioritize tasks involving:
 - video creation;
 - audio recording and transcription;
 - repository coding and pull-request workflows;
-- guided learning and study materials.
+- guided learning and study materials;
+- real-time voice conversation;
+- spreadsheet and CSV data analysis.
 
 ## Stage 2 — Public browsing experience
 
@@ -59,13 +61,24 @@ Current prototype:
 
 Avoid building a generic AI-tool directory.
 
-Before expanding beyond 45 questions, test whether users can:
+With the 50-question first release complete, prioritize whether users can:
 - find the relevant task without knowing the product feature name;
 - understand the answer and its plan/platform conditions;
 - find the evidence state and last-checked date;
 - identify when the answer is conditional or not yet verified.
 
 The current test protocol and pass criteria are fixed in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`. Record de-identified sessions under `research/usability-results/`.
+
+### Post-50 focus
+
+Prioritize, in order:
+- usability testing with naive users;
+- comparison and discovery UX;
+- demand validation for any future additions;
+- conversion of high-value DOCUMENTED claims to reproducible VERIFIED evidence;
+- freshness and source-change review.
+
+Do not expand the question count merely because capacity is available.
 
 ## Stage 3 — Community contribution
 
@@ -97,6 +110,7 @@ Current controls:
 - [x] add source-watch coverage for ChatGPT / Gemini / Perplexity Deep Research and Microsoft Copilot Word editing, using MANUAL mode where vendor access blocks GitHub-hosted Actions;
 - [x] add source-watch coverage for Claude Artifacts, Gemini Canvas/video, Microsoft Copilot video creation, and Microsoft Copilot Record;
 - [x] add source-watch coverage for Codex/Claude Code repository workflows, ChatGPT Record/Study mode, and Gemini learning tools;
+- [x] add source-watch coverage for ChatGPT Voice, Claude voice mode, and Gemini Live;
 - [x] explicit MANUAL handling for OpenAI Help Center sources blocked to GitHub-hosted Actions;
 - [ ] establish a reliable first-party access path for automated OpenAI Help Center monitoring without bypassing vendor controls;
 - [ ] extend source monitoring to the 30-day set after the pilot proves acceptably low-noise;

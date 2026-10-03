@@ -1,0 +1,70 @@
+{
+  "id": "Q0048",
+  "question": "Can Gemini have a real-time spoken conversation with me?",
+  "question_ja": "Geminiと、声だけでリアルタイムに会話できる？",
+  "slug": "can-gemini-have-a-real-time-voice-conversation",
+  "category": "voice-conversation",
+  "search_terms": [
+    "Gemini",
+    "Gemini Live",
+    "音声会話",
+    "音声モード",
+    "Live",
+    "AIと話す",
+    "声で会話",
+    "ハンズフリー",
+    "リアルタイム会話",
+    "話しかける",
+    "音声で返事"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Gemini Live is a major consumer voice experience, and its mobile-only boundary, account requirements, and staged rollout matter when comparing it with other assistants.",
+    "summary_ja": "Gemini Liveは主要な一般向け音声機能で、モバイル中心の提供範囲、アカウント条件、段階的な提供状況まで含めて他製品と比較する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps access; availability depends on account, age, device, region, and rollout",
+      "platform": "Gemini mobile app on Android and iOS/iPadOS",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Live supports natural, free-flowing spoken conversation. You can talk back and forth without typing, interrupt to add details or change topic, and on supported mobile devices also share a camera view or screen during Live.",
+      "summary_ja": "Gemini Liveでは、入力せずにGeminiと自然な音声会話を続けられます。途中で割り込んで情報を追加したり話題を変えたりでき、対応するモバイル端末ではカメラ映像や画面を共有しながら話すこともできます。",
+      "conditions": [
+        "The user must be signed in to Gemini Apps with an eligible personal, work, or school account.",
+        "A supported Android or iOS/iPadOS device and current Gemini mobile app are required.",
+        "The user must meet Google's applicable age and regional availability requirements."
+      ],
+      "conditions_ja": [
+        "対象となる個人、仕事用、学校用アカウントでGemini Appsにログインしている必要があります。",
+        "対応するAndroidまたはiOS/iPadOS端末と、利用可能なGeminiモバイルアプリが必要です。",
+        "Googleが定める年齢条件と地域の提供条件を満たす必要があります。"
+      ],
+      "limitations": [
+        "Google documents Gemini Live as a gradually updated feature, so the newest changes may not yet be available to every user.",
+        "The documented Gemini Live flow is for mobile apps rather than the Gemini web app.",
+        "Some Gemini features, including Gems, are not available inside Gemini Live."
+      ],
+      "limitations_ja": [
+        "Gemini Liveは段階的に更新されるため、最新の変更がすべてのユーザーへ同時に提供されるとは限りません。",
+        "公式に説明されているGemini Liveの利用先はモバイルアプリで、GeminiのWebアプリとは提供範囲が異なります。",
+        "Gemsなど一部のGemini機能はGemini Live内では利用できません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/15274899?hl=en",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents natural back-and-forth Gemini Live conversations, interruption, mobile requirements, account/age conditions, staged rollout, and camera/screen sharing."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Gemini Live voice conversation, not ordinary speech dictation into a text chat."
+}
