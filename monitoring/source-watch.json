@@ -457,19 +457,22 @@
     },
     {
       "id": "microsoft-copilot-video",
-      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-video-with-the-microsoft-copilot-app",
+      "url": "https://support.microsoft.com/en-us/clipchamp/how-to-create-video-with-copilot",
       "questions": [
         "Q0039"
       ],
       "anchor_groups": [
         [
-          "create a video"
+          "create video with copilot",
+          "how to create video with copilot"
         ],
         [
-          "clipchamp"
+          "generate a video script",
+          "ai-generated voice narrative"
         ],
         [
-          "describe what you want to create"
+          "stock footage",
+          "stock videos and graphics"
         ]
       ],
       "fetch_mode": "direct"
