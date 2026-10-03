@@ -1,0 +1,70 @@
+{
+  "id": "Q0054",
+  "question": "Can ChatGPT directly edit an existing Word document?",
+  "question_ja": "ChatGPTは、既存のWord文書を直接編集できる？",
+  "slug": "can-chatgpt-directly-edit-an-existing-word-document",
+  "category": "documents",
+  "search_terms": [
+    "ChatGPT",
+    "Word",
+    "ワード",
+    "Microsoft Word",
+    "文書編集",
+    "文章編集",
+    "既存文書",
+    "直接編集",
+    "書き換え",
+    "書式",
+    "ChatGPT for Word"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Direct editing inside Word is materially different from uploading a document for analysis or asking chat to draft replacement text.",
+    "summary_ja": "Word文書をアップロードして分析するだけでなく、Word内で既存文書を直接修正・書式設定できるかは実務上の重要な比較軸です。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "All ChatGPT plans, including Free; admin controls may apply",
+      "platform": "Microsoft Word with the ChatGPT for Word add-in",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT for Word opens in a Word sidebar and can directly revise selected text, reorganize content, and adjust headings, numbering, and formatting in the document that is open.",
+      "summary_ja": "ChatGPT for WordはMicrosoft Word内のサイドバーで動作し、開いている既存文書の選択部分を書き換えたり、構成変更、見出し・番号・書式の調整を行えます。",
+      "conditions": [
+        "The ChatGPT for Word add-in must be installed and available in Microsoft Word.",
+        "The user must sign in with a ChatGPT account.",
+        "Workspace and Microsoft 365 administrators can control whether the add-in is enabled."
+      ],
+      "conditions_ja": [
+        "Microsoft WordでChatGPT for Wordアドインをインストールし、利用可能である必要があります。",
+        "ChatGPTアカウントでサインインする必要があります。",
+        "ワークスペース管理者やMicrosoft 365管理者がアドインの利用を制御できる場合があります。"
+      ],
+      "limitations": [
+        "Complex formatting, tables, and charts may still require manual adjustment.",
+        "ChatGPT for Word works with the document currently open but cannot automatically reference unrelated local files on the computer.",
+        "Important edits should be reviewed because ChatGPT can change content the user intended to preserve."
+      ],
+      "limitations_ja": [
+        "複雑な書式、表、グラフは手動調整が必要になる場合があります。",
+        "ChatGPT for Wordは開いている文書を扱えますが、PC上の無関係なローカルファイルを自動参照することはできません。",
+        "意図せず内容が変わる可能性があるため、重要な編集は確認が必要です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/20001526-chatgpt-for-word",
+          "accessed_at": "2026-10-04",
+          "note": "OpenAI documents direct editing in Microsoft Word, including revising selected text, reorganizing content, formatting, all-plan availability, and admin controls."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers direct editing through the ChatGPT for Word add-in, not generic chat-based document rewriting."
+}
