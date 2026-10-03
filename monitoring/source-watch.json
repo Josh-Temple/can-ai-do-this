@@ -388,7 +388,8 @@
           "premium copilot"
         ]
       ],
-      "fetch_mode": "direct"
+      "fetch_mode": "manual",
+      "manual_reason": "The first live GitHub-hosted Actions run on 2026-10-03 returned a 200 response whose extracted text did not expose the documented Word article content, causing all semantic anchors to disappear. The capability remains confirmed in the current Microsoft support page; review it through the 14-day freshness process rather than treating the fetch artifact as a content change."
     }
   ]
 }

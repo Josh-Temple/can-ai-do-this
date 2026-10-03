@@ -8,7 +8,7 @@ The watcher is a **review trigger**, not a capability evaluator.
 
 It checks whether high-change first-party documentation still contains a small set of semantic anchors that support the published task boundary. It does not compare full HTML, because navigation, timestamps, translations, tracking markup, and layout changes would create excessive noise.
 
-The configuration covers every published question with a 14-day review window. Anthropic sources and the Gemini Workspace source are directly monitored. OpenAI Help Center and Perplexity Help Center sources are currently marked MANUAL because live GitHub-hosted Actions runs on 2026-10-03 received HTTP 403 from those sites. The project does not attempt to bypass that access control.
+The configuration covers every published question with a 14-day review window. Anthropic sources and the Gemini Workspace source are directly monitored. OpenAI Help Center, Perplexity Help Center, and the Microsoft Word Edit-with-Copilot source are currently marked MANUAL because live GitHub-hosted Actions runs on 2026-10-03 received HTTP 403 from those sites. The project does not attempt to bypass that access control.
 
 ## States
 
