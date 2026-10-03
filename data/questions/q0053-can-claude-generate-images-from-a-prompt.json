@@ -1,0 +1,61 @@
+{
+  "id": "Q0053",
+  "question": "Can Claude generate a photo or illustration from a text prompt?",
+  "question_ja": "Claudeは、文章の指示から写真やイラストを生成できる？",
+  "slug": "can-claude-generate-images-from-a-prompt",
+  "category": "image-generation",
+  "search_terms": [
+    "Claude",
+    "画像",
+    "写真",
+    "イラスト",
+    "絵",
+    "画像生成",
+    "画像を作る",
+    "写真を作る",
+    "生成画像",
+    "text to image"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Image generation is a common cross-product comparison task, and an explicit negative capability is more useful than leaving Claude absent from the matrix.",
+    "summary_ja": "画像生成は主要AIを比較する代表的なタスクで、Claudeについて未掲載のままにするより、公式に示された非対応範囲を明示する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "All Claude plans",
+      "platform": "Claude",
+      "region": null,
+      "answer": "NO",
+      "summary": "Claude does not generate photos or illustrations in the way dedicated image-generation tools do.",
+      "summary_ja": "Claudeは、画像生成ツールのように文章から写真やイラストを生成する機能には対応していません。",
+      "conditions": [],
+      "conditions_ja": [],
+      "limitations": [
+        "Anthropic explicitly states that Claude does not generate photos or illustrations like image-generation tools.",
+        "Claude can still create diagrams, charts, and interactive visuals using HTML/SVG, and it can view and analyze uploaded images.",
+        "Those visual and analysis capabilities are not treated as photo/illustration generation in this comparison."
+      ],
+      "limitations_ja": [
+        "Anthropicは、Claudeは画像生成ツールのような写真・イラスト生成を行わないと明示しています。",
+        "一方でHTML/SVGによる図表・グラフ・インタラクティブなビジュアル作成や、アップロード画像の表示・分析は可能です。",
+        "この比較では、それらを写真・イラストの画像生成とは扱いません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/9002504-can-claude-produce-images",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic explicitly states that Claude does not generate photos or illustrations like image-generation tools, while distinguishing diagrams/visuals and image analysis."
+        }
+      ]
+    }
+  ],
+  "notes": "The NO answer is scoped to photo/illustration generation from prompts; Claude can generate diagrams, charts, SVG/HTML visuals, and PNG data visualizations in other workflows."
+}
