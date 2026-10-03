@@ -1,0 +1,70 @@
+{
+  "id": "Q0035",
+  "question": "Can Microsoft Copilot directly edit an existing Word document?",
+  "question_ja": "Microsoft Copilotは、既存のWord文書を直接編集できる？",
+  "slug": "can-microsoft-copilot-directly-edit-a-word-document",
+  "category": "documents",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Word",
+    "ワード",
+    "文書編集",
+    "文章編集",
+    "既存文書",
+    "書き換え",
+    "書式",
+    "Edit with Copilot",
+    "Agent Mode"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Direct in-document editing is more useful than chat-only rewriting, and it provides a strong comparison with Gemini in Docs.",
+    "summary_ja": "チャットで文章案を出すだけでなく、開いている文書をその場で直接編集できるかは実務上重要で、Gemini in Docsとの比較にも向きます。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Premium Copilot license; rollout availability applies",
+      "platform": "Word for Microsoft 365",
+      "region": null,
+      "answer": "YES",
+      "summary": "Edit with Copilot in Word can directly create, edit, refine, and format content in place inside an existing Word document using Word's built-in styles and features.",
+      "summary_ja": "Wordの「Edit with Copilot」は、既存のWord文書内で内容を直接作成・編集・修正・書式設定でき、Word標準のスタイルや機能を使って文書内で変更を行えます。",
+      "conditions": [
+        "A Premium Copilot license is required for the documented feature.",
+        "Edit with Copilot must have rolled out to the user's Word environment.",
+        "Microsoft documents the feature for Word for Microsoft 365, with rollout details varying by desktop channel."
+      ],
+      "conditions_ja": [
+        "公式に説明されている機能にはPremium Copilotライセンスが必要です。",
+        "利用中のWord環境へ「Edit with Copilot」が提供済みである必要があります。",
+        "Microsoft 365版Word向け機能で、デスクトップチャネル等によって提供時期が異なる場合があります。"
+      ],
+      "limitations": [
+        "The feature is still rolling out worldwide, so eligible users may not all have access yet.",
+        "Copilot edits should be reviewed before acceptance in important documents.",
+        "This record covers the in-document editing feature, not generic Copilot chat outside Word."
+      ],
+      "limitations_ja": [
+        "世界展開中の機能で、対象ライセンスがあってもまだ利用できない場合があります。",
+        "重要文書ではCopilotによる変更を適用前に確認する必要があります。",
+        "この記録はWord内の直接編集機能を対象とし、Word外の一般Copilotチャットとは別です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/word/edit-with-copilot-in-word",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents direct in-place creation, editing, refinement, formatting, Premium Copilot licensing, and worldwide rollout status."
+        }
+      ]
+    }
+  ],
+  "notes": "Review window is 14 days because the feature is still actively rolling out."
+}
