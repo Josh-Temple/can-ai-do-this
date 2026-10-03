@@ -9,6 +9,7 @@ const els = {
   freshness: document.querySelector("#freshness"),
   empty: document.querySelector("#empty"),
   error: document.querySelector("#error"),
+  detailSection: document.querySelector(".detail-section"),
 };
 
 let records = [];
@@ -24,6 +25,99 @@ function escapeHtml(value = "") {
 
 function normalizeSearch(value = "") {
   return String(value).normalize("NFKC").toLowerCase();
+}
+
+
+const SEARCH_CONCEPTS = [
+  {
+    triggers: ["pdfを読み", "pdfを読ん", "pdfの内容", "pdfを要約", "pdfを分析"],
+    requirements: [["pdf分析", "pdf要約", "pdfを読む", "文書分析"]],
+  },
+  {
+    triggers: ["会議を文字起こし", "文字起こしした", "録音して文字起こし", "議事録を作"],
+    requirements: [["文字起こし", "議事録", "transcription", "transcribe"]],
+  },
+  {
+    triggers: ["エクセルを編集", "excelを編集", "スプレッドシートを編集", "表計算を編集"],
+    requirements: [
+      ["エクセル", "excel", "スプレッドシート", "表計算"],
+      ["編集", "直接編集", "セル編集", "シート編集", "ブック編集", "更新"],
+    ],
+  },
+  {
+    triggers: ["サイトを作", "webサイト", "ウェブサイト", "ホームページを作", "webアプリ"],
+    requirements: [["webサイト", "ウェブサイト", "ホームページ", "webアプリ", "ウェブアプリ", "webページ"]],
+  },
+  {
+    triggers: ["勉強を教え", "勉強したい", "学習したい", "家庭教師", "チューター", "フラッシュカード"],
+    requirements: [["勉強", "学習", "家庭教師", "チューター", "クイズ", "練習問題", "フラッシュカード"]],
+  },
+  {
+    triggers: ["コードを直", "コードを修正", "バグを直", "githubのコード"],
+    requirements: [["コード修正", "コード変更", "バグ修正", "実装", "リポジトリ", "repository"]],
+  },
+  {
+    triggers: ["ネットで調べ", "ウェブで調べ", "webで調べ", "ウェブ検索", "web検索", "ネット検索", "最新情報"],
+    requirements: [["ウェブ検索", "web検索", "ネット検索", "現在のウェブ", "最新情報"]],
+  },
+  {
+    triggers: ["深く調べ", "深掘り", "詳細調査", "deep research"],
+    requirements: [["deep research", "深掘り調査", "詳細調査", "調査レポート", "複数段階"]],
+  },
+  {
+    triggers: ["画像を作", "写真を作", "画像生成", "イラストを作"],
+    requirements: [["画像生成", "画像を作る", "写真を作る", "生成画像", "text to image"]],
+  },
+  {
+    triggers: ["画像編集", "写真編集", "画像を直", "写真を直", "画像加工", "レタッチ"],
+    requirements: [["画像編集", "写真編集", "画像を直す", "写真を直す", "画像加工", "レタッチ"]],
+  },
+  {
+    triggers: ["パワポを作", "powerpointを作", "スライドを作", "プレゼンを作"],
+    requirements: [["パワポ", "powerpoint", "スライド作成", "プレゼン資料"]],
+  },
+  {
+    triggers: ["aiと話した", "声で話した", "音声で会話", "リアルタイムに会話", "話しかけたい"],
+    requirements: [["音声会話", "aiと話す", "声で会話", "リアルタイム会話", "話しかける"]],
+  },
+  {
+    triggers: ["excelを分析", "エクセルを分析", "csvを分析", "データを分析", "データを見て"],
+    requirements: [
+      ["データ分析", "excel 分析", "エクセル 分析", "csv 分析", "表計算 分析", "データを見て"],
+      ["集計", "グラフ", "可視化", "統計", "分析"],
+    ],
+  },
+];
+
+const PRODUCT_SEARCH_GROUPS = [
+  { triggers: ["chatgpt"], terms: ["chatgpt"] },
+  { triggers: ["claude code"], terms: ["claude code"] },
+  { triggers: ["claude"], terms: ["claude"] },
+  { triggers: ["gemini"], terms: ["gemini"] },
+  { triggers: ["microsoft copilot", "copilot"], terms: ["microsoft copilot", "copilot"] },
+  { triggers: ["perplexity"], terms: ["perplexity"] },
+  { triggers: ["codex"], terms: ["codex"] },
+];
+
+function queryRequirements(value = "") {
+  const query = normalizeSearch(value).trim();
+  if (!query) return [];
+
+  const requirements = [];
+  for (const concept of SEARCH_CONCEPTS) {
+    if (concept.triggers.some((trigger) => query.includes(normalizeSearch(trigger)))) {
+      requirements.push(...concept.requirements.map((group) => group.map(normalizeSearch)));
+    }
+  }
+
+  for (const group of PRODUCT_SEARCH_GROUPS) {
+    if (group.triggers.some((trigger) => query.includes(normalizeSearch(trigger)))) {
+      requirements.push(group.terms.map(normalizeSearch));
+    }
+  }
+
+  if (requirements.length) return requirements;
+  return query.split(/\s+/).filter(Boolean).map((token) => [token]);
 }
 
 function sourceLabel(type) {
@@ -153,12 +247,12 @@ function renderComparisonRows(record) {
       : "";
     return `
       <tr>
-        <td class="task-cell"><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></td>
-        <td>${escapeHtml(answer.product)}</td>
-        <td><span class="answer-badge ${answerClass(answer.answer)}">${escapeHtml(answerLabel(answer.answer))}</span></td>
-        <td>${escapeHtml(answer.plan || "条件による")}</td>
-        <td class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</td>
-        <td>${escapeHtml(answer.last_checked)}${review}</td>
+        <td class="task-cell" data-label="やりたいこと"><a href="${questionUrl(record)}">${escapeHtml(questionText(record))}</a></td>
+        <td data-label="製品">${escapeHtml(answer.product)}</td>
+        <td data-label="回答"><span class="answer-badge ${answerClass(answer.answer)}">${escapeHtml(answerLabel(answer.answer))}</span></td>
+        <td data-label="プラン">${escapeHtml(answer.plan || "条件による")}</td>
+        <td data-label="根拠" class="${freshness.isDue ? "freshness-due" : ""}">${escapeHtml(effectiveEvidenceLabel(record, answer))}</td>
+        <td data-label="確認日">${escapeHtml(answer.last_checked)}${review}</td>
       </tr>
     `;
   }).join("");
@@ -253,18 +347,21 @@ function populateProductFilter() {
 
 function applyFilters() {
   const rawQuery = els.search.value.trim();
-  const tokens = normalizeSearch(rawQuery).split(/\s+/).filter(Boolean);
+  const requirements = queryRequirements(rawQuery);
   const product = els.product.value;
 
   const filtered = records.filter((record) => {
     const haystack = searchableText(record);
-    const queryMatch = tokens.length === 0 || tokens.every((token) => haystack.includes(token));
+    const queryMatch = requirements.length === 0
+      || requirements.every((group) => group.some((term) => haystack.includes(term)));
     const productMatch = !product || record.answers.some((answer) => answer.product === product);
     return queryMatch && productMatch;
   });
 
   els.comparison.innerHTML = filtered.map(renderComparisonRows).join("");
-  els.results.innerHTML = filtered.map(renderRecord).join("");
+  const hasActiveFilter = Boolean(rawQuery || product);
+  els.detailSection.hidden = !hasActiveFilter;
+  els.results.innerHTML = hasActiveFilter ? filtered.map(renderRecord).join("") : "";
   els.count.textContent = `${filtered.length} / ${records.length} 件`;
   els.empty.hidden = filtered.length !== 0;
 
@@ -274,7 +371,6 @@ function applyFilters() {
   const next = params.toString() ? `?${params}` : window.location.pathname;
   history.replaceState(null, "", next);
 }
-
 async function loadRecords() {
   try {
     const response = await fetch(DATA_URL, { cache: "no-store" });
@@ -316,5 +412,13 @@ async function loadRecords() {
 
 els.search.addEventListener("input", applyFilters);
 els.product.addEventListener("change", applyFilters);
+
+document.querySelectorAll("[data-query]").forEach((button) => {
+  button.addEventListener("click", () => {
+    els.search.value = button.dataset.query || "";
+    applyFilters();
+    els.search.focus();
+  });
+});
 
 loadRecords();
