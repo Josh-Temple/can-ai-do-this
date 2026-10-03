@@ -1,0 +1,70 @@
+{
+  "id": "Q0026",
+  "question": "Can Microsoft Copilot directly edit an existing Excel workbook?",
+  "question_ja": "Microsoft Copilotは、既存のExcelブックを直接編集できる？",
+  "slug": "can-microsoft-copilot-directly-edit-an-excel-workbook",
+  "category": "spreadsheets",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Excel",
+    "エクセル",
+    "表計算",
+    "スプレッドシート",
+    "ブック編集",
+    "セル編集",
+    "数式",
+    "グラフ",
+    "ピボットテーブル"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users need to distinguish between chat advice about spreadsheets and an assistant that can actually modify the workbook.",
+    "summary_ja": "表計算について助言するだけなのか、実際にブックへ変更を書き込めるのかは重要な違いです。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Eligible Microsoft 365 / Copilot subscription; model-switching options can require higher-tier licenses",
+      "platform": "Excel for Microsoft 365, Mac, iPad, and web",
+      "region": null,
+      "answer": "YES",
+      "summary": "Copilot in Excel can directly edit a workbook from natural-language requests, including changing worksheets and cell ranges, applying formatting, generating formulas, and creating charts and PivotTables.",
+      "summary_ja": "ExcelのCopilotは、自然言語の指示からブックを直接編集できます。シートやセル範囲の変更、書式設定、数式生成、グラフやピボットテーブルの作成などに対応します。",
+      "conditions": [
+        "Copilot in Excel must be available under the user's Microsoft 365 or Copilot subscription.",
+        "The workbook must be opened in a supported Excel surface.",
+        "Some model-switching and advanced capabilities depend on commercial Microsoft Copilot or Microsoft 365 Premium licensing."
+      ],
+      "conditions_ja": [
+        "利用中のMicrosoft 365またはCopilot契約でExcelのCopilotが利用可能である必要があります。",
+        "対応するExcel画面で対象ブックを開く必要があります。",
+        "モデル切替や一部の高度機能は、商用Microsoft CopilotまたはMicrosoft 365 Premiumなどのライセンス条件があります。"
+      ],
+      "limitations": [
+        "Copilot may not perform equally well in every language or on every complex workbook.",
+        "Generated formulas, transformations, and summaries should be reviewed before consequential use.",
+        "This record covers Copilot in Excel, not generic Microsoft Copilot chat without an open workbook."
+      ],
+      "limitations_ja": [
+        "言語や複雑なブック構造によって性能差が生じる場合があります。",
+        "生成された数式、変換、要約は重要な用途に使う前に確認する必要があります。",
+        "この記録はExcel内のCopilotを対象とし、ブックを開いていない一般のMicrosoft Copilotチャットとは別です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents direct workbook editing, worksheet and range changes, formulas, formatting, charts, PivotTables, and edit/plan/chat modes."
+        }
+      ]
+    }
+  ],
+  "notes": "This is the Microsoft Excel counterpart to task-first spreadsheet editing questions for ChatGPT and Gemini."
+}
