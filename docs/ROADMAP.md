@@ -66,6 +66,7 @@ Current prototype:
 - [x] search-first landing state: do not dump all 50 questions before the user asks for them.
 - [x] ranked intent search with category boundaries so natural multi-intent queries can return comparison candidates without unrelated leakage.
 - [x] keep full answer details on dedicated question pages instead of duplicating them below search results.
+- [x] canonicalize cross-product comparison relations instead of inferring them from search-term overlap.
 
 Avoid building a generic AI-tool directory.
 

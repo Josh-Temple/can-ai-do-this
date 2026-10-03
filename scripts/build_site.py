@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SITE_DIR = ROOT / "site"
 DATA_DIR = ROOT / "data" / "questions"
+COMPARISON_GROUPS_PATH = ROOT / "data" / "comparison-groups.json"
 
 
 def load_records():
@@ -36,6 +37,11 @@ def build(output: Path):
     records = load_records()
     (output / "questions.json").write_text(
         json.dumps(records, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    comparison_groups = json.loads(COMPARISON_GROUPS_PATH.read_text(encoding="utf-8"))
+    (output / "comparison-groups.json").write_text(
+        json.dumps(comparison_groups, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     (output / ".nojekyll").write_text("", encoding="utf-8")

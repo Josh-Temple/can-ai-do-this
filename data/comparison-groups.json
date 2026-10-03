@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "spreadsheet-direct-edit",
+      "label_ja": "既存の表計算ファイルを直接編集",
+      "question_ids": [
+        "Q0004",
+        "Q0026",
+        "Q0029"
+      ]
+    },
+    {
+      "id": "editable-powerpoint",
+      "label_ja": "編集可能なPowerPointを作成・編集",
+      "question_ids": [
+        "Q0005",
+        "Q0006",
+        "Q0019"
+      ]
+    },
+    {
+      "id": "web-search-citations",
+      "label_ja": "現在のWebを検索して出典付きで回答",
+      "question_ids": [
+        "Q0008",
+        "Q0014",
+        "Q0020",
+        "Q0024"
+      ]
+    },
+    {
+      "id": "image-generation",
+      "label_ja": "文章の指示から画像を生成",
+      "question_ids": [
+        "Q0009",
+        "Q0021",
+        "Q0025"
+      ]
+    },
+    {
+      "id": "image-editing",
+      "label_ja": "アップロードした画像を編集",
+      "question_ids": [
+        "Q0010",
+        "Q0018",
+        "Q0028"
+      ]
+    },
+    {
+      "id": "pdf-file-analysis",
+      "label_ja": "PDFやファイルを分析",
+      "question_ids": [
+        "Q0011",
+        "Q0015",
+        "Q0017",
+        "Q0023",
+        "Q0030"
+      ]
+    },
+    {
+      "id": "website-app-creation",
+      "label_ja": "文章からWebサイト・Webアプリを作成",
+      "question_ids": [
+        "Q0012",
+        "Q0036",
+        "Q0037"
+      ]
+    },
+    {
+      "id": "deep-research-report",
+      "label_ja": "複数情報源を深く調査してレポート作成",
+      "question_ids": [
+        "Q0031",
+        "Q0032",
+        "Q0033"
+      ]
+    },
+    {
+      "id": "document-direct-edit",
+      "label_ja": "既存文書を直接編集",
+      "question_ids": [
+        "Q0034",
+        "Q0035"
+      ]
+    },
+    {
+      "id": "video-generation",
+      "label_ja": "文章や素材から動画を生成",
+      "question_ids": [
+        "Q0038",
+        "Q0039"
+      ]
+    },
+    {
+      "id": "record-transcribe-summarize",
+      "label_ja": "会話や音声を録音・文字起こし・要約",
+      "question_ids": [
+        "Q0040",
+        "Q0043"
+      ]
+    },
+    {
+      "id": "repository-code-changes",
+      "label_ja": "リポジトリを編集してPull Requestを作成",
+      "question_ids": [
+        "Q0041",
+        "Q0042"
+      ]
+    },
+    {
+      "id": "guided-learning",
+      "label_ja": "段階的な学習支援とクイズ作成",
+      "question_ids": [
+        "Q0044",
+        "Q0045"
+      ]
+    },
+    {
+      "id": "realtime-voice",
+      "label_ja": "リアルタイム音声会話",
+      "question_ids": [
+        "Q0046",
+        "Q0047",
+        "Q0048"
+      ]
+    },
+    {
+      "id": "spreadsheet-data-analysis",
+      "label_ja": "Excel・CSVを分析して集計やグラフを作成",
+      "question_ids": [
+        "Q0049",
+        "Q0050"
+      ]
+    }
+  ]
+}
