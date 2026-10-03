@@ -24,7 +24,7 @@ SEARCH_CONCEPTS = [
     {"id": "learning", "groups": [["勉強", "学習", "家庭教師", "チューター", "フラッシュカード", "クイズ", "練習問題"]], "categories": ["learning"], "terms": ["勉強", "学習", "家庭教師", "チューター", "フラッシュカード", "クイズ", "練習問題"]},
     {"id": "coding", "groups": [["github", "コード", "リポジトリ", "repository"], ["直", "修正", "編集", "pr", "プルリク", "実装"]], "categories": ["coding"], "terms": ["github", "コード修正", "コード変更", "バグ修正", "リポジトリ", "repository", "pr", "プルリクエスト"]},
     {"id": "web-search", "groups": [["ネットで調べ", "ウェブで調べ", "webで調べ", "ウェブ検索", "web検索", "ネット検索", "最新情報", "現在のウェブ"]], "categories": ["web-research"], "terms": ["ウェブ検索", "web検索", "ネット検索", "現在のウェブ", "最新情報", "出典", "引用"]},
-    {"id": "deep-research", "groups": [["deep research", "深掘り", "詳しく調べ", "詳細調査", "詳細に調べ", "複数の情報源", "複数のweb情報源", "横断して", "調査レポート", "出典付きのレポート"]], "categories": ["deep-research"], "terms": ["deep research", "深掘り調査", "詳細調査", "調査レポート", "複数段階", "複数の情報源", "出典", "レポート"]},
+    {"id": "deep-research", "groups": [["deep research", "深掘り", "深く調べ", "詳しく調べ", "詳細調査", "詳細に調べ", "複数の情報源", "複数のweb情報源", "横断して", "調査レポート", "出典付きのレポート"]], "categories": ["deep-research"], "terms": ["deep research", "深掘り調査", "詳細調査", "調査レポート", "複数段階", "複数の情報源", "出典", "レポート"]},
     {"id": "image-generation", "groups": [["画像を作", "写真を作", "画像生成", "イラストを作", "生成画像"]], "categories": ["image-generation"], "terms": ["画像生成", "画像を作る", "写真を作る", "生成画像", "text to image"]},
     {"id": "image-editing", "groups": [["画像編集", "写真編集", "画像を直", "写真を直", "画像加工", "レタッチ"]], "categories": ["image-editing"], "terms": ["画像編集", "写真編集", "画像を直す", "写真を直す", "画像加工", "レタッチ"]},
     {"id": "presentations", "groups": [["パワポ", "powerpoint", "スライドを作", "プレゼンを作", "プレゼン資料"]], "categories": ["presentations"], "terms": ["パワポ", "powerpoint", "pptx", "スライド", "スライド作成", "プレゼン", "プレゼン資料"]},
