@@ -33,3 +33,19 @@ When adding a comparable question:
 4. let normal record/search/site validation run.
 
 Do not create a comparison group merely to increase apparent comparison coverage.
+
+
+## Public comparison matrix
+
+The public landing page renders a matrix from this relation file.
+
+`matrix_products` defines the fixed high-level columns. The first release uses ChatGPT, Claude, Gemini, and Microsoft Copilot because these are broad consumer/general-purpose products with useful cross-task comparison value. Products outside those columns, such as Perplexity, Codex, and Claude Code, remain visible in the “その他” column when a canonical record exists.
+
+`core_products` defines coverage targets, not facts. ChatGPT and Claude are the current core targets for general comparison groups. A missing core cell is displayed as **未調査** and is reported by validation, but it does not fail CI and must never be interpreted as “できない”.
+
+Each group has a `coverage` mode:
+
+- `general`: core-product coverage is a useful research target;
+- `specialized`: the task is primarily represented by specialist products, so a missing ChatGPT/Claude cell is not automatically a priority.
+
+Coverage gaps should be filled only with normal first-party/direct evidence. The matrix must never synthesize an answer from another product, product family, or nearby task.
