@@ -67,6 +67,8 @@ Current prototype:
 - [x] ranked intent search with category boundaries so natural multi-intent queries can return comparison candidates without unrelated leakage.
 - [x] keep full answer details on dedicated question pages instead of duplicating them below search results.
 - [x] canonicalize cross-product comparison relations instead of inferring them from search-term overlap.
+- [x] make the first viewport state the site's purpose explicitly: compare whether major AI products can do a user-described task, with conditions and evidence.
+- [x] remove duplicated onboarding copy and hide feedback until the user has actually searched or opened the full list.
 
 Avoid building a generic AI-tool directory.
 
