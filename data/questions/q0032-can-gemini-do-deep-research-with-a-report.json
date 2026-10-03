@@ -1,0 +1,71 @@
+{
+  "id": "Q0032",
+  "question": "Can Gemini do Deep Research and produce a comprehensive report?",
+  "question_ja": "Geminiは、Deep Researchで複数の情報源を調査して包括的なレポートを作れる？",
+  "slug": "can-gemini-do-deep-research-with-a-report",
+  "category": "deep-research",
+  "search_terms": [
+    "Gemini",
+    "Deep Research",
+    "deep research",
+    "深掘り調査",
+    "詳細調査",
+    "リサーチ",
+    "調査レポート",
+    "Google検索",
+    "Gmail",
+    "Drive",
+    "NotebookLM",
+    "レポート"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Gemini Deep Research combines live web research with optional personal and uploaded sources, creating a materially different workflow from ordinary chat search.",
+    "summary_ja": "GeminiのDeep Researchは、Web検索に加えてGmail・Drive・ファイル・NotebookLMなども情報源にでき、通常のチャット検索とは異なる調査フローです。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Deep Research is available to signed-in users; Google AI Pro and Ultra provide higher-quality model options and higher limits",
+      "platform": "Gemini Apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Deep Research can conduct in-depth real-time research, using Google Search by default and optionally adding sources such as personal Gmail, Drive, uploaded files, and NotebookLM notebooks to generate a comprehensive report.",
+      "summary_ja": "GeminiのDeep Researchは、Google検索を基本にリアルタイムで深い調査を行い、必要に応じて個人のGmail・Drive・アップロードファイル・NotebookLMノートブックなどを情報源に追加して包括的なレポートを生成できます。",
+      "conditions": [
+        "The user must be 18 or older and signed in to Gemini Apps.",
+        "Research request and concurrency limits apply.",
+        "Google AI Pro and Ultra provide higher report limits and access to higher-quality model options for Deep Research."
+      ],
+      "conditions_ja": [
+        "18歳以上で、Gemini Appsにログインしている必要があります。",
+        "1日あたりの調査回数や同時実行数に上限があります。",
+        "Google AI Pro・Ultraでは、より高いレポート上限や高品質なモデル選択肢を利用できます。"
+      ],
+      "limitations": [
+        "The available source types and model options can depend on account, plan, and feature rollout.",
+        "A comprehensive report can still contain mistakes or weak inferences and should be checked against its sources.",
+        "Some richer report visuals are plan-specific."
+      ],
+      "limitations_ja": [
+        "利用できる情報源やモデルは、アカウント、プラン、提供状況によって異なる場合があります。",
+        "包括的なレポートでも誤りや弱い推論を含む可能性があるため、情報源を確認する必要があります。",
+        "一部の高度なビジュアル表現はプラン限定です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/15719111",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents Deep Research, Google Search as the default source, optional Gmail/Drive/files/NotebookLM sources, age requirements, and plan-dependent limits/models."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Gemini Deep Research rather than ordinary Gemini web-grounded answers."
+}

@@ -1,0 +1,69 @@
+{
+  "id": "Q0034",
+  "question": "Can Gemini directly edit an existing Google Doc?",
+  "question_ja": "Geminiは、既存のGoogleドキュメントを直接編集できる？",
+  "slug": "can-gemini-directly-edit-an-existing-google-doc",
+  "category": "documents",
+  "search_terms": [
+    "Gemini",
+    "Google Docs",
+    "Googleドキュメント",
+    "文書編集",
+    "文章編集",
+    "既存文書",
+    "書き換え",
+    "要約",
+    "リライト",
+    "Gemini in Docs"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users need to distinguish Gemini's connected-app retrieval from Gemini operating directly inside a Google Doc.",
+    "summary_ja": "Gemini Appsの連携機能で文書を読むことと、Googleドキュメント内で既存文書を直接編集することは別の能力です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Eligible Google Workspace or Google AI plan",
+      "platform": "Gemini in Google Docs on desktop",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini in Google Docs can directly draft, rewrite, shorten, expand, summarize, reformat, and make broader or targeted edits to an existing document based on natural-language prompts.",
+      "summary_ja": "Googleドキュメント内のGeminiは、自然言語の指示に基づいて既存文書を直接下書き・書き換え・短縮・詳細化・要約・整形し、文書全体または特定部分を編集できます。",
+      "conditions": [
+        "An eligible Google Workspace or Google AI plan is required.",
+        "The documented workflow uses Gemini inside Google Docs on a computer.",
+        "Suggested changes can be reviewed and accepted individually or all at once."
+      ],
+      "conditions_ja": [
+        "対象となるGoogle WorkspaceまたはGoogle AIプランが必要です。",
+        "公式資料ではパソコン版Googleドキュメント内のGeminiとして説明されています。",
+        "提案された変更は、個別または一括で確認して適用できます。"
+      ],
+      "limitations": [
+        "This capability is distinct from the Gemini Apps Workspace connector, which has narrower write capabilities.",
+        "Gemini suggestions should be reviewed before acceptance.",
+        "Availability and supported languages depend on plan and Workspace rollout."
+      ],
+      "limitations_ja": [
+        "これはGemini AppsのWorkspace連携とは別機能で、連携側の書き込み能力はより限定されています。",
+        "Geminiの編集提案は適用前に確認する必要があります。",
+        "利用可否や対応言語はプランやWorkspaceの提供状況に依存します。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/docs/answer/13447609",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents direct drafting, rewriting, summarizing, tone changes, and broader or targeted editing with Gemini inside Google Docs."
+        }
+      ]
+    }
+  ],
+  "notes": "This is the document-editing counterpart to Q0029 Gemini in Sheets."
+}

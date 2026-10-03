@@ -15,7 +15,7 @@ Goal: define a trustworthy data model before collecting at scale.
 
 Goal: publish a small set of high-demand, high-confidence questions.
 
-Initial public milestone: **10–15 questions**. The original seed milestone was reached at 15 questions. Controlled owner-directed expansions on 2026-10-03 brought the published set to **30 questions**, increasing cross-product comparison density across ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. Pause again at 30 before expanding toward **35–50**, unless new evidence or user demand justifies a specific exception.
+Initial public milestone: **10–15 questions**. The original seed milestone was reached at 15 questions. Controlled owner-directed expansions on 2026-10-03 brought the published set to **35 questions**, increasing cross-product comparison density across ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. Pause again at 35 before expanding toward **40–50**, unless new evidence or user demand justifies a specific exception.
 
 Selection signals:
 - recurring questions in Reddit and other public communities;
@@ -54,7 +54,7 @@ Current prototype:
 
 Avoid building a generic AI-tool directory.
 
-Before expanding beyond 30 questions, test whether users can:
+Before expanding beyond 35 questions, test whether users can:
 - find the relevant task without knowing the product feature name;
 - understand the answer and its plan/platform conditions;
 - find the evidence state and last-checked date;
@@ -89,6 +89,7 @@ Current controls:
 - [x] explicitly handle the 14-day Perplexity search source as MANUAL after GitHub-hosted Actions returned HTTP 403;
 - [x] add direct semantic monitoring for the 14-day Microsoft Copilot web-search record;
 - [x] add direct semantic monitoring for the 14-day Microsoft Copilot Outlook record;
+- [x] add source-watch coverage for ChatGPT / Gemini / Perplexity Deep Research and Microsoft Copilot Word editing, using MANUAL mode where vendor access blocks GitHub-hosted Actions;
 - [x] explicit MANUAL handling for OpenAI Help Center sources blocked to GitHub-hosted Actions;
 - [ ] establish a reliable first-party access path for automated OpenAI Help Center monitoring without bypassing vendor controls;
 - [ ] extend source monitoring to the 30-day set after the pilot proves acceptably low-noise;

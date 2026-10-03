@@ -1,0 +1,76 @@
+{
+  "id": "Q0033",
+  "question": "Can Perplexity Research automatically perform in-depth research and create a comprehensive report?",
+  "question_ja": "Perplexity Researchは、複雑なテーマを自動で深く調査して包括的なレポートを作れる？",
+  "slug": "can-perplexity-research-create-an-in-depth-report",
+  "category": "deep-research",
+  "search_terms": [
+    "Perplexity",
+    "Research",
+    "Research mode",
+    "Deep Research",
+    "deep research",
+    "深掘り調査",
+    "詳細調査",
+    "レポート",
+    "複数段階",
+    "Pro",
+    "Max"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Perplexity offers multiple search modes, so users need a task-first explanation of when Research differs from ordinary and Pro Search.",
+    "summary_ja": "Perplexityには複数の検索モードがあるため、通常検索やPro SearchとResearchモードの違いをタスク単位で整理する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Perplexity",
+      "plan": "Research availability and limits are plan-dependent; Pro provides extended access and Max provides higher access",
+      "platform": "Perplexity",
+      "region": null,
+      "answer": "YES",
+      "summary": "Perplexity Research automatically selects an appropriate combination of models for in-depth work on complex topics and generates comprehensive reports without requiring the user to choose a model manually.",
+      "summary_ja": "PerplexityのResearchモードは、複雑なテーマの深い調査に適したモデルの組み合わせを自動選択し、ユーザーがモデルを手動指定しなくても包括的なレポートを生成します。",
+      "conditions": [
+        "Research mode must be available under the user's Perplexity plan.",
+        "Access volume and advanced-model availability vary by subscription tier.",
+        "Pro provides extended Research access, while Max provides higher access to advanced research capabilities."
+      ],
+      "conditions_ja": [
+        "利用中のPerplexityプランでResearchモードが提供されている必要があります。",
+        "利用回数や高度モデルへのアクセスはプランによって異なります。",
+        "ProではResearchへのアクセスが拡張され、Maxではさらに高い利用枠・高度機能が提供されます。"
+      ],
+      "limitations": [
+        "Research mode is deeper and slower than ordinary search and is intended for complex topics rather than quick facts.",
+        "The generated report should still be verified against its cited sources.",
+        "Plan limits and model availability can change."
+      ],
+      "limitations_ja": [
+        "Researchモードは通常検索より深く時間がかかるため、短い事実確認より複雑なテーマ向けです。",
+        "生成レポートは引用された情報源と照合する必要があります。",
+        "プラン上限や利用可能なモデルは変更される可能性があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity documents Research mode as automatically choosing models for in-depth complex-topic research and producing comprehensive reports."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+          "accessed_at": "2026-10-03",
+          "note": "Perplexity documents plan-dependent access to Research, including expanded Pro and Max access."
+        }
+      ]
+    }
+  ],
+  "notes": "This record is separate from Q0020 ordinary/Pro Search and focuses on the Research mode."
+}
