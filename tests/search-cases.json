@@ -77,7 +77,9 @@
     {
       "query": "Webサイト 公開",
       "must_include": [
-        "Q0012"
+        "Q0012",
+        "Q0036",
+        "Q0037"
       ]
     },
     {
@@ -172,6 +174,39 @@
       "query": "Word 編集",
       "must_include": [
         "Q0035"
+      ]
+    },
+    {
+      "query": "Webアプリ 作成",
+      "must_include": [
+        "Q0012",
+        "Q0036",
+        "Q0037"
+      ]
+    },
+    {
+      "query": "動画 作成",
+      "must_include": [
+        "Q0038",
+        "Q0039"
+      ]
+    },
+    {
+      "query": "Gemini 動画",
+      "must_include": [
+        "Q0038"
+      ]
+    },
+    {
+      "query": "Copilot 動画",
+      "must_include": [
+        "Q0039"
+      ]
+    },
+    {
+      "query": "録音 文字起こし",
+      "must_include": [
+        "Q0040"
       ]
     }
   ]

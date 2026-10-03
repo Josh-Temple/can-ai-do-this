@@ -1,0 +1,72 @@
+{
+  "id": "Q0037",
+  "question": "Can Gemini Canvas create and share an interactive web app or webpage?",
+  "question_ja": "Gemini Canvasは、文章の指示からWebアプリやWebページを作成して共有できる？",
+  "slug": "can-gemini-canvas-create-and-share-a-web-app",
+  "category": "website-creation",
+  "search_terms": [
+    "Gemini",
+    "Canvas",
+    "Webアプリ",
+    "ウェブアプリ",
+    "Webページ",
+    "ウェブページ",
+    "Webサイト",
+    "ホームページ",
+    "アプリ作成",
+    "コード",
+    "公開リンク",
+    "共有",
+    "AIアプリ"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Gemini Canvas turns natural-language requests into editable apps and webpages and can expose them through a shareable public link.",
+    "summary_ja": "Gemini Canvasでは、文章で要望を伝えてアプリやWebページを作り、そのまま共有リンクを発行できるため、ノーコード寄りの用途として比較価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; some AI-powered Canvas capabilities are limited by age, account, and feature availability",
+      "platform": "Gemini Canvas on web; some Canvas creation/viewing flows are also available on mobile",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Canvas can create and edit apps, code, and webpages from prompts, preview them interactively, add Gemini-powered AI features, and create a public share link for the app or Canvas content.",
+      "summary_ja": "Gemini Canvasは、文章の指示からアプリ、コード、Webページを作成・編集し、プレビューしながら修正できます。Geminiを使うAI機能を追加したり、アプリやCanvasコンテンツの公開共有リンクを作成したりすることもできます。",
+      "conditions": [
+        "The user must be signed in to Gemini Apps.",
+        "Adding Gemini-powered AI features to an app is documented for users age 18 or older.",
+        "Sharing and editing behavior depends on the Canvas surface and account settings."
+      ],
+      "conditions_ja": [
+        "Gemini Appsにログインしている必要があります。",
+        "アプリへGeminiを使うAI機能を追加する操作は18歳以上のユーザー向けです。",
+        "共有・編集の挙動はCanvasの利用画面やアカウント設定によって異なります。"
+      ],
+      "limitations": [
+        "A Canvas app is shared through Gemini's public-link mechanism and is not equivalent to independently deploying a production application on the user's own infrastructure.",
+        "People with a public app link may be able to inspect or edit app-associated data as described by Google, so sensitive data should not be embedded casually.",
+        "Some shared Canvas content is opened through gemini.google.com rather than as a standalone hosted site."
+      ],
+      "limitations_ja": [
+        "CanvasアプリはGeminiの公開リンク機構で共有されるもので、独自インフラへ本番アプリをデプロイすることと同義ではありません。",
+        "Googleの説明では公開アプリリンクを知る利用者がアプリ関連データを閲覧・編集できる場合があるため、機密データを安易に埋め込むべきではありません。",
+        "共有されたCanvasコンテンツの一部は独立サイトではなくgemini.google.com上で開きます。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/16047321",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents creating/editing apps and code in Canvas, AI-powered app features, webpage creation, public-link sharing, and shared-app data behavior."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Gemini Canvas app/webpage creation and sharing, not Google Cloud deployment."
+}

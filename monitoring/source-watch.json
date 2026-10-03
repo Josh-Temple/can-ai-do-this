@@ -390,6 +390,109 @@
       ],
       "fetch_mode": "manual",
       "manual_reason": "The first live GitHub-hosted Actions run on 2026-10-03 returned a 200 response whose extracted text did not expose the documented Word article content, causing all semantic anchors to disappear. The capability remains confirmed in the current Microsoft support page; review it through the 14-day freshness process rather than treating the fetch artifact as a content change."
+    },
+    {
+      "id": "anthropic-artifacts",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "questions": [
+        "Q0036"
+      ],
+      "anchor_groups": [
+        [
+          "single-page websites",
+          "small interactive tool"
+        ],
+        [
+          "artifacts are available"
+        ],
+        [
+          "cloud code execution",
+          "file creation"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-gemini-canvas",
+      "url": "https://support.google.com/gemini/answer/16047321",
+      "questions": [
+        "Q0037"
+      ],
+      "anchor_groups": [
+        [
+          "create or edit a doc, app, slides, or code",
+          "apps & code"
+        ],
+        [
+          "public link",
+          "share"
+        ],
+        [
+          "webpage",
+          "web page"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-gemini-video",
+      "url": "https://support.google.com/gemini/answer/16126339",
+      "questions": [
+        "Q0038"
+      ],
+      "anchor_groups": [
+        [
+          "create a video",
+          "generate video"
+        ],
+        [
+          "google ai plan"
+        ],
+        [
+          "audio",
+          "sound"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-video",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-video-with-the-microsoft-copilot-app",
+      "questions": [
+        "Q0039"
+      ],
+      "anchor_groups": [
+        [
+          "create a video"
+        ],
+        [
+          "clipchamp"
+        ],
+        [
+          "describe what you want to create"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-record",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-record",
+      "questions": [
+        "Q0040"
+      ],
+      "anchor_groups": [
+        [
+          "transcript"
+        ],
+        [
+          "ai-generated summary",
+          "summary"
+        ],
+        [
+          "120 minutes"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }

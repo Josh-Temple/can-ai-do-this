@@ -1,0 +1,76 @@
+{
+  "id": "Q0039",
+  "question": "Can Microsoft Copilot create a video from a text description?",
+  "question_ja": "Microsoft Copilotは、文章の指示から動画を作成できる？",
+  "slug": "can-microsoft-copilot-create-a-video-from-a-description",
+  "category": "video-creation",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "動画",
+    "動画作成",
+    "AI動画",
+    "Clipchamp",
+    "ビデオ",
+    "video",
+    "PowerPointから動画",
+    "ナレーション",
+    "ストック映像"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often group all AI video tools together, but Microsoft Copilot's standard Create flow currently composes a video using generated script, narration, and stock footage rather than only synthetic video generation.",
+    "summary_ja": "「AIで動画を作る」といっても、Microsoft Copilotの標準Createフローは生成映像だけではなく、台本・AIナレーション・ストック映像を組み合わせる仕組みであり、違いを明示する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Work or school Microsoft 365 account with Copilot Create access; Clipchamp must be enabled by the organization",
+      "platform": "Microsoft Copilot Create / Clipchamp",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot Create can turn a text description into a video by generating a script and AI voice narration, selecting stock footage, and assembling the result in Clipchamp. It can also use an existing PowerPoint file as source material.",
+      "summary_ja": "Microsoft Copilot Createは文章の指示から台本とAI音声ナレーションを生成し、ストック映像を選んでClipchamp上の動画として組み立てられます。既存のPowerPointを素材として動画を作ることもできます。",
+      "conditions": [
+        "For the documented work/school flow, Clipchamp must be enabled by the organization's administrator.",
+        "The user needs access to Copilot Create under an eligible Microsoft 365 account.",
+        "Personal Microsoft 365 account availability differs from work/school accounts; Microsoft's current account table does not list Create a video for Personal, Family, Premium, or Pro."
+      ],
+      "conditions_ja": [
+        "公式に説明されている仕事用・学校用フローでは、組織管理者がClipchampを有効にしている必要があります。",
+        "対象となるMicrosoft 365アカウントでCopilot Createを利用できる必要があります。",
+        "個人向けMicrosoft 365アカウントは仕事用・学校用と提供範囲が異なり、Microsoftの現行一覧ではPersonal・Family・Premium・Proに「Create a video」は掲載されていません。"
+      ],
+      "limitations": [
+        "The standard documented Create-a-video flow generates a script and narration and searches stock footage; it is not the same mechanism as a fully generative text-to-video model.",
+        "Microsoft separately offers experimental AI-generated short clips in Frontier for a narrower eligible population.",
+        "Result quality and service availability can vary by license and system load."
+      ],
+      "limitations_ja": [
+        "標準の「Create a video」は台本・ナレーション生成とストック映像検索を組み合わせる方式で、完全な生成動画モデルと同じ仕組みではありません。",
+        "Microsoftは別途FrontierでAI生成ショートクリップを提供していますが、対象ユーザーは限定されています。",
+        "生成品質や利用可否はライセンスやサービス負荷によって変わる場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-video-with-the-microsoft-copilot-app",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents prompt-based video creation, optional PowerPoint input, preview/transcript, AI transformation, Clipchamp refinement, and the Clipchamp prerequisite."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/clipchamp/how-to-create-video-with-copilot",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents the generated-script, AI narration, stock-footage composition mechanism and work-account requirements."
+        }
+      ]
+    }
+  ],
+  "notes": "This record deliberately distinguishes Copilot's standard video-composition workflow from fully generative video models."
+}
