@@ -163,10 +163,57 @@ function renderAnswer(record, answer) {
   `;
 }
 
-function relatedRecords(record, records) {
+const GENERIC_COMPARISON_TERMS = new Set([
+  "作成",
+  "編集",
+  "要約",
+  "ファイル",
+  "資料",
+  "文書",
+  "画像",
+  "動画",
+  "検索",
+  "調べる",
+  "公開",
+  "共有",
+  "リサーチ",
+  "アップロード",
+]);
+
+function comparisonTermSet(record) {
+  return new Set(
+    (record.search_terms || [])
+      .map(normalizeSearch)
+      .filter((term) => term && !GENERIC_COMPARISON_TERMS.has(term))
+  );
+}
+
+function comparisonPeers(record, records) {
+  const currentProducts = new Set(record.answers.map((answer) => answer.product));
+  const sourceTerms = comparisonTermSet(record);
+
+  return records
+    .filter((candidate) => candidate.id !== record.id
+      && candidate.status === "PUBLISHED"
+      && candidate.category === record.category
+      && candidate.answers.some((answer) => !currentProducts.has(answer.product)))
+    .map((candidate) => {
+      const candidateTerms = comparisonTermSet(candidate);
+      const overlap = [...sourceTerms].filter((term) => candidateTerms.has(term)).length;
+      return { candidate, overlap };
+    })
+    .filter(({ overlap }) => overlap >= 3)
+    .sort((a, b) => b.overlap - a.overlap || a.candidate.id.localeCompare(b.candidate.id))
+    .slice(0, 5)
+    .map(({ candidate }) => candidate);
+}
+
+function relatedRecords(record, records, excludedIds = new Set()) {
   const products = new Set(record.answers.map((answer) => answer.product));
   return records
-    .filter((candidate) => candidate.id !== record.id && candidate.status === "PUBLISHED")
+    .filter((candidate) => candidate.id !== record.id
+      && candidate.status === "PUBLISHED"
+      && !excludedIds.has(candidate.id))
     .map((candidate) => {
       const sameCategory = candidate.category === record.category ? 2 : 0;
       const sharedProduct = candidate.answers.some((answer) => products.has(answer.product)) ? 1 : 0;
