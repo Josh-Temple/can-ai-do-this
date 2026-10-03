@@ -1,0 +1,96 @@
+name: Triage public site feedback
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  triage:
+    if: startsWith(github.event.issue.title, '[Site feedback]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Classify feedback
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = context.issue.number;
+            const body = context.payload.issue.body || "";
+
+            const definitions = {
+              "feedback": {
+                color: "1D76DB",
+                description: "Feedback submitted from the public site or feedback form."
+              },
+              "feedback:found": {
+                color: "2DA44E",
+                description: "The user reports finding the answer."
+              },
+              "feedback:partial": {
+                color: "D4A72C",
+                description: "The user reports only partly finding the answer."
+              },
+              "feedback:discovery-failure": {
+                color: "CF222E",
+                description: "The user reports not finding the answer."
+              }
+            };
+
+            let outcome = null;
+            if (/Result:\s*見つからなかった|Did not find it/i.test(body)) {
+              outcome = "feedback:discovery-failure";
+            } else if (/Result:\s*一部見つかった|Partly found it/i.test(body)) {
+              outcome = "feedback:partial";
+            } else if (/Result:\s*見つかった|Found it/i.test(body)) {
+              outcome = "feedback:found";
+            }
+
+            const desired = ["feedback"];
+            if (outcome) desired.push(outcome);
+
+            for (const name of desired) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                const definition = definitions[name];
+                await github.rest.issues.createLabel({
+                  owner,
+                  repo,
+                  name,
+                  color: definition.color,
+                  description: definition.description
+                });
+              }
+            }
+
+            const outcomeLabels = new Set([
+              "feedback:found",
+              "feedback:partial",
+              "feedback:discovery-failure"
+            ]);
+            const existing = (context.payload.issue.labels || [])
+              .map((label) => typeof label === "string" ? label : label.name)
+              .filter(Boolean);
+
+            for (const name of existing) {
+              if (outcomeLabels.has(name) && name !== outcome) {
+                try {
+                  await github.rest.issues.removeLabel({ owner, repo, issue_number, name });
+                } catch (error) {
+                  if (error.status !== 404) throw error;
+                }
+              }
+            }
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: desired
+            });
