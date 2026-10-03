@@ -1,6 +1,8 @@
 const DATA_URL = "./questions.json";
+const COMPARISON_GROUPS_URL = "./comparison-groups.json";
 
 const els = {
+  backLink: document.querySelector("#back-link"),
   meta: document.querySelector("#question-meta"),
   title: document.querySelector("#question-title"),
   badge: document.querySelector("#question-badge"),
@@ -163,49 +165,23 @@ function renderAnswer(record, answer) {
   `;
 }
 
-const GENERIC_COMPARISON_TERMS = new Set([
-  "作成",
-  "編集",
-  "要約",
-  "ファイル",
-  "資料",
-  "文書",
-  "画像",
-  "動画",
-  "検索",
-  "調べる",
-  "公開",
-  "共有",
-  "リサーチ",
-  "アップロード",
-]);
-
-function comparisonTermSet(record) {
-  return new Set(
-    (record.search_terms || [])
-      .map(normalizeSearch)
-      .filter((term) => term && !GENERIC_COMPARISON_TERMS.has(term))
+function comparisonPeers(record, records, comparisonGroups) {
+  const group = (comparisonGroups?.groups || []).find((item) =>
+    (item.question_ids || []).includes(record.id)
   );
-}
+  if (!group) return [];
 
-function comparisonPeers(record, records) {
+  const allowedIds = new Set(group.question_ids || []);
   const currentProducts = new Set(record.answers.map((answer) => answer.product));
-  const sourceTerms = comparisonTermSet(record);
 
   return records
-    .filter((candidate) => candidate.id !== record.id
+    .filter((candidate) =>
+      candidate.id !== record.id
       && candidate.status === "PUBLISHED"
-      && candidate.category === record.category
-      && candidate.answers.some((answer) => !currentProducts.has(answer.product)))
-    .map((candidate) => {
-      const candidateTerms = comparisonTermSet(candidate);
-      const overlap = [...sourceTerms].filter((term) => candidateTerms.has(term)).length;
-      return { candidate, overlap };
-    })
-    .filter(({ overlap }) => overlap >= 3)
-    .sort((a, b) => b.overlap - a.overlap || a.candidate.id.localeCompare(b.candidate.id))
-    .slice(0, 5)
-    .map(({ candidate }) => candidate);
+      && allowedIds.has(candidate.id)
+      && candidate.answers.some((answer) => !currentProducts.has(answer.product))
+    )
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
 
 function relatedRecords(record, records, excludedIds = new Set()) {
@@ -224,6 +200,24 @@ function relatedRecords(record, records, excludedIds = new Set()) {
     .map(({ candidate }) => candidate);
 }
 
+function configureBackLink() {
+  if (!els.backLink || !document.referrer) return;
+  try {
+    const referrer = new URL(document.referrer);
+    const current = new URL(window.location.href);
+    const sameOrigin = referrer.origin === current.origin;
+    const fromListing = sameOrigin && !referrer.pathname.endsWith("/question.html");
+    if (!fromListing) return;
+
+    els.backLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      history.back();
+    });
+  } catch {
+    // Keep the normal ./ fallback link.
+  }
+}
+
 function updateMeta(record) {
   const text = questionText(record);
   document.title = `${text} | Can AI Do This?`;
@@ -236,10 +230,15 @@ function updateMeta(record) {
 
 async function loadQuestion() {
   try {
-    const response = await fetch(DATA_URL, { cache: "no-store" });
-    if (!response.ok) throw new Error("Could not load capability records.");
+    const [questionsResponse, comparisonResponse] = await Promise.all([
+      fetch(DATA_URL, { cache: "no-store" }),
+      fetch(COMPARISON_GROUPS_URL, { cache: "no-store" }),
+    ]);
+    if (!questionsResponse.ok) throw new Error("Could not load capability records.");
+    if (!comparisonResponse.ok) throw new Error("Could not load comparison relations.");
 
-    const records = (await response.json()).filter((record) => record.status === "PUBLISHED");
+    const records = (await questionsResponse.json()).filter((record) => record.status === "PUBLISHED");
+    const comparisonGroups = await comparisonResponse.json();
     const params = new URLSearchParams(window.location.search);
     const slug = params.get("slug");
     const id = params.get("id");
@@ -261,7 +260,7 @@ async function loadQuestion() {
       els.community.hidden = false;
     }
 
-    const peers = comparisonPeers(record, records);
+    const peers = comparisonPeers(record, records, comparisonGroups);
     if (peers.length) {
       els.comparisonPeers.innerHTML = peers
         .map((item) => {
@@ -288,4 +287,5 @@ async function loadQuestion() {
   }
 }
 
+configureBackLink();
 loadQuestion();
