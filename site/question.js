@@ -84,6 +84,8 @@ function categoryLabel(category) {
     "deep-research": "深掘り調査",
     "video-creation": "動画作成",
     "audio-transcription": "音声・文字起こし",
+    coding: "プログラミング",
+    learning: "学習",
   }[category] || category;
 }
 

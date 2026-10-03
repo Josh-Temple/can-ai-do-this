@@ -1,0 +1,78 @@
+{
+  "id": "Q0045",
+  "question": "Can Gemini guide my learning and create quizzes, flashcards, or study guides?",
+  "question_ja": "Geminiは、学習をガイドし、クイズ・フラッシュカード・学習ガイドを作れる？",
+  "slug": "can-gemini-guide-learning-and-create-quizzes-or-flashcards",
+  "category": "learning",
+  "search_terms": [
+    "Gemini",
+    "ガイド付き学習",
+    "Guided Learning",
+    "勉強",
+    "学習",
+    "家庭教師",
+    "チューター",
+    "クイズ",
+    "フラッシュカード",
+    "模擬試験",
+    "学習ガイド",
+    "試験対策",
+    "教材"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Gemini has dedicated learning flows beyond normal chat, including guided tutoring and generated study materials, which users may not discover from general feature lists.",
+    "summary_ja": "Geminiには通常チャットとは別にガイド付き学習や学習教材作成があり、家庭教師用途として独立して比較する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; availability of some learning resources varies by account, region, age, and rollout",
+      "platform": "Gemini web and supported mobile apps",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini Apps can act as a tutor with Guided Learning, visual aids, and educational resources. It can also create interactive quizzes, flashcards, practice exams, and study guides, optionally using uploaded source materials.",
+      "summary_ja": "Gemini Appsはガイド付き学習、視覚資料、教育リソースを使う家庭教師として利用できます。さらに、アップロードした教材などを基に、インタラクティブなクイズ、フラッシュカード、模擬試験、学習ガイドを作成できます。",
+      "conditions": [
+        "The user must be signed in to Gemini Apps.",
+        "Guided Learning is available on the web and is being rolled out gradually in mobile apps.",
+        "Some learning-resource integrations and features have additional country, language, age, or account restrictions."
+      ],
+      "conditions_ja": [
+        "Gemini Appsにログインしている必要があります。",
+        "ガイド付き学習はWebで利用でき、モバイルアプリでは段階的に提供されています。",
+        "一部の教育リソース連携や機能には、国・言語・年齢・アカウント種別による追加制限があります。"
+      ],
+      "limitations": [
+        "Gemini-generated study materials can contain mistakes and should be checked against reliable course materials.",
+        "Sharing quizzes, flashcards, practice tests, or study guides is not available for work or school Google accounts in the documented flow.",
+        "Some specialized educational resources such as OpenStax integration have narrower region/language/account requirements."
+      ],
+      "limitations_ja": [
+        "Geminiが生成する学習教材には誤りが含まれる可能性があるため、信頼できる教材と照合する必要があります。",
+        "公式に説明されているフローでは、仕事用・学校用Googleアカウントからクイズ、フラッシュカード、模擬試験、学習ガイドを共有できません。",
+        "OpenStax連携など一部の教育リソースは、地域・言語・年齢・アカウント条件がより限定されています。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/16448384",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents Guided Learning, visual aids, uploaded learning materials, and mobile rollout conditions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/16275879",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents creation and use of quizzes, flashcards, practice tests, and study guides, including source-material uploads and sharing restrictions for work/school accounts."
+        }
+      ]
+    }
+  ],
+  "notes": "This record combines Gemini's Guided Learning and interactive study-material creation because users typically approach both as one study workflow."
+}

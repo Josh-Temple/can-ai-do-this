@@ -206,7 +206,36 @@
     {
       "query": "録音 文字起こし",
       "must_include": [
-        "Q0040"
+        "Q0040",
+        "Q0043"
+      ]
+    },
+    {
+      "query": "GitHub PR",
+      "must_include": [
+        "Q0041",
+        "Q0042"
+      ]
+    },
+    {
+      "query": "コード 修正",
+      "must_include": [
+        "Q0041",
+        "Q0042"
+      ]
+    },
+    {
+      "query": "学習 クイズ",
+      "must_include": [
+        "Q0044",
+        "Q0045"
+      ]
+    },
+    {
+      "query": "フラッシュカード",
+      "must_include": [
+        "Q0044",
+        "Q0045"
       ]
     }
   ]
