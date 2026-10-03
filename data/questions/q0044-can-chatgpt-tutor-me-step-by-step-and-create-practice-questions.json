@@ -1,0 +1,73 @@
+{
+  "id": "Q0044",
+  "question": "Can ChatGPT tutor me step by step and create quizzes or practice questions?",
+  "question_ja": "ChatGPTは、段階的に学習を導き、クイズや練習問題を作ってくれる？",
+  "slug": "can-chatgpt-tutor-me-step-by-step-and-create-practice-questions",
+  "category": "learning",
+  "search_terms": [
+    "ChatGPT",
+    "学習モード",
+    "Study",
+    "勉強",
+    "学習",
+    "家庭教師",
+    "チューター",
+    "クイズ",
+    "小テスト",
+    "練習問題",
+    "フラッシュカード",
+    "試験対策",
+    "教材",
+    "宿題"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Learning support is a major consumer use case where a guided tutor experience is materially different from simply asking a normal chat for an answer.",
+    "summary_ja": "学習用途では、答えを返すだけでなく、質問をしながら段階的に理解を深める専用モードがあるかが重要です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Available across ChatGPT plans",
+      "platform": "Web, iOS, and Android in regular ChatGPT conversations",
+      "region": "Global availability",
+      "answer": "YES",
+      "summary": "ChatGPT Study mode can guide learning with questions, step-by-step explanations, feedback, quizzes, practice questions, and flashcard-style review. It can also reference uploaded notes, slides, PDFs, worksheets, and images when uploads are available.",
+      "summary_ja": "ChatGPTの学習モードは、質問をしながら考え方を導き、段階的な説明、フィードバック、クイズ、練習問題、フラッシュカード形式の復習を行えます。利用可能な場合は、アップロードしたノート、スライド、PDF、ワークシート、画像も教材として使えます。",
+      "conditions": [
+        "Study mode is used in a regular ChatGPT conversation and requires the user to be signed in.",
+        "The underlying model, message, upload, and rate limits remain those of the user's ChatGPT plan.",
+        "Uploaded-material support depends on file/image upload availability in the current chat."
+      ],
+      "conditions_ja": [
+        "学習モードは通常のChatGPT会話で利用し、ログインしている必要があります。",
+        "利用できるモデル、メッセージ数、アップロード、レート上限は通常のChatGPTプランの制約が適用されます。",
+        "教材ファイルや画像を使えるかは、そのチャットでアップロード機能が利用可能かどうかに依存します。"
+      ],
+      "limitations": [
+        "Study mode is not available in Temporary Chats, GPTs, or Projects.",
+        "It can still make mistakes and does not replace a teacher, course materials, or academic requirements.",
+        "It may sometimes give a direct answer even though the mode is designed to guide reasoning."
+      ],
+      "limitations_ja": [
+        "学習モードは一時チャット、GPT、Projectsでは利用できません。",
+        "誤りを含む可能性があり、教師、教材、学校・講師の要件に代わるものではありません。",
+        "考え方を導く設計ですが、場合によっては直接答えを示すことがあります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11780217-study-mode",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents global cross-plan Study mode availability, Socratic guidance, step-by-step explanations, quizzes, practice questions, flashcard-style review, uploaded materials, and surface limitations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers the dedicated Study mode rather than generic tutoring prompts in ordinary chat."
+}
