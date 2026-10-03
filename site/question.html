@@ -10,11 +10,12 @@
 <body>
   <header class="masthead question-masthead">
     <div class="wrap">
-      <a class="back-link" href="./">← 一覧へ戻る</a>
+      <a class="back-link" href="./">← 検索へ戻る</a>
       <p class="eyebrow">CAN AI DO THIS? / QUESTION</p>
       <p id="question-meta" class="question-id">読み込み中…</p>
       <h1 id="question-title" class="question-page-title">質問を読み込んでいます</h1>
       <div id="question-badge" class="question-page-badge"></div>
+      <p class="evidence-key question-evidence-key">実測済み＝記載環境で再現済み ／ 公式確認＝一次資料で確認済み ／ 要再確認＝確認期限超過</p>
     </div>
   </header>
 
@@ -27,7 +28,7 @@
     <section id="comparison-peers-section" class="related-section" aria-labelledby="comparison-peers-heading" hidden>
       <p class="section-kicker">COMPARE</p>
       <h2 id="comparison-peers-heading" class="section-title">同じタスクを他製品で比較</h2>
-      <p class="section-note">同じカテゴリ内で、タスク検索語の重なりが大きい質問を表示します。各製品の回答と条件は個別ページで確認できます。</p>
+      <p class="section-note">同じタスクに近い質問を製品横断で表示します。各製品の条件と根拠は個別ページで確認できます。</p>
       <ul id="comparison-peers-list" class="related-list"></ul>
     </section>
 
@@ -39,7 +40,7 @@
 
     <div id="question-error" class="error" hidden>
       <p>質問を読み込めませんでした。</p>
-      <p class="muted"><a href="./">一覧から探し直す</a></p>
+      <p class="muted"><a href="./">検索から探し直す</a></p>
     </div>
 
     <section class="feedback-section" aria-labelledby="feedback-heading">
@@ -69,12 +70,8 @@
   </main>
 
   <footer class="wrap footer">
-    <p>
-      AIの機能は変化します。回答には確認日・条件・根拠を付けています。
-    </p>
-    <p>
-      <a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a>
-    </p>
+    <p>AIの機能は変化します。回答には確認日・条件・根拠を付けています。</p>
+    <p><a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a></p>
   </footer>
 
   <script src="./freshness.js" defer></script>

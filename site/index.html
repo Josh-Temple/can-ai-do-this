@@ -12,7 +12,7 @@
     <div class="wrap">
       <p class="eyebrow">CAN AI DO THIS?</p>
       <h1>何をしたいですか？</h1>
-      <p class="lede">実際のタスクから探す。公式情報と条件つきで確認する。</p>
+      <p class="lede">やりたいことをそのまま入力すると、近い質問を製品横断で比較できます。</p>
 
       <div class="search-row">
         <label class="sr-only" for="search">タスクを検索</label>
@@ -41,21 +41,31 @@
       </div>
 
       <div class="meta-row">
-        <span id="result-count">読み込み中…</span>
+        <span id="result-count" aria-live="polite">読み込み中…</span>
         <span id="freshness"></span>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="comparison-section" aria-labelledby="comparison-heading">
+    <section id="intro-state" class="intro-state" aria-labelledby="intro-heading">
+      <div>
+        <p class="section-kicker">TASK-FIRST DATABASE</p>
+        <h2 id="intro-heading" class="section-title">まず、やりたいことから探す</h2>
+        <p class="section-note intro-note">製品名や機能名を知らなくても構いません。自然な言葉で検索し、候補を比較してから詳細ページで条件と根拠を確認できます。</p>
+      </div>
+      <button id="show-all" class="text-button" type="button">全50問を見る</button>
+    </section>
+
+    <section id="comparison-section" class="comparison-section" aria-labelledby="comparison-heading" hidden>
       <div class="section-head">
         <div>
-          <p class="section-kicker">QUICK VIEW</p>
-          <h2 id="comparison-heading" class="section-title">比較一覧</h2>
+          <p class="section-kicker">COMPARE</p>
+          <h2 id="comparison-heading" class="section-title">比較結果</h2>
         </div>
-        <p class="section-note">まず一覧で当たりをつけ、必要な項目だけ詳細を確認できます。</p>
+        <p id="comparison-note" class="section-note">検索意図との近さを優先して表示しています。質問を開くと、条件・制限・一次資料を確認できます。</p>
       </div>
+      <p class="evidence-key"><strong>根拠:</strong> 実測済み＝記載環境で再現済み ／ 公式確認＝一次資料で確認済み ／ 要再確認＝確認期限超過</p>
       <div class="comparison-wrap">
         <table class="comparison-table">
           <thead>
@@ -73,20 +83,12 @@
       </div>
     </section>
 
-    <section class="detail-section" aria-labelledby="detail-heading" hidden>
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">DETAILS</p>
-          <h2 id="detail-heading" class="section-title">詳しく見る</h2>
-        </div>
-      </div>
-      <div id="results" aria-live="polite"></div>
-    </section>
-
     <div id="empty" class="empty" hidden>
-      <p>一致する項目はまだありません。</p>
-      <p class="muted">短い言葉、製品名、別の動詞で検索してみてください。</p>
+      <p><strong>近い質問を見つけられませんでした。</strong></p>
+      <p class="muted">短い言葉や別の動詞でも試せます。探しているタスク自体が未収載なら、そのまま知らせてください。</p>
+      <button id="empty-feedback-button" class="text-button" type="button">見つからなかった内容を知らせる</button>
     </div>
+
     <div id="error" class="error" hidden>
       <p>データを読み込めませんでした。</p>
       <p class="muted">正本データはGitHubリポジトリで確認できます。</p>
@@ -120,8 +122,7 @@
 
   <footer class="wrap footer">
     <p>
-      AIの機能は変化します。「公式確認」は一次資料で確認済み、「実測済み」は記載した環境で再現済み、という区別です。
-      回答には確認日と条件を付けています。
+      AIの機能は変化します。回答には確認日と条件を付け、実測と公式資料による確認を区別しています。
     </p>
     <p>
       <a href="https://github.com/Josh-Temple/can-ai-do-this">データと調査方法をGitHubで見る</a>
