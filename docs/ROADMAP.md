@@ -80,7 +80,7 @@ With the 50-question first release complete, prioritize whether users can:
 - find the evidence state and last-checked date;
 - identify when the answer is conditional or not yet verified.
 
-The current test protocol and pass criteria are fixed in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`. Record de-identified sessions under `research/usability-results/`.
+The current test protocol and pass criteria are fixed in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`, but the gate is tied to the validated main SHA recorded for each session rather than to a permanently fixed question count. Record de-identified sessions under `research/usability-results/`.
 
 ### Post-50 focus
 

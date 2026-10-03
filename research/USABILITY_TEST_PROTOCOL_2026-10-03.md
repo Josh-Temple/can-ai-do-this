@@ -1,10 +1,10 @@
-# Naive-user usability gate — 50-question first release
+# Naive-user usability gate — current public comparison release
 
 ## Purpose
 
 This protocol tests whether **Can AI Do This?** works for a person who does not know the products' feature names.
 
-The repository now has a **50-question first release**. The goal of this gate is not to justify automatic content growth. It is to detect concrete failures in task discovery, cross-product comparison, answer interpretation, condition visibility, evidence visibility, and freshness visibility before deciding what to improve or add next.
+The repository reached a 50-question first-release milestone and may later add evidence-backed records to improve comparison coverage. This gate applies to the **validated public release identified by the main SHA recorded for each session**, rather than to a permanently fixed question count. Its goal is to detect concrete failures in task discovery, cross-product comparison, answer interpretation, condition visibility, evidence visibility, and freshness visibility before deciding what to improve or add next.
 
 ## Participant
 
@@ -88,9 +88,9 @@ For PARTIAL records, also ask:
 
 5. なぜ「条件付き」なのですか？
 
-## 50-question gate pass criteria
+## Current-release gate pass criteria
 
-Treat the 50-question first release as usable enough to guide the next improvement cycle only when:
+Treat the tested public release as usable enough to guide the next improvement cycle only when:
 
 - relevant-question discovery succeeds on at least **4 of 5 tasks** for each participant;
 - no task has a repeated discovery failure across participants without an explicit fix or no-change rationale;
@@ -125,7 +125,7 @@ A summary should distinguish:
 - product families actually reached;
 - site changes made in response;
 - unresolved problems;
-- whether the 50-question gate passed.
+- whether the tested release passed the gate.
 
 ## Decision rule after the gate
 
