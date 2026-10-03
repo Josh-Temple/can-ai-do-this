@@ -78,10 +78,31 @@ def searchable_text(record):
     return normalize(" ".join(str(value) for value in values if value))
 
 
+def query_requirements(query):
+    value = normalize(query).strip()
+    if not value:
+        return []
+
+    requirements = []
+    for triggers, groups in SEARCH_CONCEPTS:
+        if any(normalize(trigger) in value for trigger in triggers):
+            requirements.extend(
+                [[normalize(term) for term in group] for group in groups]
+            )
+
+    for triggers, terms in PRODUCT_SEARCH_GROUPS:
+        if any(normalize(trigger) in value for trigger in triggers):
+            requirements.append([normalize(term) for term in terms])
+
+    if requirements:
+        return requirements
+    return [[token] for token in value.split() if token]
+
+
 def matches(record, query):
-    tokens = [token for token in normalize(query).split() if token]
+    requirements = query_requirements(query)
     haystack = searchable_text(record)
-    return all(token in haystack for token in tokens)
+    return all(any(term in haystack for term in group) for group in requirements)
 
 
 def main():
