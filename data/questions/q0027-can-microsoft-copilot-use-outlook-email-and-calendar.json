@@ -1,0 +1,77 @@
+{
+  "id": "Q0027",
+  "question": "Can Microsoft Copilot work with Outlook email and calendar?",
+  "question_ja": "Microsoft Copilotは、Outlookのメールや予定表を使って要約・下書き・会議調整ができる？",
+  "slug": "can-microsoft-copilot-use-outlook-email-and-calendar",
+  "category": "connected-apps",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Outlook",
+    "メール",
+    "受信トレイ",
+    "予定表",
+    "カレンダー",
+    "会議",
+    "会議調整",
+    "メール要約",
+    "メール下書き",
+    "Schedule with Copilot"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Email and calendar integration is a mainstream productivity task and provides a direct comparison with ChatGPT/Gmail and Gemini/Google Workspace.",
+    "summary_ja": "メール・予定表連携は代表的な業務用途であり、ChatGPT＋GmailやGemini＋Google Workspaceと比較しやすい軸です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Outlook Copilot features depend on Microsoft 365/Copilot license and account type",
+      "platform": "New Outlook, Outlook on the web, supported Outlook mobile/Mac surfaces; some features are surface-specific",
+      "region": null,
+      "answer": "YES",
+      "summary": "Copilot in Outlook can summarize email threads, draft email content, answer questions about the inbox and calendar, and create or schedule meeting invitations from email context when the relevant license and feature are available.",
+      "summary_ja": "OutlookのCopilotは、メールスレッドの要約、メール下書き、受信トレイや予定表に関する質問、メール文脈からの会議招待作成・日程調整に対応します。利用できる範囲はライセンスやOutlook画面によって異なります。",
+      "conditions": [
+        "The relevant Copilot feature must be available for the user's Microsoft 365 account and license.",
+        "Some chat and enterprise-data prompts require a Microsoft Copilot add-on or Work license.",
+        "Schedule with Copilot is supported in specific Outlook experiences and may require new Outlook."
+      ],
+      "conditions_ja": [
+        "利用するMicrosoft 365アカウントとライセンスで対象のCopilot機能が提供されている必要があります。",
+        "チャットや組織データを横断する一部のプロンプトにはMicrosoft Copilotの追加ライセンスまたはWorkライセンスが必要です。",
+        "Copilotによる会議調整は対応するOutlook画面に限られ、新しいOutlookが必要な場合があります。"
+      ],
+      "limitations": [
+        "Not every Outlook Copilot capability is available on every platform or license.",
+        "Some scheduling flows generate a draft invitation that the user must review and send.",
+        "This record describes Outlook-integrated Copilot, not unrestricted access to every mailbox or calendar the user can see."
+      ],
+      "limitations_ja": [
+        "OutlookのCopilot機能は、すべてのプラットフォーム・ライセンスで同一ではありません。",
+        "会議調整では、Copilotが招待案を作成し、ユーザーが確認して送信する方式の機能があります。",
+        "この記録はOutlookに統合されたCopilotを対象とし、ユーザーが閲覧できるすべてのメールボックスや予定表への無制限アクセスを意味しません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/outlook/copilot-outlook/chat-with-copilot-in-outlook",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents prompts for summarizing email, checking calendar events, drafting updates, scheduling meetings, flagging unread mail, and other Outlook actions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/outlook/copilot-outlook/create-a-meeting-agenda-with-copilot-in-outlook",
+          "accessed_at": "2026-10-03",
+          "note": "Microsoft documents creating a meeting invitation and agenda from an email thread, including license and Outlook-surface conditions."
+        }
+      ]
+    }
+  ],
+  "notes": "Availability varies materially by Outlook surface and Microsoft Copilot license, so the answer is bounded to documented integrated features."
+}
