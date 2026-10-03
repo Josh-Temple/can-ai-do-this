@@ -8,8 +8,8 @@ const els = {
   comparisonNote: document.querySelector("#comparison-note"),
   count: document.querySelector("#result-count"),
   freshness: document.querySelector("#freshness"),
-  intro: document.querySelector("#intro-state"),
   showAll: document.querySelector("#show-all"),
+  feedbackSection: document.querySelector("#feedback-section"),
   empty: document.querySelector("#empty"),
   emptyFeedback: document.querySelector("#empty-feedback-button"),
   error: document.querySelector("#error"),
@@ -359,8 +359,8 @@ function applyFilters() {
   }
 
   const active = hasSearch || showAllRecords;
-  els.intro.hidden = active;
   els.comparisonSection.hidden = !active || filtered.length === 0;
+  els.feedbackSection.hidden = !active;
   els.comparison.innerHTML = filtered.map(renderComparisonRows).join("");
   els.empty.hidden = !active || filtered.length !== 0;
 
@@ -408,9 +408,11 @@ async function loadRecords() {
         0
       );
       els.freshness.textContent = dueAnswers
-        ? `要再確認: ${dueAnswers}回答 · 最新確認日: ${dates.at(-1)}`
-        : `確認期限内 · 最新確認日: ${dates.at(-1)}`;
+        ? `要再確認 ${dueAnswers}回答 · 最新確認 ${dates.at(-1)}`
+        : `最新確認 ${dates.at(-1)} · 確認期限内`;
     }
+
+    els.showAll.textContent = `全${records.length}問を見る`;
 
     applyFilters();
   } catch (error) {
