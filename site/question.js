@@ -6,6 +6,8 @@ const els = {
   badge: document.querySelector("#question-badge"),
   answers: document.querySelector("#question-answers"),
   community: document.querySelector("#question-community"),
+  comparisonPeersSection: document.querySelector("#comparison-peers-section"),
+  comparisonPeers: document.querySelector("#comparison-peers-list"),
   related: document.querySelector("#related-list"),
   error: document.querySelector("#question-error"),
 };
@@ -17,6 +19,10 @@ function escapeHtml(value = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function normalizeSearch(value = "") {
+  return String(value).normalize("NFKC").toLowerCase();
 }
 
 function sourceLabel(type) {
@@ -157,10 +163,57 @@ function renderAnswer(record, answer) {
   `;
 }
 
-function relatedRecords(record, records) {
+const GENERIC_COMPARISON_TERMS = new Set([
+  "作成",
+  "編集",
+  "要約",
+  "ファイル",
+  "資料",
+  "文書",
+  "画像",
+  "動画",
+  "検索",
+  "調べる",
+  "公開",
+  "共有",
+  "リサーチ",
+  "アップロード",
+]);
+
+function comparisonTermSet(record) {
+  return new Set(
+    (record.search_terms || [])
+      .map(normalizeSearch)
+      .filter((term) => term && !GENERIC_COMPARISON_TERMS.has(term))
+  );
+}
+
+function comparisonPeers(record, records) {
+  const currentProducts = new Set(record.answers.map((answer) => answer.product));
+  const sourceTerms = comparisonTermSet(record);
+
+  return records
+    .filter((candidate) => candidate.id !== record.id
+      && candidate.status === "PUBLISHED"
+      && candidate.category === record.category
+      && candidate.answers.some((answer) => !currentProducts.has(answer.product)))
+    .map((candidate) => {
+      const candidateTerms = comparisonTermSet(candidate);
+      const overlap = [...sourceTerms].filter((term) => candidateTerms.has(term)).length;
+      return { candidate, overlap };
+    })
+    .filter(({ overlap }) => overlap >= 3)
+    .sort((a, b) => b.overlap - a.overlap || a.candidate.id.localeCompare(b.candidate.id))
+    .slice(0, 5)
+    .map(({ candidate }) => candidate);
+}
+
+function relatedRecords(record, records, excludedIds = new Set()) {
   const products = new Set(record.answers.map((answer) => answer.product));
   return records
-    .filter((candidate) => candidate.id !== record.id && candidate.status === "PUBLISHED")
+    .filter((candidate) => candidate.id !== record.id
+      && candidate.status === "PUBLISHED"
+      && !excludedIds.has(candidate.id))
     .map((candidate) => {
       const sameCategory = candidate.category === record.category ? 2 : 0;
       const sharedProduct = candidate.answers.some((answer) => products.has(answer.product)) ? 1 : 0;
@@ -208,7 +261,19 @@ async function loadQuestion() {
       els.community.hidden = false;
     }
 
-    const related = relatedRecords(record, records);
+    const peers = comparisonPeers(record, records);
+    if (peers.length) {
+      els.comparisonPeers.innerHTML = peers
+        .map((item) => {
+          const answer = item.answers[0] || { answer: "UNKNOWN" };
+          return `<li><a href="${questionUrl(item)}">${escapeHtml(questionText(item))}</a><span>${escapeHtml(answer.product || "")} · ${escapeHtml(answerLabel(answer.answer))}</span></li>`;
+        })
+        .join("");
+      els.comparisonPeersSection.hidden = false;
+    }
+
+    const peerIds = new Set(peers.map((item) => item.id));
+    const related = relatedRecords(record, records, peerIds);
     els.related.innerHTML = related
       .map((item) => `<li><a href="${questionUrl(item)}">${escapeHtml(questionText(item))}</a><span>${escapeHtml(item.answers[0]?.product || "")}</span></li>`)
       .join("");

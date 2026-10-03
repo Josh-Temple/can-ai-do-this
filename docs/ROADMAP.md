@@ -49,7 +49,10 @@ Goal: make the dataset useful to non-technical users.
 
 Current prototype:
 - [x] prominent keyword search;
+- [x] natural Japanese task phrasing and plain-language comparison shortcuts;
 - [x] simple comparison table;
+- [x] mobile-readable comparison rows without a card-layout rewrite;
+- [x] same-task cross-product navigation on question pages;
 - [x] plain-language Japanese answer with English fallback;
 - [x] product/plan/platform conditions;
 - [x] evidence state and last checked date;
