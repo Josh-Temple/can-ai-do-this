@@ -1,0 +1,77 @@
+{
+  "id": "Q0056",
+  "question": "Can Claude help me study with practice questions, study guides, flashcards, and step-by-step explanations?",
+  "question_ja": "Claudeは、練習問題・学習ガイド・フラッシュカード・段階的な説明で学習を支援できる？",
+  "slug": "can-claude-guide-learning-and-create-practice-materials",
+  "category": "learning",
+  "search_terms": [
+    "Claude",
+    "勉強",
+    "学習",
+    "家庭教師",
+    "チューター",
+    "クイズ",
+    "練習問題",
+    "フラッシュカード",
+    "学習ガイド",
+    "試験対策",
+    "教材",
+    "step-by-step"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Study support is a common consumer task, and Claude's documented education workflows provide a useful comparison with dedicated study features in other assistants.",
+    "summary_ja": "学習支援は一般的なAI用途で、Claudeの教育向け公式ワークフローを、他AIの専用学習機能と比較できるようにする価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Claude for Education university-sponsored account for the fully documented study-aid workflow",
+      "platform": "Claude web, Desktop, and supported mobile apps",
+      "region": "Participating Claude for Education institutions; institution policies apply",
+      "answer": "YES",
+      "summary": "Anthropic documents Claude for Education as a study aid that can create practice questions, study guides, and flashcards, explain complex concepts more simply, and provide step-by-step explanations for problem solving.",
+      "summary_ja": "AnthropicはClaude for Educationの学習支援として、練習問題、学習ガイド、フラッシュカードの作成、難しい概念の平易な説明、問題解決の段階的な説明を案内しています。",
+      "conditions": [
+        "The fully documented workflow here is for a university-sponsored Claude for Education account.",
+        "Institution-specific policies and enabled features can vary.",
+        "The user remains responsible for following course and academic-integrity requirements."
+      ],
+      "conditions_ja": [
+        "ここで公式に確認した一連の学習支援は、大学提供のClaude for Educationアカウントを対象としています。",
+        "大学ごとに利用可能な機能やポリシーが異なる場合があります。",
+        "授業や大学の学術的誠実性に関するルールに従う必要があります。"
+      ],
+      "limitations": [
+        "This record does not claim that Claude has a dedicated universal Study mode equivalent to every other product's guided-learning feature.",
+        "Generated practice materials and explanations can contain errors and should be checked against course materials.",
+        "Availability outside Claude for Education is not established by this record."
+      ],
+      "limitations_ja": [
+        "この記録は、他製品の専用学習モードと同等の普遍的なStudyモードがClaude全体にあると主張するものではありません。",
+        "生成された練習問題や説明には誤りが含まれる可能性があるため、授業資料などと照合する必要があります。",
+        "Claude for Education以外で同じ一連の機能が公式に保証されるとは、この記録からは判断していません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic documents Claude for Education study-aid uses including practice questions, study guides, flashcards, simpler explanations, and step-by-step problem-solving explanations."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic also documents learning new subjects as a general Claude use case."
+        }
+      ]
+    }
+  ],
+  "notes": "The YES answer is intentionally scoped to the documented Claude for Education study-aid workflow; it does not assert a dedicated universal Claude Study mode."
+}

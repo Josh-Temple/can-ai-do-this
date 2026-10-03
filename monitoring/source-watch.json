@@ -692,7 +692,8 @@
       "id": "anthropic-google-workspace-editing",
       "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
       "questions": [
-        "Q0052"
+        "Q0052",
+        "Q0055"
       ],
       "anchor_groups": [
         [
@@ -735,6 +736,31 @@
       ],
       "fetch_mode": "manual",
       "manual_reason": "GitHub-hosted Actions has repeatedly received HTTP 403 from help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "anthropic-education-study-aid",
+      "url": "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university",
+      "questions": [
+        "Q0056"
+      ],
+      "anchor_groups": [
+        [
+          "practice questions"
+        ],
+        [
+          "study guides and flashcards",
+          "study guides",
+          "flashcards"
+        ],
+        [
+          "step-by-step explanations",
+          "step by step explanations"
+        ],
+        [
+          "study aid"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }

@@ -1,0 +1,76 @@
+{
+  "id": "Q0055",
+  "question": "Can Claude directly edit an existing Google Doc?",
+  "question_ja": "Claudeは、既存のGoogleドキュメントを直接編集できる？",
+  "slug": "can-claude-directly-edit-an-existing-google-doc",
+  "category": "documents",
+  "search_terms": [
+    "Claude",
+    "Google Docs",
+    "Googleドキュメント",
+    "ドキュメント",
+    "文書編集",
+    "文章編集",
+    "既存文書",
+    "直接編集",
+    "書き換え",
+    "再構成",
+    "Claude for Google Workspace"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Direct editing of an existing document is materially different from generating replacement text in chat, so it is useful in the same comparison family as Word and Gemini in Docs.",
+    "summary_ja": "チャット上で文章案を出すだけでなく、既存文書へ直接変更を反映できるかは実務上の違いが大きく、WordやGemini in Docsと比較する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Pro, Max, Team, or Enterprise (beta)",
+      "platform": "Claude for Google Workspace in Google Docs; Claude web or Desktop supported flows",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude for Google Workspace can read the Google Doc that is open and edit it directly in place, including drafting, rewriting, restructuring, and restyling content.",
+      "summary_ja": "Claude for Google Workspaceは、開いているGoogleドキュメントを読み、その文書内で直接編集できます。下書き、書き換え、再構成、スタイル調整などをその場で反映できます。",
+      "conditions": [
+        "Claude for Google Workspace must be available and enabled for the account.",
+        "The feature is documented as beta for Pro, Max, Team, and Enterprise plans.",
+        "The user needs access to the Google Doc and the required Google Workspace integration or Marketplace app."
+      ],
+      "conditions_ja": [
+        "アカウントでClaude for Google Workspaceを利用でき、有効にしている必要があります。",
+        "公式資料ではPro、Max、Team、Enterprise向けのベータ機能として説明されています。",
+        "対象のGoogleドキュメントへのアクセス権と、必要なGoogle Workspace連携またはMarketplaceアプリが必要です。"
+      ],
+      "limitations": [
+        "Claude edits only files the user's Google account can access, and the exact supported flow depends on the Google Workspace integration surface.",
+        "Some Google Docs operations remain unsupported, including certain comment, suggestion, tab, and sharing-management actions.",
+        "Edits should be reviewed through the document's normal version history, especially for important content."
+      ],
+      "limitations_ja": [
+        "Claudeが編集できるのはGoogleアカウントでアクセス権があるファイルに限られ、利用できるフローはGoogle Workspace連携の画面によって異なります。",
+        "コメント、提案、タブ、共有管理などGoogle Docsの一部操作には制限があります。",
+        "重要な文書では、通常の変更履歴などを使って編集内容を確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic documents reading and directly editing the open Google Doc in place, including drafting, rewriting, restructuring, and restyling, plus beta plan and permission boundaries."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic documents live editing of Google Docs in the pane beside Claude and states that existing Google permissions apply."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers direct editing of native Google Docs through Claude's Google Workspace integration, not arbitrary local DOCX overwrite."
+}
