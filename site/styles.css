@@ -559,3 +559,94 @@ select:focus {
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
+
+
+.feedback-section {
+  margin-top: 54px;
+  padding: 42px 0 18px;
+  border-top: 2px solid var(--ink);
+}
+
+.feedback-note {
+  margin-top: 12px;
+}
+
+.feedback-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 24px;
+}
+
+.feedback-form label {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.feedback-form select,
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  padding: 10px 2px;
+}
+
+.feedback-form textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+.feedback-form select:focus,
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: 3px solid rgba(20, 32, 51, 0.13);
+  outline-offset: 4px;
+}
+
+.feedback-submit {
+  width: fit-content;
+  margin-top: 14px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 720;
+  padding: 10px 14px;
+}
+
+.feedback-submit:hover,
+.feedback-submit:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.feedback-submit:focus-visible {
+  outline: 3px solid rgba(20, 32, 51, 0.13);
+  outline-offset: 4px;
+}
+
+.feedback-help {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .feedback-section {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .feedback-submit {
+    width: 100%;
+  }
+}
