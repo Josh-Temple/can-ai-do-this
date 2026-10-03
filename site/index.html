@@ -56,11 +56,29 @@
   </header>
 
   <main class="wrap">
+    <section id="overview-section" class="overview-section" aria-labelledby="overview-heading">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">QUICK COMPARE</p>
+          <h2 id="overview-heading" class="section-title">主要タスクを一覧比較</h2>
+        </div>
+        <p class="section-note">各セルは根拠付きの質問レコードに対応します。「未調査」は「できない」ではなく、まだこのDBで結論を持っていない状態です。</p>
+      </div>
+      <p id="matrix-coverage" class="matrix-coverage" aria-live="polite"></p>
+      <p class="matrix-scroll-hint">横にスクロールして比較できます。</p>
+      <div class="matrix-wrap" tabindex="0" aria-label="主要AIサービス比較表">
+        <table class="matrix-table">
+          <thead id="matrix-head"></thead>
+          <tbody id="matrix-body"></tbody>
+        </table>
+      </div>
+    </section>
+
     <section id="comparison-section" class="comparison-section" aria-labelledby="comparison-heading" hidden>
       <div class="section-head">
         <div>
-          <p class="section-kicker">COMPARE</p>
-          <h2 id="comparison-heading" class="section-title">比較結果</h2>
+          <p class="section-kicker">SEARCH RESULT</p>
+          <h2 id="comparison-heading" class="section-title">検索結果</h2>
         </div>
         <p id="comparison-note" class="section-note">検索意図との近さを優先して表示しています。質問を開くと、条件・制限・一次資料を確認できます。</p>
       </div>
