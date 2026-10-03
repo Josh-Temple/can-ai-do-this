@@ -9,14 +9,22 @@ on:
       - "scripts/build_site.py"
       - "scripts/check_search_cases.py"
       - "scripts/check_freshness.py"
-      - "scripts/check_source_watch.py"\n      - "scripts/check_usability_assets.py"
+      - "scripts/check_source_watch.py"
+      - "scripts/check_usability_assets.py"
+      - "scripts/check_usability_assets.py"
       - "site/**"
       - "tests/fixtures/**"
       - "tests/search-cases.json"
       - "monitoring/source-watch.json"
       - ".github/workflows/source-watch.yml"
       - ".github/workflows/validate-data.yml"
-      - ".github/workflows/freshness-watch.yml"\n      - ".github/workflows/feedback-triage.yml"\n      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"\n      - "research/usability-results/TEMPLATE.md"
+      - ".github/workflows/freshness-watch.yml"
+      - ".github/workflows/feedback-triage.yml"
+      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"
+      - "research/usability-results/TEMPLATE.md"
+      - ".github/workflows/feedback-triage.yml"
+      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"
+      - "research/usability-results/TEMPLATE.md"
   pull_request:
     paths:
       - "data/questions/**"
@@ -25,14 +33,14 @@ on:
       - "scripts/build_site.py"
       - "scripts/check_search_cases.py"
       - "scripts/check_freshness.py"
-      - "scripts/check_source_watch.py"\n      - "scripts/check_usability_assets.py"
+      - "scripts/check_source_watch.py"
       - "site/**"
       - "tests/fixtures/**"
       - "tests/search-cases.json"
       - "monitoring/source-watch.json"
       - ".github/workflows/source-watch.yml"
       - ".github/workflows/validate-data.yml"
-      - ".github/workflows/freshness-watch.yml"\n      - ".github/workflows/feedback-triage.yml"\n      - "research/USABILITY_TEST_PROTOCOL_2026-10-03.md"\n      - "research/usability-results/TEMPLATE.md"
+      - ".github/workflows/freshness-watch.yml"
 
 permissions:
   contents: read
@@ -89,7 +97,10 @@ jobs:
           fi
           echo "VERIFIED direct-test freshness failed closed as expected."
 
-      - name: Check usability protocol/template alignment\n        run: python scripts/check_usability_assets.py\n\n      - name: Check browser JavaScript syntax
+      - name: Check usability protocol/template alignment
+        run: python scripts/check_usability_assets.py
+
+      - name: Check browser JavaScript syntax
         run: |
           node --check site/freshness.js
           node --check site/feedback.js
