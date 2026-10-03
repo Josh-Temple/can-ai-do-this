@@ -123,3 +123,10 @@ A summary should distinguish:
 ## Expansion rule
 
 Passing this gate permits **controlled expansion** beyond 15 questions. It does not require immediate expansion to 25–50, and it does not override freshness or evidence-quality requirements.
+
+
+## Relationship to public site feedback
+
+The public site may collect lightweight feedback through a GitHub Issue link. That feedback is useful for discovering search, copy, comparison, and interpretation problems, but it does **not** by itself complete this usability gate.
+
+A submission counts toward the minimum naive-user sample only when the participant actually completes the protocol above and a de-identified result file is recorded under `research/usability-results/`. Do not infer timing, search paths, or interpretation success from a general feedback issue.
