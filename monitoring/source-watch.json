@@ -594,7 +594,8 @@
           "practice questions"
         ]
       ],
-      "fetch_mode": "direct"
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned HTTP 200 on 2026-10-03 but exposed only a minimal shell (76 extracted characters), so semantic anchors cannot be monitored reliably. Review the official Google support page through the 14-day freshness process instead of treating extraction failure as content drift."
     },
     {
       "id": "openai-chatgpt-voice",
