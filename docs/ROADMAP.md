@@ -62,7 +62,10 @@ Current prototype:
 - [x] related-question navigation;
 - [x] live public deployment verified.
 - [x] lightweight public feedback intake routed to GitHub Issues without a client-side write token.
-- [x] automatic feedback triage into found / partial / discovery-failure labels.\n- [x] search-first landing state: do not dump all 50 questions before the user asks for them.\n- [x] ranked intent search with category boundaries so natural multi-intent queries can return comparison candidates without unrelated leakage.\n- [x] keep full answer details on dedicated question pages instead of duplicating them below search results.
+- [x] automatic feedback triage into found / partial / discovery-failure labels.
+- [x] search-first landing state: do not dump all 50 questions before the user asks for them.
+- [x] ranked intent search with category boundaries so natural multi-intent queries can return comparison candidates without unrelated leakage.
+- [x] keep full answer details on dedicated question pages instead of duplicating them below search results.
 
 Avoid building a generic AI-tool directory.
 
