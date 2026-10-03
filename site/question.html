@@ -41,6 +41,31 @@
       <p>質問を読み込めませんでした。</p>
       <p class="muted"><a href="./">一覧から探し直す</a></p>
     </div>
+
+    <section class="feedback-section" aria-labelledby="feedback-heading">
+      <p class="section-kicker">FEEDBACK</p>
+      <h2 id="feedback-heading" class="section-title">探していた答えは見つかりましたか？</h2>
+      <p class="section-note feedback-note">短いフィードバックをGitHubへ送れます。氏名・メールアドレスなどの個人情報は入力しないでください。</p>
+
+      <form id="feedback-form" class="feedback-form">
+        <label for="feedback-outcome">結果</label>
+        <select id="feedback-outcome" required>
+          <option value="">選択してください</option>
+          <option value="見つかった">見つかった</option>
+          <option value="一部見つかった">一部見つかった</option>
+          <option value="見つからなかった">見つからなかった</option>
+        </select>
+
+        <label for="feedback-intent">本当は何をしたかったですか？ <span class="muted">任意</span></label>
+        <input id="feedback-intent" type="text" maxlength="300" autocomplete="off" placeholder="例：PDFの図表まで読めるAIを比較したかった">
+
+        <label for="feedback-confusion">分かりにくかった点 <span class="muted">任意</span></label>
+        <textarea id="feedback-confusion" rows="4" maxlength="1000" placeholder="見つけにくかった、条件が分かりにくかった、比較しづらかった、など"></textarea>
+
+        <button class="feedback-submit" type="submit">GitHubへ送る</button>
+        <p class="feedback-help">GitHubのIssue作成画面が開きます。内容を確認してから送信できます。GitHubへのログインが必要です。</p>
+      </form>
+    </section>
   </main>
 
   <footer class="wrap footer">
@@ -53,6 +78,7 @@
   </footer>
 
   <script src="./freshness.js" defer></script>
+  <script src="./feedback.js" defer></script>
   <script src="./question.js" defer></script>
 </body>
 </html>
