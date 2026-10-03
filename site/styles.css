@@ -653,20 +653,6 @@ select:focus {
 
 
 /* Search-first information architecture */
-.intro-state {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 32px;
-  padding: 46px 0 34px;
-  border-bottom: 1px solid var(--line);
-}
-
-.intro-note {
-  margin-top: 12px;
-  max-width: 680px;
-}
-
 .text-button {
   appearance: none;
   flex: 0 0 auto;
@@ -716,13 +702,6 @@ select:focus {
 }
 
 @media (max-width: 720px) {
-  .intro-state {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-    padding-top: 36px;
-  }
-
   .question-page-answer {
     grid-template-columns: 1fr;
     gap: 22px;
