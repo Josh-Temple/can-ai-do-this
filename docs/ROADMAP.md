@@ -69,6 +69,8 @@ Current prototype:
 - [x] canonicalize cross-product comparison relations instead of inferring them from search-term overlap.
 - [x] make the first viewport state the site's purpose explicitly: compare whether major AI products can do a user-described task, with conditions and evidence.
 - [x] remove duplicated onboarding copy and hide feedback until the user has actually searched or opened the full list.
+- [x] add a task-by-product overview matrix with explicit 未調査 cells instead of treating missing coverage as a negative capability claim.
+- [x] define ChatGPT / Claude as non-blocking core coverage targets for general comparison groups while keeping specialist products visible.
 
 Avoid building a generic AI-tool directory.
 

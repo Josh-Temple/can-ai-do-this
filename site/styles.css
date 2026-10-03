@@ -793,3 +793,154 @@ select:focus {
     padding-top: 14px;
   }
 }
+
+
+/* Task comparison matrix */
+.overview-section {
+  padding: 44px 0 18px;
+}
+
+.matrix-coverage {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.matrix-scroll-hint {
+  display: none;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.matrix-wrap {
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
+}
+
+.matrix-wrap:focus-visible {
+  outline: 3px solid rgba(20, 32, 51, 0.13);
+  outline-offset: 4px;
+}
+
+.matrix-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  text-align: left;
+}
+
+.matrix-table thead th {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.matrix-table tbody th {
+  width: 280px;
+  min-width: 240px;
+  font-size: 0.9rem;
+  font-weight: 680;
+  line-height: 1.45;
+}
+
+.matrix-status {
+  display: inline-block;
+  min-width: 4.8rem;
+  border: 1px solid currentColor;
+  padding: 4px 7px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 760;
+  white-space: nowrap;
+}
+
+.matrix-status.yes { color: var(--yes); }
+.matrix-status.partial { color: var(--partial); }
+.matrix-status.no { color: var(--no); }
+.matrix-status.unknown,
+.matrix-status.stale { color: var(--unknown); }
+
+.matrix-status:hover,
+.matrix-status:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.matrix-status:focus-visible {
+  outline: 3px solid rgba(20, 32, 51, 0.13);
+  outline-offset: 3px;
+}
+
+.matrix-missing {
+  color: var(--muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.matrix-others {
+  display: grid;
+  gap: 3px;
+  min-width: 110px;
+}
+
+.matrix-others a {
+  white-space: nowrap;
+  font-size: 0.76rem;
+}
+
+.matrix-others a span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 720px) {
+  .overview-section {
+    padding-top: 34px;
+  }
+
+  .matrix-scroll-hint {
+    display: block;
+  }
+
+  .matrix-table {
+    min-width: 820px;
+  }
+
+  .matrix-table thead th:first-child,
+  .matrix-table tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--paper);
+    box-shadow: 1px 0 0 var(--line);
+  }
+
+  .matrix-table thead th:first-child {
+    z-index: 3;
+  }
+
+  .matrix-table tbody th {
+    width: 180px;
+    min-width: 180px;
+    font-size: 0.82rem;
+  }
+
+  .matrix-table th,
+  .matrix-table td {
+    padding: 10px 8px;
+  }
+}
