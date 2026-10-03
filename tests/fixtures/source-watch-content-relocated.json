@@ -1,0 +1,15 @@
+{
+  "demo-source": {
+    "by_url": {
+      "https://example.com/help": {
+        "status": 404,
+        "content": "",
+        "error": "HTTP 404"
+      },
+      "https://example.com/help-v2": {
+        "status": 200,
+        "content": "This help page explains recurring tasks and includes citations to relevant sources. More text for extraction."
+      }
+    }
+  }
+}

@@ -77,6 +77,18 @@ jobs:
           fi
           echo "Semantic-invalid evidence fixture failed as expected."
 
+      - name: Confirm VERIFIED documentation reread fixture passes
+        run: python scripts/validate_records.py tests/fixtures/valid-verified-doc-reread-question.json
+
+      - name: Confirm VERIFIED direct-test freshness fails closed
+        shell: bash
+        run: |
+          if python scripts/validate_records.py tests/fixtures/invalid-verified-refresh-question.json; then
+            echo "VERIFIED fixture incorrectly refreshed from documentation."
+            exit 1
+          fi
+          echo "VERIFIED direct-test freshness failed closed as expected."
+
       - name: Check browser JavaScript syntax
         run: |
           node --check site/freshness.js
@@ -121,14 +133,42 @@ jobs:
             exit 1
           fi
           echo "Freshness due-date boundary failed as expected."
+
+      - name: Confirm answer-level freshness is fail-closed
+        shell: bash
+        run: |
+          if python scripts/check_freshness.py tests/fixtures/freshness-answer-level-question.json --as-of 2026-10-16 --fail-on-due; then
+            echo "Record-level last_checked incorrectly hid an answer due for review."
+            exit 1
+          fi
+          echo "Answer-level due-date boundary failed closed as expected."
+
       - name: Lint source-watch coverage
         run: python scripts/check_source_watch.py --lint-only
+
+      - name: Check source-watch token boundaries
+        run: |
+          python - <<'PY'
+          from scripts.check_source_watch import anchor_present, normalize
+          assert not anchor_present(normalize("product pricing"), "pro")
+          assert not anchor_present(normalize("program"), "pr")
+          assert anchor_present(normalize("Pro plan"), "pro")
+          assert anchor_present(normalize("open a PR"), "pr")
+          print("Source-watch token boundary checks passed.")
+          PY
 
       - name: Confirm clean source-watch fixture passes
         run: >-
           python scripts/check_source_watch.py
           --config tests/fixtures/source-watch-config.json
           --content-map tests/fixtures/source-watch-content-ok.json
+          --skip-coverage
+
+      - name: Confirm configured source relocation passes
+        run: >-
+          python scripts/check_source_watch.py
+          --config tests/fixtures/source-watch-config.json
+          --content-map tests/fixtures/source-watch-content-relocated.json
           --skip-coverage
 
       - name: Confirm semantic source change fails
@@ -139,6 +179,15 @@ jobs:
             exit 1
           fi
           echo "Changed source fixture failed as expected."
+
+      - name: Confirm unreadable HTTP 200 fails closed
+        shell: bash
+        run: |
+          if python scripts/check_source_watch.py --config tests/fixtures/source-watch-config.json --content-map tests/fixtures/source-watch-content-unreadable.json --skip-coverage; then
+            echo "Unreadable HTTP 200 fixture unexpectedly passed."
+            exit 1
+          fi
+          echo "Unreadable HTTP 200 fixture failed closed as expected."
 
       - name: Confirm transient source failure does not create semantic failure
         run: >-

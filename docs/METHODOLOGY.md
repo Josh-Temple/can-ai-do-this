@@ -99,7 +99,7 @@ Each canonical question stores the selected policy as `review_window_days` with 
 
 - Update `last_checked` only after the relevant evidence has actually been re-read or the capability has been re-tested.
 - Rebuilding the site, opening a record, or seeing that a URL still resolves is not a freshness check.
-- Re-reading documentation does not refresh an older direct-test date. Preserve what was actually tested and when.
+- Re-reading documentation does not refresh an older direct-test date. For a `VERIFIED` answer, answer-level `last_checked` is the date of the most recent `DIRECT_TEST`. A later documentation review may advance the record-level `last_checked` and the official source's `accessed_at`, but it must not advance the verified answer-level date unless the capability is directly re-tested.
 - When evidence has exceeded its review window and has not been re-checked, mark the affected answer `STALE` or the question `REVIEW_REQUIRED` before relying on it as a current answer.
 - The public site also derives a fail-closed freshness warning from answer-level `last_checked` plus `review_window_days`. Once the review date is reached, the UI displays **要再確認** even if the canonical record has not yet been manually changed to STALE/REVIEW_REQUIRED. This presentation rule does not alter the stored evidence state or historical answer.
 - Official documentation changes are a reason to re-investigate, not an automatic reason to change a YES/NO answer.
@@ -109,7 +109,8 @@ Each canonical question stores the selected policy as `review_window_days` with 
 
 For high-change questions, the repository may monitor a small set of semantic anchors in first-party documentation. This deliberately avoids full-page hashing.
 
-- Missing semantic anchors or permanent 404/410 responses create a review signal.
+- Missing semantic anchors or exhausted explicitly configured first-party URLs after permanent 404/410 responses create a review signal.
+- An HTTP 200 response that cannot expose enough claim-relevant text is an unreadable-source review signal, not proof that the capability changed.
 - Transient fetch failures are warnings, not evidence that the capability changed.
 - A monitoring alert never refreshes `last_checked`, changes the answer, or promotes an evidence state.
 - The source must be re-read or the capability re-tested before the canonical claim is changed.

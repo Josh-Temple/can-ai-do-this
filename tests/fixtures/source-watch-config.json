@@ -29,7 +29,10 @@
           "source links"
         ]
       ],
-      "fetch_mode": "direct"
+      "fetch_mode": "direct",
+      "fallback_urls": [
+        "https://example.com/help-v2"
+      ]
     },
     {
       "id": "manual-demo",

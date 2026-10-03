@@ -1,0 +1,37 @@
+{
+  "id": "Q9995",
+  "question": "Can an answer-level freshness fixture stay fail-closed?",
+  "slug": "can-an-answer-level-freshness-fixture-stay-fail-closed",
+  "category": "example",
+  "status": "DRAFT",
+  "demand": {
+    "summary": "Fixture used to ensure record-level dates do not hide stale answers.",
+    "community_links": []
+  },
+  "last_checked": "2026-10-10",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Example AI",
+      "plan": null,
+      "platform": null,
+      "region": null,
+      "answer": "UNKNOWN",
+      "summary": "The record date is newer than the answer evidence date.",
+      "conditions": [],
+      "limitations": [],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-02",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://example.com/",
+          "accessed_at": "2026-10-02",
+          "note": "Fixture source."
+        }
+      ]
+    }
+  ],
+  "notes": "Freshness must use the answer-level date."
+}

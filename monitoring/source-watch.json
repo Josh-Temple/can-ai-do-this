@@ -61,8 +61,7 @@
           "take supported actions"
         ],
         [
-          "new gmail messages",
-          "gmail"
+          "new gmail messages"
         ]
       ],
       "fetch_mode": "manual",
@@ -172,8 +171,7 @@
           "public beta"
         ],
         [
-          "production url",
-          "publish"
+          "production url"
         ]
       ],
       "fetch_mode": "manual",
@@ -319,11 +317,10 @@
         ],
         [
           "citations",
-          "sources"
+          "cited sources"
         ],
         [
-          "research plan",
-          "plan"
+          "research plan"
         ]
       ],
       "fetch_mode": "manual",
@@ -424,8 +421,8 @@
           "apps & code"
         ],
         [
-          "public link",
-          "share"
+          "shareable public link",
+          "public link"
         ],
         [
           "webpage",
@@ -449,8 +446,7 @@
           "google ai plan"
         ],
         [
-          "audio",
-          "sound"
+          "generate audio with your video"
         ]
       ],
       "fetch_mode": "direct"
@@ -488,8 +484,7 @@
           "transcript"
         ],
         [
-          "ai-generated summary",
-          "summary"
+          "ai-generated summary"
         ],
         [
           "120 minutes"
@@ -499,20 +494,20 @@
     },
     {
       "id": "openai-codex-github",
-      "url": "https://developers.openai.com/docs/pricing",
+      "url": "https://developers.openai.com/blog/codex-at-devday",
       "questions": [
         "Q0041"
       ],
       "anchor_groups": [
         [
-          "github"
-        ],
-        [
-          "code review",
-          "github code review"
-        ],
-        [
           "codex cloud"
+        ],
+        [
+          "codex code review"
+        ],
+        [
+          "opened up a pr",
+          "opened a pr"
         ]
       ],
       "fetch_mode": "direct"
@@ -533,7 +528,6 @@
           "commit"
         ],
         [
-          "pr",
           "pull request"
         ]
       ],
@@ -596,8 +590,8 @@
           "visual aids"
         ],
         [
-          "practice questions",
-          "quiz"
+          "practice questions with feedback and hints",
+          "practice questions"
         ]
       ],
       "fetch_mode": "direct"

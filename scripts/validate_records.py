@@ -73,6 +73,7 @@ def semantic_errors(record):
     for index, answer in enumerate(record.get("answers", [])):
         answer_checked = date.fromisoformat(answer["last_checked"])
         prefix = f"$.answers[{index}]"
+        evidence_state = answer.get("evidence_state")
 
         if answer_checked > record_checked:
             errors.append(
@@ -80,16 +81,31 @@ def semantic_errors(record):
                 f"({record['last_checked']})"
             )
 
+        direct_test_dates = []
         for source_index, source in enumerate(answer.get("sources", [])):
             accessed = date.fromisoformat(source["accessed_at"])
-            if accessed > answer_checked:
+            source_prefix = f"{prefix}.sources[{source_index}]"
+
+            if accessed > record_checked:
                 errors.append(
-                    f"{prefix}.sources[{source_index}].accessed_at: cannot be later than "
+                    f"{source_prefix}.accessed_at: cannot be later than record last_checked "
+                    f"({record['last_checked']})"
+                )
+
+            if source["type"] == "DIRECT_TEST":
+                direct_test_dates.append(accessed)
+                if accessed > answer_checked:
+                    errors.append(
+                        f"{source_prefix}.accessed_at: cannot be later than "
+                        f"answer last_checked ({answer['last_checked']})"
+                    )
+            elif evidence_state != "VERIFIED" and accessed > answer_checked:
+                errors.append(
+                    f"{source_prefix}.accessed_at: cannot be later than "
                     f"answer last_checked ({answer['last_checked']})"
                 )
 
         source_types = {source["type"] for source in answer.get("sources", [])}
-        evidence_state = answer.get("evidence_state")
 
         if evidence_state == "DOCUMENTED" and not (
             {"OFFICIAL_DOC", "OFFICIAL_ANNOUNCEMENT"} & source_types
@@ -106,6 +122,12 @@ def semantic_errors(record):
             if not answer.get("tested_environment"):
                 errors.append(
                     f"{prefix}.tested_environment: required for VERIFIED evidence"
+                )
+            if direct_test_dates and answer_checked != max(direct_test_dates):
+                errors.append(
+                    f"{prefix}.last_checked: VERIFIED answers must equal the most recent "
+                    "DIRECT_TEST accessed_at; documentation re-reads must not refresh "
+                    "direct-test freshness"
                 )
 
         if evidence_state == "USER_REPORTED" and not (

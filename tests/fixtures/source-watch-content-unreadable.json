@@ -1,0 +1,6 @@
+{
+  "demo-source": {
+    "status": 200,
+    "content": "This is a long generic shell page about account navigation, privacy, support, products, billing, settings, and other unrelated topics. It contains enough text to pass the minimum extraction length but none of the configured capability evidence anchors."
+  }
+}
