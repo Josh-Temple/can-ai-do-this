@@ -1,0 +1,79 @@
+{
+  "id": "Q0036",
+  "question": "Can Claude create an interactive web app or webpage from a text description?",
+  "question_ja": "Claudeは、文章の指示からインタラクティブなWebアプリやWebページを作れる？",
+  "slug": "can-claude-create-an-interactive-web-app-or-page",
+  "category": "website-creation",
+  "search_terms": [
+    "Claude",
+    "Artifacts",
+    "アーティファクト",
+    "Webアプリ",
+    "ウェブアプリ",
+    "Webサイト",
+    "ウェブサイト",
+    "ホームページ",
+    "ダッシュボード",
+    "インタラクティブ",
+    "React",
+    "HTML",
+    "公開",
+    "共有"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users increasingly want to describe a lightweight tool or webpage in natural language and receive something interactive rather than only code.",
+    "summary_ja": "コードそのものではなく、文章で要望を伝えてその場で動くWebページや小さなアプリを作れるかは、一般ユーザーにも分かりやすい用途です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Artifacts are available on Free, Pro, Max, Team, and Enterprise; sharing and templates vary by plan and experience",
+      "platform": "Claude web, Claude Desktop, and supported Claude Code / mobile Artifact surfaces",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude can create Artifacts such as single-page websites, dashboards, interactive React components, and small tools from a natural-language request. Artifacts can be iterated on and shared according to the user's plan and Claude experience.",
+      "summary_ja": "Claudeは自然言語の要望から、シングルページWebサイト、ダッシュボード、インタラクティブなReactコンポーネント、小さなツールなどをArtifactsとして作成できます。作成後に修正を重ね、プランや利用画面に応じて共有できます。",
+      "conditions": [
+        "Cloud code execution and file creation must be enabled for Artifacts.",
+        "Artifact creation is available across Claude plans, but template and sharing options differ by plan and Claude experience.",
+        "Some AI-powered or connected-app Artifact features require paid plans or additional permissions."
+      ],
+      "conditions_ja": [
+        "Artifactsを使うには、クラウドコード実行とファイル作成を有効にする必要があります。",
+        "Artifacts自体は各Claudeプランで作成できますが、テンプレートや共有方法はプラン・Claudeの利用画面によって異なります。",
+        "AI機能や接続アプリを組み込むArtifactsでは、有料プランや追加権限が必要な場合があります。"
+      ],
+      "limitations": [
+        "Artifacts are lightweight app/content experiences, not a guarantee of production-ready hosting, security, backend architecture, or operational support.",
+        "Sharing behavior differs between current Artifacts and legacy chat Artifacts.",
+        "Mobile surfaces support viewing and some creation flows, while more complete editing and sharing controls are documented for web or desktop."
+      ],
+      "limitations_ja": [
+        "Artifactsは軽量なアプリ・コンテンツ体験であり、本番向けホスティング、セキュリティ、バックエンド構成、運用要件まで自動的に満たすものではありません。",
+        "現在のArtifactsと旧チャット由来のLegacy Artifactsでは共有方法が異なります。",
+        "モバイルでは閲覧や一部作成ができますが、より完全な編集・共有操作はWebまたはデスクトップ向けに説明されています。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents Artifacts including single-page websites, dashboards, interactive tools, React components, plan availability, code execution requirements, and AI-powered apps."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/9547008-share-artifacts",
+          "accessed_at": "2026-10-03",
+          "note": "Anthropic documents Artifact sharing and publishing behavior across plans and current versus legacy Artifact experiences."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Claude Artifacts, not arbitrary production deployment outside Claude."
+}
