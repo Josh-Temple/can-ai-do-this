@@ -1,0 +1,69 @@
+{
+  "id": "Q0029",
+  "question": "Can Gemini directly edit an existing Google Sheet?",
+  "question_ja": "Geminiは、既存のGoogleスプレッドシートを直接編集できる？",
+  "slug": "can-gemini-directly-edit-an-existing-google-sheet",
+  "category": "spreadsheets",
+  "search_terms": [
+    "Gemini",
+    "Google Sheets",
+    "Googleスプレッドシート",
+    "スプレッドシート",
+    "表計算",
+    "シート編集",
+    "既存シート",
+    "セル編集",
+    "数式",
+    "Gemini in Sheets"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Gemini's Workspace connector and Gemini inside Sheets have different action boundaries, so users need to distinguish them.",
+    "summary_ja": "Gemini AppsのWorkspace連携と、Googleスプレッドシート内のGeminiでは実行できる操作が異なるため、区別する価値があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Eligible Google Workspace or Google AI plan",
+      "platform": "Gemini in Google Sheets on desktop",
+      "region": null,
+      "answer": "YES",
+      "summary": "Gemini in Google Sheets can create new sheets and complete end-to-end tasks on an existing spreadsheet, including direct edits based on natural-language prompts.",
+      "summary_ja": "Googleスプレッドシート内のGeminiは、新しいシートの作成や、既存スプレッドシートに対する自然言語指示ベースのエンドツーエンド編集を行えます。",
+      "conditions": [
+        "An eligible Google Workspace or Google AI plan is required.",
+        "The feature is documented for Gemini inside Google Sheets on a computer.",
+        "Gemini works best with native Google Sheets files; Excel files should be converted to Google Sheets format for the best supported workflow."
+      ],
+      "conditions_ja": [
+        "対象となるGoogle WorkspaceまたはGoogle AIプランが必要です。",
+        "公式資料ではパソコン上のGoogleスプレッドシート内Geminiとして説明されています。",
+        "Googleスプレッドシート形式で最も適切に動作し、ExcelファイルではGoogleスプレッドシート形式へ変換することが推奨されています。"
+      ],
+      "limitations": [
+        "This capability is different from the Gemini Apps Google Workspace connected app, which has narrower write capabilities.",
+        "The user should review Gemini's proposed plan and spreadsheet changes before relying on them.",
+        "Complex spreadsheet logic may still require manual verification."
+      ],
+      "limitations_ja": [
+        "これはGemini AppsのGoogle Workspace連携とは別機能で、Workspace連携側の書き込み機能はより限定されています。",
+        "Geminiが提示する計画やシート変更内容は、反映・利用前に確認する必要があります。",
+        "複雑な表計算ロジックでは引き続き手動確認が必要です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/docs/answer/16959434",
+          "accessed_at": "2026-10-03",
+          "note": "Google documents creating new sheets and completing end-to-end tasks on existing spreadsheets with Gemini in Sheets, including plan and native-file requirements."
+        }
+      ]
+    }
+  ],
+  "notes": "This record deliberately distinguishes Gemini in Sheets from Q0016, where the Gemini Apps Workspace connector has narrower file-write capabilities."
+}

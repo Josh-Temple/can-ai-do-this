@@ -285,6 +285,27 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-outlook",
+      "url": "https://support.microsoft.com/en-us/outlook/copilot-outlook/chat-with-copilot-in-outlook",
+      "questions": [
+        "Q0027"
+      ],
+      "anchor_groups": [
+        [
+          "summarize my emails",
+          "summarize"
+        ],
+        [
+          "when is my next",
+          "calendar"
+        ],
+        [
+          "schedule a meeting"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
