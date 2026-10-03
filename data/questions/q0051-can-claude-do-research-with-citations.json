@@ -1,0 +1,78 @@
+{
+  "id": "Q0051",
+  "question": "Can Claude do multi-step research and produce a cited report?",
+  "question_ja": "Claudeは、複数段階のResearchを行って出典付きレポートを作れる？",
+  "slug": "can-claude-do-research-with-citations",
+  "category": "deep-research",
+  "search_terms": [
+    "Claude",
+    "Research",
+    "Deep Research",
+    "deep research",
+    "リサーチ",
+    "深掘り調査",
+    "詳細調査",
+    "調査レポート",
+    "レポート",
+    "出典",
+    "引用",
+    "複数段階",
+    "調べる"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Cross-product research comparison is incomplete without Claude's dedicated Research mode, which is distinct from ordinary web search.",
+    "summary_ja": "通常のWeb検索とは別に、Claudeの専用Research機能を比較対象に含めることで、複数AIの深い調査機能を横並びで確認できます。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Claude",
+      "plan": "Pro, Max, Team, or Enterprise",
+      "platform": "Claude on web, Claude Desktop, or Claude Mobile",
+      "region": null,
+      "answer": "YES",
+      "summary": "Claude Research can conduct multiple agentic searches that build on one another and produce a thorough answer with citations, using the web and connected internal context where available.",
+      "summary_ja": "ClaudeのResearchは、前の検索結果を踏まえて複数回の調査を自律的に進め、Webや接続済みの内部情報を横断して、引用付きの詳細な回答を作成できます。",
+      "conditions": [
+        "A paid Claude plan (Pro, Max, Team, or Enterprise) is required.",
+        "Web search must be turned on for Research to function.",
+        "Connected internal sources are only included when the relevant integrations are available and enabled."
+      ],
+      "conditions_ja": [
+        "Pro、Max、Team、Enterpriseのいずれかの有料Claudeプランが必要です。",
+        "Researchを機能させるにはWeb検索を有効にする必要があります。",
+        "内部情報源は、対応する連携が利用可能で有効になっている場合にのみ調査対象になります。"
+      ],
+      "limitations": [
+        "Research sessions can consume usage limits faster than ordinary conversations.",
+        "Citations make sources inspectable but do not guarantee that every synthesis or inference is correct.",
+        "Availability and integration coverage can change as the feature evolves."
+      ],
+      "limitations_ja": [
+        "複数の情報源を取得するため、通常の会話より利用上限を早く消費する場合があります。",
+        "引用によって情報源を確認できますが、生成された統合や推論が常に正しいことを保証するものではありません。",
+        "提供範囲や連携対象は機能更新によって変わる可能性があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/11088861-use-research-on-claude",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic documents paid-plan availability, agentic multi-search Research, web/internal-context research, and citations."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research",
+          "accessed_at": "2026-10-04",
+          "note": "Anthropic describes Research as comprehensive multi-source information gathering that produces in-depth reports with citations."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Claude's dedicated Research feature, not ordinary Claude web search in Q0014."
+}
