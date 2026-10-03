@@ -92,8 +92,42 @@ jobs:
       - name: Check browser JavaScript syntax
         run: |
           node --check site/freshness.js
+          node --check site/feedback.js
           node --check site/app.js
           node --check site/question.js
+      - name: Check public feedback URL handling
+        run: |
+          node - <<'NODE'
+          const assert = require("node:assert");
+          const { cleanPageUrl, buildFeedbackIssueUrl } = require("./site/feedback.js");
+
+          assert.equal(
+            cleanPageUrl("https://example.test/?q=private+search&product=ChatGPT#results"),
+            "https://example.test/"
+          );
+          assert.equal(
+            cleanPageUrl("https://example.test/question.html?slug=sample&q=private#answer"),
+            "https://example.test/question.html?slug=sample"
+          );
+
+          const issueUrl = new URL(buildFeedbackIssueUrl({
+            outcome: "見つからなかった",
+            intent: "PDFを比較したい",
+            confusion: "検索で見つからない",
+            context: {
+              questionId: "Q0049",
+              questionTitle: "Sample question",
+              pageUrl: "https://example.test/question.html?slug=sample",
+            },
+          }));
+          assert.equal(issueUrl.hostname, "github.com");
+          assert.equal(issueUrl.pathname, "/Josh-Temple/can-ai-do-this/issues/new");
+          assert.match(issueUrl.searchParams.get("title"), /^\[Site feedback\] Q0049/);
+          assert.match(issueUrl.searchParams.get("body"), /PDFを比較したい/);
+          assert(!issueUrl.searchParams.get("body").includes("private search"));
+          console.log("Public feedback URL checks passed.");
+          NODE
+
       - name: Check public freshness boundary
         run: |
           node - <<'NODE'
