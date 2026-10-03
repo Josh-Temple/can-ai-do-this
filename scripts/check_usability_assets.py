@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keep the usability protocol and result template aligned with the 50-question gate."""
+"""Keep the usability protocol and result template aligned with the current-release gate."""
 
 from __future__ import annotations
 
@@ -19,8 +19,11 @@ def main() -> None:
     protocol = PROTOCOL.read_text(encoding="utf-8")
     template = TEMPLATE.read_text(encoding="utf-8")
 
-    if "50-question first release" not in protocol:
-        fail("Usability protocol must target the 50-question first release.")
+    if "current public comparison release" not in protocol:
+        fail("Usability protocol must target the current public comparison release.")
+
+    if re.search(r"50-question gate pass criteria|Treat the 50-question first release", protocol, flags=re.I):
+        fail("Usability protocol still hard-codes the old 50-question gate.")
 
     if re.search(r"15-question|beyond 15|15-question seed", protocol, flags=re.I):
         fail("Usability protocol still contains stale 15-question gate language.")
@@ -48,7 +51,7 @@ def main() -> None:
     titles = {title for _, title in protocol_tasks}
     missing = required_themes - titles
     if missing:
-        fail(f"Usability protocol is missing required post-50 themes: {sorted(missing)}")
+        fail(f"Usability protocol is missing required comparison themes: {sorted(missing)}")
 
     required_fields = {
         "products_reached",
