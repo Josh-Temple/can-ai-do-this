@@ -505,16 +505,14 @@
       ],
       "anchor_groups": [
         [
-          "github issues",
-          "github issue"
+          "@codex"
         ],
         [
-          "pull requests",
-          "pull request"
+          "code review",
+          "github code review"
         ],
         [
-          "@codex",
-          "code review"
+          "codex cloud"
         ]
       ],
       "fetch_mode": "direct"
@@ -527,8 +525,8 @@
       ],
       "anchor_groups": [
         [
-          "ファイル編集",
-          "file editing"
+          "コードベース",
+          "codebase"
         ],
         [
           "コミット",
