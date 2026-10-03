@@ -60,7 +60,7 @@ Current prototype:
 - [x] community discussion links where useful;
 - [x] dedicated question pages / stable share links;
 - [x] related-question navigation;
-- [x] live public deployment verified.
+- [x] live public deployment verified.\n- [x] lightweight public feedback intake routed to GitHub Issues without a client-side write token.\n- [x] automatic feedback triage into found / partial / discovery-failure labels.
 
 Avoid building a generic AI-tool directory.
 
