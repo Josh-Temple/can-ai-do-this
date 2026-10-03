@@ -1,0 +1,71 @@
+{
+  "id": "Q0031",
+  "question": "Can ChatGPT do multi-step deep research and produce a cited report?",
+  "question_ja": "ChatGPTは、複数段階のDeep Researchを行って出典付きレポートを作れる？",
+  "slug": "can-chatgpt-do-deep-research-with-citations",
+  "category": "deep-research",
+  "search_terms": [
+    "ChatGPT",
+    "Deep Research",
+    "deep research",
+    "深掘り調査",
+    "詳細調査",
+    "リサーチ",
+    "調査レポート",
+    "レポート",
+    "出典",
+    "引用",
+    "複数段階",
+    "調べる"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users need to distinguish ordinary web search from longer multi-step research that plans, compares evidence, and produces a structured cited report.",
+    "summary_ja": "通常のWeb検索と、調査計画を立てて複数の情報源を比較し、構造化されたレポートを作る深い調査は別の用途です。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Availability and usage limits depend on the user's ChatGPT plan and account",
+      "platform": "Chat; Work and Codex where Deep Research is available",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Deep Research can plan and carry out a complex research task, compare evidence across sources, and produce a structured result with citations and links to sources.",
+      "summary_ja": "ChatGPTのDeep Researchは、複雑な調査を計画して実行し、複数の情報源を比較しながら、引用・情報源リンク付きの構造化レポートを作成できます。",
+      "conditions": [
+        "Deep Research must be available for the user's ChatGPT plan and account.",
+        "The user provides the desired outcome, context, and source constraints, and can review or refine the proposed research plan in supported surfaces.",
+        "Usage limits depend on plan and can change over time."
+      ],
+      "conditions_ja": [
+        "利用中のChatGPTプランとアカウントでDeep Researchが利用可能である必要があります。",
+        "目的、前提、使用したい情報源などを伝え、対応する画面では調査計画を確認・修正できます。",
+        "利用回数などの上限はプランによって異なり、変更される場合があります。"
+      ],
+      "limitations": [
+        "Deep Research is designed for complex research rather than quick factual lookups.",
+        "Citations make the evidence inspectable but do not guarantee that every synthesis or inference is correct.",
+        "Availability, model behavior, and limits can change as the feature evolves."
+      ],
+      "limitations_ja": [
+        "Deep Researchは、短い事実確認よりも複雑な調査向けの機能です。",
+        "引用により根拠を確認できますが、生成された統合や推論が必ず正しいことを保証するものではありません。",
+        "機能の提供範囲、モデル挙動、利用上限は変更される可能性があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents Deep Research planning, source selection, iterative research, and cited structured reports in ChatGPT."
+        }
+      ]
+    }
+  ],
+  "notes": "This record is separate from ordinary ChatGPT web search in Q0008."
+}
