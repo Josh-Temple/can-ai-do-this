@@ -1,0 +1,71 @@
+{
+  "id": "Q0043",
+  "question": "Can ChatGPT record, transcribe, and summarize a meeting or voice note?",
+  "question_ja": "ChatGPTは、会議や音声メモを録音して文字起こし・要約できる？",
+  "slug": "can-chatgpt-record-transcribe-and-summarize-a-meeting",
+  "category": "audio-transcription",
+  "search_terms": [
+    "ChatGPT",
+    "Record",
+    "録音",
+    "文字起こし",
+    "音声",
+    "会議",
+    "議事録",
+    "要約",
+    "ブレインストーミング",
+    "voice note",
+    "transcription",
+    "macOS"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Meeting capture is a practical productivity workflow where device support, plan eligibility, transcription accuracy, and consent rules matter.",
+    "summary_ja": "会議記録では、録音できるだけでなく、対応端末・プラン・文字起こし精度・録音同意まで含めて判断する必要があります。"
+  },
+  "last_checked": "2026-10-03",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "ChatGPT",
+      "plan": "Plus, Pro, Business, Enterprise, and Edu workspaces",
+      "platform": "ChatGPT desktop app for macOS only",
+      "region": null,
+      "answer": "YES",
+      "summary": "ChatGPT Record can capture meetings, brainstorms, and voice notes, transcribe the audio, and generate a summary that is saved in the chat and can be turned into follow-up outputs such as plans, emails, or code.",
+      "summary_ja": "ChatGPT Recordは、会議、ブレインストーミング、音声メモを録音して文字起こしし、要約をチャットに保存できます。その内容から計画、メール、コードなどの後続成果物を作ることもできます。",
+      "conditions": [
+        "The user must have an eligible Plus, Pro, Business, Enterprise, or Edu workspace.",
+        "ChatGPT Record is currently documented only for the macOS desktop app.",
+        "Microphone and, where needed, system-audio permissions must be granted."
+      ],
+      "conditions_ja": [
+        "Plus、Pro、Business、Enterprise、Eduのいずれか対象ワークスペースが必要です。",
+        "現在、ChatGPT RecordはmacOSデスクトップアプリのみで提供されています。",
+        "マイクおよび必要に応じてシステムオーディオの権限を許可する必要があります。"
+      ],
+      "limitations": [
+        "Transcriptions can contain mistakes and important information should be checked.",
+        "Users are responsible for following applicable recording laws and obtaining required consent before recording other people.",
+        "The current documented platform restriction means Android, iOS, Windows, and web users cannot rely on this exact Record workflow."
+      ],
+      "limitations_ja": [
+        "文字起こしには誤りが含まれる可能性があるため、重要事項は確認する必要があります。",
+        "他者を録音する場合は、適用される法令を確認し、必要な同意を得る責任があります。",
+        "現在の公式仕様ではmacOS限定のため、Android、iOS、Windows、Webで同じRecordフローを利用できるとは限りません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-03",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://help.openai.com/en/articles/11487532-chatgpt-record/",
+          "accessed_at": "2026-10-03",
+          "note": "OpenAI documents eligible plans, macOS-only availability, live transcription, summaries, downstream outputs, accuracy caveats, and recording-consent responsibilities."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers ChatGPT Record mode, not generic audio-file upload or Voice mode."
+}
