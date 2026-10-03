@@ -16,11 +16,28 @@
 
       <div class="search-row">
         <label class="sr-only" for="search">タスクを検索</label>
-        <input id="search" type="search" autocomplete="off" placeholder="例：PDFを要約、スライドを作成、メールを監視、Webサイトを作る">
+        <input id="search" type="search" autocomplete="off" placeholder="例：PDFを読みたい、会議を文字起こししたい、AIでサイトを作りたい">
         <label class="sr-only" for="product-filter">製品で絞り込む</label>
         <select id="product-filter">
           <option value="">すべての製品</option>
         </select>
+      </div>
+
+      <div class="quick-queries" aria-label="よく比較するタスク">
+        <span>すぐ比較:</span>
+        <button type="button" data-query="PDFを読みたい">PDFを読む</button>
+        <button type="button" data-query="ネットで調べたい">Web検索</button>
+        <button type="button" data-query="Deep Research">Deep Research</button>
+        <button type="button" data-query="画像を作りたい">画像生成</button>
+        <button type="button" data-query="写真を直したい">画像編集</button>
+        <button type="button" data-query="エクセルを編集したい">表計算</button>
+        <button type="button" data-query="Excelを分析したい">データ分析</button>
+        <button type="button" data-query="パワポを作りたい">プレゼン</button>
+        <button type="button" data-query="AIでサイトを作りたい">Webアプリ</button>
+        <button type="button" data-query="勉強を教えてほしい">学習</button>
+        <button type="button" data-query="AIと話したい">音声会話</button>
+        <button type="button" data-query="会議を文字起こししたい">文字起こし</button>
+        <button type="button" data-query="GitHubのコードを直してほしい">コード修正</button>
       </div>
 
       <div class="meta-row">
@@ -56,7 +73,7 @@
       </div>
     </section>
 
-    <section class="detail-section" aria-labelledby="detail-heading">
+    <section class="detail-section" aria-labelledby="detail-heading" hidden>
       <div class="section-head">
         <div>
           <p class="section-kicker">DETAILS</p>
