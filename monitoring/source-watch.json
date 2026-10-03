@@ -306,6 +306,89 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "openai-deep-research",
+      "url": "https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt",
+      "questions": [
+        "Q0031"
+      ],
+      "anchor_groups": [
+        [
+          "deep research"
+        ],
+        [
+          "citations",
+          "sources"
+        ],
+        [
+          "research plan",
+          "plan"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions previously returned HTTP 403 for help.openai.com. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "google-gemini-deep-research",
+      "url": "https://support.google.com/gemini/answer/15719111",
+      "questions": [
+        "Q0032"
+      ],
+      "anchor_groups": [
+        [
+          "deep research"
+        ],
+        [
+          "google search"
+        ],
+        [
+          "gmail",
+          "drive",
+          "notebooklm"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "perplexity-research-mode",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro",
+      "questions": [
+        "Q0033"
+      ],
+      "anchor_groups": [
+        [
+          "research mode"
+        ],
+        [
+          "comprehensive reports"
+        ],
+        [
+          "complex topics"
+        ]
+      ],
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions previously returned HTTP 403 for www.perplexity.ai. Review through the 14-day freshness process instead of bypassing vendor access controls."
+    },
+    {
+      "id": "microsoft-copilot-word-edit",
+      "url": "https://support.microsoft.com/en-us/word/edit-with-copilot-in-word",
+      "questions": [
+        "Q0035"
+      ],
+      "anchor_groups": [
+        [
+          "edit with copilot"
+        ],
+        [
+          "create, edit, refine, and format",
+          "create, edit, refine"
+        ],
+        [
+          "premium copilot"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }
