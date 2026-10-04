@@ -19,7 +19,8 @@
       "question_ids": [
         "Q0005",
         "Q0006",
-        "Q0019"
+        "Q0019",
+        "Q0062"
       ]
     },
     {
@@ -80,7 +81,8 @@
       "question_ids": [
         "Q0012",
         "Q0036",
-        "Q0037"
+        "Q0037",
+        "Q0063"
       ]
     },
     {
@@ -131,7 +133,8 @@
       "coverage": "general",
       "question_ids": [
         "Q0040",
-        "Q0043"
+        "Q0043",
+        "Q0065"
       ],
       "missing_products": {
         "Claude": {
@@ -146,7 +149,9 @@
       "coverage": "specialized",
       "question_ids": [
         "Q0041",
-        "Q0042"
+        "Q0042",
+        "Q0066",
+        "Q0067"
       ],
       "missing_products": {
         "ChatGPT": {
@@ -156,6 +161,14 @@
         "Claude": {
           "state": "OUT_OF_SCOPE",
           "note_ja": "このDBではリポジトリ作業をClaude Codeとして別製品扱いしている。"
+        },
+        "Gemini": {
+          "state": "OUT_OF_SCOPE",
+          "note_ja": "このDBではGoogleの自律的なGitHubリポジトリ編集をJulesとして別製品扱いしている。"
+        },
+        "Microsoft Copilot": {
+          "state": "OUT_OF_SCOPE",
+          "note_ja": "このDBではGitHubリポジトリ編集をGitHub Copilotとして別製品扱いしている。"
         }
       }
     },
@@ -166,7 +179,8 @@
       "question_ids": [
         "Q0044",
         "Q0045",
-        "Q0056"
+        "Q0056",
+        "Q0064"
       ]
     },
     {
