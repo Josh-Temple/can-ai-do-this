@@ -1,0 +1,75 @@
+{
+  "id": "Q0058",
+  "question": "Can Microsoft Copilot have a real-time spoken conversation with me?",
+  "question_ja": "Microsoft Copilotと、声でリアルタイムに会話できる？",
+  "slug": "can-microsoft-copilot-have-a-real-time-voice-conversation",
+  "category": "voice-conversation",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot Voice",
+    "音声会話",
+    "ボイスチャット",
+    "voice chat",
+    "AIと話す",
+    "声で会話",
+    "リアルタイム会話",
+    "話しかける",
+    "ハンズフリー"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Real-time voice is a mainstream assistant task and Microsoft Copilot has a documented two-way spoken conversation experience across major surfaces.",
+    "summary_ja": "リアルタイム音声会話は主要AIの比較軸で、Microsoft Copilotにも双方向のボイスチャットが公式に案内されています。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft Copilot access; Microsoft 365 Personal, Family, and Premium subscribers receive priority when capacity is limited",
+      "platform": "Copilot web, Windows/macOS desktop apps, and supported mobile apps",
+      "region": "Supported Copilot Voice languages and regions",
+      "answer": "YES",
+      "summary": "Copilot Voice supports a live two-way spoken conversation: you speak to Copilot, hear spoken responses, can interrupt or redirect the conversation, and receive a text transcript after the conversation ends.",
+      "summary_ja": "Copilot Voiceでは、Copilotに話しかけて音声の返答を聞く双方向のリアルタイム会話ができます。途中で割り込んだり話題を変えたりでき、終了後には会話のテキスト記録も確認できます。",
+      "conditions": [
+        "Copilot Voice must be available in the user's region, language, and current Copilot surface.",
+        "The browser or device must grant microphone access.",
+        "Voice conversations can be time-limited and may disconnect automatically at the applicable limit."
+      ],
+      "conditions_ja": [
+        "利用中の地域・言語・Copilot画面でCopilot Voiceが提供されている必要があります。",
+        "ブラウザまたは端末でマイク権限を許可する必要があります。",
+        "音声会話には時間上限が設定され、自動終了する場合があります。"
+      ],
+      "limitations": [
+        "Availability and capacity priority vary by account and Microsoft 365 subscription.",
+        "Voice recognition and generated responses can contain errors.",
+        "Some Microsoft 365 work/school voice features are staged separately from the general consumer Copilot Voice experience."
+      ],
+      "limitations_ja": [
+        "提供状況や混雑時の優先利用はアカウントやMicrosoft 365契約によって異なります。",
+        "音声認識や生成された回答には誤りが含まれる場合があります。",
+        "Microsoft 365の仕事用・学校用音声機能は、一般向けCopilot Voiceとは別に段階提供される場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-voice-with-microsoft-copilot",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents spoken two-way Copilot Voice conversations, spoken responses, transcripts, microphone requirements, time limits, and capacity priority."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/frequently-asked-questions-about-voice-features-in-microsoft-365-copilot",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents interruptible real-time voice chat and current web, mobile, Windows, and Mac availability for Microsoft 365 Copilot voice."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers two-way voice conversation, not dictation or simple text-to-speech."
+}
