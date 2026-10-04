@@ -1,0 +1,72 @@
+{
+  "id": "Q0059",
+  "question": "Can Gemini analyze spreadsheet data and create charts in Google Sheets?",
+  "question_ja": "Geminiは、Googleスプレッドシートのデータを分析して集計・グラフ作成できる？",
+  "slug": "can-gemini-analyze-spreadsheet-data-and-create-charts-in-google-sheets",
+  "category": "data-analysis",
+  "search_terms": [
+    "Gemini",
+    "Google Sheets",
+    "Googleスプレッドシート",
+    "Excel 分析",
+    "エクセル 分析",
+    "CSV 分析",
+    "データ分析",
+    "集計",
+    "グラフ",
+    "可視化",
+    "ピボット",
+    "回帰",
+    "予測"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Spreadsheet analysis is a high-frequency office task, but Gemini's strongest documented workflow is inside Google Sheets rather than a generic uploaded-file analysis surface.",
+    "summary_ja": "表計算分析は利用頻度が高い一方、Geminiで公式に最も明確なのは汎用ファイル分析ではなくGoogleスプレッドシート内の分析機能です。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Eligible Google Workspace or Google AI plan",
+      "platform": "Gemini in Google Sheets",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "Gemini in Google Sheets can analyze spreadsheet data for trends, patterns, key takeaways, regression or predictions, and can create charts and graphs. This comparison is partial because the documented workflow is centered on data in Google Sheets rather than arbitrary uploaded Excel or CSV files in a general Gemini chat.",
+      "summary_ja": "Googleスプレッドシート内のGeminiは、傾向・パターン・重要ポイント・回帰・予測などのデータ分析を行い、グラフも作成できます。ただし公式に明確なのはGoogleスプレッドシート内のデータであり、一般のGeminiチャットへ任意のExcel・CSVを渡すフローと同一ではないため「条件付き」としています。",
+      "conditions": [
+        "An eligible Google Workspace or Google AI plan is required.",
+        "The documented workflow runs inside Google Sheets and works best with native Google Sheets files.",
+        "The spreadsheet data must be available in the open Sheet for Gemini to analyze it."
+      ],
+      "conditions_ja": [
+        "対象となるGoogle WorkspaceまたはGoogle AIプランが必要です。",
+        "公式に説明されているフローはGoogleスプレッドシート内で動作し、ネイティブなGoogleスプレッドシート形式が推奨されています。",
+        "分析対象データが開いているシート内で利用可能である必要があります。"
+      ],
+      "limitations": [
+        "This record does not establish a generic ChatGPT-style workflow for arbitrary uploaded Excel/CSV files outside Google Sheets.",
+        "Generated charts may use a new tab and underlying generated data, and do not automatically track changes in the original source data.",
+        "Analysis and generated formulas or charts should be reviewed before consequential use."
+      ],
+      "limitations_ja": [
+        "Googleスプレッドシート外で任意のExcel・CSVを直接アップロードして分析する汎用フローまで、この記録では保証していません。",
+        "生成グラフは新しいタブと生成データを使う場合があり、元データの変更へ自動追従しないことがあります。",
+        "重要な用途では分析内容や生成された数式・グラフを確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/docs/answer/14356410?hl=en",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents Gemini in Sheets data analysis and insights, regression/prediction prompts, charts and graphs, pivot-table actions, plan requirements, and native-Sheets guidance."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL reflects a surface/input boundary, not weak evidence: the documented capability is strong inside Google Sheets but is not equivalent to arbitrary uploaded Excel/CSV analysis in a generic Gemini chat."
+}
