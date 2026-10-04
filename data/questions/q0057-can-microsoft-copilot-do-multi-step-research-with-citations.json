@@ -1,0 +1,71 @@
+{
+  "id": "Q0057",
+  "question": "Can Microsoft Copilot do multi-step research and produce a cited report?",
+  "question_ja": "Microsoft Copilotは、複数段階の深い調査を行って出典付きレポートを作れる？",
+  "slug": "can-microsoft-copilot-do-multi-step-research-with-citations",
+  "category": "deep-research",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Researcher",
+    "リサーチ",
+    "深掘り調査",
+    "詳細調査",
+    "Deep Research",
+    "調査レポート",
+    "出典",
+    "引用",
+    "複数段階",
+    "Web調査"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Microsoft's Researcher is a direct cross-product comparison for multi-step, source-cited research rather than ordinary quick Copilot Chat answers.",
+    "summary_ja": "MicrosoftのResearcherは通常のCopilot Chatより深い複数段階調査を行うため、他AIのDeep Research系機能と直接比較できます。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Microsoft 365 Premium or Pro; business/enterprise users need a Microsoft 365 Copilot add-on license",
+      "platform": "Microsoft Copilot app — Researcher agent",
+      "region": null,
+      "answer": "YES",
+      "summary": "Microsoft Copilot Researcher can perform complex, multistep research across the web and, for work accounts, accessible work content, then produce a structured report with cited sources.",
+      "summary_ja": "Microsoft CopilotのResearcherは、Webや、仕事用アカウントでは権限のある社内情報を横断して複数段階の調査を行い、出典を示した構造化レポートを作成できます。",
+      "conditions": [
+        "Researcher must be included in the user's eligible Microsoft 365 plan or Copilot license.",
+        "For work accounts, access to files, email, meetings, and chats follows the user's existing Microsoft 365 permissions.",
+        "An organization administrator can control whether Researcher and related agents are available."
+      ],
+      "conditions_ja": [
+        "利用中のMicrosoft 365プランまたはCopilotライセンスでResearcherが利用可能である必要があります。",
+        "仕事用アカウントでファイル、メール、会議、チャットを調査対象にする場合、既存のMicrosoft 365権限が適用されます。",
+        "組織管理者がResearcherなどのエージェント利用を制御できる場合があります。"
+      ],
+      "limitations": [
+        "Researcher intentionally takes longer than standard Copilot Chat for deeper analysis.",
+        "Cited sources make the report inspectable but do not guarantee every synthesis or inference is correct.",
+        "Availability can differ by plan and administrator settings."
+      ],
+      "limitations_ja": [
+        "より深い分析を行うため、通常のCopilot Chatより処理時間が長くなる設計です。",
+        "引用により情報源を確認できますが、生成された統合や推論が常に正しいことを保証するものではありません。",
+        "利用可否はプランや管理者設定によって異なります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents Researcher as a complex multistep research agent that uses web and permitted work sources and returns structured reports with source citations, including current licensing."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers the current Researcher agent. Microsoft states that the earlier Deep Research experience has been retired in favor of Researcher."
+}
