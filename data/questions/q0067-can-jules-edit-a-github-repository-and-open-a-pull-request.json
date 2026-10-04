@@ -1,0 +1,75 @@
+{
+  "id": "Q0067",
+  "question": "Can Jules edit a GitHub repository and open a pull request?",
+  "question_ja": "Julesは、GitHubリポジトリを編集してPull Requestを作成できる？",
+  "slug": "can-jules-edit-a-github-repository-and-open-a-pull-request",
+  "category": "coding",
+  "search_terms": [
+    "Jules",
+    "Google Jules",
+    "GitHub",
+    "リポジトリ",
+    "コード修正",
+    "コード変更",
+    "Pull Request",
+    "PR",
+    "coding agent",
+    "Google coding agent"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Google's repository-editing agent is Jules rather than the general Gemini consumer app, so representing it as a separate product avoids falsely filling the Gemini matrix column.",
+    "summary_ja": "Googleのリポジトリ編集エージェントは一般向けGeminiアプリではなくJulesとして提供されるため、別製品として扱う方が比較上正確です。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Jules",
+      "plan": "Jules access; Google account and GitHub repository authorization required",
+      "platform": "Jules web / Jules integrations with GitHub",
+      "region": null,
+      "answer": "YES",
+      "summary": "Jules can connect to a GitHub repository, clone it into a task environment, plan and implement code changes, run tests, publish a branch, and open a pull request for review.",
+      "summary_ja": "JulesはGitHubリポジトリへ接続し、タスク環境へクローンして実装計画を立て、コード変更・テストを行い、ブランチを公開してPull Requestを作成できます。",
+      "conditions": [
+        "The user must sign in to Jules and authorize the Jules GitHub app for the target repository.",
+        "The selected repository and branch must be accessible to Jules.",
+        "The user can require plan approval and should review the resulting diff before merging."
+      ],
+      "conditions_ja": [
+        "Julesへログインし、対象リポジトリに対してJules GitHub Appを認可する必要があります。",
+        "Julesが対象リポジトリとブランチへアクセスできる必要があります。",
+        "計画承認を要求でき、マージ前には生成差分を確認する必要があります。"
+      ],
+      "limitations": [
+        "Jules is a separate Google coding-agent product rather than the general Gemini app.",
+        "Repository protections, external service credentials, and environment-specific dependencies can limit what a task can complete.",
+        "Generated code and tests should be reviewed before merge."
+      ],
+      "limitations_ja": [
+        "Julesは一般向けGeminiアプリとは別のGoogle製コーディングエージェントです。",
+        "リポジトリ保護、外部サービスの認証情報、環境固有の依存関係によってタスク完了範囲が制限される場合があります。",
+        "生成されたコードとテストはマージ前に確認する必要があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://jules.google/docs/",
+          "accessed_at": "2026-10-04",
+          "note": "Jules documents GitHub connection, repository selection, autonomous code modification in a VM, and plan review."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://jules.google/docs/running-tasks/",
+          "accessed_at": "2026-10-04",
+          "note": "Jules documents changed-file diffs, branch publication, and opening pull requests from completed coding tasks."
+        }
+      ]
+    }
+  ],
+  "notes": "Jules is intentionally shown under 'その他'; the Gemini matrix cell is marked 別製品 for this repository workflow."
+}

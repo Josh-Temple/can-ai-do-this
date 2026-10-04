@@ -149,6 +149,8 @@ const SEARCH_CONCEPTS = [
 
 const PRODUCT_SEARCH_GROUPS = [
   { name: "Claude Code", triggers: ["claude code"] },
+  { name: "GitHub Copilot", triggers: ["github copilot"] },
+  { name: "Jules", triggers: ["jules"] },
   { name: "Microsoft Copilot", triggers: ["microsoft copilot", "copilot"] },
   { name: "ChatGPT", triggers: ["chatgpt"] },
   { name: "Claude", triggers: ["claude"] },
@@ -184,6 +186,7 @@ function mentionedProducts(rawQuery) {
     );
     if (!matches) continue;
     if (group.name === "Claude" && found.includes("Claude Code")) continue;
+    if (group.name === "Microsoft Copilot" && found.includes("GitHub Copilot")) continue;
     found.push(group.name);
   }
   return found;

@@ -826,6 +826,117 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-pages-apps",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/build-lightweight-apps-within-microsoft-365-copilot-pages",
+      "questions": [
+        "Q0063"
+      ],
+      "anchor_groups": [
+        [
+          "lightweight apps"
+        ],
+        [
+          "runnable code"
+        ],
+        [
+          "preview"
+        ],
+        [
+          "create app",
+          "app builder"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-study-guide",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-copilot-notebook-study-guide",
+      "questions": [
+        "Q0064"
+      ],
+      "anchor_groups": [
+        [
+          "study guide"
+        ],
+        [
+          "flashcards"
+        ],
+        [
+          "quiz"
+        ],
+        [
+          "reference materials",
+          "references"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-meet-gemini-notes",
+      "url": "https://support.google.com/meet/answer/14754931?hl=en",
+      "questions": [
+        "Q0065"
+      ],
+      "anchor_groups": [
+        [
+          "take notes for me"
+        ],
+        [
+          "meeting notes"
+        ],
+        [
+          "summary so far"
+        ],
+        [
+          "recap"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "github-copilot-cloud-agent",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/research-plan-iterate",
+      "questions": [
+        "Q0066"
+      ],
+      "anchor_groups": [
+        [
+          "copilot cloud agent"
+        ],
+        [
+          "code changes"
+        ],
+        [
+          "create a pull request",
+          "pull request"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-jules-repository-agent",
+      "url": "https://jules.google/docs/running-tasks/",
+      "questions": [
+        "Q0067"
+      ],
+      "anchor_groups": [
+        [
+          "repository"
+        ],
+        [
+          "files changed"
+        ],
+        [
+          "create branch"
+        ],
+        [
+          "open a pr",
+          "publish pr"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }

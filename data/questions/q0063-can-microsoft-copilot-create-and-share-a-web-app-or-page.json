@@ -1,0 +1,84 @@
+{
+  "id": "Q0063",
+  "question": "Can Microsoft Copilot create and share a web app or webpage from a text description?",
+  "question_ja": "Microsoft Copilotは、文章の指示からWebアプリやWebページを作成して共有・公開できる？",
+  "slug": "can-microsoft-copilot-create-and-share-a-web-app-or-page",
+  "category": "website-creation",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot Pages",
+    "Webアプリ",
+    "ウェブアプリ",
+    "Webページ",
+    "ウェブページ",
+    "Webサイト",
+    "サイト作成",
+    "アプリ作成",
+    "公開",
+    "共有",
+    "SharePoint",
+    "HTML"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Copilot Pages and SharePoint now provide natural-language paths from an idea to runnable code or a publishable HTML page, but the hosting boundary differs from a standalone public-site builder.",
+    "summary_ja": "Copilot PagesやSharePointでは文章から軽量アプリやHTMLページを作れますが、独立した一般公開サイトへそのままデプロイする仕組みとは異なるため、境界を示す価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Copilot Pages availability depends on Microsoft 365 account/storage; SharePoint Copilot publishing requires eligible permissions and licensing",
+      "platform": "Microsoft Copilot Pages / SharePoint",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "Microsoft Copilot Pages can turn a natural-language description into runnable code for a lightweight app that can be previewed and shared. In SharePoint, Copilot can also draft HTML pages that users with the right permissions can publish and share. This is partial because these flows are hosted inside Microsoft 365/SharePoint rather than providing a general standalone public production URL.",
+      "summary_ja": "Microsoft Copilot Pagesは、文章の要望から実行可能な軽量アプリを生成し、プレビューしながら修正・共有できます。SharePointではCopilotにHTMLページを作らせ、権限のある利用者向けに公開・共有することもできます。ただしMicrosoft 365／SharePoint内の公開が中心で、独立した一般公開URLへ本番デプロイする仕組みとは異なるため「条件付き」です。",
+      "conditions": [
+        "Copilot Pages must be available for the user's Microsoft 365 work/school or eligible personal account.",
+        "SharePoint publishing requires a SharePoint site, appropriate page permissions, and the required Copilot/HTML-page settings.",
+        "The user describes the desired app or page in natural language and can iterate on the generated result."
+      ],
+      "conditions_ja": [
+        "利用中のMicrosoft 365仕事用・学校用アカウント、または対象個人アカウントでCopilot Pagesが利用可能である必要があります。",
+        "SharePointでの公開にはSharePointサイト、ページ作成・公開権限、必要なCopilot／HTMLページ設定が必要です。",
+        "作りたいアプリやページを文章で説明し、生成結果をプレビューしながら修正できます。"
+      ],
+      "limitations": [
+        "A Copilot Page is not the same as deploying an independent production app to arbitrary infrastructure.",
+        "Published SharePoint HTML pages remain governed by SharePoint permissions and do not automatically become public internet sites.",
+        "More advanced app requirements may require handoff to App Builder or further development."
+      ],
+      "limitations_ja": [
+        "Copilot Pageは任意のインフラへ独立した本番アプリをデプロイすることと同義ではありません。",
+        "SharePointのHTMLページはSharePointの権限に従い、自動的に一般公開Webサイトになるわけではありません。",
+        "高度なアプリ要件ではApp Builderへの引き継ぎや追加開発が必要になる場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/build-lightweight-apps-within-microsoft-365-copilot-pages",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents natural-language generation, editing and preview of runnable code/lightweight apps in Copilot Pages, plus handoff to App Builder."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/sharepoint/create-edit-publish-html-pages",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents creating HTML pages with Copilot in SharePoint and publishing/sharing them under SharePoint permissions."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/share-a-microsoft-365-copilot-page",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents sharing individual Copilot Pages by link or component."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL reflects the Microsoft 365/SharePoint hosting boundary rather than an inability to generate runnable web UI."
+}

@@ -1,0 +1,75 @@
+{
+  "id": "Q0062",
+  "question": "Can Gemini create an editable PowerPoint (.pptx) presentation?",
+  "question_ja": "Geminiは、編集可能なPowerPoint（.pptx）プレゼンテーションを作成できる？",
+  "slug": "can-gemini-create-an-editable-powerpoint-presentation",
+  "category": "presentations",
+  "search_terms": [
+    "Gemini",
+    "Google Slides",
+    "Googleスライド",
+    "PowerPoint",
+    "パワポ",
+    "pptx",
+    "プレゼン",
+    "プレゼン資料",
+    "スライド",
+    "スライド作成"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users need to distinguish native Google Slides generation from receiving a directly generated PowerPoint file.",
+    "summary_ja": "Geminiでスライドを作れることと、直接PowerPointファイルを生成することは同じではないため、書き出しまで含めた境界を比較する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Eligible Google Workspace or Google AI plan",
+      "platform": "Gemini in Google Slides on desktop; PowerPoint export through Google Slides/Drive",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "Gemini in Google Slides can generate and directly edit editable slides. The resulting Google Slides presentation can then be downloaded as a Microsoft PowerPoint (.pptx) file, but the documented workflow is a Google Slides creation/editing flow followed by export rather than direct PPTX generation in Gemini.",
+      "summary_ja": "Googleスライド内のGeminiは編集可能なスライドを生成・直接編集でき、完成したGoogleスライドはPowerPoint（.pptx）としてダウンロードできます。ただし、Geminiが直接PPTXを生成するのではなく、Googleスライドで作成・編集した後に書き出す二段階のため「条件付き」としています。",
+      "conditions": [
+        "An eligible Google Workspace or Google AI plan is required for the documented Gemini in Slides feature.",
+        "The current slide-generation experience is documented for desktop and may have language or rollout restrictions.",
+        "PowerPoint delivery requires downloading/exporting the Google Slides presentation as .pptx."
+      ],
+      "conditions_ja": [
+        "公式に説明されているGemini in Googleスライドの利用には対象Google WorkspaceまたはGoogle AIプランが必要です。",
+        "現在のスライド生成機能はパソコン向けとして案内され、言語や段階提供の制限がある場合があります。",
+        "PowerPointとして渡すには、作成したGoogleスライドを.pptx形式でダウンロード・書き出す必要があります。"
+      ],
+      "limitations": [
+        "This is not documented as a one-step native PPTX-generation flow inside Gemini.",
+        "Formatting can change when a Google Slides presentation is exported to PowerPoint and should be reviewed.",
+        "Availability of newer Gemini slide-generation features can vary by language and account."
+      ],
+      "limitations_ja": [
+        "Gemini内でPPTXを直接生成する一段階のフローとしては公式に説明されていません。",
+        "GoogleスライドからPowerPointへ書き出す際に書式が変わる可能性があるため確認が必要です。",
+        "新しいGeminiスライド生成機能の提供状況は言語やアカウントによって異なる場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/docs/answer/16961475?hl=ja",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents generating and directly editing editable slides with Gemini in Google Slides, including current plan/surface limits."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/drive/answer/2423534?co=GENIE.Platform%3DDesktop&hl=ja-jp",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents downloading Google Slides files in Microsoft PowerPoint (.pptx) format."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL reflects the two-step Google Slides -> PPTX export workflow rather than weak evidence."
+}
