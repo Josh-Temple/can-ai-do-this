@@ -35,6 +35,8 @@ SEARCH_CONCEPTS = [
 
 PRODUCT_SEARCH_GROUPS = [
     ("Claude Code", ["claude code"]),
+    ("GitHub Copilot", ["github copilot"]),
+    ("Jules", ["jules"]),
     ("Microsoft Copilot", ["microsoft copilot", "copilot"]),
     ("ChatGPT", ["chatgpt"]),
     ("Claude", ["claude"]),
@@ -80,6 +82,8 @@ def mentioned_products(query):
         if not matches:
             continue
         if name == "Claude" and "Claude Code" in found:
+            continue
+        if name == "Microsoft Copilot" and "GitHub Copilot" in found:
             continue
         found.append(name)
     return found
