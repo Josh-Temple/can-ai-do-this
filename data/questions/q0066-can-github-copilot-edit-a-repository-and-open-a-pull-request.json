@@ -1,0 +1,76 @@
+{
+  "id": "Q0066",
+  "question": "Can GitHub Copilot edit a repository and open a pull request?",
+  "question_ja": "GitHub Copilotは、リポジトリを編集してPull Requestを作成できる？",
+  "slug": "can-github-copilot-edit-a-repository-and-open-a-pull-request",
+  "category": "coding",
+  "search_terms": [
+    "GitHub Copilot",
+    "Copilot coding agent",
+    "Copilot cloud agent",
+    "GitHub",
+    "リポジトリ",
+    "コード修正",
+    "コード変更",
+    "Pull Request",
+    "PR",
+    "issue",
+    "coding agent"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Repository-level implementation and pull-request creation are core coding-agent tasks and should not be conflated with the general Microsoft Copilot product.",
+    "summary_ja": "リポジトリ単位の実装とPull Request作成は代表的なコーディングエージェント用途で、一般向けMicrosoft Copilotとは分けて比較する必要があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "GitHub Copilot",
+      "plan": "Paid GitHub Copilot plan for Copilot cloud agent; repository/account policies apply",
+      "platform": "GitHub.com Copilot agents / GitHub Copilot app and supported integrations",
+      "region": null,
+      "answer": "YES",
+      "summary": "GitHub Copilot cloud agent can work on a selected repository, research and plan changes, edit code on a branch, iterate on the diff, and create a pull request. Assigning an issue to the agent can also result in a pull request for review.",
+      "summary_ja": "GitHub Copilotのクラウドエージェントは、対象リポジトリを調査して実装計画を立て、ブランチ上でコードを変更し、差分を修正しながらPull Requestを作成できます。Issueをエージェントへ割り当ててPR作成まで進めることもできます。",
+      "conditions": [
+        "Copilot cloud agent must be available under the user's paid Copilot plan and enabled by account/repository policies.",
+        "The agent needs access to the target GitHub repository.",
+        "Repository protections, reviews, CI, and merge requirements still apply."
+      ],
+      "conditions_ja": [
+        "有料GitHub CopilotプランでCopilotクラウドエージェントが利用でき、アカウント・リポジトリポリシーで許可されている必要があります。",
+        "対象GitHubリポジトリへのアクセス権が必要です。",
+        "ブランチ保護、レビュー、CI、マージ要件など通常のリポジトリルールは引き続き適用されます。"
+      ],
+      "limitations": [
+        "Agent-generated pull requests require normal human review; GitHub explicitly recommends reviewing Copilot output.",
+        "Availability and permissions depend on repository ownership and policy settings.",
+        "This is GitHub Copilot, a separate product identity from Microsoft Copilot in this database."
+      ],
+      "limitations_ja": [
+        "エージェントが作成したPull Requestも通常どおり人による確認が必要で、GitHubもCopilot出力のレビューを推奨しています。",
+        "利用可否と権限はリポジトリ所有形態やポリシー設定に依存します。",
+        "このDBではGitHub CopilotをMicrosoft Copilotとは別製品として扱います。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/research-plan-iterate",
+          "accessed_at": "2026-10-04",
+          "note": "GitHub documents repository research, planning, iterative branch changes, diff review, and pull-request creation with Copilot cloud agent."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/kick-off-a-task",
+          "accessed_at": "2026-10-04",
+          "note": "GitHub documents assigning issues or prompts to Copilot cloud agent, pushing code changes, and creating pull requests."
+        }
+      ]
+    }
+  ],
+  "notes": "GitHub Copilot is intentionally displayed under 'その他' rather than filling the Microsoft Copilot matrix column."
+}
