@@ -1,0 +1,77 @@
+{
+  "id": "Q0064",
+  "question": "Can Microsoft Copilot create study guides, quizzes, flashcards, and practice activities from my materials?",
+  "question_ja": "Microsoft Copilotは、教材から学習ガイド・クイズ・フラッシュカード・練習活動を作れる？",
+  "slug": "can-microsoft-copilot-create-study-guides-quizzes-and-flashcards",
+  "category": "learning",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot Notebook",
+    "Study Guide",
+    "学習ガイド",
+    "勉強",
+    "学習",
+    "クイズ",
+    "フラッシュカード",
+    "練習問題",
+    "教材",
+    "試験対策",
+    "OneNote"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Microsoft Copilot Notebook Study Guide provides a structured study workflow comparable to other assistants' guided-learning and generated study-material features.",
+    "summary_ja": "Microsoft Copilot NotebookのStudy Guideは、他AIの学習支援と比較できる、教材ベースの構造化された学習ワークフローです。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Eligible Microsoft Copilot/Copilot Notebook access; school and enterprise availability depends on license, tenant enrollment, age and admin settings",
+      "platform": "Microsoft Copilot Notebooks / OneNote",
+      "region": null,
+      "answer": "YES",
+      "summary": "Copilot Notebook Study Guide can turn reference materials into a multi-page study companion with summaries and topic pages, and can include flashcards, quizzes, exercises, and other active-recall activities.",
+      "summary_ja": "Copilot Notebook Study Guideは、参照した教材から概要やトピック別ページを含む学習ガイドを生成し、フラッシュカード、クイズ、練習活動などの能動的な学習コンテンツも作成できます。",
+      "conditions": [
+        "Copilot Notebooks and the Study Guide feature must be enabled for the account.",
+        "School or enterprise environments can require an eligible Copilot license, tenant enrollment, and administrator configuration.",
+        "The study materials must be added as notebook references; supported sources include common Microsoft 365 files and PDFs."
+      ],
+      "conditions_ja": [
+        "アカウントでCopilot NotebooksとStudy Guideが利用可能である必要があります。",
+        "学校・企業環境では対象Copilotライセンス、テナントの有効化、管理者設定が必要になる場合があります。",
+        "教材をNotebookの参照として追加する必要があり、Microsoft 365ファイルやPDFなどが利用できます。"
+      ],
+      "limitations": [
+        "Feature rollout and licensing can vary by account and organization.",
+        "The Study Guide is grounded in the provided materials and is not a substitute for reviewing the original course content.",
+        "Generated study content can contain errors and should be checked for important learning or assessment use."
+      ],
+      "limitations_ja": [
+        "機能の段階提供やライセンス条件はアカウント・組織によって異なる場合があります。",
+        "Study Guideは提供した教材を基に作る補助教材で、元の授業資料を確認することの代替ではありません。",
+        "生成された学習内容には誤りが含まれる可能性があり、重要な学習・評価用途では確認が必要です。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/create-a-copilot-notebook-study-guide",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents generating summary/topic pages, flashcards and quizzes from notebook reference materials."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/education/copilot/using-the-copilot-notebook-study-guide",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents cognitive questions, exercises, flashcards, quizzes, review feedback, and active-recall study workflows."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Copilot Notebook Study Guide rather than claiming every general Copilot chat behaves as a dedicated tutor."
+}
