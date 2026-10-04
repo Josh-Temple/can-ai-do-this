@@ -50,6 +50,7 @@ def main() -> int:
         label = group.get("label_ja")
         question_ids = group.get("question_ids")
         coverage = group.get("coverage")
+        missing_products = group.get("missing_products", {})
 
         if not isinstance(group_id, str) or not group_id:
             failures.append("group id must be a non-empty string")
@@ -62,6 +63,23 @@ def main() -> int:
             failures.append(f"{group_id}: label_ja must be non-empty")
         if coverage not in {"general", "specialized"}:
             failures.append(f"{group_id}: coverage must be general or specialized")
+        if not isinstance(missing_products, dict):
+            failures.append(f"{group_id}: missing_products must be an object when present")
+            missing_products = {}
+        for product, missing_state in missing_products.items():
+            if product not in matrix_products:
+                failures.append(f"{group_id}: missing_products has non-matrix product {product}")
+                continue
+            if not isinstance(missing_state, dict):
+                failures.append(f"{group_id}: missing_products[{product}] must be an object")
+                continue
+            if missing_state.get("state") not in {"INSUFFICIENT_EVIDENCE", "OUT_OF_SCOPE"}:
+                failures.append(
+                    f"{group_id}: missing_products[{product}].state must be "
+                    "INSUFFICIENT_EVIDENCE or OUT_OF_SCOPE"
+                )
+            if not isinstance(missing_state.get("note_ja"), str) or not missing_state["note_ja"].strip():
+                failures.append(f"{group_id}: missing_products[{product}].note_ja must be non-empty")
         if not isinstance(question_ids, list) or len(question_ids) < 2:
             failures.append(f"{group_id}: question_ids must contain at least two ids")
             continue
@@ -92,6 +110,11 @@ def main() -> int:
         }
         if len(products) < 2:
             failures.append(f"{group_id}: must compare at least two distinct products")
+        for product in missing_products:
+            if product in products:
+                failures.append(
+                    f"{group_id}: {product} cannot be both covered and listed in missing_products"
+                )
 
         for question_id in question_ids:
             membership[question_id].append(group_id)
@@ -121,7 +144,8 @@ def main() -> int:
         if group["coverage"] == "general":
             for product in core_products:
                 if product not in present_products:
-                    core_gaps.append((group["id"], product))
+                    state = group.get("missing_products", {}).get(product, {}).get("state", "NOT_RESEARCHED")
+                    core_gaps.append((group["id"], product, state))
 
     print(
         f"Comparison groups passed: {len(groups)} groups, "
@@ -133,8 +157,8 @@ def main() -> int:
     ))
     if core_gaps:
         print("Core coverage gaps (reported, not a validation failure):")
-        for group_id, product in core_gaps:
-            print(f"  - {group_id}: {product}")
+        for group_id, product, state in core_gaps:
+            print(f"  - {group_id}: {product} ({state})")
     return 0
 
 
