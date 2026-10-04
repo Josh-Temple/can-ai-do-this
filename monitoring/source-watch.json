@@ -936,7 +936,8 @@
           "publish pr"
         ]
       ],
-      "fetch_mode": "direct"
+      "fetch_mode": "manual",
+      "manual_reason": "GitHub-hosted Actions returned a readable HTTP response on 2026-10-04 but exposed none of the claim-relevant Jules documentation text, so semantic-anchor monitoring is unreliable. Review the official Jules documentation through the normal 14-day freshness process instead of treating extraction failure as content drift."
     }
   ]
 }
