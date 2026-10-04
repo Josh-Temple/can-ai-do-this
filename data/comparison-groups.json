@@ -30,7 +30,8 @@
         "Q0008",
         "Q0014",
         "Q0020",
-        "Q0024"
+        "Q0024",
+        "Q0061"
       ]
     },
     {
@@ -52,7 +53,13 @@
         "Q0010",
         "Q0018",
         "Q0028"
-      ]
+      ],
+      "missing_products": {
+        "Claude": {
+          "state": "INSUFFICIENT_EVIDENCE",
+          "note_ja": "公式資料では画像の表示・分析とSVG等の作成は確認できるが、アップロード写真を生成AI編集する機能は十分に確認できない。"
+        }
+      }
     },
     {
       "id": "pdf-file-analysis",
@@ -84,7 +91,8 @@
         "Q0031",
         "Q0032",
         "Q0033",
-        "Q0051"
+        "Q0051",
+        "Q0057"
       ]
     },
     {
@@ -105,7 +113,17 @@
       "question_ids": [
         "Q0038",
         "Q0039"
-      ]
+      ],
+      "missing_products": {
+        "ChatGPT": {
+          "state": "INSUFFICIENT_EVIDENCE",
+          "note_ja": "Sora提供終了は確認できるが、現在のChatGPT全体について動画生成不可と断定できる一次資料までは確認できない。"
+        },
+        "Claude": {
+          "state": "INSUFFICIENT_EVIDENCE",
+          "note_ja": "現在の一次資料だけでは、Claudeの生成動画機能または明示的な非対応を安全に確定できない。"
+        }
+      }
     },
     {
       "id": "record-transcribe-summarize",
@@ -114,7 +132,13 @@
       "question_ids": [
         "Q0040",
         "Q0043"
-      ]
+      ],
+      "missing_products": {
+        "Claude": {
+          "state": "INSUFFICIENT_EVIDENCE",
+          "note_ja": "音声入力・Voice modeは確認できるが、対面会話を録音して文字起こし・要約する一連の機能は確認できない。"
+        }
+      }
     },
     {
       "id": "repository-code-changes",
@@ -123,7 +147,17 @@
       "question_ids": [
         "Q0041",
         "Q0042"
-      ]
+      ],
+      "missing_products": {
+        "ChatGPT": {
+          "state": "OUT_OF_SCOPE",
+          "note_ja": "このDBではリポジトリ作業をCodexとして別製品扱いしている。"
+        },
+        "Claude": {
+          "state": "OUT_OF_SCOPE",
+          "note_ja": "このDBではリポジトリ作業をClaude Codeとして別製品扱いしている。"
+        }
+      }
     },
     {
       "id": "guided-learning",
@@ -142,7 +176,8 @@
       "question_ids": [
         "Q0046",
         "Q0047",
-        "Q0048"
+        "Q0048",
+        "Q0058"
       ]
     },
     {
@@ -151,7 +186,9 @@
       "coverage": "general",
       "question_ids": [
         "Q0049",
-        "Q0050"
+        "Q0050",
+        "Q0059",
+        "Q0060"
       ]
     }
   ],

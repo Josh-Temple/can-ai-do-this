@@ -944,3 +944,14 @@ select:focus {
     padding: 10px 8px;
   }
 }
+
+
+.matrix-hold {
+  color: var(--partial);
+  font-weight: 700;
+}
+
+.matrix-out-of-scope {
+  color: var(--ink);
+  font-weight: 650;
+}

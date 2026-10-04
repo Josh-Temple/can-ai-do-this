@@ -343,6 +343,15 @@ function matrixAnswerFor(group, product) {
 function renderMatrixCell(group, product) {
   const match = matrixAnswerFor(group, product);
   if (!match) {
+    const missing = group.missing_products?.[product];
+    if (missing?.state === "INSUFFICIENT_EVIDENCE") {
+      const note = escapeHtml(missing.note_ja || "一次資料を確認したが、結論に必要な根拠が不足しています。");
+      return '<span class="matrix-missing matrix-hold" title="' + note + '" aria-label="' + note + '">判断保留</span>';
+    }
+    if (missing?.state === "OUT_OF_SCOPE") {
+      const note = escapeHtml(missing.note_ja || "この比較では別製品として扱います。");
+      return '<span class="matrix-missing matrix-out-of-scope" title="' + note + '" aria-label="' + note + '">別製品</span>';
+    }
     return '<span class="matrix-missing">未調査</span>';
   }
 

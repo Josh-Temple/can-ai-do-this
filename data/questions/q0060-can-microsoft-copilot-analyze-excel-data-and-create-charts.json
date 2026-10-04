@@ -1,0 +1,78 @@
+{
+  "id": "Q0060",
+  "question": "Can Microsoft Copilot analyze Excel data and create charts or PivotTables?",
+  "question_ja": "Microsoft Copilotは、Excelデータを分析して集計・グラフ・ピボットテーブルを作成できる？",
+  "slug": "can-microsoft-copilot-analyze-excel-data-and-create-charts",
+  "category": "data-analysis",
+  "search_terms": [
+    "Microsoft Copilot",
+    "Copilot",
+    "Excel 分析",
+    "エクセル 分析",
+    "データ分析",
+    "集計",
+    "グラフ",
+    "可視化",
+    "PivotTable",
+    "ピボットテーブル",
+    "傾向",
+    "外れ値",
+    "数式"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Copilot in Excel is a direct office-productivity comparison with conversational spreadsheet analysis in other assistants.",
+    "summary_ja": "Excel内のCopilotは、他AIの表計算・データ分析機能と直接比較できる代表的な実務用途です。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 30,
+  "answers": [
+    {
+      "product": "Microsoft Copilot",
+      "plan": "Eligible Microsoft 365 plan with Copilot in Excel available",
+      "platform": "Excel for Microsoft 365 on supported desktop, web, Mac, and iPad surfaces",
+      "region": null,
+      "answer": "YES",
+      "summary": "Copilot in Excel can analyze workbook data in natural language, surface summaries, trends and outliers, generate formulas, and create charts and PivotTables.",
+      "summary_ja": "ExcelのCopilotは、自然言語でブック内データを分析し、概要・傾向・外れ値を示したり、数式を生成したり、グラフやピボットテーブルを作成できます。",
+      "conditions": [
+        "Copilot in Excel must be available under the user's Microsoft 365 account and current Excel version.",
+        "The relevant workbook data must be accessible to Copilot in Excel.",
+        "Feature availability can vary by account, platform, and rollout."
+      ],
+      "conditions_ja": [
+        "利用中のMicrosoft 365アカウントとExcel版でCopilot in Excelが利用可能である必要があります。",
+        "分析対象のブックデータをCopilot in Excelが参照できる必要があります。",
+        "機能の提供範囲はアカウント、プラットフォーム、段階提供状況によって異なる場合があります。"
+      ],
+      "limitations": [
+        "AI-generated analyses, formulas, charts, and PivotTables should be reviewed and verified.",
+        "This record covers analysis inside Excel rather than arbitrary uploaded spreadsheet files in a standalone Copilot chat.",
+        "Specific Copilot features and licenses can change independently of Excel itself."
+      ],
+      "limitations_ja": [
+        "AIが生成した分析、数式、グラフ、ピボットテーブルは確認・検証する必要があります。",
+        "この記録はExcel内での分析を対象とし、単独のCopilotチャットに任意の表計算ファイルを渡すフローとは別です。",
+        "Copilotの個別機能やライセンス条件はExcel本体とは別に変更される場合があります。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents natural-language data insights, summaries, trends, outliers, formula generation, charts, and PivotTables in Copilot for Excel."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.microsoft.com/en-us/excel/copilot/visualize-your-data-with-copilot-in-excel",
+          "accessed_at": "2026-10-04",
+          "note": "Microsoft documents generating charts and PivotTables with Copilot in Excel."
+        }
+      ]
+    }
+  ],
+  "notes": "This record covers Copilot in Excel, not the retired COPILOT worksheet function."
+}

@@ -761,6 +761,71 @@
         ]
       ],
       "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-researcher",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot",
+      "questions": [
+        "Q0057"
+      ],
+      "anchor_groups": [
+        [
+          "complex, multistep research",
+          "complex, multistep"
+        ],
+        [
+          "structured, source-cited report",
+          "source-cited report"
+        ],
+        [
+          "cited sources",
+          "source citations"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "microsoft-copilot-voice",
+      "url": "https://support.microsoft.com/en-us/microsoft-copilot/using-copilot-voice-with-microsoft-copilot",
+      "questions": [
+        "Q0058"
+      ],
+      "anchor_groups": [
+        [
+          "engage in conversation with you",
+          "voice conversation"
+        ],
+        [
+          "speak the response out loud",
+          "spoken"
+        ],
+        [
+          "text transcript",
+          "transcript"
+        ]
+      ],
+      "fetch_mode": "direct"
+    },
+    {
+      "id": "google-gemini-web-sources",
+      "url": "https://support.google.com/gemini/answer/14143489?hl=en",
+      "questions": [
+        "Q0061"
+      ],
+      "anchor_groups": [
+        [
+          "sources and related content",
+          "sources & related links"
+        ],
+        [
+          "public websites"
+        ],
+        [
+          "not all responses include",
+          "not every response"
+        ]
+      ],
+      "fetch_mode": "direct"
     }
   ]
 }

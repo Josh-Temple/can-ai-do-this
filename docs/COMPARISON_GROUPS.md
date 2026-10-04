@@ -41,7 +41,7 @@ The public landing page renders a matrix from this relation file.
 
 `matrix_products` defines the fixed high-level columns. The first release uses ChatGPT, Claude, Gemini, and Microsoft Copilot because these are broad consumer/general-purpose products with useful cross-task comparison value. Products outside those columns, such as Perplexity, Codex, and Claude Code, remain visible in the “その他” column when a canonical record exists.
 
-`core_products` defines coverage targets, not facts. ChatGPT and Claude are the current core targets for general comparison groups. A missing core cell is displayed as **未調査** and is reported by validation, but it does not fail CI and must never be interpreted as “できない”.
+`core_products` defines coverage targets, not facts. ChatGPT and Claude are the current core targets for general comparison groups. A missing cell defaults to **未調査** and is reported by validation, but it does not fail CI and must never be interpreted as “できない”. When a missing product has already been researched, `missing_products` may record one of two explicit non-capability states: `INSUFFICIENT_EVIDENCE` renders as **判断保留**; `OUT_OF_SCOPE` renders as **別製品**. Neither state is a negative capability claim.
 
 Each group has a `coverage` mode:
 
@@ -49,3 +49,14 @@ Each group has a `coverage` mode:
 - `specialized`: the task is primarily represented by specialist products, so a missing ChatGPT/Claude cell is not automatically a priority.
 
 Coverage gaps should be filled only with normal first-party/direct evidence. The matrix must never synthesize an answer from another product, product family, or nearby task.
+
+### Missing-cell semantics
+
+A blank matrix relationship has four distinct meanings:
+
+- **未調査**: no canonical record and no completed coverage disposition yet;
+- **判断保留** (`INSUFFICIENT_EVIDENCE`): first-party research was performed, but the evidence is not strong enough for a safe YES / PARTIAL / NO record;
+- **別製品** (`OUT_OF_SCOPE`): this database deliberately represents the task under a separate product identity, such as Codex or Claude Code;
+- **できない**: only a canonical question with an evidence-backed `NO` answer can render this outcome.
+
+Do not convert missing-cell metadata into a capability claim. If later evidence becomes sufficient, add the normal question record, add it to the group, and remove the corresponding `missing_products` entry.

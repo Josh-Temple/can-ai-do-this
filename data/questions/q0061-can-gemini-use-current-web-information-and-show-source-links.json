@@ -1,0 +1,77 @@
+{
+  "id": "Q0061",
+  "question": "Can Gemini use current web information and show source links?",
+  "question_ja": "Geminiは、現在のWeb情報を使い、出典リンク付きで回答できる？",
+  "slug": "can-gemini-use-current-web-information-and-show-source-links",
+  "category": "web-research",
+  "search_terms": [
+    "Gemini",
+    "Web検索",
+    "ウェブ検索",
+    "ネット検索",
+    "Google Search",
+    "Google検索",
+    "最新情報",
+    "現在のWeb",
+    "出典",
+    "引用",
+    "ソース",
+    "Sources"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Users often assume every web-grounded assistant response will contain citations, but Gemini's official documentation makes source-link availability conditional.",
+    "summary_ja": "Web情報を使えることと、すべての回答に出典が付くことは別であり、Geminiではその差を明示する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Gemini Apps; exact availability varies by account and surface",
+      "platform": "Gemini Apps and supported Gemini surfaces",
+      "region": null,
+      "answer": "PARTIAL",
+      "summary": "Gemini can use public information from Google Search and can show source or related links in its answers, but Google explicitly notes that not every response includes sources. It therefore supports web-grounded answers with sources, but cannot be treated as guaranteeing citations on every answer.",
+      "summary_ja": "GeminiはGoogle検索の公開情報を利用でき、回答内や回答下に出典・関連リンクを表示することがあります。ただしGoogleは、すべての回答にソースが付くわけではないと明記しているため、毎回答での出典表示を保証する機能としては「条件付き」です。",
+      "conditions": [
+        "The relevant Gemini surface must be able to use Google Search or public web information.",
+        "Source links appear only when Gemini provides sources for that particular response.",
+        "Connected-app and personalization settings can affect which additional information sources Gemini may use."
+      ],
+      "conditions_ja": [
+        "利用するGemini画面でGoogle検索などの公開Web情報を利用できる必要があります。",
+        "出典リンクは、その回答でGeminiがソースを提示した場合にのみ表示されます。",
+        "接続アプリやパーソナライズ設定によって、追加で利用される情報源が変わる場合があります。"
+      ],
+      "limitations": [
+        "Google explicitly states that not all Gemini responses include source or related links.",
+        "A source link does not guarantee that every generated claim is supported by that source.",
+        "For systematic multi-source cited research, Gemini Deep Research is a stronger fit and is tracked separately."
+      ],
+      "limitations_ja": [
+        "Googleは、すべてのGemini回答に出典・関連リンクが付くわけではないと明示しています。",
+        "出典リンクが表示されても、生成されたすべての主張がその出典で裏付けられているとは限りません。",
+        "複数情報源を体系的に調べて出典付きレポートを作る用途では、別途掲載しているGemini Deep Researchの方が適しています。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/13695044?hl=en",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents that Gemini automatically uses public information from Google Search among supported public Google services."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/gemini/answer/14143489?hl=en",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents source and related links in Gemini responses and explicitly states that not every response includes sources."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL reflects the lack of a per-answer citation guarantee. Deep Research is tracked separately in Q0032."
+}
