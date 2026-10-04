@@ -1,0 +1,83 @@
+{
+  "id": "Q0065",
+  "question": "Can Gemini in Google Meet record, transcribe, and summarize a meeting or in-person conversation?",
+  "question_ja": "Gemini in Google Meetは、会議や対面会話を記録し、文字起こし・要約できる？",
+  "slug": "can-gemini-in-google-meet-record-transcribe-and-summarize-a-meeting",
+  "category": "audio-transcription",
+  "search_terms": [
+    "Gemini",
+    "Google Meet",
+    "Take notes for me",
+    "録音",
+    "文字起こし",
+    "音声",
+    "会議",
+    "議事録",
+    "要約",
+    "対面会議",
+    "transcription",
+    "meeting notes"
+  ],
+  "status": "PUBLISHED",
+  "demand": {
+    "summary": "Google Meet combines Gemini note-taking with separate recording and transcription controls, which is useful but not identical to a single record/transcribe/summarize assistant feature.",
+    "summary_ja": "Google MeetではGeminiの議事メモと録画・文字起こし機能を組み合わせられますが、単一のAI録音機能とは構成が異なるため、その境界を明示する価値があります。"
+  },
+  "last_checked": "2026-10-04",
+  "review_window_days": 14,
+  "answers": [
+    {
+      "product": "Gemini",
+      "plan": "Eligible Google Workspace edition or Google AI plan for Gemini note-taking; recording/transcription eligibility depends on Google Meet/Workspace edition and admin settings",
+      "platform": "Google Meet on supported computer/mobile surfaces; in-person note-taking is supported on eligible devices",
+      "region": "Supported languages, accounts, and rollout regions",
+      "answer": "PARTIAL",
+      "summary": "Gemini's 'Take notes for me' in Google Meet can document meetings, create organized notes and summaries, and now supports in-person meeting note-taking on eligible devices. Google Meet can separately create transcripts and recordings where the account is eligible. The full record + transcript + AI summary workflow therefore exists in the Meet ecosystem, but recording/transcription are separate Meet features rather than one universal Gemini Record function.",
+      "summary_ja": "Google MeetのGemini「Take notes for me」は、会議内容を記録して整理された議事メモや要約を作り、対象端末では対面会議のノート作成にも対応します。Google Meetでは対象アカウントで文字起こしや録画も別途利用できます。ただし録画・文字起こしはGemini単体のRecord機能ではなくMeet側の別機能なので「条件付き」です。",
+      "conditions": [
+        "An eligible Google Workspace edition or Google AI plan is required for 'Take notes for me'.",
+        "Recording and transcription have their own Workspace edition, host-permission, administrator, device, and consent requirements.",
+        "Supported languages and mobile/in-person availability vary by platform and rollout."
+      ],
+      "conditions_ja": [
+        "「Take notes for me」の利用には対象Google WorkspaceエディションまたはGoogle AIプランが必要です。",
+        "録画・文字起こしには別途、Workspaceエディション、主催者権限、管理者設定、端末、同意などの条件があります。",
+        "対応言語やモバイル・対面会議での利用可否はプラットフォームと段階提供状況によって異なります。"
+      ],
+      "limitations": [
+        "Gemini note-taking does not by itself mean that audio/video recording is enabled.",
+        "Recording, transcription, and AI note-taking can have different eligibility and consent requirements.",
+        "This is a Google Meet workflow, not a generic Gemini voice-note recorder for arbitrary audio outside Meet."
+      ],
+      "limitations_ja": [
+        "Geminiで議事メモを取れること自体は、音声・映像の録画が有効であることを意味しません。",
+        "録画、文字起こし、AI議事メモでは、それぞれ利用資格や同意条件が異なる場合があります。",
+        "これはGoogle Meet上のワークフローで、Meet外の任意音声を録音する汎用Geminiボイスメモ機能ではありません。"
+      ],
+      "evidence_state": "DOCUMENTED",
+      "last_checked": "2026-10-04",
+      "tested_environment": null,
+      "sources": [
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/meet/answer/14754931?hl=en",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents Gemini 'Take notes for me', organized notes, summary-so-far, post-meeting recap, plan requirements, languages, and in-person/on-the-go use."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/meet/answer/12849897?hl=en",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents meeting transcription, transcript delivery, consent controls, and coexistence with Record and Take notes for me."
+        },
+        {
+          "type": "OFFICIAL_DOC",
+          "url": "https://support.google.com/meet/answer/9308681/record-a-video-meeting?hl=en-GB",
+          "accessed_at": "2026-10-04",
+          "note": "Google documents Meet recording eligibility, host/admin requirements, and consent controls."
+        }
+      ]
+    }
+  ],
+  "notes": "PARTIAL is used because the AI summary is Gemini-powered while recording/transcription are separate Google Meet capabilities."
+}
