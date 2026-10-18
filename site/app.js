@@ -7,6 +7,10 @@ const els = {
   matrixHead: document.querySelector("#matrix-head"),
   matrixBody: document.querySelector("#matrix-body"),
   matrixCoverage: document.querySelector("#matrix-coverage"),
+  conditionTask: document.querySelector("#condition-task"),
+  conditionResults: document.querySelector("#condition-comparison-results"),
+  conditionTitle: document.querySelector("#condition-comparison-title"),
+  conditionBody: document.querySelector("#condition-comparison-body"),
   product: document.querySelector("#product-filter"),
   comparisonSection: document.querySelector("#comparison-section"),
   comparison: document.querySelector("#comparison-body"),
@@ -288,7 +292,7 @@ function answerLabel(answer) {
     YES: "できる",
     PARTIAL: "条件付き",
     NO: "できない",
-    UNKNOWN: "未確認",
+    UNKNOWN: "判断保留",
   }[answer] || answer;
 }
 
@@ -385,6 +389,98 @@ function renderOtherProducts(group, matrixProducts) {
     : '<span class="matrix-missing">—</span>';
 }
 
+function missingComparisonRow(product, result) {
+  const label = ConditionComparison.dispositionLabel(result);
+  const note = result.note ? `<p class="condition-missing-note">${escapeHtml(result.note)}</p>` : "";
+  return `
+    <tr>
+      <td data-label="製品">${escapeHtml(product)}</td>
+      <td data-label="回答"><span class="matrix-missing">${label}</span>${note}</td>
+      <td data-label="対象プラン">UNKNOWN（未記録）</td>
+      <td data-label="利用環境">UNKNOWN（未記録）</td>
+      <td data-label="前提・制限">—</td>
+      <td data-label="根拠の状態">—</td>
+      <td data-label="最終確認">—</td>
+      <td data-label="詳細">—</td>
+    </tr>
+  `;
+}
+
+function evidenceStateLabel(state) {
+  return {
+    VERIFIED: "VERIFIED（実測）",
+    DOCUMENTED: "DOCUMENTED（公式資料）",
+    USER_REPORTED: "USER_REPORTED（利用者報告）",
+    STALE: "STALE（要再確認）",
+  }[state] || `UNKNOWN（${escapeHtml(state || "未記録")}）`;
+}
+
+function renderConditionAnswerRow(product, result) {
+  if (result.kind !== "ANSWER") return missingComparisonRow(product, result);
+
+  const { record, answer } = result;
+  const freshness = freshnessInfo(record, answer);
+  const outcome = ConditionComparison.dispositionLabel(result, freshness.isDue);
+  const lastKnown = freshness.isDue
+    ? `<small class="condition-subtext">最終記録：${escapeHtml(answerLabel(answer.answer))}</small>`
+    : "";
+  const evidenceStatus = `${evidenceStateLabel(answer.evidence_state)}${freshness.isDue ? " · 確認期限超過" : ""}`;
+  const conditions = [
+    ...(answer.conditions_ja || []).map((text) => `前提：${text}`),
+    ...(answer.limitations_ja || []).map((text) => `制限：${text}`),
+  ];
+  const conditionsHtml = conditions.length
+    ? `<ul class="condition-list">${conditions.map((text) => `<li>${escapeHtml(text)}</li>`).join("")}</ul>`
+    : "UNKNOWN（未記録）";
+
+  return `
+    <tr>
+      <td data-label="製品">${escapeHtml(product)}</td>
+      <td data-label="回答"><span class="answer-badge ${freshness.isDue ? "stale" : answerClass(answer.answer)}">${escapeHtml(outcome)}</span>${lastKnown}</td>
+      <td data-label="対象プラン">${escapeHtml(answer.plan || "UNKNOWN（未記録）")}</td>
+      <td data-label="利用環境">${escapeHtml(answer.platform || "UNKNOWN（未記録）")}</td>
+      <td data-label="前提・制限">${conditionsHtml}</td>
+      <td data-label="根拠の状態"><span class="condition-evidence">${evidenceStatus}</span></td>
+      <td data-label="最終確認">${escapeHtml(answer.last_checked || "UNKNOWN（未記録）")}${freshness.nextReview ? `<small class="condition-subtext">次回確認目安 ${escapeHtml(freshness.nextReview)}</small>` : ""}</td>
+      <td data-label="詳細"><a href="${questionUrl(record)}">条件・根拠を見る</a></td>
+    </tr>
+  `;
+}
+
+function populateConditionTaskFilter() {
+  if (!els.conditionTask || !comparisonConfig) return;
+  for (const group of ConditionComparison.conditionComparisonGroups(comparisonConfig)) {
+    const option = document.createElement("option");
+    option.value = group.id;
+    option.textContent = group.label_ja;
+    els.conditionTask.append(option);
+  }
+}
+
+function renderConditionComparison() {
+  if (!els.conditionTask || !els.conditionBody) return;
+  const group = ConditionComparison.conditionComparisonGroups(comparisonConfig)
+    .find((item) => item.id === els.conditionTask.value);
+  if (!group) {
+    els.conditionResults.hidden = true;
+    els.conditionBody.innerHTML = "";
+    return;
+  }
+
+  const products = ConditionComparison.productsForGroup(
+    group,
+    records,
+    comparisonConfig?.matrix_products || []
+  );
+  const rows = products.map((product) => {
+    const result = ConditionComparison.productResult(group, records, product);
+    return renderConditionAnswerRow(product, result);
+  });
+  els.conditionTitle.textContent = group.label_ja;
+  els.conditionBody.innerHTML = rows.join("");
+  els.conditionResults.hidden = false;
+}
+
 function renderOverviewMatrix() {
   const groups = comparisonConfig?.groups || [];
   const products = comparisonConfig?.matrix_products || [];
@@ -430,10 +526,11 @@ function populateProductFilter() {
   }
 }
 
-function updateUrl(rawQuery, product) {
+function updateUrl(rawQuery, product, comparisonTask = "") {
   const params = new URLSearchParams();
   if (rawQuery) params.set("q", rawQuery);
   if (product) params.set("product", product);
+  if (comparisonTask) params.set("task", comparisonTask);
   if (showAllRecords && !rawQuery && !product) params.set("all", "1");
   const next = params.toString() ? `?${params}` : window.location.pathname;
   history.replaceState(null, "", next);
@@ -442,6 +539,7 @@ function updateUrl(rawQuery, product) {
 function applyFilters() {
   const rawQuery = els.search.value.trim();
   const product = els.product.value;
+  const comparisonTask = els.conditionTask?.value || "";
   const hasSearch = Boolean(rawQuery || product);
 
   let filtered = [];
@@ -472,7 +570,7 @@ function applyFilters() {
     ? "全質問を収録順に表示しています。検索すると、意図との近さを優先した順に切り替わります。"
     : "検索意図との近さを優先して表示しています。質問を開くと、条件・制限・一次資料を確認できます。";
 
-  updateUrl(rawQuery, product);
+  updateUrl(rawQuery, product, comparisonTask);
 }
 
 async function loadRecords() {
@@ -493,11 +591,16 @@ async function loadRecords() {
 
     populateProductFilter();
     renderOverviewMatrix();
+    populateConditionTaskFilter();
 
     const params = new URLSearchParams(window.location.search);
     els.search.value = params.get("q") || "";
     els.product.value = params.get("product") || "";
+    const requestedTask = params.get("task") || "";
+    els.conditionTask.value = ConditionComparison.selectedConditionTaskId(comparisonConfig, requestedTask);
     showAllRecords = params.get("all") === "1";
+
+    renderConditionComparison();
 
     const dates = records
       .map((record) => record.last_checked)
@@ -534,6 +637,11 @@ els.product.addEventListener("change", () => {
   applyFilters();
 });
 
+els.conditionTask.addEventListener("change", () => {
+  renderConditionComparison();
+  updateUrl(els.search.value.trim(), els.product.value, els.conditionTask.value);
+});
+
 els.showAll.addEventListener("click", () => {
   els.search.value = "";
   els.product.value = "";
@@ -566,6 +674,7 @@ if (typeof module !== "undefined" && module.exports) {
     queryTokens,
     scoreRecord,
     searchRecords,
+    answerLabel,
   };
 }
 

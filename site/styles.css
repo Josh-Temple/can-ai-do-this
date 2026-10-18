@@ -198,6 +198,115 @@ select:focus {
   border-bottom: 0;
 }
 
+.condition-comparison-section {
+  padding: 38px 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.condition-comparison-controls {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  max-width: 800px;
+  margin-top: 22px;
+}
+
+.condition-comparison-controls .field-label {
+  margin: 0;
+}
+
+.condition-comparison-controls select {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  padding: 9px 4px;
+}
+
+.condition-comparison-controls select:focus-visible {
+  outline: 3px solid rgba(20, 32, 51, 0.13);
+  outline-offset: 4px;
+}
+
+.condition-comparison-note,
+.condition-comparison-title {
+  max-width: 850px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.condition-comparison-note {
+  margin: 12px 0 0;
+}
+
+.condition-comparison-title {
+  margin: 22px 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.condition-comparison-wrap {
+  margin-top: 0;
+}
+
+.condition-comparison-table {
+  min-width: 1180px;
+}
+
+.condition-comparison-table td {
+  line-height: 1.55;
+}
+
+.condition-comparison-table td[data-label="製品"] {
+  min-width: 125px;
+  font-weight: 700;
+}
+
+.condition-comparison-table td[data-label="対象プラン"] {
+  min-width: 210px;
+}
+
+.condition-comparison-table td[data-label="利用環境"] {
+  min-width: 190px;
+}
+
+.condition-list {
+  min-width: 250px;
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.condition-list li + li {
+  margin-top: 7px;
+}
+
+.condition-evidence {
+  display: inline-block;
+  min-width: 170px;
+  font-size: 0.78rem;
+}
+
+.condition-subtext,
+.condition-missing-note {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.condition-missing-note {
+  max-width: 280px;
+  white-space: normal;
+}
+
 .task-cell {
   min-width: 310px;
   font-size: 0.96rem;
@@ -252,6 +361,7 @@ select:focus {
 .answer-badge.partial { color: var(--partial); }
 .answer-badge.no { color: var(--no); }
 .answer-badge.unknown { color: var(--unknown); }
+.answer-badge.stale { color: var(--unknown); }
 
 .answer {
   display: grid;
@@ -365,6 +475,74 @@ select:focus {
 }
 
 @media (max-width: 720px) {
+  .condition-comparison-section {
+    padding: 32px 0 28px;
+  }
+
+  .condition-comparison-controls {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-top: 18px;
+  }
+
+  .condition-comparison-wrap {
+    overflow-x: visible;
+  }
+
+  .condition-comparison-table {
+    min-width: 0;
+  }
+
+  .condition-comparison-table thead {
+    display: none;
+  }
+
+  .condition-comparison-table,
+  .condition-comparison-table tbody,
+  .condition-comparison-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .condition-comparison-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .condition-comparison-table td {
+    display: grid;
+    grid-template-columns: 6.7rem minmax(0, 1fr);
+    gap: 9px;
+    padding: 5px 0;
+    border-bottom: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .condition-comparison-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .condition-comparison-table td[data-label="製品"] {
+    min-width: 0;
+  }
+
+  .condition-comparison-table td[data-label="対象プラン"],
+  .condition-comparison-table td[data-label="利用環境"] {
+    min-width: 0;
+  }
+
+  .condition-list {
+    min-width: 0;
+  }
+
+  .condition-evidence {
+    min-width: 0;
+  }
+
   .masthead { padding-top: 42px; }
 
   .search-row {

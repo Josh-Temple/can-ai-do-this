@@ -108,7 +108,7 @@ Initial coverage may include ChatGPT, Claude, Gemini, Microsoft Copilot, and Per
 
 ## Status
 
-The repository currently contains **50 published, source-backed questions** and a live static public site generated from the canonical JSON records. The interface is Japanese-first, with a simple comparison table, keyword search with task aliases, product filtering, dedicated question pages, and detailed evidence views.
+The repository currently contains **67 published, source-backed questions** and a live static public site generated from the canonical JSON records. The Japanese-first interface includes natural-language task search, product filtering, dedicated question pages, and condition-aware comparisons for spreadsheet editing, PowerPoint, and Deep Research with the recorded plan, platform, limitations, evidence state, and review date.
 
 The initial 10–15 question seed milestone is complete, followed by controlled expansion to a **50-question first release** covering ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, Codex, and Claude Code. The final expansion adds cross-product coverage for real-time voice conversation and spreadsheet/CSV data analysis. From this point, question count is not an automatic growth target; priority shifts to usability validation, comparison UX, demand validation, freshness, and stronger VERIFIED evidence.
 

@@ -48,6 +48,8 @@ Each group has a `coverage` mode:
 - `general`: core-product coverage is a useful research target;
 - `specialized`: the task is primarily represented by specialist products, so a missing ChatGPT/Claude cell is not automatically a priority.
 
+Up to three groups may set `condition_comparison: true` to appear in the landing-page task selector. This flag chooses which existing tasks to show; it does not assert that products are equivalent or that a user's plan or device matches. The selector reads each answer's exact `plan`, `platform`, `conditions_ja`, `limitations_ja`, evidence state, and dates. Plan and platform text is displayed verbatim because it is not normalized enough for automatic matching. Missing answers retain the separate **未調査**, **判断保留**, and **別製品** states above.
+
 Coverage gaps should be filled only with normal first-party/direct evidence. The matrix must never synthesize an answer from another product, product family, or nearby task.
 
 ### Missing-cell semantics

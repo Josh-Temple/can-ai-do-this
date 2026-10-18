@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import json
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +44,7 @@ def main() -> int:
     failures = []
     seen_group_ids = set()
     membership = defaultdict(list)
+    condition_comparison_groups = []
 
     for group in groups:
         group_id = group.get("id")
@@ -51,6 +52,11 @@ def main() -> int:
         question_ids = group.get("question_ids")
         coverage = group.get("coverage")
         missing_products = group.get("missing_products", {})
+        if "condition_comparison" in group:
+            if not isinstance(group["condition_comparison"], bool):
+                failures.append(f"{group_id}: condition_comparison must be boolean")
+            elif group["condition_comparison"]:
+                condition_comparison_groups.append(group_id)
 
         if not isinstance(group_id, str) or not group_id:
             failures.append("group id must be a non-empty string")
@@ -108,6 +114,21 @@ def main() -> int:
             for answer in record.get("answers", [])
             if answer.get("product")
         }
+        if group.get("condition_comparison") is True:
+            products_per_group = Counter(
+                answer.get("product")
+                for record in group_records
+                for answer in record.get("answers", [])
+                if answer.get("product")
+            )
+            duplicates = sorted(
+                product for product, count in products_per_group.items() if count > 1
+            )
+            if duplicates:
+                failures.append(
+                    f"{group_id}: condition comparison needs at most one answer per product; "
+                    f"duplicates {duplicates}"
+                )
         if len(products) < 2:
             failures.append(f"{group_id}: must compare at least two distinct products")
         for product in missing_products:
@@ -118,6 +139,12 @@ def main() -> int:
 
         for question_id in question_ids:
             membership[question_id].append(group_id)
+
+    if len(condition_comparison_groups) > 3:
+        failures.append(
+            "condition_comparison must select no more than three task groups: "
+            f"{condition_comparison_groups}"
+        )
 
     ambiguous = {qid: gids for qid, gids in membership.items() if len(gids) > 1}
     if ambiguous:

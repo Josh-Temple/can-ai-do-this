@@ -9,7 +9,7 @@ const CapabilityFreshness = (() => {
   }
 
   function todayUtcDay(now = new Date()) {
-    return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
   }
 
   function formatIsoDay(timestamp) {

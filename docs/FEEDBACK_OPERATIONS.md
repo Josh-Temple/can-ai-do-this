@@ -31,7 +31,7 @@ Review feedback as evidence about the **site experience**, especially:
 - missed product/plan/platform conditions;
 - inability to find evidence state or freshness;
 - comparison/navigation friction;
-- candidate tasks that are absent from the current 50-question set.
+- candidate tasks that are absent from the current published set.
 
 Repeated independent reports increase priority, but they do not establish product capability.
 
@@ -50,6 +50,6 @@ Do not copy personal information into the repository. If a submitter includes pr
 
 Ordinary feedback does not satisfy Issue #12.
 
-The 50-question naive-user gate requires the fixed protocol in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`, at least three real participants, and one de-identified result file per participant under `research/usability-results/`.
+The naive-user gate requires the fixed protocol in `research/USABILITY_TEST_PROTOCOL_2026-10-03.md`, at least three real participants, and one de-identified result file per participant under `research/usability-results/`.
 
 Use public feedback to decide what to inspect during and after the gate, not as a substitute for the gate.
