@@ -57,6 +57,43 @@
   </header>
 
   <main class="wrap">
+    <section id="condition-comparison-section" class="condition-comparison-section" aria-labelledby="condition-comparison-heading">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">CONDITIONS FIRST</p>
+          <h2 id="condition-comparison-heading" class="section-title">条件を見ながら比較</h2>
+        </div>
+        <p class="section-note">作業を選ぶと、各製品の回答、対象プラン、利用環境、前提条件、根拠の状態を並べて確認できます。</p>
+      </div>
+      <div class="condition-comparison-controls">
+        <label class="field-label" for="condition-task">比較したい作業 <span class="muted">任意</span></label>
+        <select id="condition-task">
+          <option value="">作業を選択してください</option>
+        </select>
+      </div>
+      <p class="condition-comparison-note">プランや利用環境は、記録された表記のまま表示します。現在の契約・端末との一致は、正規化された条件データがないため自動判定しません。結論は確認日と根拠の状態を見て判断してください。</p>
+      <div id="condition-comparison-results" hidden>
+        <p id="condition-comparison-title" class="condition-comparison-title"></p>
+        <div class="comparison-wrap condition-comparison-wrap">
+          <table class="comparison-table condition-comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">製品</th>
+                <th scope="col">回答</th>
+                <th scope="col">対象プラン</th>
+                <th scope="col">利用環境</th>
+                <th scope="col">前提・制限</th>
+                <th scope="col">根拠の状態</th>
+                <th scope="col">最終確認</th>
+                <th scope="col">詳細</th>
+              </tr>
+            </thead>
+            <tbody id="condition-comparison-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <section id="overview-section" class="overview-section" aria-labelledby="overview-heading">
       <div class="section-head">
         <div>
@@ -145,6 +182,7 @@
 
   <script src="./freshness.js" defer></script>
   <script src="./feedback.js" defer></script>
+  <script src="./condition-comparison.js" defer></script>
   <script src="./app.js" defer></script>
 </body>
 </html>

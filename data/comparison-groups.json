@@ -5,6 +5,7 @@
       "id": "spreadsheet-direct-edit",
       "label_ja": "既存の表計算ファイルを直接編集",
       "coverage": "general",
+      "condition_comparison": true,
       "question_ids": [
         "Q0004",
         "Q0026",
@@ -16,6 +17,7 @@
       "id": "editable-powerpoint",
       "label_ja": "編集可能なPowerPointを作成・編集",
       "coverage": "general",
+      "condition_comparison": true,
       "question_ids": [
         "Q0005",
         "Q0006",
@@ -89,6 +91,7 @@
       "id": "deep-research-report",
       "label_ja": "複数情報源を深く調査してレポート作成",
       "coverage": "general",
+      "condition_comparison": true,
       "question_ids": [
         "Q0031",
         "Q0032",
